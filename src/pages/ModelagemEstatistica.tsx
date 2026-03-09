@@ -821,11 +821,19 @@ const ModelagemEstatistica = () => {
             </TableHeader>
             <TableBody>
               {[
-                { nivel: "Mestrado", freq: "1.77", gasto: "R$329,50", renda: "R$30.717" },
-                { nivel: "Doutorado", freq: "1.70", gasto: "R$328,81", renda: "R$29.377" },
-                { nivel: "Superior Completo", freq: "1.65", gasto: "R$305,53", renda: "R$25.420" },
-                { nivel: "Pós-Graduação", freq: "1.62", gasto: "R$278,37", renda: "R$26.325" },
+                { nivel: "Superior Completo", freq: "1.65", gasto: "R$305,53", renda: "R$25.421" },
                 { nivel: "Ensino Médio", freq: "1.57", gasto: "R$260,80", renda: "R$13.450" },
+                { nivel: "Superior Incompleto", freq: "1.52", gasto: "R$257,21", renda: "R$16.390" },
+                { nivel: "Pós-Graduação", freq: "1.62", gasto: "R$278,37", renda: "R$26.326" },
+                { nivel: "Mestrado", freq: "1.77", gasto: "R$329,50", renda: "R$30.718" },
+                { nivel: "Ensino Fundamental", freq: "1.58", gasto: "R$301,88", renda: "R$11.053" },
+                { nivel: "Doutorado", freq: "1.70", gasto: "R$328,81", renda: "R$29.378" },
+                { nivel: "Ensino Médio Incompleto", freq: "1.38", gasto: "R$251,44", renda: "R$14.401" },
+                { nivel: "4ª Série Completa", freq: "1.70", gasto: "R$278,56", renda: "R$17.241" },
+                { nivel: "5ª a 8ª Série Incompleta", freq: "2.00", gasto: "R$327,98", renda: "R$6.816" },
+                { nivel: "Até 4ª Série Incompleta", freq: "1.25", gasto: "R$162,23", renda: "R$16.375" },
+                { nivel: "Pós-Doutorado", freq: "1.67", gasto: "R$265,72", renda: "R$15.159" },
+                { nivel: "Analfabeto", freq: "1.50", gasto: "R$154,44", renda: "R$5.159" },
               ].map((row) => (
                 <TableRow key={row.nivel}>
                   <TableCell className="text-sm font-medium">{row.nivel}</TableCell>
