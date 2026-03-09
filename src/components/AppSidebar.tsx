@@ -38,6 +38,7 @@ export function AppSidebar() {
 
   return (
     <Sidebar collapsible="icon" className="border-r border-sidebar-border">
+      {/* area51 logo header */}
       <div className="flex items-center gap-2 px-4 py-[20px] border-b border-sidebar-border justify-center">
         <img
           src={area51Logo}
