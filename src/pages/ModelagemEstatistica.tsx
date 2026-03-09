@@ -41,7 +41,7 @@ const objetivos = [
   "Avaliação de perfis com taxa de recorrência para a prospecção de clientes;",
 ];
 
-const idadeDistribuicao = [
+const idadeDistribuicao  = [
   { idade: 20, frequencia: 150 }, { idade: 22, frequencia: 280 },
   { idade: 25, frequencia: 700 }, { idade: 28, frequencia: 950 },
   { idade: 30, frequencia: 1950 }, { idade: 32, frequencia: 2500 },
