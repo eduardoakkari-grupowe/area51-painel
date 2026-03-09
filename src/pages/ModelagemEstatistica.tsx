@@ -813,7 +813,7 @@ const ModelagemEstatistica = () => {
             </div>
           </div>
         </div>
-        </div>
+
 
         {/* Tabela à direita */}
         <div className="bg-card border border-border rounded-xl p-6 overflow-auto">
