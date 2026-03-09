@@ -37,11 +37,7 @@ const modelagemScrollItems = [
   { title: "Escolaridade", hash: "escolaridade" },
 ];
 
-const modelagemSubItems = [
-  { title: "Personas", url: "/modelagem-estatistica/personas" },
-  { title: "Conclusão de Personas", url: "/modelagem-estatistica/conclusao" },
-  { title: "Composição do Aquário", url: "/modelagem-estatistica/composicao-do-aquario" },
-];
+const modelagemSubItems: { title: string; url: string }[] = [];
 
 const bottomItems = [
   { title: "Cubo", url: "https://cubopfpj.com/login/", icon: Box, external: true },
