@@ -4,6 +4,9 @@ import { DashboardLayout } from "@/components/DashboardLayout";
 import { Users, ShoppingCart, AlertTriangle, Code, UsersRound, SearchCheck, Share2, Target } from "lucide-react";
 import googleAdsIcon from "@/assets/google-ads-icon.png";
 import googleAdsText from "@/assets/google-ads-text.png";
+import metaIcon from "@/assets/meta-icon.png";
+import metaText from "@/assets/meta-text.png";
+import metaApps from "@/assets/meta-apps.png";
 
 const etapas = [
   {
