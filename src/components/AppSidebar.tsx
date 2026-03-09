@@ -29,10 +29,10 @@ const modelagemScrollItems = [
   { title: "Dados utilizados", hash: "dados-utilizados" },
   { title: "Objetivos", hash: "objetivos" },
   { title: "Etapas do processo", hash: "etapas-do-processo" },
+  { title: "Aquário", hash: "aquario" },
 ];
 
 const modelagemSubItems = [
-  { title: "Aquário", url: "/modelagem-estatistica#aquario" },
   { title: "Metodologia Look alike", url: "/modelagem-estatistica/metodologia-look-alike" },
   { title: "Sexo", url: "/modelagem-estatistica/sexo" },
   { title: "Idade", url: "/modelagem-estatistica/idade" },
