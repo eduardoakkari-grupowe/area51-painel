@@ -1129,6 +1129,97 @@ const ModelagemEstatistica = () => {
       </div>
     </div>
 
+    {/* Submenu Conta Bancária Digital */}
+    <div id="conta-bancaria-digital" className="mt-10 scroll-mt-6">
+      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3 mb-6">
+        <div className="h-2.5 w-2.5 rounded-full bg-primary" />
+        <span className="text-xl font-semibold text-foreground">Conta Bancária Digital</span>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Gráfico */}
+        <div className="bg-card border border-border rounded-xl p-6">
+          <p className="text-sm font-semibold text-foreground mb-4 text-center">Distribuição de Clientes: Tem Conta Bancária Digital?</p>
+          <div className="h-[350px]">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={[
+                { categoria: "N", total: 11776 },
+                { categoria: "S", total: 20838 },
+              ]} margin={{ top: 30, right: 30, left: 20, bottom: 40 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                <XAxis dataKey="categoria" tick={{ fill: "hsl(var(--foreground))", fontSize: 13 }} label={{ value: "Perfil Digital (S = Sim, N = Não)", position: "insideBottom", offset: -25, fill: "hsl(var(--muted-foreground))", fontSize: 12 }} />
+                <YAxis tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 11 }} label={{ value: "Número de Clientes", angle: -90, position: "insideLeft", offset: 0, fill: "hsl(var(--muted-foreground))", fontSize: 12 }} />
+                <Tooltip contentStyle={{ background: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: 8 }} />
+                <Bar dataKey="total" radius={[4, 4, 0, 0]} label={false}>
+                  <Cell fill="hsl(var(--primary))" />
+                  <Cell fill="hsl(var(--accent))" />
+                  <LabelList
+                    dataKey="total"
+                    position="top"
+                    content={({ x, y, width, index }: any) => {
+                      const labels = [
+                        { qty: "11.776", pct: "(36,1%)" },
+                        { qty: "20.838", pct: "(63,9%)" },
+                      ];
+                      const item = labels[index as number];
+                      if (!item) return null;
+                      return (
+                        <g>
+                          <text x={x + width / 2} y={y - 18} textAnchor="middle" fill="hsl(var(--foreground))" fontSize={13} fontWeight={700}>{item.qty}</text>
+                          <text x={x + width / 2} y={y - 4} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize={11}>{item.pct}</text>
+                        </g>
+                      );
+                    }}
+                  />
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        {/* Considerações e Tabela */}
+        <div className="bg-card border border-border rounded-xl p-6 flex flex-col gap-6">
+          <div>
+            <h3 className="text-base font-bold text-foreground mb-3">O Perfil do Cliente "Digital"</h3>
+            <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5">
+              <li><strong className="text-foreground">Renda e Score:</strong> Clientes com conta digital têm uma renda média 23% superior (R$ 25.220 vs R$ 20.378) e um Score de Crédito significativamente maior (823 vs 755).</li>
+              <li><strong className="text-foreground">Consumo:</strong> O ticket médio e a frequência de compra são ligeiramente maiores no público digital, sugerindo que a facilidade tecnológica correlaciona-se com uma maior propensão ao e-commerce.</li>
+            </ul>
+          </div>
+
+          <div className="overflow-auto">
+            <Table>
+              <TableHeader>
+                <TableRow className="bg-primary/10">
+                  <TableHead className="text-foreground font-bold text-xs">Perfil Digital</TableHead>
+                  <TableHead className="text-foreground font-bold text-xs text-right">Volume de Clientes</TableHead>
+                  <TableHead className="text-foreground font-bold text-xs text-right">Renda Média</TableHead>
+                  <TableHead className="text-foreground font-bold text-xs text-right">Score Médio</TableHead>
+                  <TableHead className="text-foreground font-bold text-xs text-right">Gasto Médio</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="text-sm font-medium">Sim (S)</TableCell>
+                  <TableCell className="text-sm text-right">20.838</TableCell>
+                  <TableCell className="text-sm text-right">R$ 25.220</TableCell>
+                  <TableCell className="text-sm text-right">823</TableCell>
+                  <TableCell className="text-sm text-right">R$ 298,96</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-sm font-medium">Não (N)</TableCell>
+                  <TableCell className="text-sm text-right">11.776</TableCell>
+                  <TableCell className="text-sm text-right">R$ 20.378</TableCell>
+                  <TableCell className="text-sm text-right">755</TableCell>
+                  <TableCell className="text-sm text-right">R$ 294,13</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </DashboardLayout>
   );
 };

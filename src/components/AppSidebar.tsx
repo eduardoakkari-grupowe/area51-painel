@@ -37,6 +37,7 @@ const modelagemScrollItems = [
   { title: "Escolaridade", hash: "escolaridade" },
   { title: "Estado", hash: "estado" },
   { title: "Renda", hash: "renda" },
+  { title: "Conta Bancária Digital", hash: "conta-bancaria-digital" },
 ];
 
 const modelagemSubItems: { title: string; url: string }[] = [];
