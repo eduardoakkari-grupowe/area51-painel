@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { DashboardLayout } from "@/components/DashboardLayout";
 import { Users, ShoppingCart, AlertTriangle, Code, UsersRound, SearchCheck, Share2, Target, Crosshair, Brain, UsersIcon } from "lucide-react";
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import { Table, TableHeader, TableBody, TableRow, TableHead, TableCell } from "@/components/ui/table";
 import googleAdsIcon from "@/assets/google-ads-icon.png";
 import googleAdsText from "@/assets/google-ads-text.png";
 import metaIcon from "@/assets/meta-icon.png";
@@ -37,6 +39,32 @@ const objetivos = [
   "Desenvolvimento de modelo de Look Alike, tendo por objetivo identificar na area51 pessoas que possuem perfil semelhante aos atuais clientes, visando o desenvolvimento de ações de prospecção anonimizadas;",
   "Estudo comparativo do perfil de clientes com perfis de afinidade area51;",
   "Avaliação de perfis com taxa de recorrência para a prospecção de clientes;",
+];
+
+const idadeDistribuicao = [
+  { idade: 20, frequencia: 150 }, { idade: 22, frequencia: 280 },
+  { idade: 25, frequencia: 700 }, { idade: 28, frequencia: 950 },
+  { idade: 30, frequencia: 1950 }, { idade: 32, frequencia: 2500 },
+  { idade: 35, frequencia: 3500 }, { idade: 37, frequencia: 3600 },
+  { idade: 38, frequencia: 3150 }, { idade: 40, frequencia: 4000 },
+  { idade: 42, frequencia: 4700 }, { idade: 44, frequencia: 3900 },
+  { idade: 45, frequencia: 3100 }, { idade: 48, frequencia: 3800 },
+  { idade: 50, frequencia: 3200 }, { idade: 52, frequencia: 2200 },
+  { idade: 55, frequencia: 2000 }, { idade: 58, frequencia: 2100 },
+  { idade: 60, frequencia: 1500 }, { idade: 62, frequencia: 1050 },
+  { idade: 65, frequencia: 800 }, { idade: 68, frequencia: 500 },
+  { idade: 70, frequencia: 400 }, { idade: 75, frequencia: 250 },
+  { idade: 80, frequencia: 150 }, { idade: 85, frequencia: 80 },
+  { idade: 90, frequencia: 30 },
+];
+
+const idadeTabela = [
+  { faixa: "18-25", volume: "305", gasto: "R$197,38", frequencia: "1.22", renda: "R$10.351" },
+  { faixa: "26-35", volume: "4.533", gasto: "R$252,14", frequencia: "1.46", renda: "R$15.693" },
+  { faixa: "36-45", volume: "13.728", gasto: "R$291,29", frequencia: "1.61", renda: "R$21.695" },
+  { faixa: "46-55", volume: "10.125", gasto: "R$317,33", frequencia: "1.70", renda: "R$27.015" },
+  { faixa: "56-65", volume: "3.159", gasto: "R$321,33", frequencia: "1.73", renda: "R$30.567" },
+  { faixa: "66+", volume: "758", gasto: "R$345,64", frequencia: "1.81", renda: "R$30.582" },
 ];
 
 const ModelagemEstatistica = () => {
@@ -275,6 +303,78 @@ const ModelagemEstatistica = () => {
             </div>
           </div>
           <p className="text-sm font-bold text-foreground">Pessoas com perfil semelhante ao público de interesse.</p>
+        </div>
+      </div>
+    </div>
+
+    {/* Submenu Sexo */}
+    <div id="sexo" className="mt-10 scroll-mt-6">
+      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3">
+        <div className="h-2.5 w-2.5 rounded-full bg-accent" />
+        <span className="text-xl font-semibold text-foreground">Sexo</span>
+      </div>
+
+      <div className="mt-6 flex flex-col lg:flex-row gap-8">
+        {/* Left: Histogram */}
+        <div className="flex-1 min-w-0">
+          <h3 className="text-lg font-bold text-foreground mb-1">Idade (Homens e Mulheres)</h3>
+          <p className="text-xs text-muted-foreground mb-4">Distribuição de Idade dos Compradores</p>
+          <div className="w-full h-[320px]">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={idadeDistribuicao} margin={{ top: 5, right: 20, left: 10, bottom: 25 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                <XAxis dataKey="idade" label={{ value: "Idade", position: "insideBottom", offset: -15, style: { fill: 'hsl(var(--muted-foreground))' } }} tick={{ fontSize: 11, fill: 'hsl(var(--muted-foreground))' }} />
+                <YAxis label={{ value: "Frequência", angle: -90, position: "insideLeft", offset: 0, style: { fill: 'hsl(var(--muted-foreground))' } }} tick={{ fontSize: 11, fill: 'hsl(var(--muted-foreground))' }} />
+                <Tooltip contentStyle={{ background: 'hsl(var(--card))', border: '1px solid hsl(var(--border))', borderRadius: '8px', color: 'hsl(var(--foreground))' }} />
+                <Bar dataKey="frequencia" fill="hsl(var(--primary))" radius={[2, 2, 0, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        {/* Right: Insights + Table */}
+        <div className="flex-1 min-w-0">
+          <h3 className="text-base font-bold text-primary mb-3">O Perfil Geracional e o Consumo</h3>
+          <ul className="space-y-3 mb-6">
+            <li className="flex items-start gap-2">
+              <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
+              <span className="text-sm text-muted-foreground"><strong className="text-foreground">O Grupo Dominante (36-45 anos):</strong> É o maior volume da base (13.728 clientes). Eles gastam em média R$ 291,29 e são o motor do e-commerce.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
+              <span className="text-sm text-muted-foreground"><strong className="text-foreground">Os "Heavy Spenders" (56 anos ou mais):</strong> Embora em menor número, são os clientes que possuem o maior ticket médio (R$ 345,64 para quem tem 66+) e a maior frequência de compra (1.81). Isso indica que o público sênior, quando fidelizado, é o mais rentável.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
+              <span className="text-sm text-muted-foreground"><strong className="text-foreground">Os Jovens (18-25 anos):</strong> Representam apenas 305 clientes. O ticket médio é o menor (R$ 197,38) e a frequência também.</span>
+            </li>
+          </ul>
+
+          {/* Table */}
+          <div className="overflow-auto">
+            <Table>
+              <TableHeader>
+                <TableRow className="bg-primary/10">
+                  <TableHead className="text-foreground font-bold text-xs">Faixa Etária</TableHead>
+                  <TableHead className="text-foreground font-bold text-xs">Volume de Clientes</TableHead>
+                  <TableHead className="text-foreground font-bold text-xs">Gasto Médio (M)</TableHead>
+                  <TableHead className="text-foreground font-bold text-xs">Frequência</TableHead>
+                  <TableHead className="text-foreground font-bold text-xs">Renda Média</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {idadeTabela.map((row) => (
+                  <TableRow key={row.faixa}>
+                    <TableCell className="text-sm font-medium">{row.faixa}</TableCell>
+                    <TableCell className="text-sm">{row.volume}</TableCell>
+                    <TableCell className="text-sm">{row.gasto}</TableCell>
+                    <TableCell className="text-sm">{row.frequencia}</TableCell>
+                    <TableCell className="text-sm">{row.renda}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
         </div>
       </div>
     </div>
