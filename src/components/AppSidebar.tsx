@@ -1,7 +1,7 @@
 import { LayoutDashboard, Newspaper, Wrench, Users, ChevronLeft, BarChart3, GraduationCap, Image, IdCard, Video, Megaphone, LogOut } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useLocation } from "react-router-dom";
-import grupoWeLogo from "@/assets/clients/grupowe.webp";
+import area51Logo from "@/assets/clients/area51.png";
 import {
   Sidebar,
   SidebarContent,
