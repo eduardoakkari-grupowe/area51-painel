@@ -281,6 +281,7 @@ const ModelagemEstatistica = () => {
       </div>
     </div>
     </div>
+    </div>
   </DashboardLayout>
   );
 };
