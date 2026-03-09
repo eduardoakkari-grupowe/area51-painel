@@ -141,7 +141,7 @@ const ModelagemEstatistica = () => {
                 <Icon className="h-12 w-12 text-primary-foreground" />
               </div>
               <div className="bg-accent rounded-xl p-4 flex-1 flex items-center">
-                <p className="text-xs text-accent-foreground leading-relaxed">{etapa.titulo}</p>
+                <p className="text-sm text-accent-foreground leading-relaxed">{etapa.titulo}</p>
               </div>
               {i < etapas.length - 1 && (
                 <span className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 text-muted-foreground text-lg font-bold">›</span>
