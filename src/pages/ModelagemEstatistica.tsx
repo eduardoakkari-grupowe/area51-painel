@@ -239,46 +239,46 @@ const ModelagemEstatistica = () => {
       </ul>
 
       {/* Visual: Público de Interesse → Machine Learning → Pessoas semelhantes */}
-      <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 max-w-4xl">
+      <div className="mt-8 flex flex-col sm:flex-row items-start justify-center gap-6 sm:gap-10">
         {/* Público de Interesse */}
-        <div className="flex flex-col items-center text-center gap-3">
-          <div className="bg-card border border-border rounded-2xl p-6 shadow-lg">
+        <div className="flex flex-col items-center text-center gap-3 w-[140px]">
+          <div className="bg-card border border-border rounded-2xl p-6 shadow-lg w-[112px] h-[112px] flex items-center justify-center">
             <Crosshair className="h-16 w-16 text-foreground" />
           </div>
           <p className="text-sm font-bold text-foreground">Público de Interesse</p>
         </div>
 
         {/* Arrow */}
-        <svg width="60" height="24" viewBox="0 0 60 24" className="shrink-0 hidden sm:block">
+        <svg width="60" height="24" viewBox="0 0 60 24" className="shrink-0 hidden sm:block mt-11">
           <path d="M0 12 L50 12" stroke="hsl(var(--muted-foreground))" strokeWidth="2" fill="none" />
           <path d="M45 6 L55 12 L45 18" stroke="hsl(var(--muted-foreground))" strokeWidth="2" fill="none" />
         </svg>
 
         {/* Machine Learning */}
-        <div className="flex flex-col items-center text-center gap-3">
-          <div className="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-2xl p-6 shadow-lg">
+        <div className="flex flex-col items-center text-center gap-3 w-[140px]">
+          <div className="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-2xl p-6 shadow-lg w-[112px] h-[112px] flex items-center justify-center">
             <Brain className="h-16 w-16 text-white" />
           </div>
           <p className="text-sm font-bold text-foreground">Machine Learning</p>
         </div>
 
         {/* Arrow */}
-        <svg width="60" height="24" viewBox="0 0 60 24" className="shrink-0 hidden sm:block">
+        <svg width="60" height="24" viewBox="0 0 60 24" className="shrink-0 hidden sm:block mt-11">
           <path d="M0 12 L50 12" stroke="hsl(var(--muted-foreground))" strokeWidth="2" fill="none" />
           <path d="M45 6 L55 12 L45 18" stroke="hsl(var(--muted-foreground))" strokeWidth="2" fill="none" />
         </svg>
 
         {/* Pessoas com perfil semelhante */}
-        <div className="flex flex-col items-center text-center gap-3">
-          <div className="bg-card border border-border rounded-2xl p-6 shadow-lg">
-            <div className="grid grid-cols-2 gap-2">
-              <UsersIcon className="h-10 w-10 text-foreground" />
-              <UsersIcon className="h-10 w-10 text-foreground" />
-              <UsersIcon className="h-10 w-10 text-foreground" />
-              <UsersIcon className="h-10 w-10 text-foreground" />
+        <div className="flex flex-col items-center text-center gap-3 w-[140px]">
+          <div className="bg-card border border-border rounded-2xl p-6 shadow-lg w-[112px] h-[112px] flex items-center justify-center">
+            <div className="grid grid-cols-2 gap-1">
+              <UsersIcon className="h-8 w-8 text-foreground" />
+              <UsersIcon className="h-8 w-8 text-foreground" />
+              <UsersIcon className="h-8 w-8 text-foreground" />
+              <UsersIcon className="h-8 w-8 text-foreground" />
             </div>
           </div>
-          <p className="text-sm font-bold text-foreground max-w-[180px]">Pessoas com perfil semelhante ao público de interesse.</p>
+          <p className="text-sm font-bold text-foreground">Pessoas com perfil semelhante ao público de interesse.</p>
         </div>
       </div>
     </div>
