@@ -34,7 +34,19 @@ const objetivos = [
   "Avaliação de perfis com taxa de recorrência para a prospecção de clientes;",
 ];
 
-const ModelagemEstatistica = () => (
+const ModelagemEstatistica = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      setTimeout(() => {
+        const el = document.getElementById(location.hash.slice(1));
+        el?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  }, [location.hash]);
+
+  return (
   <DashboardLayout>
     <div>
       <h1 className="text-2xl font-bold text-foreground">Modelagem Estatística</h1>
