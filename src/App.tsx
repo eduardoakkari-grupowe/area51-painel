@@ -24,7 +24,7 @@ import EtapasDoProcesso from "./pages/modelagem/EtapasDoProcesso";
 import Aquario from "./pages/modelagem/Aquario";
 import MetodologiaLookAlike from "./pages/modelagem/MetodologiaLookAlike";
 
-import Idade from "./pages/modelagem/Idade";
+
 import Compras from "./pages/modelagem/Compras";
 import Escolaridade from "./pages/modelagem/Escolaridade";
 import Personas from "./pages/modelagem/Personas";
