@@ -34,7 +34,7 @@ const modelagemScrollItems = [
   { title: "Idade", hash: "sexo", bullet: "accent" },
   { title: "Sexo X Valor", hash: "sexo-x-valor", bullet: "primary" },
   { title: "Compras (Qtde X Valor)", hash: "compras-quantidade-valor", bullet: "accent" },
-  { title: "Escolaridade", hash: "escolaridade", bullet: "accent" },
+  { title: "Escolaridade", hash: "escolaridade", bullet: "primary" },
   { title: "Estado", hash: "estado", bullet: "primary" },
   { title: "Renda", hash: "renda", bullet: "accent" },
 ];
