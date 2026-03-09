@@ -116,7 +116,7 @@ export function AppSidebar() {
                   </CollapsibleTrigger>
                   {!collapsed && (
                     <CollapsibleContent>
-                      <SidebarMenu className="ml-6 mt-1 border-l border-border/50 pl-3">
+                      <SidebarMenu className="ml-4 mt-1 border-l border-border/50 pl-2 overflow-hidden">
                         {modelagemSubItems.map((sub) => {
                           const subActive = location.pathname === sub.url;
                           return (
