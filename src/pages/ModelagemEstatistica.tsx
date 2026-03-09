@@ -782,6 +782,62 @@ const ModelagemEstatistica = () => {
           </ResponsiveContainer>
         </div>
       </div>
+
+      {/* Considerações + Tabela Escolaridade */}
+      <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+        {/* Considerações à esquerda */}
+        <div className="bg-card border border-border rounded-xl p-6">
+          <h3 className="text-lg font-bold text-foreground mb-4">Considerações</h3>
+          <div className="space-y-6">
+            <div>
+              <p className="text-sm font-bold text-foreground mb-1">1. Panorama da Base (O Domínio do Ensino Superior)</p>
+              <p className="text-sm text-muted-foreground mb-2">Sua base é composta majoritariamente por pessoas com alto nível de instrução.</p>
+              <ul className="space-y-1 ml-4">
+                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Superior Completo: Representa a vasta maioria (25.572 clientes), com um ticket médio de R$ 305,53.</span></li>
+                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Pós-Graduação, Mestrado e Doutorado: Juntos somam mais de 1.500 clientes e possuem os maiores tickets médios (R$ 329,50 para Mestres e R$ 328,81 para Doutores).</span></li>
+              </ul>
+            </div>
+            <div>
+              <p className="text-sm font-bold text-foreground mb-1">2. O Perfil de "Performance"</p>
+              <p className="text-sm text-muted-foreground mb-2">Há uma correlação clara: quanto maior a escolaridade, maior a frequência de compra e o valor gasto.</p>
+              <ul className="space-y-1 ml-4">
+                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Clientes com Mestrado/Doutorado têm uma frequência de compra superior à média geral (1.77 e 1.70, respectivamente).</span></li>
+                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Isso reforça a hipótese da persona do "Executivo de Alta Performance" ou do "Acadêmico/Cientista", que consome o produto para manter a produtividade no dia seguinte a um consumo de álcool.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        {/* Tabela à direita */}
+        <div className="bg-card border border-border rounded-xl p-6 overflow-auto">
+          <Table>
+            <TableHeader>
+              <TableRow className="bg-primary/10">
+                <TableHead className="text-foreground font-bold text-xs">Nível de Escolaridade</TableHead>
+                <TableHead className="text-foreground font-bold text-xs">Frequência Média</TableHead>
+                <TableHead className="text-foreground font-bold text-xs">Gasto Médio (LTV)</TableHead>
+                <TableHead className="text-foreground font-bold text-xs">Renda Média</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {[
+                { nivel: "Mestrado", freq: "1.77", gasto: "R$329,50", renda: "R$30.717" },
+                { nivel: "Doutorado", freq: "1.70", gasto: "R$328,81", renda: "R$29.377" },
+                { nivel: "Superior Completo", freq: "1.65", gasto: "R$305,53", renda: "R$25.420" },
+                { nivel: "Pós-Graduação", freq: "1.62", gasto: "R$278,37", renda: "R$26.325" },
+                { nivel: "Ensino Médio", freq: "1.57", gasto: "R$260,80", renda: "R$13.450" },
+              ].map((row) => (
+                <TableRow key={row.nivel}>
+                  <TableCell className="text-sm font-medium">{row.nivel}</TableCell>
+                  <TableCell className="text-sm">{row.freq}</TableCell>
+                  <TableCell className="text-sm">{row.gasto}</TableCell>
+                  <TableCell className="text-sm">{row.renda}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </div>
+      </div>
     </div>
   </DashboardLayout>
   );
