@@ -790,7 +790,7 @@ const ModelagemEstatistica = () => {
           <h3 className="text-lg font-bold text-foreground mb-4">Considerações</h3>
           <div className="space-y-6">
             <div>
-              <p className="text-sm font-bold text-foreground mb-1">1. Panorama da Base (O Domínio do Ensino Superior)</p>
+              <p className="text-sm font-bold text-primary mb-1">1. Panorama da Base (O Domínio do Ensino Superior)</p>
               <p className="text-sm text-muted-foreground mb-2">Sua base é composta majoritariamente por pessoas com alto nível de instrução.</p>
               <ul className="space-y-1 ml-4">
                 <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Superior Completo: Representa a vasta maioria (25.572 clientes), com um ticket médio de R$ 305,53.</span></li>
