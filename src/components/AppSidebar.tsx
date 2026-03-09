@@ -36,7 +36,7 @@ const modelagemSubItems = [
   { title: "Escolaridade", url: "/modelagem-estatistica/escolaridade" },
   { title: "Personas", url: "/modelagem-estatistica/personas" },
   { title: "Conclusão", url: "/modelagem-estatistica/conclusao" },
-  { title: "Composição Aquário", url: "/modelagem-estatistica/composicao-do-aquario" },
+  { title: "Composição do Aquário", url: "/modelagem-estatistica/composicao-do-aquario" },
 ];
 
 const bottomItems = [
