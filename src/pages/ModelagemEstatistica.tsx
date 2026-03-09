@@ -11,28 +11,34 @@ const ModelagemEstatistica = () => (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8 max-w-2xl">
       {/* Card Clientes */}
       <div className="rounded-xl overflow-hidden shadow-lg">
-        <div className="bg-[hsl(var(--primary))] flex items-center gap-4 p-6">
+        <div className="bg-primary flex items-center gap-4 p-6">
           <div className="bg-white/20 rounded-lg p-3">
-            <Users className="h-8 w-8 text-white" />
+            <Users className="h-8 w-8 text-primary-foreground" />
           </div>
           <div>
-            <p className="text-4xl font-bold text-white">6</p>
-            <p className="text-sm font-medium text-white/90">Clientes</p>
+            <p className="text-4xl font-bold text-primary-foreground">32.715</p>
+            <p className="text-sm font-medium text-primary-foreground/90">CPFs / Clientes</p>
           </div>
         </div>
         <div className="bg-card p-4 border border-t-0 border-border rounded-b-xl">
-          <p className="text-xs text-muted-foreground">Base de clientes distintosow-lg">
+          <p className="text-xs text-muted-foreground">Base de clientes distintos identificados na modelagem.</p>
+        </div>
+      </div>
+
+      {/* Card Compras */}
+      <div className="rounded-xl overflow-hidden shadow-lg">
         <div className="bg-destructive flex items-center gap-4 p-6">
           <div className="bg-white/20 rounded-lg p-3">
-            <ShoppingCart className="h-8 w-8 text-white" />
+            <ShoppingCart className="h-8 w-8 text-destructive-foreground" />
           </div>
           <div>
-            <p className="text-4xl font-bold text-white">41</p>
-            <p className="text-sm font-medium text-white/90">Pedidos</p>
+            <p className="text-4xl font-bold text-destructive-foreground">55.000</p>
+            <p className="text-sm font-medium text-destructive-foreground/90">Compras</p>
           </div>
         </div>
         <div className="bg-card p-4 border border-t-0 border-border rounded-b-xl">
-          <p className="text-xs text-muted-foreground">Base de <span className="font-semibold text-foreground">55.000 compras</span> rcompras
+          <p className="text-xs text-muted-foreground">Base de compras registradas para análise de perfil e recorrência.</p>
+        </div>
       </div>
     </div>
   </DashboardLayout>
