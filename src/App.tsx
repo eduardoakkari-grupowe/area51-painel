@@ -62,7 +62,7 @@ const App = () => (
           <Route path="/modelagem-estatistica/aquario" element={<Aquario />} />
           <Route path="/modelagem-estatistica/metodologia-look-alike" element={<MetodologiaLookAlike />} />
           
-          <Route path="/modelagem-estatistica/idade" element={<Idade />} />
+          
           <Route path="/modelagem-estatistica/compras" element={<Compras />} />
           <Route path="/modelagem-estatistica/escolaridade" element={<Escolaridade />} />
           <Route path="/modelagem-estatistica/personas" element={<Personas />} />

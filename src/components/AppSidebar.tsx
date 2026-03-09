@@ -37,7 +37,7 @@ const modelagemScrollItems = [
 const modelagemSubItems = [
   
   
-  { title: "Idade", url: "/modelagem-estatistica/idade" },
+  
   { title: "Compras", url: "/modelagem-estatistica/compras" },
   { title: "Escolaridade", url: "/modelagem-estatistica/escolaridade" },
   { title: "Conta Bancária Digital", url: "/modelagem-estatistica/conta-bancaria-digital" },
