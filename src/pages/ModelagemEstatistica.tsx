@@ -813,7 +813,7 @@ const ModelagemEstatistica = () => {
             </div>
           </div>
         </div>
-        </div>
+
 
         {/* Tabela à direita */}
         <div className="bg-card border border-border rounded-xl p-6 overflow-auto">
@@ -858,6 +858,152 @@ const ModelagemEstatistica = () => {
           </Table>
         </div>
       </div>
+    </div>
+
+    {/* Submenu Estado */}
+    <div id="estado" className="mt-10 scroll-mt-6">
+      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3">
+        <div className="h-2.5 w-2.5 rounded-full bg-accent" />
+        <span className="text-xl font-semibold text-foreground">Estado</span>
+      </div>
+
+      <div className="mt-6 bg-card border border-border rounded-xl p-6">
+        <p className="text-sm font-semibold text-foreground mb-4 text-center">Volume de Clientes por Estado e Segmentação de Mercado (Tier)</p>
+        <div className="h-[420px]">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={[
+                { uf: "SP", total: 14698, tier: "top" },
+                { uf: "RJ", total: 3076, tier: "expansao" },
+                { uf: "MG", total: 3010, tier: "expansao" },
+                { uf: "PR", total: 1908, tier: "expansao" },
+                { uf: "SC", total: 1591, tier: "expansao" },
+                { uf: "RS", total: 1358, tier: "expansao" },
+                { uf: "DF", total: 1324, tier: "expansao" },
+                { uf: "GO", total: 883, tier: "expansao" },
+                { uf: "BA", total: 867, tier: "expansao" },
+                { uf: "PE", total: 691, tier: "expansao" },
+                { uf: "ES", total: 518, tier: "expansao" },
+                { uf: "CE", total: 450, tier: "expansao" },
+                { uf: "MS", total: 389, tier: "expansao" },
+                { uf: "MT", total: 353, tier: "expansao" },
+                { uf: "PA", total: 226, tier: "secundario" },
+                { uf: "AL", total: 193, tier: "secundario" },
+                { uf: "MA", total: 186, tier: "secundario" },
+                { uf: "RN", total: 183, tier: "secundario" },
+                { uf: "PB", total: 171, tier: "secundario" },
+                { uf: "PI", total: 115, tier: "secundario" },
+                { uf: "AM", total: 114, tier: "secundario" },
+                { uf: "SE", total: 100, tier: "secundario" },
+                { uf: "TO", total: 89, tier: "secundario" },
+                { uf: "RO", total: 68, tier: "secundario" },
+                { uf: "AC", total: 20, tier: "secundario" },
+                { uf: "RR", total: 18, tier: "secundario" },
+                { uf: "AP", total: 14, tier: "secundario" },
+              ]}
+              margin={{ top: 20, right: 20, left: 10, bottom: 30 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+              <XAxis dataKey="uf" tick={{ fontSize: 10, fill: 'hsl(var(--muted-foreground))' }} interval={0} />
+              <YAxis tick={{ fontSize: 11, fill: 'hsl(var(--muted-foreground))' }} label={{ value: "Total de Clientes", angle: -90, position: "insideLeft", offset: 0, style: { fill: 'hsl(var(--muted-foreground))', fontSize: 11 } }} />
+              <Tooltip contentStyle={{ background: 'hsl(var(--card))', border: '1px solid hsl(var(--border))', borderRadius: '8px', color: 'hsl(var(--foreground))' }} labelStyle={{ color: 'hsl(var(--foreground))', fontWeight: 600, marginBottom: 4 }} itemStyle={{ color: 'hsl(var(--foreground))' }} formatter={(value: number) => [value.toLocaleString(), 'Clientes']} />
+              <Legend formatter={(value: string) => {
+                const labels: Record<string, string> = { top: "Mercados Estratégicos (Top)", expansao: "Mercados em Expansão", secundario: "Mercados Secundários" };
+                return labels[value] || value;
+              }} />
+              <Bar dataKey="total" radius={[4, 4, 0, 0]}>
+                {[
+                  { uf: "SP", tier: "top" }, { uf: "RJ", tier: "expansao" }, { uf: "MG", tier: "expansao" },
+                  { uf: "PR", tier: "expansao" }, { uf: "SC", tier: "expansao" }, { uf: "RS", tier: "expansao" },
+                  { uf: "DF", tier: "expansao" }, { uf: "GO", tier: "expansao" }, { uf: "BA", tier: "expansao" },
+                  { uf: "PE", tier: "expansao" }, { uf: "ES", tier: "expansao" }, { uf: "CE", tier: "expansao" },
+                  { uf: "MS", tier: "expansao" }, { uf: "MT", tier: "expansao" }, { uf: "PA", tier: "secundario" },
+                  { uf: "AL", tier: "secundario" }, { uf: "MA", tier: "secundario" }, { uf: "RN", tier: "secundario" },
+                  { uf: "PB", tier: "secundario" }, { uf: "PI", tier: "secundario" }, { uf: "AM", tier: "secundario" },
+                  { uf: "SE", tier: "secundario" }, { uf: "TO", tier: "secundario" }, { uf: "RO", tier: "secundario" },
+                  { uf: "AC", tier: "secundario" }, { uf: "RR", tier: "secundario" }, { uf: "AP", tier: "secundario" },
+                ].map((entry, index) => (
+                  <Cell key={`cell-${index}`} fill={entry.tier === "top" ? "hsl(var(--accent))" : entry.tier === "expansao" ? "hsl(36, 70%, 50%)" : "hsl(210, 60%, 40%)"} />
+                ))}
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
+
+      {/* Tabela Estados em 2 colunas */}
+      <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="bg-card border border-border rounded-xl p-6 overflow-auto">
+          <Table>
+            <TableHeader>
+              <TableRow className="bg-primary/10">
+                <TableHead className="text-foreground font-bold text-xs">Estado (UF)</TableHead>
+                <TableHead className="text-foreground font-bold text-xs text-right">Qtde de Clientes</TableHead>
+                <TableHead className="text-foreground font-bold text-xs text-right">Participação (%)</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {[
+                { uf: "SP", qtd: "14.698", pct: "45,07%" },
+                { uf: "RJ", qtd: "3.076", pct: "9,43%" },
+                { uf: "MG", qtd: "3.010", pct: "9,23%" },
+                { uf: "PR", qtd: "1.908", pct: "5,85%" },
+                { uf: "SC", qtd: "1.591", pct: "4,88%" },
+                { uf: "RS", qtd: "1.358", pct: "4,16%" },
+                { uf: "DF", qtd: "1.324", pct: "4,06%" },
+                { uf: "GO", qtd: "883", pct: "2,71%" },
+                { uf: "BA", qtd: "867", pct: "2,66%" },
+                { uf: "PE", qtd: "691", pct: "2,12%" },
+                { uf: "ES", qtd: "518", pct: "1,59%" },
+                { uf: "CE", qtd: "450", pct: "1,38%" },
+                { uf: "MS", qtd: "389", pct: "1,19%" },
+                { uf: "MT", qtd: "353", pct: "1,08%" },
+              ].map((row) => (
+                <TableRow key={row.uf}>
+                  <TableCell className="text-sm font-medium">{row.uf}</TableCell>
+                  <TableCell className="text-sm text-right">{row.qtd}</TableCell>
+                  <TableCell className="text-sm text-right">{row.pct}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </div>
+        <div className="bg-card border border-border rounded-xl p-6 overflow-auto">
+          <Table>
+            <TableHeader>
+              <TableRow className="bg-primary/10">
+                <TableHead className="text-foreground font-bold text-xs">Estado (UF)</TableHead>
+                <TableHead className="text-foreground font-bold text-xs text-right">Qtde de Clientes</TableHead>
+                <TableHead className="text-foreground font-bold text-xs text-right">Participação (%)</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {[
+                { uf: "PA", qtd: "226", pct: "0,69%" },
+                { uf: "AL", qtd: "193", pct: "0,59%" },
+                { uf: "MA", qtd: "186", pct: "0,57%" },
+                { uf: "RN", qtd: "183", pct: "0,56%" },
+                { uf: "PB", qtd: "171", pct: "0,52%" },
+                { uf: "PI", qtd: "115", pct: "0,35%" },
+                { uf: "AM", qtd: "114", pct: "0,35%" },
+                { uf: "SE", qtd: "100", pct: "0,31%" },
+                { uf: "TO", qtd: "89", pct: "0,27%" },
+                { uf: "RO", qtd: "68", pct: "0,21%" },
+                { uf: "AC", qtd: "20", pct: "0,06%" },
+                { uf: "RR", qtd: "18", pct: "0,06%" },
+                { uf: "AP", qtd: "14", pct: "0,04%" },
+              ].map((row) => (
+                <TableRow key={row.uf}>
+                  <TableCell className="text-sm font-medium">{row.uf}</TableCell>
+                  <TableCell className="text-sm text-right">{row.qtd}</TableCell>
+                  <TableCell className="text-sm text-right">{row.pct}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </div>
+      </div>
+    </div>
     </div>
   </DashboardLayout>
   );
