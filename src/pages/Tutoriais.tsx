@@ -8,9 +8,9 @@ const Tutoriais = () => {
         <p className="text-sm text-muted-foreground mt-1">Acesse tutoriais e materiais de aprendizado</p>
       </div>
 
-      <div className="mt-6 space-y-6">
-        <div className="glass-card p-6">
-          <h2 className="text-lg font-semibold text-foreground mb-4">Tutorial de utilização do cubo de Pessoas Físicas</h2>
+      <div className="mt-6 space-y-6 max-w-xl">
+        <div className="glass-card p-4">
+          <h2 className="text-sm font-semibold text-foreground mb-3">Tutorial de utilização do cubo de Pessoas Físicas</h2>
           <div className="aspect-video rounded-lg overflow-hidden">
             <iframe
               className="w-full h-full"
@@ -20,8 +20,9 @@ const Tutoriais = () => {
               allowFullScreen
             />
           </div>
-        <div className="glass-card p-6">
-          <h2 className="text-lg font-semibold text-foreground mb-4">Tutorial de utilização do cubo de Pessoas Jurídicas</h2>
+        </div>
+        <div className="glass-card p-4">
+          <h2 className="text-sm font-semibold text-foreground mb-3">Tutorial de utilização do cubo de Pessoas Jurídicas</h2>
           <div className="aspect-video rounded-lg overflow-hidden">
             <iframe
               className="w-full h-full"
@@ -32,7 +33,6 @@ const Tutoriais = () => {
             />
           </div>
         </div>
-      </div>
       </div>
     </DashboardLayout>
   );
