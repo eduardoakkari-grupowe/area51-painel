@@ -26,17 +26,17 @@ const mainItems = [
 ];
 
 const modelagemScrollItems = [
-  { title: "Dados utilizados", hash: "dados-utilizados" },
-  { title: "Objetivos", hash: "objetivos" },
-  { title: "Etapas do processo", hash: "etapas-do-processo" },
-  { title: "Aquário", hash: "aquario" },
-  { title: "Metodologia Look Alike", hash: "metodologia-look-alike" },
-  { title: "Idade", hash: "sexo" },
-  { title: "Sexo X Valor", hash: "sexo-x-valor" },
-  { title: "Compras (Qtde X Valor)", hash: "compras-quantidade-valor" },
-  { title: "Escolaridade", hash: "escolaridade" },
-  { title: "Estado", hash: "estado" },
-  { title: "Renda", hash: "renda" },
+  { title: "Dados utilizados", hash: "dados-utilizados", bullet: "accent" },
+  { title: "Objetivos", hash: "objetivos", bullet: "accent" },
+  { title: "Etapas do processo", hash: "etapas-do-processo", bullet: "accent" },
+  { title: "Aquário", hash: "aquario", bullet: "accent" },
+  { title: "Metodologia Look Alike", hash: "metodologia-look-alike", bullet: "accent" },
+  { title: "Idade", hash: "sexo", bullet: "accent" },
+  { title: "Sexo X Valor", hash: "sexo-x-valor", bullet: "primary" },
+  { title: "Compras (Qtde X Valor)", hash: "compras-quantidade-valor", bullet: "accent" },
+  { title: "Escolaridade", hash: "escolaridade", bullet: "accent" },
+  { title: "Estado", hash: "estado", bullet: "primary" },
+  { title: "Renda", hash: "renda", bullet: "accent" },
 ];
 
 const modelagemSubItems: { title: string; url: string }[] = [];
@@ -147,7 +147,7 @@ export function AppSidebar() {
                                   }}
                                   className={`flex items-center px-3 py-1.5 rounded-md text-xs transition-all duration-200 w-full text-left ${isScrollActive ? "bg-primary/10 text-primary font-medium" : "text-muted-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"}`}
                                 >
-                                  <span className="w-2 h-2 rounded-full bg-accent shrink-0 mr-2" />
+                                  <span className={`w-2 h-2 rounded-full shrink-0 mr-2 ${scrollItem.bullet === "primary" ? "bg-primary" : "bg-accent"}`} />
                                   <span>{scrollItem.title}</span>
                                 </button>
                               </SidebarMenuButton>
