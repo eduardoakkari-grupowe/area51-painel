@@ -33,7 +33,7 @@ export function AppSidebar() {
         <img
           src={area51Logo}
           alt="area51"
-          className={`transition-all duration-300 ${collapsed ? "w-6" : "w-[80px] h-auto"}`}
+          className={`transition-all duration-300 ${collapsed ? "w-10" : "w-[160px] h-auto"}`}
         />
       </div>
 
