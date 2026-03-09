@@ -1,5 +1,5 @@
 import { DashboardLayout } from "@/components/DashboardLayout";
-import { Users, ShoppingCart, Target } from "lucide-react";
+import { Users, ShoppingCart, AlertTriangle } from "lucide-react";
 
 const objetivos = [
   "Estudo do perfil de clientes da Novvo;",
@@ -56,6 +56,14 @@ const ModelagemEstatistica = () => (
           <p className="text-xs text-muted-foreground">Base de compras registradas para análise de perfil e recorrência.</p>
         </div>
       </div>
+    </div>
+
+    {/* Observação CNPJs */}
+    <div className="mt-4 max-w-2xl flex items-center gap-2 bg-card border border-warning/30 rounded-lg px-4 py-3">
+      <AlertTriangle className="h-4 w-4 text-warning shrink-0" />
+      <p className="text-xs text-muted-foreground">
+        Para realização da <span className="font-semibold text-foreground">MODELAGEM ESTATÍSTICA</span> foram removidos os CNPJs.
+      </p>
     </div>
 
     {/* Submenu Objetivos */}
