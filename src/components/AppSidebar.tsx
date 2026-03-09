@@ -1,7 +1,7 @@
 import { LayoutDashboard, Newspaper, Wrench, Users, ChevronLeft, BarChart3, GraduationCap, Image, IdCard, Video, Megaphone, LogOut } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useLocation } from "react-router-dom";
-import grupoWeLogo from "@/assets/clients/grupowe.webp";
+import area51Logo from "@/assets/clients/area51.png";
 import {
   Sidebar,
   SidebarContent,
@@ -40,9 +40,9 @@ export function AppSidebar() {
     <Sidebar collapsible="icon" className="border-r border-sidebar-border">
       <div className="flex items-center gap-2 px-4 py-[20px] border-b border-sidebar-border justify-center">
         <img
-          src={grupoWeLogo}
-          alt="GrupoWe"
-          className={`transition-all duration-300 ${collapsed ? "w-4" : "w-[100px] h-auto"}`}
+          src={area51Logo}
+          alt="area51"
+          className={`transition-all duration-300 ${collapsed ? "w-6" : "w-[80px] h-auto"}`}
         />
       </div>
 
