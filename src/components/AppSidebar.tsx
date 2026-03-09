@@ -25,9 +25,13 @@ const mainItems = [
   { title: "Dashboard", url: "/", icon: LayoutDashboard, external: false },
 ];
 
+const modelagemScrollItems = [
+  { title: "Dados utilizados", hash: "dados-utilizados" },
+  { title: "Objetivos", hash: "objetivos" },
+  { title: "Etapas do processo", hash: "etapas-do-processo" },
+];
+
 const modelagemSubItems = [
-  { title: "Objetivos e dados", url: "/modelagem-estatistica/objetivos-e-dados" },
-  { title: "Etapas do processo", url: "/modelagem-estatistica/etapas-do-processo" },
   { title: "Aquário", url: "/modelagem-estatistica/aquario" },
   { title: "Metodologia Look alike", url: "/modelagem-estatistica/metodologia-look-alike" },
   { title: "Sexo", url: "/modelagem-estatistica/sexo" },
