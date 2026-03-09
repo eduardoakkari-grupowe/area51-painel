@@ -1076,6 +1076,53 @@ const ModelagemEstatistica = () => {
           </Table>
         </div>
       </div>
+
+      {/* Considerações */}
+      <div className="mt-6 bg-card border border-border rounded-xl p-6">
+        <h3 className="text-lg font-bold text-foreground mb-4">Considerações</h3>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="space-y-6">
+            <div>
+              <p className="text-sm font-bold text-primary mb-1">1. Nível: Classe Média / Entrada</p>
+              <ul className="space-y-1 ml-4">
+                <li className="text-sm text-muted-foreground"><strong className="text-foreground">Faixa:</strong> R$ 1.561,91 a R$ 22.779,42</li>
+                <li className="text-sm text-muted-foreground"><strong className="text-foreground">Volume:</strong> 21.498 clientes (65,9% da base).</li>
+                <li className="text-sm text-muted-foreground"><strong className="text-foreground">Comportamento:</strong> Possuem o menor gasto médio (R$ 269,35) e a menor frequência (1,57).</li>
+                <li className="text-sm text-muted-foreground"><strong className="text-foreground">Estratégia:</strong> Focar em conversão de primeira compra e "educação" sobre os benefícios das cápsulas.</li>
+              </ul>
+            </div>
+            <div>
+              <p className="text-sm font-bold text-primary mb-1">2. Nível: Classe Alta / Premium</p>
+              <ul className="space-y-1 ml-4">
+                <li className="text-sm text-muted-foreground"><strong className="text-foreground">Faixa:</strong> R$ 22.781,55 a R$ 53.752,43</li>
+                <li className="text-sm text-muted-foreground"><strong className="text-foreground">Volume:</strong> 8.268 clientes (25,4% da base).</li>
+                <li className="text-sm text-muted-foreground"><strong className="text-foreground">Comportamento:</strong> Há um salto significativo no gasto médio para R$ 331,72. Este público já compra com mais recorrência (1,72).</li>
+                <li className="text-sm text-muted-foreground"><strong className="text-foreground">Estratégia:</strong> Este é o público ideal para programas de assinatura e kits intermediários.</li>
+              </ul>
+            </div>
+          </div>
+          <div className="space-y-6">
+            <div>
+              <p className="text-sm font-bold text-primary mb-1">3. Nível: Elite / High-End</p>
+              <ul className="space-y-1 ml-4">
+                <li className="text-sm text-muted-foreground"><strong className="text-foreground">Faixa:</strong> R$ 53.779,62 a R$ 117.918,54</li>
+                <li className="text-sm text-muted-foreground"><strong className="text-foreground">Volume:</strong> 2.453 clientes (7,5% da base).</li>
+                <li className="text-sm text-muted-foreground"><strong className="text-foreground">Comportamento:</strong> O gasto médio sobe para R$ 407,57. A frequência de compra (1,82) é a mais alta da base, mostrando que o produto faz parte do estilo de vida social constante.</li>
+                <li className="text-sm text-muted-foreground"><strong className="text-foreground">Estratégia:</strong> Marketing focado em exclusividade, eventos e parcerias com marcas de luxo (vinhos caros, resorts).</li>
+              </ul>
+            </div>
+            <div>
+              <p className="text-sm font-bold text-primary mb-1">4. Nível: Ultra-Ricos / VIPs</p>
+              <ul className="space-y-1 ml-4">
+                <li className="text-sm text-muted-foreground"><strong className="text-foreground">Faixa:</strong> R$ 118.461,21 a R$ 919.911,59</li>
+                <li className="text-sm text-muted-foreground"><strong className="text-foreground">Volume:</strong> 384 clientes (1,2% da base).</li>
+                <li className="text-sm text-muted-foreground"><strong className="text-foreground">Comportamento:</strong> É o topo absoluto. Gastam em média R$ 411,80. Embora sejam poucos, possuem o maior LTV (Lifetime Value) da base, com frequência de 1,77.</li>
+                <li className="text-sm text-muted-foreground"><strong className="text-foreground">Estratégia:</strong> Atendimento personalizado (Concierge), ofertas de edições limitadas e kits "Ultra" de longa duração.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
   </DashboardLayout>
