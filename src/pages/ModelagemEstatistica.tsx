@@ -600,19 +600,19 @@ const ModelagemEstatistica = () => {
             <ResponsiveContainer width="100%" height="100%">
               <BarChart
                 data={[
-                  { cluster: "Baixo Valor", quantidade: 24932, percent: "76.4%", fill: "hsl(207, 44%, 49%)" },
-                  { cluster: "Médio Valor", quantidade: 5706, percent: "17.5%", fill: "hsl(40, 65%, 52%)" },
-                  { cluster: "Alto Valor", quantidade: 1780, percent: "5.5%", fill: "hsl(25, 85%, 60%)" },
-                  { cluster: "Premium", quantidade: 196, percent: "0.6%", fill: "hsl(330, 55%, 38%)" },
+                  { cluster: "Baixo Valor", quantidade: 24932, percent: "76.4%", fill: "hsl(var(--primary))" },
+                  { cluster: "Médio Valor", quantidade: 5706, percent: "17.5%", fill: "hsl(var(--secondary))" },
+                  { cluster: "Alto Valor", quantidade: 1780, percent: "5.5%", fill: "hsl(var(--accent))" },
+                  { cluster: "Premium", quantidade: 196, percent: "0.6%", fill: "hsl(var(--warning))" },
                 ]}
                 margin={{ top: 30, right: 20, left: 10, bottom: 25 }}
               >
                 <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
                 <XAxis dataKey="cluster" tick={{ fontSize: 11, fill: 'hsl(var(--muted-foreground))' }} />
                 <YAxis tick={{ fontSize: 11, fill: 'hsl(var(--muted-foreground))' }} label={{ value: "Quantidade", angle: -90, position: "insideLeft", offset: 0, style: { fill: 'hsl(var(--muted-foreground))' } }} />
-                <Tooltip contentStyle={{ background: 'hsl(var(--card))', border: '1px solid hsl(var(--border))', borderRadius: '8px', color: 'hsl(var(--foreground))' }} formatter={(value: number, name: string, props: any) => [`${value.toLocaleString()} (${props.payload.percent})`, 'Clientes']} />
+                <Tooltip contentStyle={{ background: 'hsl(var(--card))', border: '1px solid hsl(var(--border))', borderRadius: '8px', color: 'hsl(var(--foreground))' }} labelStyle={{ color: 'hsl(var(--foreground))', fontWeight: 600, marginBottom: 4 }} itemStyle={{ color: 'hsl(var(--foreground))' }} formatter={(value: number, name: string, props: any) => [`${value.toLocaleString()} (${props.payload.percent})`, 'Clientes']} />
                 <Bar dataKey="quantidade" radius={[4, 4, 0, 0]}>
-                  {["hsl(207, 44%, 49%)", "hsl(40, 65%, 52%)", "hsl(25, 85%, 60%)", "hsl(330, 55%, 38%)"].map((color, index) => (
+                  {["hsl(var(--primary))", "hsl(var(--secondary))", "hsl(var(--accent))", "hsl(var(--warning))"].map((color, index) => (
                     <Cell key={index} fill={color} />
                   ))}
                 </Bar>
@@ -639,10 +639,10 @@ const ModelagemEstatistica = () => {
 
             {/* Boxplots */}
             {[
-              { label: "Baixo Valor", cx: 110, color: "hsl(40, 65%, 70%)", min: 1, q1: 1, med: 1, q3: 1, max: 2, outliers: [3, 4, 5, 6] },
-              { label: "Médio Valor", cx: 200, color: "hsl(40, 65%, 52%)", min: 1, q1: 1, med: 2, q3: 2, max: 3, outliers: [5, 6, 7, 8] },
-              { label: "Alto Valor", cx: 290, color: "hsl(25, 85%, 60%)", min: 3, q1: 4, med: 6, q3: 7, max: 11, outliers: [13, 14, 15] },
-              { label: "Premium", cx: 380, color: "hsl(330, 55%, 38%)", min: 2, q1: 10, med: 13, q3: 18, max: 28, outliers: [33, 34, 42] },
+              { label: "Baixo Valor", cx: 110, color: "hsl(var(--primary))", min: 1, q1: 1, med: 1, q3: 1, max: 2, outliers: [3, 4, 5, 6] },
+              { label: "Médio Valor", cx: 200, color: "hsl(var(--secondary))", min: 1, q1: 1, med: 2, q3: 2, max: 3, outliers: [5, 6, 7, 8] },
+              { label: "Alto Valor", cx: 290, color: "hsl(var(--accent))", min: 3, q1: 4, med: 6, q3: 7, max: 11, outliers: [13, 14, 15] },
+              { label: "Premium", cx: 380, color: "hsl(var(--warning))", min: 2, q1: 10, med: 13, q3: 18, max: 28, outliers: [33, 34, 42] },
             ].map((bp) => {
               const toY = (v: number) => 280 - (v / 45) * 260;
               const bw = 55;
