@@ -1007,10 +1007,10 @@ const ModelagemEstatistica = () => {
 
     {/* ==================== RENDA ==================== */}
     <div id="renda" className="mt-10 scroll-mt-6">
-      <h2 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
-        <Users className="h-5 w-5 text-primary" />
-        Renda
-      </h2>
+      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3 mb-6">
+        <div className="h-2.5 w-2.5 rounded-full bg-primary" />
+        <span className="text-xl font-semibold text-foreground">Renda</span>
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Gráfico */}
