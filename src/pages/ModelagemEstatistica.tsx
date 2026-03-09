@@ -1018,28 +1018,40 @@ const ModelagemEstatistica = () => {
           <h3 className="text-sm font-bold text-foreground mb-4 text-center">Quantidade de Clientes por Cluster</h3>
           <ResponsiveContainer width="100%" height={350}>
             <BarChart data={[
-              { cluster: "Classe Média\nEntrada", total: 21498, pct: "65.9%", color: "hsl(210, 55%, 55%)" },
-              { cluster: "Classe Alta\nPremium", total: 8268, pct: "25.4%", color: "hsl(210, 45%, 65%)" },
-              { cluster: "Elite\nHigh-End", total: 2453, pct: "7.5%", color: "hsl(30, 70%, 55%)" },
-              { cluster: "Ultra-Ricos\nVIPs", total: 384, pct: "1.2%", color: "hsl(350, 65%, 50%)" },
-            ]} margin={{ top: 30, right: 20, left: 20, bottom: 20 }}>
+              { cluster: "Classe Média\nEntrada", total: 21498, color: "hsl(210, 55%, 55%)" },
+              { cluster: "Classe Alta\nPremium", total: 8268, color: "hsl(210, 45%, 65%)" },
+              { cluster: "Elite\nHigh-End", total: 2453, color: "hsl(30, 70%, 55%)" },
+              { cluster: "Ultra-Ricos\nVIPs", total: 384, color: "hsl(350, 65%, 50%)" },
+            ]} margin={{ top: 50, right: 20, left: 20, bottom: 20 }}>
               <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
               <XAxis dataKey="cluster" tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 11 }} />
               <YAxis tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 11 }} />
               <Tooltip contentStyle={{ backgroundColor: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: "8px", color: "hsl(var(--foreground))" }} />
-              <Bar dataKey="total" radius={[4, 4, 0, 0]} label={{ position: "top", fill: "hsl(var(--foreground))", fontSize: 11, formatter: (_: unknown, __: unknown, index: number) => {
-                const items = [
-                  { total: "21,498", pct: "(65.9%)" },
-                  { total: "8,268", pct: "(25.4%)" },
-                  { total: "2,453", pct: "(7.5%)" },
-                  { total: "384", pct: "(1.2%)" },
-                ];
-                return `${items[index]?.total}\n${items[index]?.pct}`;
-              }}}>
+              <Bar dataKey="total" radius={[4, 4, 0, 0]}>
                 <Cell fill="hsl(210, 55%, 55%)" />
                 <Cell fill="hsl(210, 45%, 65%)" />
                 <Cell fill="hsl(30, 70%, 55%)" />
                 <Cell fill="hsl(350, 65%, 50%)" />
+                <LabelList
+                  dataKey="total"
+                  position="top"
+                  content={({ x, y, width, index }: any) => {
+                    const labels = [
+                      { qty: "21,498", pct: "(65.9%)" },
+                      { qty: "8,268", pct: "(25.4%)" },
+                      { qty: "2,453", pct: "(7.5%)" },
+                      { qty: "384", pct: "(1.2%)" },
+                    ];
+                    const item = labels[index];
+                    if (!item) return null;
+                    return (
+                      <g>
+                        <text x={x + width / 2} y={y - 20} textAnchor="middle" fill="hsl(var(--foreground))" fontSize={12} fontWeight={700}>{item.qty}</text>
+                        <text x={x + width / 2} y={y - 6} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize={11}>{item.pct}</text>
+                      </g>
+                    );
+                  }}
+                />
               </Bar>
             </BarChart>
           </ResponsiveContainer>
@@ -1074,6 +1086,45 @@ const ModelagemEstatistica = () => {
               ))}
             </TableBody>
           </Table>
+        </div>
+      </div>
+
+      {/* Considerações Renda */}
+      <div className="mt-6 bg-card border border-border rounded-xl p-6">
+        <h3 className="text-base font-bold text-foreground mb-4">Considerações</h3>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="space-y-4">
+            <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg">
+              <p className="text-sm font-bold text-foreground mb-1">1. Nível: Classe Média / Entrada</p>
+              <p className="text-xs text-muted-foreground"><strong>Faixa:</strong> R$ 1.561,91 a R$ 22.779,42</p>
+              <p className="text-xs text-muted-foreground"><strong>Volume:</strong> 21.498 clientes (65,9% da base).</p>
+              <p className="text-xs text-muted-foreground"><strong>Comportamento:</strong> Possuem o menor gasto médio (R$ 269,35) e a menor frequência (1,57).</p>
+              <p className="text-xs text-muted-foreground"><strong>Estratégia:</strong> Focar em conversão de primeira compra e "educação" sobre os benefícios das cápsulas.</p>
+            </div>
+            <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg">
+              <p className="text-sm font-bold text-foreground mb-1">2. Nível: Classe Alta / Premium</p>
+              <p className="text-xs text-muted-foreground"><strong>Faixa:</strong> R$ 22.781,55 a R$ 53.752,43</p>
+              <p className="text-xs text-muted-foreground"><strong>Volume:</strong> 8.268 clientes (25,4% da base).</p>
+              <p className="text-xs text-muted-foreground"><strong>Comportamento:</strong> Há um salto significativo no gasto médio para R$ 331,72. Este público já compra com mais recorrência (1,72).</p>
+              <p className="text-xs text-muted-foreground"><strong>Estratégia:</strong> Este é o público ideal para programas de assinatura e kits intermediários.</p>
+            </div>
+          </div>
+          <div className="space-y-4">
+            <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg">
+              <p className="text-sm font-bold text-foreground mb-1">3. Nível: Elite / High-End</p>
+              <p className="text-xs text-muted-foreground"><strong>Faixa:</strong> R$ 53.779,62 a R$ 117.918,54</p>
+              <p className="text-xs text-muted-foreground"><strong>Volume:</strong> 2.453 clientes (7,5% da base).</p>
+              <p className="text-xs text-muted-foreground"><strong>Comportamento:</strong> O gasto médio sobe para R$ 407,57. A frequência de compra (1,82) é a mais alta da base, mostrando que o produto faz parte do estilo de vida social constante.</p>
+              <p className="text-xs text-muted-foreground"><strong>Estratégia:</strong> Marketing focado em exclusividade, eventos e parcerias com marcas de luxo (vinhos caros, resorts).</p>
+            </div>
+            <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg">
+              <p className="text-sm font-bold text-foreground mb-1">4. Nível: Ultra-Ricos / VIPs</p>
+              <p className="text-xs text-muted-foreground"><strong>Faixa:</strong> R$ 118.461,21 a R$ 919.911,59</p>
+              <p className="text-xs text-muted-foreground"><strong>Volume:</strong> 384 clientes (1,2% da base).</p>
+              <p className="text-xs text-muted-foreground"><strong>Comportamento:</strong> É o topo absoluto. Gastam em média R$ 411,80. Embora sejam poucos, possuem o maior LTV (Lifetime Value) da base, com frequência de 1,77.</p>
+              <p className="text-xs text-muted-foreground"><strong>Estratégia:</strong> Atendimento personalizado (Concierge), ofertas de edições limitadas e kits "Ultra" de longa duração.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
