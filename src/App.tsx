@@ -24,7 +24,7 @@ import EtapasDoProcesso from "./pages/modelagem/EtapasDoProcesso";
 import Aquario from "./pages/modelagem/Aquario";
 import MetodologiaLookAlike from "./pages/modelagem/MetodologiaLookAlike";
 
-import Idade from "./pages/modelagem/Idade";
+
 import Compras from "./pages/modelagem/Compras";
 import Escolaridade from "./pages/modelagem/Escolaridade";
 import Personas from "./pages/modelagem/Personas";
@@ -62,7 +62,7 @@ const App = () => (
           <Route path="/modelagem-estatistica/aquario" element={<Aquario />} />
           <Route path="/modelagem-estatistica/metodologia-look-alike" element={<MetodologiaLookAlike />} />
           
-          <Route path="/modelagem-estatistica/idade" element={<Idade />} />
+          
           <Route path="/modelagem-estatistica/compras" element={<Compras />} />
           <Route path="/modelagem-estatistica/escolaridade" element={<Escolaridade />} />
           <Route path="/modelagem-estatistica/personas" element={<Personas />} />
