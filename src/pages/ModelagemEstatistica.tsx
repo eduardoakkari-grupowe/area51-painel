@@ -786,26 +786,33 @@ const ModelagemEstatistica = () => {
       {/* Considerações + Tabela Escolaridade */}
       <div className="mt-6 grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 items-start">
         {/* Considerações à esquerda */}
-        <div className="bg-card border border-border rounded-xl p-5">
-          <h3 className="text-lg font-bold text-foreground mb-3">Considerações</h3>
-          <div className="space-y-4">
+        <div className="bg-card border border-border rounded-xl p-6">
+          <h3 className="text-lg font-bold text-foreground mb-4">Considerações</h3>
+          <div className="space-y-6">
             <div>
-              <p className="text-xs font-bold text-primary mb-1">1. Panorama da Base</p>
-              <p className="text-xs text-muted-foreground mb-1">Base composta majoritariamente por pessoas com alto nível de instrução.</p>
-              <ul className="space-y-0.5 ml-3">
-                <li className="flex items-start gap-1.5"><span className="mt-1.5 h-1 w-1 rounded-full bg-muted-foreground shrink-0" /><span className="text-xs text-muted-foreground">Superior Completo: 25.572 clientes, ticket médio R$305,53.</span></li>
-                <li className="flex items-start gap-1.5"><span className="mt-1.5 h-1 w-1 rounded-full bg-muted-foreground shrink-0" /><span className="text-xs text-muted-foreground">Pós-Grad, Mestrado e Doutorado: +1.500 clientes com maiores tickets.</span></li>
+              <p className="text-sm font-bold text-primary mb-1">1. Nível: Compradores Pontuais — Baixo Valor</p>
+              <ul className="space-y-1 ml-4">
+                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Volume: 24.932 clientes (76,4% da base).</span></li>
+                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Perfil: Grande massa de experimentação. Média de 1,3 compras, gasto médio total de R$150 e ticket médio de R$119.</span></li>
+                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Estratégia: O desafio é a primeira recompra. Campanhas de CRM pós-venda (ex: 20 dias após a primeira compra) são cruciais.</span></li>
               </ul>
             </div>
             <div>
-              <p className="text-xs font-bold text-primary mb-1">2. Perfil de "Performance"</p>
-              <p className="text-xs text-muted-foreground mb-1">Quanto maior a escolaridade, maior a frequência e o valor gasto.</p>
-              <ul className="space-y-0.5 ml-3">
-                <li className="flex items-start gap-1.5"><span className="mt-1.5 h-1 w-1 rounded-full bg-muted-foreground shrink-0" /><span className="text-xs text-muted-foreground">Mestrado/Doutorado: frequência superior à média (1.77 e 1.70).</span></li>
-                <li className="flex items-start gap-1.5"><span className="mt-1.5 h-1 w-1 rounded-full bg-muted-foreground shrink-0" /><span className="text-xs text-muted-foreground">Reforça a persona do "Executivo de Alta Performance".</span></li>
+              <p className="text-sm font-bold text-primary mb-1">2. Nível: Compradores Recorrentes — Médio Valor</p>
+              <ul className="space-y-1 ml-4">
+                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Volume: 5.706 clientes (17,5% da base).</span></li>
+                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Perfil: Clientes que validaram o produto e o incluíram na rotina. Média de 1,6 compras, gasto médio total de R$491 e ticket médio de R$332.</span></li>
+                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Estratégia: Fidelização e aumento de ticket. Ofertas de assinaturas ou clubes de benefícios funcionam muito bem.</span></li>
+              </ul>
+            </div>
+            <div>
+              <p className="text-sm font-bold text-primary mb-1">3. Nível: Clientes Fiéis — Alto Valor</p>
+              <ul className="space-y-1 ml-4">
+                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Clientes de maior valor e recorrência na base.</span></li>
               </ul>
             </div>
           </div>
+        </div>
         </div>
 
         {/* Tabela à direita */}
