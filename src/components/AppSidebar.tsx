@@ -51,6 +51,7 @@ export function AppSidebar() {
   const { state, toggleSidebar } = useSidebar();
   const collapsed = state === "collapsed";
   const location = useLocation();
+  const navigate = useNavigate();
   const isModelagemActive = location.pathname.startsWith("/modelagem-estatistica");
   const [modelagemOpen, setModelagemOpen] = useState(isModelagemActive);
 
