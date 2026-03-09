@@ -18,6 +18,7 @@ import CalculadoraSainsbury from "./pages/CalculadoraSainsbury";
 import Tutoriais from "./pages/Tutoriais";
 import Onboarding from "./pages/Onboarding";
 import Eventos from "./pages/Eventos";
+import ModelagemEstatistica from "./pages/ModelagemEstatistica";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -44,6 +45,7 @@ const App = () => (
           <Route path="/tutoriais" element={<Tutoriais />} />
           <Route path="/onboarding" element={<Onboarding />} />
           <Route path="/eventos" element={<Eventos />} />
+          <Route path="/modelagem-estatistica" element={<ModelagemEstatistica />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
