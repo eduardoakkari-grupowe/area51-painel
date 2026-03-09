@@ -53,8 +53,6 @@ const ModelagemEstatistica = () => {
 
   return (
   <DashboardLayout>
-    <div className="flex flex-col items-center">
-    <div className="w-full max-w-4xl">
     <div>
       <h1 className="text-2xl font-bold text-foreground">Modelagem Estatística</h1>
       <p className="text-sm text-muted-foreground mt-1">Verifique a modelagem estatística da base de clientes e ou compradores</p>
@@ -279,8 +277,6 @@ const ModelagemEstatistica = () => {
           <p className="text-sm font-bold text-foreground">Pessoas com perfil semelhante ao público de interesse.</p>
         </div>
       </div>
-    </div>
-    </div>
     </div>
   </DashboardLayout>
   );
