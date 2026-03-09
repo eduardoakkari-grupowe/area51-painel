@@ -40,6 +40,7 @@ const modelagemScrollItems = [
   { title: "Conta Bancária Digital", hash: "conta-bancaria-digital" },
   { title: "Posse de Imóvel", hash: "posse-de-imovel" },
   { title: "Posse de Imóvel de AP", hash: "posse-de-imovel-alto-padrao" },
+  { title: "Posse de Automóvel", hash: "posse-de-automovel" },
 ];
 
 const modelagemSubItems: { title: string; url: string }[] = [];
