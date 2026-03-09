@@ -858,6 +858,7 @@ const ModelagemEstatistica = () => {
           </Table>
         </div>
       </div>
+    </div>
 
     {/* Submenu Estado */}
     <div id="estado" className="mt-10 scroll-mt-6">
