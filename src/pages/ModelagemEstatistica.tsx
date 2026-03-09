@@ -703,38 +703,34 @@ const ModelagemEstatistica = () => {
         <h3 className="text-lg font-bold text-foreground mb-4">Considerações</h3>
         <div className="space-y-6">
           <div>
-            <p className="text-sm font-bold text-primary mb-1">1. Nível: Compradores Pontuais (Cluster 0)</p>
+            <p className="text-sm font-bold text-primary mb-1">1. Nível: Compradores Pontuais — Baixo Valor</p>
             <ul className="space-y-1 ml-4">
-              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Faixa: 1 a 2 compras.</span></li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Volume: 28.597 clientes (87,7% da base).</span></li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Perfil: É a grande massa de experimentação. O gasto médio total é de R$ 189,79.</span></li>
+              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Volume: 24.932 clientes (76,4% da base).</span></li>
+              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Perfil: É a grande massa de experimentação. A média de compras é de 1,3, com gasto médio total de R$ 150 e ticket médio de R$ 119.</span></li>
               <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Estratégia: O desafio aqui é a primeira recompra. Campanhas de CRM pós-venda (ex: 20 dias após a primeira compra) são cruciais para mover esse cliente para o próximo nível.</span></li>
             </ul>
           </div>
           <div>
-            <p className="text-sm font-bold text-primary mb-1">2. Nível: Compradores Recorrentes (Cluster 2)</p>
+            <p className="text-sm font-bold text-primary mb-1">2. Nível: Compradores Recorrentes — Médio Valor</p>
             <ul className="space-y-1 ml-4">
-              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Faixa: 3 a 6 compras.</span></li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Volume: 3.361 clientes.</span></li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Perfil: Clientes que já validaram o produto e o incluíram em sua rotina social. O gasto médio salta para R$ 791,59.</span></li>
+              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Volume: 5.706 clientes (17,5% da base).</span></li>
+              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Perfil: Clientes que já validaram o produto e o incluíram em sua rotina social. A média de compras é de 1,6, com gasto médio total de R$ 491 e ticket médio de R$ 332.</span></li>
               <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Estratégia: Focar em fidelização e aumento de ticket. Ofertas de assinaturas ou clubes de benefícios funcionam muito bem aqui.</span></li>
             </ul>
           </div>
           <div>
-            <p className="text-sm font-bold text-primary mb-1">3. Nível: Clientes Fiéis (Cluster 1)</p>
+            <p className="text-sm font-bold text-primary mb-1">3. Nível: Clientes Fiéis — Alto Valor</p>
             <ul className="space-y-1 ml-4">
-              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Faixa: 7 a 15 compras.</span></li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Volume: 584 clientes.</span></li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Perfil: Defensores da marca. O gasto médio é alto: R$ 2.140,55.</span></li>
+              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Volume: 1.780 clientes (5,5% da base).</span></li>
+              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Perfil: Defensores da marca. A média de compras é de 5,7, com gasto médio total de R$ 1.285 e ticket médio de R$ 233.</span></li>
               <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Estratégia: Tratamento diferenciado. Pesquisas de satisfação (NPS) e mimos exclusivos ajudam a manter esse cliente engajado.</span></li>
             </ul>
           </div>
           <div>
-            <p className="text-sm font-bold text-primary mb-1">4. Nível: Super-Fãs / Heavy Users (Cluster 3)</p>
+            <p className="text-sm font-bold text-primary mb-1">4. Nível: Super-Fãs / Heavy Users — Premium</p>
             <ul className="space-y-1 ml-4">
-              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Faixa: 16 a 42 compras.</span></li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Volume: 72 clientes.</span></li>
-              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Perfil: O "topo da pirâmide". Compram em média 21 vezes. O valor gasto médio é de R$ 4.936,85.</span></li>
+              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Volume: 196 clientes (0,6% da base).</span></li>
+              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Perfil: O "topo da pirâmide". Compram em média 14,5 vezes. O gasto médio total é de R$ 4.433, com ticket médio de R$ 486.</span></li>
               <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Estratégia: São os seus embaixadores orgânicos. Devem ter um canal de atendimento direto (VIP) e podem ser usados para testes de novos produtos antes do lançamento oficial.</span></li>
             </ul>
           </div>
