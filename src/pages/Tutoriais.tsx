@@ -20,7 +20,19 @@ const Tutoriais = () => {
               allowFullScreen
             />
           </div>
+        <div className="glass-card p-6">
+          <h2 className="text-lg font-semibold text-foreground mb-4">Tutorial de utilização do cubo de Pessoas Jurídicas</h2>
+          <div className="aspect-video rounded-lg overflow-hidden">
+            <iframe
+              className="w-full h-full"
+              src="https://www.youtube.com/embed/phlEUXLyLCc"
+              title="Tutorial de utilização do cubo de Pessoas Jurídicas"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
         </div>
+      </div>
       </div>
     </DashboardLayout>
   );
