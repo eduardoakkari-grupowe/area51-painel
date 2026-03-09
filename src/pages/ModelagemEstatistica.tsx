@@ -1,5 +1,28 @@
 import { DashboardLayout } from "@/components/DashboardLayout";
-import { Users, ShoppingCart, AlertTriangle } from "lucide-react";
+import { Users, ShoppingCart, AlertTriangle, Code, UsersRound, SearchCheck, Share2, Target } from "lucide-react";
+
+const etapas = [
+  {
+    icon: Code,
+    titulo: "Implantação da Tag area51 no site da empresa.",
+  },
+  {
+    icon: UsersRound,
+    titulo: "Empresa disponibiliza para a area51 uma amostra de sua base de clientes ou público de interesse para estudo.",
+  },
+  {
+    icon: SearchCheck,
+    titulo: "Análise de perfil e criação de personas, considerando amostra de clientes ou público de interesse.",
+  },
+  {
+    icon: Share2,
+    titulo: "Desenvolvimento do modelo de Look Alike.",
+  },
+  {
+    icon: Target,
+    titulo: "Aplicação do modelo de Look Alike no Big Data area51 visando identificar indivíduos que apresentam alta semelhança com o público de interesse.",
+  },
+];
 
 const objetivos = [
   "Estudo do perfil de clientes da Novvo;",
