@@ -386,6 +386,105 @@ const ModelagemEstatistica = () => {
           </Table>
         </div>
       </div>
+
+      {/* Idade (Homens) */}
+      <div className="mt-10">
+        <h3 className="text-lg font-bold text-foreground mb-4">Idade (Homens)</h3>
+
+        <div className="space-y-6">
+          {/* Cluster 2 */}
+          <div>
+            <p className="text-sm font-bold text-primary mb-1">1. Nível: Jovens Adultos / Startups (Cluster 2)</p>
+            <ul className="space-y-1 ml-4">
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Faixa Etária: 19 a 37 anos.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Volume: 4.067 homens.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Gasto Médio: R$ 274,10.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Perfil: É o público que está entrando no mercado premium. Utilizam o produto provavelmente para manter o ritmo social de festas e baladas sem comprometer o início da carreira.</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Cluster 0 */}
+          <div>
+            <p className="text-sm font-bold text-primary mb-1">2. Nível: Consolidação de Carreira (Cluster 0)</p>
+            <ul className="space-y-1 ml-4">
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Faixa Etária: 38 a 45 anos.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Volume: 6.732 homens (O maior grupo da base masculina).</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Gasto Médio: R$ 311,81.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Perfil: É o seu "ponto doce" (sweet spot). Homens em cargos de liderança ou gestão, com vida social ativa (jantares de negócios, eventos) e que já sentem o impacto do álcool no rendimento do dia seguinte.</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Cluster 3 */}
+          <div>
+            <p className="text-sm font-bold text-primary mb-1">3. Nível: Plenitude Profissional (Cluster 3)</p>
+            <ul className="space-y-1 ml-4">
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Faixa Etária: 46 a 55 anos.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Volume: 5.524 homens.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Gasto Médio: R$ 337,72.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Perfil: Homens com alto poder aquisitivo e estabilidade. O gasto médio sobe consideravelmente, indicando que compram kits maiores ou de forma mais recorrente.</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Cluster 1 */}
+          <div>
+            <p className="text-sm font-bold text-primary mb-1">4. Nível: Sênior / Lifestyle (Cluster 1)</p>
+            <ul className="space-y-1 ml-4">
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Faixa Etária: 56 a 95 anos.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Volume: 2.259 homens.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Gasto Médio: R$ 353,44 (O maior gasto médio entre os homens).</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Perfil: Público que preza pelo bem-estar e longevidade. O consumo do álcool é mais qualificado (vinhos e destilados premium) e o produto é visto como um suplemento de saúde essencial para manter a qualidade de vida.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
   </DashboardLayout>
   );
