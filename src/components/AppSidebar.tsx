@@ -17,6 +17,7 @@ import {
 
 const internalItems = [
   { title: "Dashboard", url: "/", icon: LayoutDashboard, external: false },
+  { title: "Modelagem Estatística", url: "/modelagem-estatistica", icon: BarChart3, external: false },
   { title: "Cubo", url: "https://cubopfpj.com/login/", icon: Box, external: true },
   { title: "Tag", url: "https://www.ph3a.com.br/crm/account/login?returnUrl=https://www.ph3a.com.br:443/crm/", icon: Tag, external: true },
   { title: "FTPs", url: "https://www.ph3a.com.br/crm/account/login?returnUrl=https://www.ph3a.com.br:443/crm/", icon: FolderUp, external: true },
