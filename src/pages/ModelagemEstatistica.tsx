@@ -317,7 +317,7 @@ const ModelagemEstatistica = () => {
       <div className="mt-6 flex flex-col lg:flex-row gap-8">
         {/* Left: Histogram */}
         <div className="flex-1 min-w-0">
-          <h3 className="text-lg font-bold text-foreground mb-1">Idade (Homens e Mulheres)</h3>
+          
           <p className="text-xs text-muted-foreground mb-4">Distribuição de Idade dos Compradores</p>
           <div className="w-full h-[320px]">
             <ResponsiveContainer width="100%" height="100%">
