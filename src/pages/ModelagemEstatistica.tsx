@@ -486,6 +486,105 @@ const ModelagemEstatistica = () => {
         </div>
       </div>
     </div>
+
+      {/* Descritivo das Mulheres */}
+      <div className="mt-10">
+        <h3 className="text-lg font-bold text-foreground mb-4">Descritivo das Mulheres</h3>
+
+        <div className="space-y-6">
+          {/* Cluster 1 */}
+          <div>
+            <p className="text-sm font-bold text-primary mb-1">1. Nível: Jovens Adultas / Conectadas (Cluster 1)</p>
+            <ul className="space-y-1 ml-4">
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Faixa Etária: 19 a 38 anos.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Volume: 3.336 mulheres.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Gasto Médio: R$ 237,77.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Perfil: É o público mais jovem da base feminina. O foco aqui costuma ser o uso social intenso e a manutenção da estética/bem-estar pós-evento.</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Cluster 2 */}
+          <div>
+            <p className="text-sm font-bold text-primary mb-1">2. Nível: Mulheres em Ascensão (Cluster 2)</p>
+            <ul className="space-y-1 ml-4">
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Faixa Etária: 39 a 46 anos.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Volume: 5.065 mulheres (O maior grupo da base feminina).</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Gasto Médio: R$ 268,34.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Perfil: Representa o "pilar" do seu e-commerce para este gênero. Mulheres em fase de consolidação pessoal e profissional, com vida social ativa e maior ticket médio que o grupo anterior.</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Cluster 0 */}
+          <div>
+            <p className="text-sm font-bold text-primary mb-1">3. Nível: Plenitude e Bem-Estar (Cluster 0)</p>
+            <ul className="space-y-1 ml-4">
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Faixa Etária: 47 a 56 anos.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Volume: 4.103 mulheres.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Gasto Médio: R$ 297,86 (O maior gasto médio entre as mulheres).</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Perfil: É o grupo de maior valor para a marca. Possuem maturidade financeira e utilizam o produto como uma ferramenta de saúde preventiva e auxílio no metabolismo, que se torna mais lento nesta fase.</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Cluster 3 */}
+          <div>
+            <p className="text-sm font-bold text-primary mb-1">4. Nível: Maturidade / Sênior (Cluster 3)</p>
+            <ul className="space-y-1 ml-4">
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Faixa Etária: 57 a 87 anos.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Volume: 1.422 mulheres.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Gasto Médio: R$ 290,51.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" />
+                <span className="text-sm text-muted-foreground">Perfil: Público qualificado que mantém um consumo estável. Curiosamente, diferente dos homens, o ticket médio feminino apresenta uma leve estabilização (pequena queda) após os 57 anos comparado à faixa anterior, mas continua sendo muito alto.</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
   </DashboardLayout>
   );
 };
