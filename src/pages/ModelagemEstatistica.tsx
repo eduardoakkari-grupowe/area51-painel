@@ -798,7 +798,7 @@ const ModelagemEstatistica = () => {
               </ul>
             </div>
             <div>
-              <p className="text-sm font-bold text-foreground mb-1">2. O Perfil de "Performance"</p>
+              <p className="text-sm font-bold text-primary mb-1">2. O Perfil de "Performance"</p>
               <p className="text-sm text-muted-foreground mb-2">Há uma correlação clara: quanto maior a escolaridade, maior a frequência de compra e o valor gasto.</p>
               <ul className="space-y-1 ml-4">
                 <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Clientes com Mestrado/Doutorado têm uma frequência de compra superior à média geral (1.77 e 1.70, respectivamente).</span></li>
