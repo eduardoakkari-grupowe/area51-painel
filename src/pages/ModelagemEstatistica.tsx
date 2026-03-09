@@ -21,8 +21,7 @@ const ModelagemEstatistica = () => (
           </div>
         </div>
         <div className="bg-card p-4 border border-t-0 border-border rounded-b-xl">
-          <p className="text-xs text-muted-foreground">Base de clientes distintos Card Pedidos */}
-      <div className="rounded-xl overflow-hidden shadow-lg">
+          <p className="text-xs text-muted-foreground">Base de clientes distintosow-lg">
         <div className="bg-destructive flex items-center gap-4 p-6">
           <div className="bg-white/20 rounded-lg p-3">
             <ShoppingCart className="h-8 w-8 text-white" />
@@ -33,8 +32,7 @@ const ModelagemEstatistica = () => (
           </div>
         </div>
         <div className="bg-card p-4 border border-t-0 border-border rounded-b-xl">
-          <p className="text-xs text-muted-foreground">Base de <span className="font-semibold text-foreground">55.000 compras</span> registradas para análise de perfil e recorrência.</p>
-        </div>
+          <p className="text-xs text-muted-foreground">Base de <span className="font-semibold text-foreground">55.000 compras</span> rcompras
       </div>
     </div>
   </DashboardLayout>
