@@ -784,25 +784,25 @@ const ModelagemEstatistica = () => {
       </div>
 
       {/* Considerações + Tabela Escolaridade */}
-      <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+      <div className="mt-6 grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 items-start">
         {/* Considerações à esquerda */}
-        <div className="bg-card border border-border rounded-xl p-6">
-          <h3 className="text-lg font-bold text-foreground mb-4">Considerações</h3>
-          <div className="space-y-6">
+        <div className="bg-card border border-border rounded-xl p-5">
+          <h3 className="text-lg font-bold text-foreground mb-3">Considerações</h3>
+          <div className="space-y-4">
             <div>
-              <p className="text-sm font-bold text-primary mb-1">1. Panorama da Base (O Domínio do Ensino Superior)</p>
-              <p className="text-sm text-muted-foreground mb-2">Sua base é composta majoritariamente por pessoas com alto nível de instrução.</p>
-              <ul className="space-y-1 ml-4">
-                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Superior Completo: Representa a vasta maioria (25.572 clientes), com um ticket médio de R$ 305,53.</span></li>
-                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Pós-Graduação, Mestrado e Doutorado: Juntos somam mais de 1.500 clientes e possuem os maiores tickets médios (R$ 329,50 para Mestres e R$ 328,81 para Doutores).</span></li>
+              <p className="text-xs font-bold text-primary mb-1">1. Panorama da Base</p>
+              <p className="text-xs text-muted-foreground mb-1">Base composta majoritariamente por pessoas com alto nível de instrução.</p>
+              <ul className="space-y-0.5 ml-3">
+                <li className="flex items-start gap-1.5"><span className="mt-1.5 h-1 w-1 rounded-full bg-muted-foreground shrink-0" /><span className="text-xs text-muted-foreground">Superior Completo: 25.572 clientes, ticket médio R$305,53.</span></li>
+                <li className="flex items-start gap-1.5"><span className="mt-1.5 h-1 w-1 rounded-full bg-muted-foreground shrink-0" /><span className="text-xs text-muted-foreground">Pós-Grad, Mestrado e Doutorado: +1.500 clientes com maiores tickets.</span></li>
               </ul>
             </div>
             <div>
-              <p className="text-sm font-bold text-primary mb-1">2. O Perfil de "Performance"</p>
-              <p className="text-sm text-muted-foreground mb-2">Há uma correlação clara: quanto maior a escolaridade, maior a frequência de compra e o valor gasto.</p>
-              <ul className="space-y-1 ml-4">
-                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Clientes com Mestrado/Doutorado têm uma frequência de compra superior à média geral (1.77 e 1.70, respectivamente).</span></li>
-                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Isso reforça a hipótese da persona do "Executivo de Alta Performance" ou do "Acadêmico/Cientista", que consome o produto para manter a produtividade no dia seguinte a um consumo de álcool.</span></li>
+              <p className="text-xs font-bold text-primary mb-1">2. Perfil de "Performance"</p>
+              <p className="text-xs text-muted-foreground mb-1">Quanto maior a escolaridade, maior a frequência e o valor gasto.</p>
+              <ul className="space-y-0.5 ml-3">
+                <li className="flex items-start gap-1.5"><span className="mt-1.5 h-1 w-1 rounded-full bg-muted-foreground shrink-0" /><span className="text-xs text-muted-foreground">Mestrado/Doutorado: frequência superior à média (1.77 e 1.70).</span></li>
+                <li className="flex items-start gap-1.5"><span className="mt-1.5 h-1 w-1 rounded-full bg-muted-foreground shrink-0" /><span className="text-xs text-muted-foreground">Reforça a persona do "Executivo de Alta Performance".</span></li>
               </ul>
             </div>
           </div>
@@ -813,33 +813,38 @@ const ModelagemEstatistica = () => {
           <Table>
             <TableHeader>
               <TableRow className="bg-primary/10">
-                <TableHead className="text-foreground font-bold text-xs">Nível de Escolaridade</TableHead>
-                <TableHead className="text-foreground font-bold text-xs">Frequência Média</TableHead>
-                <TableHead className="text-foreground font-bold text-xs">Gasto Médio (LTV)</TableHead>
-                <TableHead className="text-foreground font-bold text-xs">Renda Média</TableHead>
+                <TableHead className="text-foreground font-bold text-xs">Escolaridade</TableHead>
+                <TableHead className="text-foreground font-bold text-xs text-right">Quantidade</TableHead>
+                <TableHead className="text-foreground font-bold text-xs text-right">% do Total</TableHead>
+                <TableHead className="text-foreground font-bold text-xs text-right">Freq. Média</TableHead>
+                <TableHead className="text-foreground font-bold text-xs text-right">Gasto Médio (LTV)</TableHead>
+                <TableHead className="text-foreground font-bold text-xs text-right">Renda Média</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {[
-                { nivel: "Superior Completo", freq: "1.65", gasto: "R$305,53", renda: "R$25.421" },
-                { nivel: "Ensino Médio", freq: "1.57", gasto: "R$260,80", renda: "R$13.450" },
-                { nivel: "Superior Incompleto", freq: "1.52", gasto: "R$257,21", renda: "R$16.390" },
-                { nivel: "Pós-Graduação", freq: "1.62", gasto: "R$278,37", renda: "R$26.326" },
-                { nivel: "Mestrado", freq: "1.77", gasto: "R$329,50", renda: "R$30.718" },
-                { nivel: "Ensino Fundamental", freq: "1.58", gasto: "R$301,88", renda: "R$11.053" },
-                { nivel: "Doutorado", freq: "1.70", gasto: "R$328,81", renda: "R$29.378" },
-                { nivel: "Ensino Médio Incompleto", freq: "1.38", gasto: "R$251,44", renda: "R$14.401" },
-                { nivel: "4ª Série Completa", freq: "1.70", gasto: "R$278,56", renda: "R$17.241" },
-                { nivel: "5ª a 8ª Série Incompleta", freq: "2.00", gasto: "R$327,98", renda: "R$6.816" },
-                { nivel: "Até 4ª Série Incompleta", freq: "1.25", gasto: "R$162,23", renda: "R$16.375" },
-                { nivel: "Pós-Doutorado", freq: "1.67", gasto: "R$265,72", renda: "R$15.159" },
-                { nivel: "Analfabeto", freq: "1.50", gasto: "R$154,44", renda: "R$5.159" },
+                { nivel: "Superior Completo", qtd: "25.572", pct: "81,4%", freq: "1.65", gasto: "R$305,53", renda: "R$25.421" },
+                { nivel: "Ensino Médio", qtd: "2.620", pct: "8,3%", freq: "1.57", gasto: "R$260,80", renda: "R$13.450" },
+                { nivel: "Superior Incompleto", qtd: "1.345", pct: "4,3%", freq: "1.52", gasto: "R$257,21", renda: "R$16.390" },
+                { nivel: "Pós-Graduação", qtd: "1.024", pct: "3,3%", freq: "1.62", gasto: "R$278,37", renda: "R$26.326" },
+                { nivel: "Sem Informação", qtd: "1.184", pct: "3,6%", freq: "1.44", gasto: "R$252,65", renda: "R$9.669" },
+                { nivel: "Mestrado", qtd: "364", pct: "1,2%", freq: "1.77", gasto: "R$329,50", renda: "R$30.718" },
+                { nivel: "Ensino Fundamental", qtd: "185", pct: "0,6%", freq: "1.58", gasto: "R$301,88", renda: "R$11.053" },
+                { nivel: "Doutorado", qtd: "116", pct: "0,4%", freq: "1.70", gasto: "R$328,81", renda: "R$29.378" },
+                { nivel: "Ensino Médio Incompleto", qtd: "109", pct: "0,3%", freq: "1.38", gasto: "R$251,44", renda: "R$14.401" },
+                { nivel: "4ª Série Completa", qtd: "73", pct: "0,2%", freq: "1.70", gasto: "R$278,56", renda: "R$17.241" },
+                { nivel: "5ª a 8ª Série Incompleta", qtd: "9", pct: "0,0%", freq: "2.00", gasto: "R$327,98", renda: "R$6.816" },
+                { nivel: "Até 4ª Série Incompleta", qtd: "8", pct: "0,0%", freq: "1.25", gasto: "R$162,23", renda: "R$16.375" },
+                { nivel: "Pós-Doutorado", qtd: "3", pct: "0,0%", freq: "1.67", gasto: "R$265,72", renda: "R$15.159" },
+                { nivel: "Analfabeto", qtd: "2", pct: "0,0%", freq: "1.50", gasto: "R$154,44", renda: "R$5.159" },
               ].map((row) => (
                 <TableRow key={row.nivel}>
-                  <TableCell className="text-sm font-medium">{row.nivel}</TableCell>
-                  <TableCell className="text-sm">{row.freq}</TableCell>
-                  <TableCell className="text-sm">{row.gasto}</TableCell>
-                  <TableCell className="text-sm">{row.renda}</TableCell>
+                  <TableCell className="text-xs font-medium">{row.nivel}</TableCell>
+                  <TableCell className="text-xs text-right">{row.qtd}</TableCell>
+                  <TableCell className="text-xs text-right">{row.pct}</TableCell>
+                  <TableCell className="text-xs text-right">{row.freq}</TableCell>
+                  <TableCell className="text-xs text-right">{row.gasto}</TableCell>
+                  <TableCell className="text-xs text-right">{row.renda}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
