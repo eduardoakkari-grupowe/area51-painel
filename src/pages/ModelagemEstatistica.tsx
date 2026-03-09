@@ -215,11 +215,11 @@ const ModelagemEstatistica = () => {
         <span className="text-xl font-semibold text-foreground">Metodologia: Look Alike</span>
       </div>
 
-      <p className="mt-4 text-sm text-muted-foreground max-w-4xl">
+      <p className="mt-4 text-sm text-muted-foreground">
         A partir de um público de interesse, identifica indivíduos que apresentam alto nível de semelhança a ele, sendo esta semelhança dada por um score de similaridade:
       </p>
 
-      <ul className="mt-4 space-y-3 max-w-4xl">
+      <ul className="mt-4 space-y-3">
         <li className="flex items-start gap-3">
           <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
           <span className="text-sm text-muted-foreground">O desenvolvimento do modelo de Look Alike utiliza técnicas de Machine Learning com o objetivo analisar o perfil do público de interesse e identificar padrões que possibilitem diferenciar e selecionar indivíduos com alta similaridade a ele;</span>
