@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { DashboardLayout } from "@/components/DashboardLayout";
 import { Users, ShoppingCart, AlertTriangle, Code, UsersRound, SearchCheck, Share2, Target } from "lucide-react";
 
