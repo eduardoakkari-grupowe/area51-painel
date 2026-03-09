@@ -9,7 +9,7 @@ import googleAdsText from "@/assets/google-ads-text.png";
 import metaIcon from "@/assets/meta-icon.png";
 import metaText from "@/assets/meta-text.png";
 import metaApps from "@/assets/meta-apps.png";
-import boxplotSexoValor from "@/assets/tools/boxplot_sexo_valor.png";
+
 
 const etapas = [
   {
@@ -485,10 +485,76 @@ const ModelagemEstatistica = () => {
         <span className="text-xl font-semibold text-foreground">Sexo X Valor</span>
       </div>
 
+      <p className="text-sm text-muted-foreground mt-2 mb-4">Distribuição de Valor Gasto por Sexo (Limpando Outliers para Visão)</p>
       <div className="mt-6 flex flex-col lg:flex-row gap-8">
-        {/* Left: Boxplot image */}
-        <div className="lg:w-[400px] shrink-0">
-          <img src={boxplotSexoValor} alt="Distribuição de Valor Gasto por Sexo" className="w-full rounded-lg" />
+        {/* Left: Boxplot chart (custom SVG) */}
+        <div className="lg:w-[450px] shrink-0 bg-card border border-border rounded-xl p-6">
+          <svg viewBox="0 0 400 340" className="w-full h-auto">
+            {/* Grid lines */}
+            {[0, 200, 400, 600, 800, 1000].map((val, i) => {
+              const y = 300 - (val / 1000) * 280;
+              return (
+                <g key={i}>
+                  <line x1="60" y1={y} x2="360" y2={y} stroke="hsl(var(--border))" strokeDasharray="3 3" strokeWidth={0.5} />
+                  <text x="52" y={y + 4} textAnchor="end" fill="hsl(var(--muted-foreground))" fontSize="11">{val}</text>
+                </g>
+              );
+            })}
+            {/* Y axis label */}
+            <text x="14" y="160" textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="11" transform="rotate(-90, 14, 160)">Valor_Monetário</text>
+            {/* X axis label */}
+            <text x="210" y="335" textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="12">SEXO</text>
+
+            {/* Male boxplot */}
+            {(() => {
+              const cx = 145, bw = 70;
+              const toY = (v: number) => 300 - (v / 1000) * 280;
+              const q1 = 120, med = 180, q3 = 350, min = 50, max = 720;
+              return (
+                <g>
+                  {/* Whisker line */}
+                  <line x1={cx} y1={toY(max)} x2={cx} y2={toY(min)} stroke="hsl(var(--muted-foreground))" strokeWidth={1.5} />
+                  {/* Whisker caps */}
+                  <line x1={cx - 15} y1={toY(max)} x2={cx + 15} y2={toY(max)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
+                  <line x1={cx - 15} y1={toY(min)} x2={cx + 15} y2={toY(min)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
+                  {/* Box */}
+                  <rect x={cx - bw / 2} y={toY(q3)} width={bw} height={toY(q1) - toY(q3)} fill="hsl(var(--secondary))" stroke="hsl(var(--foreground))" strokeWidth={1} rx={2} />
+                  {/* Median */}
+                  <line x1={cx - bw / 2} y1={toY(med)} x2={cx + bw / 2} y2={toY(med)} stroke="hsl(var(--foreground))" strokeWidth={2.5} />
+                  {/* Outlier dots */}
+                  {[950, 980, 990, 1000].map((v, i) => (
+                    <circle key={i} cx={cx + (Math.random() - 0.5) * 10} cy={toY(v)} r={2.5} fill="hsl(var(--muted-foreground))" opacity={0.5} />
+                  ))}
+                  <text x={cx} y={310} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="13" fontWeight="500">M</text>
+                </g>
+              );
+            })()}
+
+            {/* Female boxplot */}
+            {(() => {
+              const cx = 275, bw = 70;
+              const toY = (v: number) => 300 - (v / 1000) * 280;
+              const q1 = 95, med = 155, q3 = 305, min = 40, max = 615;
+              return (
+                <g>
+                  {/* Whisker line */}
+                  <line x1={cx} y1={toY(max)} x2={cx} y2={toY(min)} stroke="hsl(var(--muted-foreground))" strokeWidth={1.5} />
+                  {/* Whisker caps */}
+                  <line x1={cx - 15} y1={toY(max)} x2={cx + 15} y2={toY(max)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
+                  <line x1={cx - 15} y1={toY(min)} x2={cx + 15} y2={toY(min)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
+                  {/* Box */}
+                  <rect x={cx - bw / 2} y={toY(q3)} width={bw} height={toY(q1) - toY(q3)} fill="hsl(var(--accent))" stroke="hsl(var(--foreground))" strokeWidth={1} rx={2} />
+                  {/* Median */}
+                  <line x1={cx - bw / 2} y1={toY(med)} x2={cx + bw / 2} y2={toY(med)} stroke="hsl(var(--foreground))" strokeWidth={2.5} />
+                  {/* Outlier dots */}
+                  {[920, 960, 980, 1000].map((v, i) => (
+                    <circle key={i} cx={cx + (Math.random() - 0.5) * 10} cy={toY(v)} r={2.5} fill="hsl(var(--muted-foreground))" opacity={0.5} />
+                  ))}
+                  <text x={cx} y={310} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="13" fontWeight="500">F</text>
+                </g>
+              );
+            })()}
+          </svg>
         </div>
 
         {/* Right: Perfis */}
