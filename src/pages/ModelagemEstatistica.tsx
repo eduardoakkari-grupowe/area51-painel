@@ -1341,6 +1341,66 @@ const ModelagemEstatistica = () => {
       </div>
     </div>
 
+    {/* Submenu Posse de Automóvel */}
+    <div id="posse-de-automovel" className="mt-10 scroll-mt-6">
+      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3 mb-6">
+        <div className="h-2.5 w-2.5 rounded-full bg-primary" />
+        <span className="text-xl font-semibold text-foreground">Posse de Automóvel</span>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Gráfico */}
+        <div className="bg-card border border-border rounded-xl p-6">
+          <p className="text-sm font-semibold text-foreground mb-4 text-center">Distribuição de Clientes: Possui Automóvel?</p>
+          <div className="h-[350px]">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={[
+                { categoria: "N", total: 1300 },
+                { categoria: "S", total: 31308 },
+              ]} margin={{ top: 30, right: 30, left: 20, bottom: 40 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                <XAxis dataKey="categoria" tick={{ fill: "hsl(var(--foreground))", fontSize: 13 }} label={{ value: "Posse de Automóvel (S = Sim, N = Não)", position: "insideBottom", offset: -25, fill: "hsl(var(--muted-foreground))", fontSize: 12 }} />
+                <YAxis tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 11 }} label={{ value: "Número de Clientes", angle: -90, position: "insideLeft", offset: 0, fill: "hsl(var(--muted-foreground))", fontSize: 12 }} />
+                <Tooltip contentStyle={{ background: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: 8 }} />
+                <Bar dataKey="total" radius={[4, 4, 0, 0]} label={false}>
+                  <Cell fill="#2E5268" />
+                  <Cell fill="#4DB6AC" />
+                  <LabelList
+                    dataKey="total"
+                    position="top"
+                    content={({ x, y, width, index }: any) => {
+                      const labels = [
+                        { qty: "1.300", pct: "(4,0%)" },
+                        { qty: "31.308", pct: "(96,0%)" },
+                      ];
+                      const item = labels[index as number];
+                      if (!item) return null;
+                      return (
+                        <g>
+                          <text x={x + width / 2} y={y - 18} textAnchor="middle" fill="hsl(var(--foreground))" fontSize={13} fontWeight={700}>{item.qty}</text>
+                          <text x={x + width / 2} y={y - 4} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize={11}>{item.pct}</text>
+                        </g>
+                      );
+                    }}
+                  />
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        {/* Considerações */}
+        <div className="bg-card border border-border rounded-xl p-6 flex flex-col justify-center">
+          <h3 className="text-base font-bold text-foreground mb-3">Perfil Socioeconômico e Automóvel</h3>
+          <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5">
+            <li><strong className="text-foreground">Renda e Patrimônio:</strong> Clientes com automóvel possuem uma renda média de <strong className="text-foreground">R$ 24.417</strong>, o que é 6 vezes maior do que a renda dos clientes sem veículo (R$ 3.930).</li>
+            <li><strong className="text-foreground">Consumo no E-commerce:</strong> Proprietários de veículos gastam, em média, R$ 299,96 e compram com maior frequência (1.64 vs 1.39).</li>
+            <li><strong className="text-foreground">Crédito:</strong> O Score de crédito é superior no grupo com carro (800 vs 773).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
   </DashboardLayout>
   );
 };
