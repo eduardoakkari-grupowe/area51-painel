@@ -41,6 +41,32 @@ const objetivos = [
   "Avaliação de perfis com taxa de recorrência para a prospecção de clientes;",
 ];
 
+const idadeDistribuicao = [
+  { idade: 20, frequencia: 150 }, { idade: 22, frequencia: 280 },
+  { idade: 25, frequencia: 700 }, { idade: 28, frequencia: 950 },
+  { idade: 30, frequencia: 1950 }, { idade: 32, frequencia: 2500 },
+  { idade: 35, frequencia: 3500 }, { idade: 37, frequencia: 3600 },
+  { idade: 38, frequencia: 3150 }, { idade: 40, frequencia: 4000 },
+  { idade: 42, frequencia: 4700 }, { idade: 44, frequencia: 3900 },
+  { idade: 45, frequencia: 3100 }, { idade: 48, frequencia: 3800 },
+  { idade: 50, frequencia: 3200 }, { idade: 52, frequencia: 2200 },
+  { idade: 55, frequencia: 2000 }, { idade: 58, frequencia: 2100 },
+  { idade: 60, frequencia: 1500 }, { idade: 62, frequencia: 1050 },
+  { idade: 65, frequencia: 800 }, { idade: 68, frequencia: 500 },
+  { idade: 70, frequencia: 400 }, { idade: 75, frequencia: 250 },
+  { idade: 80, frequencia: 150 }, { idade: 85, frequencia: 80 },
+  { idade: 90, frequencia: 30 },
+];
+
+const idadeTabela = [
+  { faixa: "18-25", volume: "305", gasto: "R$197,38", frequencia: "1.22", renda: "R$10.351" },
+  { faixa: "26-35", volume: "4.533", gasto: "R$252,14", frequencia: "1.46", renda: "R$15.693" },
+  { faixa: "36-45", volume: "13.728", gasto: "R$291,29", frequencia: "1.61", renda: "R$21.695" },
+  { faixa: "46-55", volume: "10.125", gasto: "R$317,33", frequencia: "1.70", renda: "R$27.015" },
+  { faixa: "56-65", volume: "3.159", gasto: "R$321,33", frequencia: "1.73", renda: "R$30.567" },
+  { faixa: "66+", volume: "758", gasto: "R$345,64", frequencia: "1.81", renda: "R$30.582" },
+];
+
 const ModelagemEstatistica = () => {
   const location = useLocation();
 
