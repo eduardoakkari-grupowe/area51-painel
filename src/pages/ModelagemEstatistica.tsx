@@ -21,11 +21,7 @@ const ModelagemEstatistica = () => (
           </div>
         </div>
         <div className="bg-card p-4 border border-t-0 border-border rounded-b-xl">
-          <p className="text-xs text-muted-foreground">Base de clientes distintos identificados na modelagem.</p>
-        </div>
-      </div>
-
-      {/* Card Pedidos */}
+          <p className="text-xs text-muted-foreground">Base de clientes distintos Card Pedidos */}
       <div className="rounded-xl overflow-hidden shadow-lg">
         <div className="bg-destructive flex items-center gap-4 p-6">
           <div className="bg-white/20 rounded-lg p-3">
