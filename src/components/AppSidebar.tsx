@@ -147,7 +147,7 @@ export function AppSidebar() {
                                   }}
                                   className={`flex items-center px-3 py-1.5 rounded-md text-xs transition-all duration-200 w-full text-left ${isScrollActive ? "bg-primary/10 text-primary font-medium" : "text-muted-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"}`}
                                 >
-                                  <span className="w-2 h-2 rounded-full bg-accent shrink-0 mr-2" />
+                                  <span className={`w-2 h-2 rounded-full shrink-0 mr-2 ${scrollItem.bullet === "primary" ? "bg-primary" : "bg-accent"}`} />
                                   <span>{scrollItem.title}</span>
                                 </button>
                               </SidebarMenuButton>
