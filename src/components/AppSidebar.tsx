@@ -34,7 +34,7 @@ const modelagemScrollItems = [
 ];
 
 const modelagemSubItems = [
-  { title: "Metodologia Look alike", url: "/modelagem-estatistica/metodologia-look-alike" },
+  
   { title: "Sexo", url: "/modelagem-estatistica/sexo" },
   { title: "Idade", url: "/modelagem-estatistica/idade" },
   { title: "Compras", url: "/modelagem-estatistica/compras" },
