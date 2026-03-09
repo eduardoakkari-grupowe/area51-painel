@@ -105,6 +105,33 @@ const ModelagemEstatistica = () => (
         ))}
       </ul>
     </div>
+
+    {/* Submenu Etapas do Processo */}
+    <div className="mt-10">
+      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-4 py-2">
+        <div className="h-2 w-2 rounded-full bg-primary" />
+        <span className="text-sm font-semibold text-foreground">Etapas do Processo</span>
+      </div>
+
+      <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+        {etapas.map((etapa, i) => {
+          const Icon = etapa.icon;
+          return (
+            <div key={i} className="flex flex-col items-center text-center group">
+              <div className="bg-primary rounded-full p-3 mb-3 shadow-lg">
+                <Icon className="h-6 w-6 text-primary-foreground" />
+              </div>
+              <div className="bg-accent rounded-xl p-4 flex-1 flex items-center">
+                <p className="text-xs text-accent-foreground leading-relaxed">{etapa.titulo}</p>
+              </div>
+              {i < etapas.length - 1 && (
+                <span className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 text-muted-foreground text-lg font-bold">›</span>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
   </DashboardLayout>
 );
 
