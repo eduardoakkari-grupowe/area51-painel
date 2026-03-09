@@ -40,9 +40,9 @@ export function AppSidebar() {
     <Sidebar collapsible="icon" className="border-r border-sidebar-border">
       <div className="flex items-center gap-2 px-4 py-[20px] border-b border-sidebar-border justify-center">
         <img
-          src={grupoWeLogo}
-          alt="GrupoWe"
-          className={`transition-all duration-300 ${collapsed ? "w-4" : "w-[100px] h-auto"}`}
+          src={area51Logo}
+          alt="area51"
+          className={`transition-all duration-300 ${collapsed ? "w-6" : "w-[80px] h-auto"}`}
         />
       </div>
 
