@@ -771,7 +771,7 @@ const ModelagemEstatistica = () => {
                 { escolaridade: "Analfabeto", quantidade: 2, percent: "0.0%" },
                 { escolaridade: "Sem Informação", quantidade: 1184, percent: "3.6%" },
               ]}
-              margin={{ top: 20, right: 20, left: 10, bottom: 120 }}
+              margin={{ top: 20, right: 20, left: 10, bottom: 80 }}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
               <XAxis dataKey="escolaridade" tick={{ fontSize: 10, fill: 'hsl(var(--muted-foreground))' }} angle={-45} textAnchor="end" interval={0} height={120} />
