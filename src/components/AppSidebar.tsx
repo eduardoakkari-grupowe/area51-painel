@@ -26,17 +26,17 @@ const mainItems = [
 ];
 
 const modelagemScrollItems = [
-  { title: "Dados utilizados", hash: "dados-utilizados" },
-  { title: "Objetivos", hash: "objetivos" },
-  { title: "Etapas do processo", hash: "etapas-do-processo" },
-  { title: "Aquário", hash: "aquario" },
-  { title: "Metodologia Look Alike", hash: "metodologia-look-alike" },
-  { title: "Idade", hash: "sexo" },
-  { title: "Sexo X Valor", hash: "sexo-x-valor" },
-  { title: "Compras (Qtde X Valor)", hash: "compras-quantidade-valor" },
-  { title: "Escolaridade", hash: "escolaridade" },
-  { title: "Estado", hash: "estado" },
-  { title: "Renda", hash: "renda" },
+  { title: "Dados utilizados", hash: "dados-utilizados", bullet: "accent" },
+  { title: "Objetivos", hash: "objetivos", bullet: "accent" },
+  { title: "Etapas do processo", hash: "etapas-do-processo", bullet: "accent" },
+  { title: "Aquário", hash: "aquario", bullet: "accent" },
+  { title: "Metodologia Look Alike", hash: "metodologia-look-alike", bullet: "accent" },
+  { title: "Idade", hash: "sexo", bullet: "accent" },
+  { title: "Sexo X Valor", hash: "sexo-x-valor", bullet: "primary" },
+  { title: "Compras (Qtde X Valor)", hash: "compras-quantidade-valor", bullet: "accent" },
+  { title: "Escolaridade", hash: "escolaridade", bullet: "accent" },
+  { title: "Estado", hash: "estado", bullet: "primary" },
+  { title: "Renda", hash: "renda", bullet: "accent" },
 ];
 
 const modelagemSubItems: { title: string; url: string }[] = [];
