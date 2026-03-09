@@ -79,7 +79,7 @@ const ModelagemEstatistica = () => {
           </div>
         </div>
         <div className="bg-card p-4 border border-t-0 border-border rounded-b-xl">
-          <p className="text-xs text-muted-foreground">Base de clientes distintos identificados na modelagem.</p>
+          <p className="text-sm text-muted-foreground">Base de clientes distintos identificados na modelagem.</p>
         </div>
       </div>
 
