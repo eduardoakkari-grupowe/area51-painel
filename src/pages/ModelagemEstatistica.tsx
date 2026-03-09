@@ -43,13 +43,13 @@ const ModelagemEstatistica = () => (
 
       {/* Card Compras */}
       <div className="rounded-xl overflow-hidden shadow-lg">
-        <div className="bg-destructive flex items-center gap-4 p-6">
+        <div className="bg-accent flex items-center gap-4 p-6">
           <div className="bg-white/20 rounded-lg p-3">
-            <ShoppingCart className="h-8 w-8 text-destructive-foreground" />
+            <ShoppingCart className="h-8 w-8 text-accent-foreground" />
           </div>
           <div>
-            <p className="text-4xl font-bold text-destructive-foreground">55.000</p>
-            <p className="text-sm font-medium text-destructive-foreground/90">Compras</p>
+            <p className="text-4xl font-bold text-accent-foreground">55.000</p>
+            <p className="text-sm font-medium text-accent-foreground/90">Compras</p>
           </div>
         </div>
         <div className="bg-card p-4 border border-t-0 border-border rounded-b-xl">
