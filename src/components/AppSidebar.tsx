@@ -1,6 +1,6 @@
 import { LayoutDashboard, Users, ChevronLeft, BarChart3, GraduationCap, LogOut, Box, Tag, FolderUp, ChevronDown } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import area51Logo from "@/assets/clients/area51.png";
 import {
