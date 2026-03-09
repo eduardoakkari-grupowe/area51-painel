@@ -1220,6 +1220,66 @@ const ModelagemEstatistica = () => {
       </div>
     </div>
 
+    {/* Submenu Posse de Imóvel */}
+    <div id="posse-de-imovel" className="mt-10 scroll-mt-6">
+      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3 mb-6">
+        <div className="h-2.5 w-2.5 rounded-full bg-primary" />
+        <span className="text-xl font-semibold text-foreground">Posse de Imóvel</span>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Gráfico */}
+        <div className="bg-card border border-border rounded-xl p-6">
+          <p className="text-sm font-semibold text-foreground mb-4 text-center">Distribuição de Clientes: Possui Imóvel Próprio?</p>
+          <div className="h-[350px]">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={[
+                { categoria: "N", total: 2108 },
+                { categoria: "S", total: 30100 },
+              ]} margin={{ top: 30, right: 30, left: 20, bottom: 40 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                <XAxis dataKey="categoria" tick={{ fill: "hsl(var(--foreground))", fontSize: 13 }} label={{ value: "Posse de Imóvel (S = Sim, N = Não)", position: "insideBottom", offset: -25, fill: "hsl(var(--muted-foreground))", fontSize: 12 }} />
+                <YAxis tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 11 }} label={{ value: "Número de Clientes", angle: -90, position: "insideLeft", offset: 0, fill: "hsl(var(--muted-foreground))", fontSize: 12 }} />
+                <Tooltip contentStyle={{ background: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: 8 }} />
+                <Bar dataKey="total" radius={[4, 4, 0, 0]} label={false}>
+                  <Cell fill="hsl(var(--primary))" />
+                  <Cell fill="hsl(var(--accent))" />
+                  <LabelList
+                    dataKey="total"
+                    position="top"
+                    content={({ x, y, width, index }: any) => {
+                      const labels = [
+                        { qty: "2.108", pct: "(6,5%)" },
+                        { qty: "30.100", pct: "(93,5%)" },
+                      ];
+                      const item = labels[index as number];
+                      if (!item) return null;
+                      return (
+                        <g>
+                          <text x={x + width / 2} y={y - 18} textAnchor="middle" fill="hsl(var(--foreground))" fontSize={13} fontWeight={700}>{item.qty}</text>
+                          <text x={x + width / 2} y={y - 4} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize={11}>{item.pct}</text>
+                        </g>
+                      );
+                    }}
+                  />
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        {/* Considerações */}
+        <div className="bg-card border border-border rounded-xl p-6 flex flex-col justify-center">
+          <h3 className="text-base font-bold text-foreground mb-3">Comparativo de Perfil: Proprietários vs. Não Proprietários</h3>
+          <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5">
+            <li><strong className="text-foreground">Poder Aquisitivo:</strong> Clientes que possuem imóvel têm uma renda média 7 vezes superior (R$ 24.901) em relação aos que não possuem (R$ 3.344).</li>
+            <li><strong className="text-foreground">Consumo:</strong> Proprietários gastam, em média, R$ 301,38, enquanto não proprietários gastam R$ 238,62. Além disso, compram com maior frequência.</li>
+            <li><strong className="text-foreground">Crédito:</strong> O Score de crédito também é superior no grupo dos proprietários (802 vs 758).</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
   </DashboardLayout>
   );
 };
