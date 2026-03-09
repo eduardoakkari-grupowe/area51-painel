@@ -180,8 +180,8 @@ const ModelagemEstatistica = () => {
         </div>
 
         {/* Meta - arrow from Prospect going up-right */}
-        <div className="absolute flex items-center gap-6" style={{ left: '350px', top: '280px' }}>
-          <svg width="280" height="36" viewBox="0 0 187 24" className="shrink-0">
+        <div className="absolute flex items-center gap-6" style={{ left: '310px', top: '230px' }}>
+          <svg width="320" height="36" viewBox="0 0 213 24" className="shrink-0">
             <path d="M0 12 L177 12" stroke="hsl(260, 10%, 55%)" strokeWidth="2" fill="none" />
             <path d="M172 6 L182 12 L172 18" stroke="hsl(260, 10%, 55%)" strokeWidth="2" fill="none" />
           </svg>
