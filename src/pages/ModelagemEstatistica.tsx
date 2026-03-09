@@ -189,7 +189,7 @@ const ModelagemEstatistica = () => {
             </svg>
             <div className="flex flex-col items-start gap-2">
               <div className="flex items-center gap-2">
-                <img src={metaIcon} alt="Meta" className="h-8 w-8" />
+                <img src={metaIcon} alt="Meta" className="h-8 w-auto" />
                 <img src={metaText} alt="Meta" className="h-6 invert brightness-0 invert" style={{ filter: 'brightness(0) invert(1)' }} />
               </div>
               <img src={metaApps} alt="Facebook, Messenger, WhatsApp, Instagram" className="h-8" />
