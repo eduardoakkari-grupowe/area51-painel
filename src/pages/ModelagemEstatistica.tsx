@@ -752,7 +752,7 @@ const ModelagemEstatistica = () => {
 
       <div className="mt-6 bg-card border border-border rounded-xl p-6">
         <p className="text-sm font-semibold text-foreground mb-4 text-center">Distribuição de Clientes por Nível de Escolaridade</p>
-        <div className="h-[520px]">
+        <div className="h-[420px]">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart
               data={[
