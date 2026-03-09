@@ -32,7 +32,7 @@ const modelagemScrollItems = [
 ];
 
 const modelagemSubItems = [
-  { title: "Aquário", url: "/modelagem-estatistica/aquario" },
+  { title: "Aquário", url: "/modelagem-estatistica#aquario" },
   { title: "Metodologia Look alike", url: "/modelagem-estatistica/metodologia-look-alike" },
   { title: "Sexo", url: "/modelagem-estatistica/sexo" },
   { title: "Idade", url: "/modelagem-estatistica/idade" },
