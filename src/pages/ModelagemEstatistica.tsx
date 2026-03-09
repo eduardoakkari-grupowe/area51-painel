@@ -181,9 +181,9 @@ const ModelagemEstatistica = () => {
 
         {/* Meta - arrow from Prospect going up-right */}
         <div className="absolute flex items-center gap-6" style={{ left: '350px', top: '280px' }}>
-          <svg width="180" height="36" viewBox="0 0 120 24" className="shrink-0">
-            <path d="M0 12 L110 12" stroke="hsl(260, 10%, 55%)" strokeWidth="2" fill="none" />
-            <path d="M105 6 L115 12 L105 18" stroke="hsl(260, 10%, 55%)" strokeWidth="2" fill="none" />
+          <svg width="280" height="36" viewBox="0 0 187 24" className="shrink-0">
+            <path d="M0 12 L177 12" stroke="hsl(260, 10%, 55%)" strokeWidth="2" fill="none" />
+            <path d="M172 6 L182 12 L172 18" stroke="hsl(260, 10%, 55%)" strokeWidth="2" fill="none" />
           </svg>
           <div className="flex flex-col items-start gap-3">
             <div className="flex items-center gap-3">
