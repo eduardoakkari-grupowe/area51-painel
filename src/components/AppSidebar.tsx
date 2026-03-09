@@ -41,6 +41,7 @@ const modelagemScrollItems = [
   { title: "Posse de Imóvel", hash: "posse-de-imovel" },
   { title: "Posse de Imóvel de AP", hash: "posse-de-imovel-alto-padrao" },
   { title: "Posse de Automóvel", hash: "posse-de-automovel" },
+  { title: "Comportamento Digital", hash: "comportamento-digital" },
 ];
 
 const modelagemSubItems: { title: string; url: string }[] = [];

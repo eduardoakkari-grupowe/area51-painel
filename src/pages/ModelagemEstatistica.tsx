@@ -1401,6 +1401,66 @@ const ModelagemEstatistica = () => {
       </div>
     </div>
 
+    {/* ===== COMPORTAMENTO DIGITAL ===== */}
+    <div id="comportamento-digital" className="mt-10 scroll-mt-6">
+      <div className="flex items-center gap-3 mb-6">
+        <div className="w-2 h-2 rounded-full bg-primary" />
+        <h2 className="text-lg font-bold text-foreground tracking-tight">Comportamento Digital</h2>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Gráfico */}
+        <div className="bg-card border border-border rounded-xl p-6">
+          <p className="text-sm font-semibold text-foreground mb-4 text-center">Distribuição de Clientes: Perfil de Comportamento Digital</p>
+          <div className="h-[350px]">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={[
+                { categoria: "N", total: 1100 },
+                { categoria: "S", total: 31508 },
+              ]} margin={{ top: 30, right: 30, left: 20, bottom: 40 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                <XAxis dataKey="categoria" tick={{ fill: "hsl(var(--foreground))", fontSize: 13 }} label={{ value: "Comportamento Digital (S = Sim, N = Não)", position: "insideBottom", offset: -25, fill: "hsl(var(--muted-foreground))", fontSize: 12 }} />
+                <YAxis tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 11 }} label={{ value: "Número de Clientes", angle: -90, position: "insideLeft", offset: 0, fill: "hsl(var(--muted-foreground))", fontSize: 12 }} />
+                <Tooltip contentStyle={{ background: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: 8 }} />
+                <Bar dataKey="total" radius={[4, 4, 0, 0]} label={false}>
+                  <Cell fill="#5B2C6F" />
+                  <Cell fill="#CD9B6A" />
+                  <LabelList
+                    dataKey="total"
+                    position="top"
+                    content={({ x, y, width, index }: any) => {
+                      const labels = [
+                        { qty: "1.100", pct: "(3,4%)" },
+                        { qty: "31.508", pct: "(96,6%)" },
+                      ];
+                      const item = labels[index as number];
+                      if (!item) return null;
+                      return (
+                        <g>
+                          <text x={x + width / 2} y={y - 18} textAnchor="middle" fill="hsl(var(--foreground))" fontSize={13} fontWeight={700}>{item.qty}</text>
+                          <text x={x + width / 2} y={y - 4} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize={11}>{item.pct}</text>
+                        </g>
+                      );
+                    }}
+                  />
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        {/* Considerações */}
+        <div className="bg-card border border-border rounded-xl p-6 flex flex-col justify-center">
+          <h3 className="text-base font-bold text-foreground mb-3">O Impacto do Comportamento Digital</h3>
+          <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5">
+            <li><strong className="text-foreground">Renda e Perfil:</strong> Clientes com comportamento digital ativo possuem uma renda média de <strong className="text-foreground">R$ 23.972</strong>, o que é quase 3 vezes superior aos clientes não digitais (R$ 8.337).</li>
+            <li><strong className="text-foreground">Conversão e Gasto:</strong> O grupo digital gasta em média R$ 299,17, enquanto o grupo não digital gasta R$ 238,19. Isso reforça que o seu canal de vendas (e-commerce) seleciona naturalmente pessoas que já possuem fluência digital.</li>
+            <li><strong className="text-foreground">Frequência:</strong> O cliente digital é mais fiel, com uma frequência de compra média de 1.63 contra 1.46.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
   </DashboardLayout>
   );
 };
