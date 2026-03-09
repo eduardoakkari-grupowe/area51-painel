@@ -307,11 +307,11 @@ const ModelagemEstatistica = () => {
       </div>
     </div>
 
-    {/* Submenu Sexo */}
+    {/* Submenu Idade (Homens e Mulheres) */}
     <div id="sexo" className="mt-10 scroll-mt-6">
       <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3">
         <div className="h-2.5 w-2.5 rounded-full bg-accent" />
-        <span className="text-xl font-semibold text-foreground">Sexo</span>
+        <span className="text-xl font-semibold text-foreground">Idade (Homens e Mulheres)</span>
       </div>
 
       <div className="mt-6 flex flex-col lg:flex-row gap-8">
