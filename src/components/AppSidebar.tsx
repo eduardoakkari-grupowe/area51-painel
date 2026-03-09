@@ -34,6 +34,7 @@ const modelagemScrollItems = [
   { title: "Idade", hash: "sexo" },
   { title: "Sexo X Valor", hash: "sexo-x-valor" },
   { title: "Compras (Qtde X Valor)", hash: "compras-quantidade-valor" },
+  { title: "Escolaridade", hash: "escolaridade" },
 ];
 
 const modelagemSubItems = [

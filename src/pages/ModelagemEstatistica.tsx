@@ -737,6 +737,47 @@ const ModelagemEstatistica = () => {
         </div>
       </div>
     </div>
+
+    {/* Submenu Escolaridade */}
+    <div id="escolaridade" className="mt-10 scroll-mt-6">
+      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3">
+        <div className="h-2.5 w-2.5 rounded-full bg-accent" />
+        <span className="text-xl font-semibold text-foreground">Escolaridade</span>
+      </div>
+
+      <div className="mt-6 bg-card border border-border rounded-xl p-6">
+        <p className="text-sm font-semibold text-foreground mb-4 text-center">Distribuição de Clientes por Nível de Escolaridade</p>
+        <div className="h-[420px]">
+          <ResponsiveContainer width="100%" height="100%">
+            <BarChart
+              data={[
+                { escolaridade: "Superior Completo", quantidade: 25572, percent: "81.4%" },
+                { escolaridade: "2º Grau Completo", quantidade: 2620, percent: "8.3%" },
+                { escolaridade: "Superior Incompleto", quantidade: 1345, percent: "4.3%" },
+                { escolaridade: "Pós-Grad./Espec.", quantidade: 1024, percent: "3.3%" },
+                { escolaridade: "Mestrado", quantidade: 364, percent: "1.2%" },
+                { escolaridade: "1º Grau Completo", quantidade: 185, percent: "0.6%" },
+                { escolaridade: "Doutorado", quantidade: 116, percent: "0.4%" },
+                { escolaridade: "2º Grau Incompleto", quantidade: 109, percent: "0.3%" },
+                { escolaridade: "4ª Série Completa", quantidade: 73, percent: "0.2%" },
+                { escolaridade: "5ª a 8ª Série Inc.", quantidade: 9, percent: "0.0%" },
+                { escolaridade: "Até 4ª Série Inc.", quantidade: 8, percent: "0.0%" },
+                { escolaridade: "Pós-Doutorado", quantidade: 3, percent: "0.0%" },
+                { escolaridade: "Analfabeto", quantidade: 2, percent: "0.0%" },
+                { escolaridade: "Sem Informação", quantidade: 1184, percent: "3.6%" },
+              ]}
+              margin={{ top: 20, right: 20, left: 10, bottom: 120 }}
+            >
+              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+              <XAxis dataKey="escolaridade" tick={{ fontSize: 10, fill: 'hsl(var(--muted-foreground))' }} angle={-45} textAnchor="end" interval={0} height={120} />
+              <YAxis tick={{ fontSize: 11, fill: 'hsl(var(--muted-foreground))' }} label={{ value: "Número de Clientes", angle: -90, position: "insideLeft", offset: 0, style: { fill: 'hsl(var(--muted-foreground))', fontSize: 11 } }} />
+              <Tooltip contentStyle={{ background: 'hsl(var(--card))', border: '1px solid hsl(var(--border))', borderRadius: '8px', color: 'hsl(var(--foreground))' }} labelStyle={{ color: 'hsl(var(--foreground))', fontWeight: 600, marginBottom: 4 }} itemStyle={{ color: 'hsl(var(--foreground))' }} formatter={(value: number, name: string, props: any) => [`${value.toLocaleString()} (${props.payload.percent})`, 'Clientes']} />
+              <Bar dataKey="quantidade" radius={[4, 4, 0, 0]} fill="hsl(var(--accent))" />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+      </div>
+    </div>
   </DashboardLayout>
   );
 };
