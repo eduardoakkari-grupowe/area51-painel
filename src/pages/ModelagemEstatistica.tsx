@@ -2,6 +2,8 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { DashboardLayout } from "@/components/DashboardLayout";
 import { Users, ShoppingCart, AlertTriangle, Code, UsersRound, SearchCheck, Share2, Target } from "lucide-react";
+import googleAdsIcon from "@/assets/google-ads-icon.png";
+import googleAdsText from "@/assets/google-ads-text.png";
 
 const etapas = [
   {
@@ -208,12 +210,8 @@ const ModelagemEstatistica = () => {
               <path d="M45 6 L55 12 L45 18" stroke="hsl(260, 10%, 55%)" strokeWidth="2" fill="none" />
             </svg>
             <div className="flex items-center gap-2">
-              <svg viewBox="0 0 24 24" className="w-8 h-8" fill="none">
-                <path d="M12.48 10.92v3.28h7.84c-.24 1.84-.52 3.12-1.36 4.08-1.04 1.16-2.64 2.4-5.48 2.4-4.36 0-7.76-3.52-7.76-7.88s3.4-7.88 7.76-7.88c2.36 0 4.08.92 5.36 2.12l2.32-2.32C19.28 2.88 16.96 1.6 13.48 1.6 7.96 1.6 3.28 6.12 3.28 11.64s4.68 10.04 10.2 10.04c3 0 5.24-.98 7.02-2.82 1.82-1.82 2.38-4.38 2.38-6.44 0-.64-.04-1.24-.12-1.72h-10.28v.22z" fill="#4285F4"/>
-                <circle cx="20" cy="12" r="3" fill="#FBBC04"/>
-                <circle cx="4" cy="12" r="3" fill="#34A853"/>
-              </svg>
-              <span className="text-xl font-bold text-foreground">Google Ads</span>
+              <img src={googleAdsIcon} alt="Google Ads" className="h-8 w-8" />
+              <img src={googleAdsText} alt="Google Ads" className="h-6" />
             </div>
           </div>
         </div>
