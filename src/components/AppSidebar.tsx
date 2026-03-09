@@ -89,7 +89,7 @@ export function AppSidebar() {
   };
 
   return (
-    <Sidebar collapsible="icon" className="border-r border-sidebar-border">
+    <Sidebar collapsible="icon" className="border-r border-sidebar-border overflow-x-hidden">
       <div className="flex items-center gap-2 px-4 py-[20px] border-b border-sidebar-border justify-center">
         <img src={area51Logo} alt="area51" className={`transition-all duration-300 ${collapsed ? "w-10" : "w-[160px] h-auto"}`} />
       </div>
