@@ -32,6 +32,7 @@ const modelagemScrollItems = [
   { title: "Aquário", hash: "aquario" },
   { title: "Metodologia Look Alike", hash: "metodologia-look-alike" },
   { title: "Idade", hash: "sexo" },
+  { title: "Sexo X Valor", hash: "sexo-x-valor" },
 ];
 
 const modelagemSubItems = [
