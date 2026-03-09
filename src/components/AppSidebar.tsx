@@ -1,6 +1,6 @@
 import { LayoutDashboard, Users, ChevronLeft, BarChart3, GraduationCap, LogOut, Box, Tag, FolderUp, ChevronDown } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import area51Logo from "@/assets/clients/area51.png";
 import {
@@ -51,6 +51,7 @@ export function AppSidebar() {
   const { state, toggleSidebar } = useSidebar();
   const collapsed = state === "collapsed";
   const location = useLocation();
+  const navigate = useNavigate();
   const isModelagemActive = location.pathname.startsWith("/modelagem-estatistica");
   const [modelagemOpen, setModelagemOpen] = useState(isModelagemActive);
 
@@ -104,12 +105,22 @@ export function AppSidebar() {
                   <CollapsibleTrigger asChild>
                     <SidebarMenuButton
                       className={`flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm transition-all duration-200 w-full ${isModelagemActive ? "bg-primary/10 text-primary font-medium" : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"}`}
+                      onClick={() => {
+                        navigate("/modelagem-estatistica");
+                        setModelagemOpen(true);
+                      }}
                     >
                       <BarChart3 className="h-[18px] w-[18px] shrink-0" />
                       {!collapsed && (
                         <>
                           <span className="flex-1 text-left">Modelagem Estatística</span>
-                          <ChevronDown className={`h-4 w-4 shrink-0 transition-transform duration-200 ${modelagemOpen ? "rotate-180" : ""}`} />
+                          <ChevronDown
+                            className={`h-4 w-4 shrink-0 transition-transform duration-200 ${modelagemOpen ? "rotate-180" : ""}`}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              setModelagemOpen(!modelagemOpen);
+                            }}
+                          />
                         </>
                       )}
                     </SidebarMenuButton>
