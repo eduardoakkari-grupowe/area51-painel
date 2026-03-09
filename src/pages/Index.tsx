@@ -30,7 +30,7 @@ const Index = () => {
     <DashboardLayout>
       <div className="space-y-6">
         <div className="rounded-xl p-6" style={{ backgroundColor: "hsl(0, 50%, 12%)" }}>
-          <h1 className="text-2xl font-bold text-primary-foreground">Bem-vindo ao Dashboard do GrupoWe</h1>
+          <h1 className="text-2xl font-bold text-primary-foreground"><h1 className="text-2xl font-bold text-primary-foreground">Bem-vindo ao Dashboard da area51</h1></h1>
           <p className="text-sm text-primary-foreground/80 mt-1 flex items-center gap-1">
             <Calendar className="h-4 w-4" />
             <span>{dateTime.datePart}</span>
