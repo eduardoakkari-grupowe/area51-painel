@@ -60,9 +60,9 @@ const ModelagemEstatistica = () => {
 
     {/* Submenu Dados utilizados */}
     <div id="dados-utilizados" className="mt-8 scroll-mt-6">
-      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-4 py-2">
-        <div className="h-2 w-2 rounded-full bg-primary" />
-        <span className="text-sm font-semibold text-foreground">Dados utilizados</span>
+      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3">
+        <div className="h-2.5 w-2.5 rounded-full bg-primary" />
+        <span className="text-xl font-semibold text-foreground">Dados utilizados</span>
       </div>
     </div>
 
@@ -110,9 +110,9 @@ const ModelagemEstatistica = () => {
 
     {/* Submenu Objetivos */}
     <div id="objetivos" className="mt-10 scroll-mt-6">
-      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-4 py-2">
-        <div className="h-2 w-2 rounded-full bg-accent" />
-        <span className="text-sm font-semibold text-foreground">Objetivos</span>
+      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3">
+        <div className="h-2.5 w-2.5 rounded-full bg-accent" />
+        <span className="text-xl font-semibold text-foreground">Objetivos</span>
       </div>
 
       <ul className="mt-4 space-y-3">
@@ -127,9 +127,9 @@ const ModelagemEstatistica = () => {
 
     {/* Submenu Etapas do Processo */}
     <div id="etapas-do-processo" className="mt-10 scroll-mt-6">
-      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-4 py-2">
-        <div className="h-2 w-2 rounded-full bg-primary" />
-        <span className="text-sm font-semibold text-foreground">Etapas do Processo</span>
+      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3">
+        <div className="h-2.5 w-2.5 rounded-full bg-primary" />
+        <span className="text-xl font-semibold text-foreground">Etapas do Processo</span>
       </div>
 
       <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
@@ -154,9 +154,9 @@ const ModelagemEstatistica = () => {
 
     {/* Submenu Aquário */}
     <div id="aquario" className="mt-10 scroll-mt-6">
-      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-4 py-2">
-        <div className="h-2 w-2 rounded-full bg-accent" />
-        <span className="text-sm font-semibold text-foreground">Aquário</span>
+      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3">
+        <div className="h-2.5 w-2.5 rounded-full bg-accent" />
+        <span className="text-xl font-semibold text-foreground">Aquário</span>
       </div>
 
       <div className="mt-6 relative" style={{ minHeight: '510px' }}>
