@@ -344,25 +344,29 @@ const ModelagemEstatistica = () => {
         </div>
       </div>
 
-      {/* Insights + Tabela abaixo do gráfico */}
-      <div className="mt-8">
-        <h3 className="text-base font-bold text-primary mb-3">O Perfil Geracional e o Consumo</h3>
-        <ul className="space-y-3 mb-6">
-          <li className="flex items-start gap-2">
-            <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
-            <span className="text-sm text-muted-foreground"><strong className="text-foreground">O Grupo Dominante (36-45 anos):</strong> É o maior volume da base (13.728 clientes). Eles gastam em média R$ 291,29 e são o motor do e-commerce.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
-            <span className="text-sm text-muted-foreground"><strong className="text-foreground">Os "Heavy Spenders" (56 anos ou mais):</strong> Embora em menor número, são os clientes que possuem o maior ticket médio (R$ 345,64 para quem tem 66+) e a maior frequência de compra (1.81). Isso indica que o público sênior, quando fidelizado, é o mais rentável.</span>
-          </li>
-          <li className="flex items-start gap-2">
-            <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
-            <span className="text-sm text-muted-foreground"><strong className="text-foreground">Os Jovens (18-25 anos):</strong> Representam apenas 305 clientes. O ticket médio é o menor (R$ 197,38) e a frequência também.</span>
-          </li>
-        </ul>
+      {/* Insights + Tabela lado a lado */}
+      <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Quadro de texto à esquerda */}
+        <div className="bg-card border border-border rounded-xl p-6">
+          <h3 className="text-base font-bold text-primary mb-3">O Perfil Geracional e o Consumo</h3>
+          <ul className="space-y-3">
+            <li className="flex items-start gap-2">
+              <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
+              <span className="text-sm text-muted-foreground"><strong className="text-foreground">O Grupo Dominante (36-45 anos):</strong> É o maior volume da base (13.728 clientes). Eles gastam em média R$ 291,29 e são o motor do e-commerce.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
+              <span className="text-sm text-muted-foreground"><strong className="text-foreground">Os "Heavy Spenders" (56 anos ou mais):</strong> Embora em menor número, são os clientes que possuem o maior ticket médio (R$ 345,64 para quem tem 66+) e a maior frequência de compra (1.81). Isso indica que o público sênior, quando fidelizado, é o mais rentável.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
+              <span className="text-sm text-muted-foreground"><strong className="text-foreground">Os Jovens (18-25 anos):</strong> Representam apenas 305 clientes. O ticket médio é o menor (R$ 197,38) e a frequência também.</span>
+            </li>
+          </ul>
+        </div>
 
-        <div className="overflow-auto">
+        {/* Tabela à direita */}
+        <div className="bg-card border border-border rounded-xl p-6 overflow-auto">
           <Table>
             <TableHeader>
               <TableRow className="bg-primary/10">
