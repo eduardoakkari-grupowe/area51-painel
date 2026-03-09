@@ -23,7 +23,7 @@ import ObjetivosEDados from "./pages/modelagem/ObjetivosEDados";
 import EtapasDoProcesso from "./pages/modelagem/EtapasDoProcesso";
 import Aquario from "./pages/modelagem/Aquario";
 import MetodologiaLookAlike from "./pages/modelagem/MetodologiaLookAlike";
-import Sexo from "./pages/modelagem/Sexo";
+
 import Idade from "./pages/modelagem/Idade";
 import Compras from "./pages/modelagem/Compras";
 import Escolaridade from "./pages/modelagem/Escolaridade";
