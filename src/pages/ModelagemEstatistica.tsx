@@ -476,6 +476,46 @@ const ModelagemEstatistica = () => {
         </div>
       </div>
     </div>
+
+    {/* Submenu Sexo X Valor */}
+    <div id="sexo-x-valor" className="mt-10 scroll-mt-6">
+      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3">
+        <div className="h-2.5 w-2.5 rounded-full bg-primary" />
+        <span className="text-xl font-semibold text-foreground">Sexo X Valor</span>
+      </div>
+
+      <div className="mt-6 flex flex-col lg:flex-row gap-8">
+        {/* Left: Boxplot image */}
+        <div className="lg:w-[400px] shrink-0">
+          <img src={boxplotSexoValor} alt="Distribuição de Valor Gasto por Sexo" className="w-full rounded-lg" />
+        </div>
+
+        {/* Right: Perfis */}
+        <div className="flex-1 min-w-0">
+          <div className="space-y-6">
+            <div>
+              <p className="text-sm font-bold text-primary mb-2">1. Perfil Masculino (Maioria e Maior LTV)</p>
+              <ul className="space-y-1 ml-4">
+                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Volume: 18.583 clientes (aprox. 57% da base).</span></li>
+                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Ticket Médio e Gasto: Homens gastam, em média, R$ 316,33, o que é cerca de 16% a mais que as mulheres.</span></li>
+                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Frequência: Também compram com uma frequência ligeiramente maior (1.70 vs 1.53).</span></li>
+                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Interesses: Têm uma penetração maior em Clubes de Vinho (94%) e Consumo de Luxo (90%). Além disso, o perfil de Apostas Online é mais que o dobro do feminino (2.46 vs 1.11%).</span></li>
+              </ul>
+            </div>
+
+            <div>
+              <p className="text-sm font-bold text-primary mb-2">2. Perfil Feminino (Público Qualificado, mas "Light")</p>
+              <ul className="space-y-1 ml-4">
+                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Volume: 13.926 clientes (aprox. 43% da base).</span></li>
+                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Ticket Médio: Gastam em média R$ 271,98.</span></li>
+                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Renda e Score: A renda presumida média das mulheres na base (R$ 18.928) é significativamente menor que a dos homens (R$ 26.894), embora o Score de crédito seja muito similar (795 vs 802).</span></li>
+                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Estratégia: O público feminino parece ser mais cauteloso no ticket inicial ou focado em pacotes menores/individuais.</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </DashboardLayout>
   );
 };
