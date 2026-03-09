@@ -148,7 +148,7 @@ export function AppSidebar() {
                   </CollapsibleTrigger>
                   {!collapsed && (
                     <CollapsibleContent>
-                      <SidebarMenu className="ml-4 mt-1 border-l border-border/50 pl-2 overflow-hidden">
+                      <SidebarMenu className="ml-4 mt-1 border-l border-border/50 pl-2 overflow-hidden space-y-1">
                         {modelagemScrollItems.map((scrollItem) => {
                           const isScrollActive = location.pathname === "/modelagem-estatistica" && location.hash === `#${scrollItem.hash}`;
                           return (
