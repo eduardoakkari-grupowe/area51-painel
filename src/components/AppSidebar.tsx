@@ -1,4 +1,4 @@
-import { LayoutDashboard, Newspaper, Wrench, Users, ChevronLeft, BarChart3, GraduationCap, Image, IdCard, Video, Megaphone, LogOut } from "lucide-react";
+import { LayoutDashboard, Newspaper, Wrench, Users, ChevronLeft, BarChart3, GraduationCap, Image, IdCard, Video, Megaphone, LogOut, Box, Tag, FolderUp } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useLocation } from "react-router-dom";
 import area51Logo from "@/assets/clients/area51.png";
@@ -15,10 +15,13 @@ import {
   useSidebar,
 } from "@/components/ui/sidebar";
 
-const mainItems = [
-  { title: "Dashboard", url: "/", icon: LayoutDashboard },
-  { title: "Tutoriais", url: "/tutoriais", icon: GraduationCap },
-  { title: "Usuários", url: "/usuarios", icon: Users },
+const internalItems = [
+  { title: "Dashboard", url: "/", icon: LayoutDashboard, external: false },
+  { title: "Cubo", url: "https://cubopfpj.com/login/", icon: Box, external: true },
+  { title: "Tag", url: "https://www.ph3a.com.br/crm/account/login?returnUrl=https://www.ph3a.com.br:443/crm/", icon: Tag, external: true },
+  { title: "FTPs", url: "https://www.ph3a.com.br/crm/account/login?returnUrl=https://www.ph3a.com.br:443/crm/", icon: FolderUp, external: true },
+  { title: "Tutoriais", url: "/tutoriais", icon: GraduationCap, external: false },
+  { title: "Usuários", url: "https://www.ph3a.com.br/crm/account/login?returnUrl=https://www.ph3a.com.br:443/crm/customer/configuration", icon: Users, external: true },
 ];
 
 export function AppSidebar() {
