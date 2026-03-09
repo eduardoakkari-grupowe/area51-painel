@@ -771,10 +771,10 @@ const ModelagemEstatistica = () => {
                 { escolaridade: "Analfabeto", quantidade: 2, percent: "0.0%" },
                 { escolaridade: "Sem Informação", quantidade: 1184, percent: "3.6%" },
               ]}
-              margin={{ top: 20, right: 20, left: 10, bottom: 120 }}
+              margin={{ top: 20, right: 20, left: 10, bottom: 80 }}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-              <XAxis dataKey="escolaridade" tick={{ fontSize: 10, fill: 'hsl(var(--muted-foreground))' }} angle={-45} textAnchor="end" interval={0} height={120} />
+              <XAxis dataKey="escolaridade" tick={{ fontSize: 10, fill: 'hsl(var(--muted-foreground))' }} angle={-45} textAnchor="end" interval={0} height={80} />
               <YAxis tick={{ fontSize: 11, fill: 'hsl(var(--muted-foreground))' }} label={{ value: "Número de Clientes", angle: -90, position: "insideLeft", offset: 0, style: { fill: 'hsl(var(--muted-foreground))', fontSize: 11 } }} />
               <Tooltip contentStyle={{ background: 'hsl(var(--card))', border: '1px solid hsl(var(--border))', borderRadius: '8px', color: 'hsl(var(--foreground))' }} labelStyle={{ color: 'hsl(var(--foreground))', fontWeight: 600, marginBottom: 4 }} itemStyle={{ color: 'hsl(var(--foreground))' }} formatter={(value: number, name: string, props: any) => [`${value.toLocaleString()} (${props.payload.percent})`, 'Clientes']} />
               <Bar dataKey="quantidade" radius={[4, 4, 0, 0]} fill="hsl(var(--accent))" />
@@ -790,7 +790,7 @@ const ModelagemEstatistica = () => {
           <h3 className="text-lg font-bold text-foreground mb-4">Considerações</h3>
           <div className="space-y-6">
             <div>
-              <p className="text-sm font-bold text-foreground mb-1">1. Panorama da Base (O Domínio do Ensino Superior)</p>
+              <p className="text-sm font-bold text-primary mb-1">1. Panorama da Base (O Domínio do Ensino Superior)</p>
               <p className="text-sm text-muted-foreground mb-2">Sua base é composta majoritariamente por pessoas com alto nível de instrução.</p>
               <ul className="space-y-1 ml-4">
                 <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Superior Completo: Representa a vasta maioria (25.572 clientes), com um ticket médio de R$ 305,53.</span></li>
@@ -798,7 +798,7 @@ const ModelagemEstatistica = () => {
               </ul>
             </div>
             <div>
-              <p className="text-sm font-bold text-foreground mb-1">2. O Perfil de "Performance"</p>
+              <p className="text-sm font-bold text-primary mb-1">2. O Perfil de "Performance"</p>
               <p className="text-sm text-muted-foreground mb-2">Há uma correlação clara: quanto maior a escolaridade, maior a frequência de compra e o valor gasto.</p>
               <ul className="space-y-1 ml-4">
                 <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Clientes com Mestrado/Doutorado têm uma frequência de compra superior à média geral (1.77 e 1.70, respectivamente).</span></li>
