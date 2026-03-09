@@ -1027,7 +1027,7 @@ const ModelagemEstatistica = () => {
               <XAxis dataKey="cluster" tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 11 }} />
               <YAxis tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 11 }} />
               <Tooltip contentStyle={{ backgroundColor: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: "8px", color: "hsl(var(--foreground))" }} />
-              <Bar dataKey="total" radius={[4, 4, 0, 0]}>
+              <Bar dataKey="total" radius={[4, 4, 0, 0]} label={false}>
                 <Cell fill="hsl(210, 55%, 55%)" />
                 <Cell fill="hsl(210, 45%, 65%)" />
                 <Cell fill="hsl(30, 70%, 55%)" />
