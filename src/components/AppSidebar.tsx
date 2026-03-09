@@ -17,7 +17,6 @@ import {
 
 const mainItems = [
   { title: "Dashboard", url: "/", icon: LayoutDashboard },
-  { title: "Onboarding", url: "/onboarding", icon: Video },
   { title: "Tutoriais", url: "/tutoriais", icon: GraduationCap },
   { title: "Usuários", url: "/usuarios", icon: Users },
 ];
