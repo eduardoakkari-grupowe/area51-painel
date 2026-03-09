@@ -270,7 +270,7 @@ const ModelagemEstatistica = () => {
 
         {/* Pessoas com perfil semelhante */}
         <div className="flex flex-col items-center text-center gap-3 w-[140px]">
-          <div className="bg-card border border-border rounded-2xl p-6 shadow-lg w-[112px] h-[112px] flex items-center justify-center">
+          <div className="bg-accent border border-accent/50 rounded-2xl p-6 shadow-lg w-[112px] h-[112px] flex items-center justify-center">
             <div className="grid grid-cols-2 gap-1">
               <UsersIcon className="h-8 w-8 text-foreground" />
               <UsersIcon className="h-8 w-8 text-foreground" />
