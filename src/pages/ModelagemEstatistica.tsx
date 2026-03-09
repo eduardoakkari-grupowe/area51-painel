@@ -137,8 +137,8 @@ const ModelagemEstatistica = () => {
           const Icon = etapa.icon;
           return (
             <div key={i} className="flex flex-col items-center text-center group">
-              <div className="bg-primary rounded-full p-3 mb-3 shadow-lg">
-                <Icon className="h-6 w-6 text-primary-foreground" />
+              <div className="bg-primary rounded-full p-6 mb-3 shadow-lg">
+                <Icon className="h-12 w-12 text-primary-foreground" />
               </div>
               <div className="bg-accent rounded-xl p-4 flex-1 flex items-center">
                 <p className="text-xs text-accent-foreground leading-relaxed">{etapa.titulo}</p>
