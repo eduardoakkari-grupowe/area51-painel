@@ -56,7 +56,7 @@ const modelagemSubItems = [
   { title: "Frete", url: "/modelagem-estatistica/frete" },
   { title: "Desconto", url: "/modelagem-estatistica/desconto" },
   { title: "Personas", url: "/modelagem-estatistica/personas" },
-  { title: "Conclusão", url: "/modelagem-estatistica/conclusao" },
+  { title: "Conclusão de Personas", url: "/modelagem-estatistica/conclusao" },
   { title: "Composição do Aquário", url: "/modelagem-estatistica/composicao-do-aquario" },
 ];
 
