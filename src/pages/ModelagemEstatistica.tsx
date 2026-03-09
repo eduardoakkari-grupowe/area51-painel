@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import { DashboardLayout } from "@/components/DashboardLayout";
 import { Users, ShoppingCart, AlertTriangle, Code, UsersRound, SearchCheck, Share2, Target } from "lucide-react";
 
@@ -32,7 +34,19 @@ const objetivos = [
   "Avaliação de perfis com taxa de recorrência para a prospecção de clientes;",
 ];
 
-const ModelagemEstatistica = () => (
+const ModelagemEstatistica = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.hash) {
+      setTimeout(() => {
+        const el = document.getElementById(location.hash.slice(1));
+        el?.scrollIntoView({ behavior: "smooth" });
+      }, 100);
+    }
+  }, [location.hash]);
+
+  return (
   <DashboardLayout>
     <div>
       <h1 className="text-2xl font-bold text-foreground">Modelagem Estatística</h1>
@@ -40,7 +54,7 @@ const ModelagemEstatistica = () => (
     </div>
 
     {/* Submenu Dados utilizados */}
-    <div className="mt-8">
+    <div id="dados-utilizados" className="mt-8 scroll-mt-6">
       <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-4 py-2">
         <div className="h-2 w-2 rounded-full bg-primary" />
         <span className="text-sm font-semibold text-foreground">Dados utilizados</span>
@@ -90,7 +104,7 @@ const ModelagemEstatistica = () => (
     </div>
 
     {/* Submenu Objetivos */}
-    <div className="mt-10">
+    <div id="objetivos" className="mt-10 scroll-mt-6">
       <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-4 py-2">
         <div className="h-2 w-2 rounded-full bg-accent" />
         <span className="text-sm font-semibold text-foreground">Objetivos</span>
@@ -107,7 +121,7 @@ const ModelagemEstatistica = () => (
     </div>
 
     {/* Submenu Etapas do Processo */}
-    <div className="mt-10">
+    <div id="etapas-do-processo" className="mt-10 scroll-mt-6">
       <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-4 py-2">
         <div className="h-2 w-2 rounded-full bg-primary" />
         <span className="text-sm font-semibold text-foreground">Etapas do Processo</span>
@@ -133,6 +147,7 @@ const ModelagemEstatistica = () => (
       </div>
     </div>
   </DashboardLayout>
-);
+  );
+};
 
 export default ModelagemEstatistica;
