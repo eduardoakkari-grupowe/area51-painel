@@ -1,6 +1,7 @@
-import { LayoutDashboard, Newspaper, Wrench, Users, ChevronLeft, BarChart3, GraduationCap, Image, IdCard, Video, Megaphone, LogOut, Box, Tag, FolderUp } from "lucide-react";
+import { LayoutDashboard, Users, ChevronLeft, BarChart3, GraduationCap, LogOut, Box, Tag, FolderUp, ChevronDown } from "lucide-react";
 import { NavLink } from "@/components/NavLink";
 import { useLocation } from "react-router-dom";
+import { useState } from "react";
 import area51Logo from "@/assets/clients/area51.png";
 import {
   Sidebar,
@@ -14,10 +15,31 @@ import {
   SidebarFooter,
   useSidebar,
 } from "@/components/ui/sidebar";
+import {
+  Collapsible,
+  CollapsibleContent,
+  CollapsibleTrigger,
+} from "@/components/ui/collapsible";
 
-const internalItems = [
+const mainItems = [
   { title: "Dashboard", url: "/", icon: LayoutDashboard, external: false },
-  { title: "Modelagem Estatística", url: "/modelagem-estatistica", icon: BarChart3, external: false },
+];
+
+const modelagemSubItems = [
+  { title: "Objetivos e dados", url: "/modelagem-estatistica/objetivos-e-dados" },
+  { title: "Etapas do processo", url: "/modelagem-estatistica/etapas-do-processo" },
+  { title: "Aquário", url: "/modelagem-estatistica/aquario" },
+  { title: "Metodologia Look alike", url: "/modelagem-estatistica/metodologia-look-alike" },
+  { title: "Sexo", url: "/modelagem-estatistica/sexo" },
+  { title: "Idade", url: "/modelagem-estatistica/idade" },
+  { title: "Compras", url: "/modelagem-estatistica/compras" },
+  { title: "Escolaridade", url: "/modelagem-estatistica/escolaridade" },
+  { title: "Personas", url: "/modelagem-estatistica/personas" },
+  { title: "Conclusão", url: "/modelagem-estatistica/conclusao" },
+  { title: "Composição do Aquário", url: "/modelagem-estatistica/composicao-do-aquario" },
+];
+
+const bottomItems = [
   { title: "Cubo", url: "https://cubopfpj.com/login/", icon: Box, external: true },
   { title: "Tag", url: "https://www.ph3a.com.br/crm/account/login?returnUrl=https://www.ph3a.com.br:443/crm/", icon: Tag, external: true },
   { title: "FTPs", url: "https://www.ph3a.com.br/crm/account/login?returnUrl=https://www.ph3a.com.br:443/crm/", icon: FolderUp, external: true },
@@ -29,16 +51,42 @@ export function AppSidebar() {
   const { state, toggleSidebar } = useSidebar();
   const collapsed = state === "collapsed";
   const location = useLocation();
+  const isModelagemActive = location.pathname.startsWith("/modelagem-estatistica");
+  const [modelagemOpen, setModelagemOpen] = useState(isModelagemActive);
+
+  const renderItem = (item: { title: string; url: string; icon: React.ComponentType<{ className?: string }>; external: boolean }) => {
+    const isActive = !item.external && location.pathname === item.url;
+    if (item.external) {
+      return (
+        <SidebarMenuItem key={item.title}>
+          <SidebarMenuButton asChild>
+            <a href={item.url} target="_blank" rel="noopener noreferrer"
+              className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm transition-all duration-200 text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground">
+              <item.icon className="h-[18px] w-[18px] shrink-0" />
+              {!collapsed && <span>{item.title}</span>}
+            </a>
+          </SidebarMenuButton>
+        </SidebarMenuItem>
+      );
+    }
+    return (
+      <SidebarMenuItem key={item.title}>
+        <SidebarMenuButton asChild>
+          <NavLink to={item.url} end
+            className={`flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm transition-all duration-200 ${isActive ? "bg-primary/10 text-primary font-medium" : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"}`}
+            activeClassName="">
+            <item.icon className="h-[18px] w-[18px] shrink-0" />
+            {!collapsed && <span>{item.title}</span>}
+          </NavLink>
+        </SidebarMenuButton>
+      </SidebarMenuItem>
+    );
+  };
 
   return (
     <Sidebar collapsible="icon" className="border-r border-sidebar-border">
-      {/* area51 logo header */}
       <div className="flex items-center gap-2 px-4 py-[20px] border-b border-sidebar-border justify-center">
-        <img
-          src={area51Logo}
-          alt="area51"
-          className={`transition-all duration-300 ${collapsed ? "w-10" : "w-[160px] h-auto"}`}
-        />
+        <img src={area51Logo} alt="area51" className={`transition-all duration-300 ${collapsed ? "w-10" : "w-[160px] h-auto"}`} />
       </div>
 
       <SidebarContent className="pt-4">
@@ -48,61 +96,59 @@ export function AppSidebar() {
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
-              {internalItems.map((item) => {
-                const isActive = !item.external && location.pathname === item.url;
-                if (item.external) {
-                  return (
-                    <SidebarMenuItem key={item.title}>
-                      <SidebarMenuButton asChild>
-                        <a
-                          href={item.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm transition-all duration-200 text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
-                        >
-                          <item.icon className="h-[18px] w-[18px] shrink-0" />
-                          {!collapsed && <span>{item.title}</span>}
-                        </a>
-                      </SidebarMenuButton>
-                    </SidebarMenuItem>
-                  );
-                }
-                return (
-                  <SidebarMenuItem key={item.title}>
-                    <SidebarMenuButton asChild>
-                      <NavLink
-                        to={item.url}
-                        end
-                        className={`flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm transition-all duration-200 ${
-                          isActive
-                            ? "bg-primary/10 text-primary font-medium"
-                            : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
-                        }`}
-                        activeClassName=""
-                      >
-                        <item.icon className="h-[18px] w-[18px] shrink-0" />
-                        {!collapsed && <span>{item.title}</span>}
-                      </NavLink>
+              {mainItems.map(renderItem)}
+
+              {/* Modelagem Estatística collapsible */}
+              <SidebarMenuItem>
+                <Collapsible open={modelagemOpen} onOpenChange={setModelagemOpen}>
+                  <CollapsibleTrigger asChild>
+                    <SidebarMenuButton
+                      className={`flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm transition-all duration-200 w-full ${isModelagemActive ? "bg-primary/10 text-primary font-medium" : "text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"}`}
+                    >
+                      <BarChart3 className="h-[18px] w-[18px] shrink-0" />
+                      {!collapsed && (
+                        <>
+                          <span className="flex-1 text-left">Modelagem Estatística</span>
+                          <ChevronDown className={`h-4 w-4 shrink-0 transition-transform duration-200 ${modelagemOpen ? "rotate-180" : ""}`} />
+                        </>
+                      )}
                     </SidebarMenuButton>
-                  </SidebarMenuItem>
-                );
-              })}
+                  </CollapsibleTrigger>
+                  {!collapsed && (
+                    <CollapsibleContent>
+                      <SidebarMenu className="ml-6 mt-1 border-l border-border/50 pl-3">
+                        {modelagemSubItems.map((sub) => {
+                          const subActive = location.pathname === sub.url;
+                          return (
+                            <SidebarMenuItem key={sub.url}>
+                              <SidebarMenuButton asChild>
+                                <NavLink to={sub.url}
+                                  className={`flex items-center px-3 py-1.5 rounded-md text-xs transition-all duration-200 ${subActive ? "bg-primary/10 text-primary font-medium" : "text-muted-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"}`}
+                                  activeClassName="">
+                                  <span>{sub.title}</span>
+                                </NavLink>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                          );
+                        })}
+                      </SidebarMenu>
+                    </CollapsibleContent>
+                  )}
+                </Collapsible>
+              </SidebarMenuItem>
+
+              {bottomItems.map(renderItem)}
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
 
       <SidebarFooter className="p-3 border-t border-sidebar-border space-y-2">
-        <button
-          className={`flex items-center gap-3 py-2.5 rounded-lg text-sm text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-all duration-200 w-full ${collapsed ? "justify-center px-0" : "px-4"}`}
-        >
+        <button className={`flex items-center gap-3 py-2.5 rounded-lg text-sm text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-all duration-200 w-full ${collapsed ? "justify-center px-0" : "px-4"}`}>
           <LogOut className="h-[18px] w-[18px] shrink-0" />
           {!collapsed && <span>Sair</span>}
         </button>
-        <button
-          onClick={toggleSidebar}
-          className="flex items-center justify-center w-8 h-8 rounded-lg text-muted-foreground hover:text-foreground hover:bg-sidebar-accent transition-colors"
-        >
+        <button onClick={toggleSidebar} className="flex items-center justify-center w-8 h-8 rounded-lg text-muted-foreground hover:text-foreground hover:bg-sidebar-accent transition-colors">
           <ChevronLeft className={`h-4 w-4 transition-transform duration-300 ${collapsed ? "rotate-180" : ""}`} />
         </button>
       </SidebarFooter>
