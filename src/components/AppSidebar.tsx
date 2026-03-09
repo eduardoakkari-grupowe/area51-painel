@@ -39,7 +39,6 @@ const modelagemSubItems = [
   
   
   
-  { title: "Compras", url: "/modelagem-estatistica/compras" },
   { title: "Escolaridade", url: "/modelagem-estatistica/escolaridade" },
   { title: "Conta Bancária Digital", url: "/modelagem-estatistica/conta-bancaria-digital" },
   { title: "Posse de Imóvel", url: "/modelagem-estatistica/posse-de-imovel" },
