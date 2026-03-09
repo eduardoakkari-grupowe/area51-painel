@@ -389,7 +389,7 @@ const ModelagemEstatistica = () => {
 
       {/* Idade (Homens) */}
       <div className="mt-10">
-        <h3 className="text-lg font-bold text-foreground mb-4">Idade (Homens)</h3>
+        <h3 className="text-lg font-bold text-foreground mb-4">Descritivo dos Homens</h3>
 
         <div className="space-y-6">
           {/* Cluster 2 */}
