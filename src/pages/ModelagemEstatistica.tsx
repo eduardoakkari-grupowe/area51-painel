@@ -487,42 +487,74 @@ const ModelagemEstatistica = () => {
 
       <p className="text-sm text-muted-foreground mt-2 mb-4">Distribuição de Valor Gasto por Sexo (Limpando Outliers para Visão)</p>
       <div className="mt-6 flex flex-col lg:flex-row gap-8">
-        {/* Left: Boxplot chart */}
-        <div className="lg:w-[450px] shrink-0 bg-card border border-border rounded-xl p-4">
-          <ResponsiveContainer width="100%" height={380}>
-            <ComposedChart
-              data={[
-                { name: 'M', min: 50, q1: 120, median: 180, q3: 350, max: 720, whiskerLow: 50, whiskerHigh: 720, color: 'hsl(var(--secondary))' },
-                { name: 'F', min: 40, q1: 95, median: 155, q3: 305, max: 615, whiskerLow: 40, whiskerHigh: 615, color: 'hsl(var(--accent))' },
-              ]}
-              margin={{ top: 20, right: 30, left: 20, bottom: 20 }}
-            >
-              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-              <XAxis dataKey="name" tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 14 }} label={{ value: 'SEXO', position: 'insideBottom', offset: -10, fill: 'hsl(var(--muted-foreground))' }} />
-              <YAxis tick={{ fill: 'hsl(var(--muted-foreground))', fontSize: 12 }} label={{ value: 'Valor Monetário', angle: -90, position: 'insideLeft', offset: -5, fill: 'hsl(var(--muted-foreground))' }} domain={[0, 1000]} />
-              {/* Whisker lines (min to Q1, Q3 to max) */}
-              {[
-                { name: 'M', x: 0, min: 50, q1: 120, median: 180, q3: 350, max: 720 },
-                { name: 'F', x: 1, min: 40, q1: 95, median: 155, q3: 305, max: 615 },
-              ].map((d, i) => (
-                <ReferenceLine key={`whisker-${i}`} segment={[]} />
-              ))}
-              {/* Box: bottom part (Q1 to median) */}
-              <Bar dataKey="q1" stackId="box" fill="transparent" />
-              <Bar dataKey={(d: any) => d.median - d.q1} stackId="box" name="Q1-Median" shape={(props: any) => {
-                const { x, y, width, height, index } = props;
-                const colors = ['hsl(var(--secondary))', 'hsl(var(--accent))'];
-                return <Rectangle x={x} y={y} width={width} height={height} fill={colors[index]} stroke="hsl(var(--foreground))" strokeWidth={1} />;
-              }} />
-              <Bar dataKey={(d: any) => d.q3 - d.median} stackId="box" name="Median-Q3" shape={(props: any) => {
-                const { x, y, width, height, index } = props;
-                const colors = ['hsl(var(--secondary))', 'hsl(var(--accent))'];
-                return <Rectangle x={x} y={y} width={width} height={height} fill={colors[index]} stroke="hsl(var(--foreground))" strokeWidth={1} />;
-              }} />
-            </ComposedChart>
-          </ResponsiveContainer>
-          {/* Custom whisker overlay using SVG */}
-          <svg className="absolute inset-0 pointer-events-none" style={{ display: 'none' }} />
+        {/* Left: Boxplot chart (custom SVG) */}
+        <div className="lg:w-[450px] shrink-0 bg-card border border-border rounded-xl p-6">
+          <svg viewBox="0 0 400 340" className="w-full h-auto">
+            {/* Grid lines */}
+            {[0, 200, 400, 600, 800, 1000].map((val, i) => {
+              const y = 300 - (val / 1000) * 280;
+              return (
+                <g key={i}>
+                  <line x1="60" y1={y} x2="360" y2={y} stroke="hsl(var(--border))" strokeDasharray="3 3" strokeWidth={0.5} />
+                  <text x="52" y={y + 4} textAnchor="end" fill="hsl(var(--muted-foreground))" fontSize="11">{val}</text>
+                </g>
+              );
+            })}
+            {/* Y axis label */}
+            <text x="14" y="160" textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="11" transform="rotate(-90, 14, 160)">Valor_Monetário</text>
+            {/* X axis label */}
+            <text x="210" y="335" textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="12">SEXO</text>
+
+            {/* Male boxplot */}
+            {(() => {
+              const cx = 145, bw = 70;
+              const toY = (v: number) => 300 - (v / 1000) * 280;
+              const q1 = 120, med = 180, q3 = 350, min = 50, max = 720;
+              return (
+                <g>
+                  {/* Whisker line */}
+                  <line x1={cx} y1={toY(max)} x2={cx} y2={toY(min)} stroke="hsl(var(--muted-foreground))" strokeWidth={1.5} />
+                  {/* Whisker caps */}
+                  <line x1={cx - 15} y1={toY(max)} x2={cx + 15} y2={toY(max)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
+                  <line x1={cx - 15} y1={toY(min)} x2={cx + 15} y2={toY(min)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
+                  {/* Box */}
+                  <rect x={cx - bw / 2} y={toY(q3)} width={bw} height={toY(q1) - toY(q3)} fill="hsl(var(--secondary))" stroke="hsl(var(--foreground))" strokeWidth={1} rx={2} />
+                  {/* Median */}
+                  <line x1={cx - bw / 2} y1={toY(med)} x2={cx + bw / 2} y2={toY(med)} stroke="hsl(var(--foreground))" strokeWidth={2.5} />
+                  {/* Outlier dots */}
+                  {[950, 980, 990, 1000].map((v, i) => (
+                    <circle key={i} cx={cx + (Math.random() - 0.5) * 10} cy={toY(v)} r={2.5} fill="hsl(var(--muted-foreground))" opacity={0.5} />
+                  ))}
+                  <text x={cx} y={310} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="13" fontWeight="500">M</text>
+                </g>
+              );
+            })()}
+
+            {/* Female boxplot */}
+            {(() => {
+              const cx = 275, bw = 70;
+              const toY = (v: number) => 300 - (v / 1000) * 280;
+              const q1 = 95, med = 155, q3 = 305, min = 40, max = 615;
+              return (
+                <g>
+                  {/* Whisker line */}
+                  <line x1={cx} y1={toY(max)} x2={cx} y2={toY(min)} stroke="hsl(var(--muted-foreground))" strokeWidth={1.5} />
+                  {/* Whisker caps */}
+                  <line x1={cx - 15} y1={toY(max)} x2={cx + 15} y2={toY(max)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
+                  <line x1={cx - 15} y1={toY(min)} x2={cx + 15} y2={toY(min)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
+                  {/* Box */}
+                  <rect x={cx - bw / 2} y={toY(q3)} width={bw} height={toY(q1) - toY(q3)} fill="hsl(var(--accent))" stroke="hsl(var(--foreground))" strokeWidth={1} rx={2} />
+                  {/* Median */}
+                  <line x1={cx - bw / 2} y1={toY(med)} x2={cx + bw / 2} y2={toY(med)} stroke="hsl(var(--foreground))" strokeWidth={2.5} />
+                  {/* Outlier dots */}
+                  {[920, 960, 980, 1000].map((v, i) => (
+                    <circle key={i} cx={cx + (Math.random() - 0.5) * 10} cy={toY(v)} r={2.5} fill="hsl(var(--muted-foreground))" opacity={0.5} />
+                  ))}
+                  <text x={cx} y={310} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="13" fontWeight="500">F</text>
+                </g>
+              );
+            })()}
+          </svg>
         </div>
 
         {/* Right: Perfis */}
