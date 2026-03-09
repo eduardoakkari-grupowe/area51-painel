@@ -596,7 +596,7 @@ const ModelagemEstatistica = () => {
       </div>
 
       {/* Two charts side by side */}
-      <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
         {/* Bar chart - Quantidade de Clientes por Cluster */}
         <div className="bg-card border border-border rounded-xl p-6">
           <p className="text-sm font-semibold text-foreground mb-4 text-center">Quantidade de Clientes por Cluster</p>
