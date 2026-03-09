@@ -207,6 +207,81 @@ const ModelagemEstatistica = () => {
         </div>
       </div>
     </div>
+
+    {/* Submenu Metodologia: Look Alike */}
+    <div id="metodologia-look-alike" className="mt-10 scroll-mt-6">
+      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3">
+        <div className="h-2.5 w-2.5 rounded-full bg-primary" />
+        <span className="text-xl font-semibold text-foreground">Metodologia: Look Alike</span>
+      </div>
+
+      <p className="mt-4 text-sm text-muted-foreground max-w-4xl">
+        A partir de um público de interesse, identifica indivíduos que apresentam alto nível de semelhança a ele, sendo esta semelhança dada por um score de similaridade:
+      </p>
+
+      <ul className="mt-4 space-y-3 max-w-4xl">
+        <li className="flex items-start gap-3">
+          <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
+          <span className="text-sm text-muted-foreground">O desenvolvimento do modelo de Look Alike utiliza técnicas de Machine Learning com o objetivo analisar o perfil do público de interesse e identificar padrões que possibilitem diferenciar e selecionar indivíduos com alta similaridade a ele;</span>
+        </li>
+        <li className="flex items-start gap-3">
+          <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
+          <span className="text-sm text-muted-foreground">Técnica Supervisionada ou Semi-Supervisionada;</span>
+        </li>
+        <li className="flex items-start gap-3">
+          <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
+          <span className="text-sm text-muted-foreground">O score de similaridade possibilita ordenar os indivíduos em ordem decrescente de similaridade, ou seja, através dele pode-se selecionar os top 1% mais semelhantes ao público de interesse, visando o desenvolvimento de ações de prospecção;</span>
+        </li>
+        <li className="flex items-start gap-3">
+          <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
+          <span className="text-sm text-muted-foreground">A aplicação do modelo no Big Data area51 possibilita a seleção de indivíduos com alta similaridade ao público de interesse, visando a construção do Aquário utilizado em ações de prospecção on-line anonimizadas.</span>
+        </li>
+      </ul>
+
+      {/* Visual: Público de Interesse → Machine Learning → Pessoas semelhantes */}
+      <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10 max-w-4xl">
+        {/* Público de Interesse */}
+        <div className="flex flex-col items-center text-center gap-3">
+          <div className="bg-card border border-border rounded-2xl p-6 shadow-lg">
+            <Crosshair className="h-16 w-16 text-foreground" />
+          </div>
+          <p className="text-sm font-bold text-foreground">Público de Interesse</p>
+        </div>
+
+        {/* Arrow */}
+        <svg width="60" height="24" viewBox="0 0 60 24" className="shrink-0 hidden sm:block">
+          <path d="M0 12 L50 12" stroke="hsl(var(--muted-foreground))" strokeWidth="2" fill="none" />
+          <path d="M45 6 L55 12 L45 18" stroke="hsl(var(--muted-foreground))" strokeWidth="2" fill="none" />
+        </svg>
+
+        {/* Machine Learning */}
+        <div className="flex flex-col items-center text-center gap-3">
+          <div className="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-2xl p-6 shadow-lg">
+            <Brain className="h-16 w-16 text-white" />
+          </div>
+          <p className="text-sm font-bold text-foreground">Machine Learning</p>
+        </div>
+
+        {/* Arrow */}
+        <svg width="60" height="24" viewBox="0 0 60 24" className="shrink-0 hidden sm:block">
+          <path d="M0 12 L50 12" stroke="hsl(var(--muted-foreground))" strokeWidth="2" fill="none" />
+          <path d="M45 6 L55 12 L45 18" stroke="hsl(var(--muted-foreground))" strokeWidth="2" fill="none" />
+        </svg>
+
+        {/* Pessoas com perfil semelhante */}
+        <div className="flex flex-col items-center text-center gap-3">
+          <div className="bg-card border border-border rounded-2xl p-6 shadow-lg">
+            <div className="grid grid-cols-2 gap-2">
+              <UsersIcon className="h-10 w-10 text-foreground" />
+              <UsersIcon className="h-10 w-10 text-foreground" />
+              <UsersIcon className="h-10 w-10 text-foreground" />
+              <UsersIcon className="h-10 w-10 text-foreground" />
+            </div>
+          </div>
+          <p className="text-sm font-bold text-foreground max-w-[180px]">Pessoas com perfil semelhante ao público de interesse.</p>
+        </div>
+      </div>
+    </div>
   </DashboardLayout>
   );
 };
