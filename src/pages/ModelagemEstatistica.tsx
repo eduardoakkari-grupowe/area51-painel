@@ -1004,6 +1004,80 @@ const ModelagemEstatistica = () => {
         </div>
       </div>
     </div>
+
+    {/* ==================== RENDA ==================== */}
+    <div id="renda" className="mt-10 scroll-mt-6">
+      <h2 className="text-xl font-bold text-foreground mb-6 flex items-center gap-2">
+        <Users className="h-5 w-5 text-primary" />
+        Renda
+      </h2>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Gráfico */}
+        <div className="bg-card border border-border rounded-xl p-6">
+          <h3 className="text-sm font-bold text-foreground mb-4 text-center">Quantidade de Clientes por Cluster</h3>
+          <ResponsiveContainer width="100%" height={350}>
+            <BarChart data={[
+              { cluster: "Classe Média\nEntrada", total: 21498, pct: "65.9%", color: "hsl(210, 55%, 55%)" },
+              { cluster: "Classe Alta\nPremium", total: 8268, pct: "25.4%", color: "hsl(210, 45%, 65%)" },
+              { cluster: "Elite\nHigh-End", total: 2453, pct: "7.5%", color: "hsl(30, 70%, 55%)" },
+              { cluster: "Ultra-Ricos\nVIPs", total: 384, pct: "1.2%", color: "hsl(350, 65%, 50%)" },
+            ]} margin={{ top: 30, right: 20, left: 20, bottom: 20 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+              <XAxis dataKey="cluster" tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 11 }} />
+              <YAxis tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 11 }} />
+              <Tooltip contentStyle={{ backgroundColor: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: "8px", color: "hsl(var(--foreground))" }} />
+              <Bar dataKey="total" radius={[4, 4, 0, 0]} label={{ position: "top", fill: "hsl(var(--foreground))", fontSize: 11, formatter: (_: unknown, __: unknown, index: number) => {
+                const items = [
+                  { total: "21,498", pct: "(65.9%)" },
+                  { total: "8,268", pct: "(25.4%)" },
+                  { total: "2,453", pct: "(7.5%)" },
+                  { total: "384", pct: "(1.2%)" },
+                ];
+                return `${items[index]?.total}\n${items[index]?.pct}`;
+              }}}>
+                <Cell fill="hsl(210, 55%, 55%)" />
+                <Cell fill="hsl(210, 45%, 65%)" />
+                <Cell fill="hsl(30, 70%, 55%)" />
+                <Cell fill="hsl(350, 65%, 50%)" />
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+
+        {/* Tabela */}
+        <div className="bg-card border border-border rounded-xl p-6 overflow-auto">
+          <Table>
+            <TableHeader>
+              <TableRow className="bg-primary/10">
+                <TableHead className="text-foreground font-bold text-xs">Cluster</TableHead>
+                <TableHead className="text-foreground font-bold text-xs text-right">Clientes</TableHead>
+                <TableHead className="text-foreground font-bold text-xs">Faixa de Renda</TableHead>
+                <TableHead className="text-foreground font-bold text-xs text-right">Gasto Médio</TableHead>
+                <TableHead className="text-foreground font-bold text-xs text-right">Freq. Média</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {[
+                { cluster: "Classe Média / Entrada", clientes: "21.498", faixa: "R$ 1.562 a R$ 22.779", gasto: "R$ 269,35", freq: "1,57" },
+                { cluster: "Classe Alta / Premium", clientes: "8.268", faixa: "R$ 22.782 a R$ 53.752", gasto: "R$ 331,72", freq: "1,72" },
+                { cluster: "Elite / High-End", clientes: "2.453", faixa: "R$ 53.780 a R$ 117.919", gasto: "R$ 407,57", freq: "1,82" },
+                { cluster: "Ultra-Ricos / VIPs", clientes: "384", faixa: "R$ 118.461 a R$ 919.912", gasto: "R$ 411,80", freq: "1,77" },
+              ].map((row) => (
+                <TableRow key={row.cluster}>
+                  <TableCell className="text-sm font-medium">{row.cluster}</TableCell>
+                  <TableCell className="text-sm text-right">{row.clientes}</TableCell>
+                  <TableCell className="text-sm">{row.faixa}</TableCell>
+                  <TableCell className="text-sm text-right">{row.gasto}</TableCell>
+                  <TableCell className="text-sm text-right">{row.freq}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </div>
+      </div>
+    </div>
+
   </DashboardLayout>
   );
 };
