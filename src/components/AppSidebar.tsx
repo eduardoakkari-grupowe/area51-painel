@@ -132,6 +132,29 @@ export function AppSidebar() {
                   {!collapsed && (
                     <CollapsibleContent>
                       <SidebarMenu className="ml-4 mt-1 border-l border-border/50 pl-2 overflow-hidden">
+                        {modelagemScrollItems.map((scrollItem) => {
+                          const isScrollActive = location.pathname === "/modelagem-estatistica" && location.hash === `#${scrollItem.hash}`;
+                          return (
+                            <SidebarMenuItem key={scrollItem.hash}>
+                              <SidebarMenuButton asChild>
+                                <button
+                                  onClick={() => {
+                                    if (location.pathname !== "/modelagem-estatistica") {
+                                      navigate(`/modelagem-estatistica#${scrollItem.hash}`);
+                                    } else {
+                                      const el = document.getElementById(scrollItem.hash);
+                                      el?.scrollIntoView({ behavior: "smooth" });
+                                      window.history.replaceState(null, "", `#${scrollItem.hash}`);
+                                    }
+                                  }}
+                                  className={`flex items-center px-3 py-1.5 rounded-md text-xs transition-all duration-200 w-full text-left ${isScrollActive ? "bg-primary/10 text-primary font-medium" : "text-muted-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"}`}
+                                >
+                                  <span>{scrollItem.title}</span>
+                                </button>
+                              </SidebarMenuButton>
+                            </SidebarMenuItem>
+                          );
+                        })}
                         {modelagemSubItems.map((sub) => {
                           const subActive = location.pathname === sub.url;
                           return (
