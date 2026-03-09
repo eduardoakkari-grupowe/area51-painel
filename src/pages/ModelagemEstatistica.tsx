@@ -612,13 +612,8 @@ const ModelagemEstatistica = () => {
                 <YAxis tick={{ fontSize: 11, fill: 'hsl(var(--muted-foreground))' }} label={{ value: "Quantidade", angle: -90, position: "insideLeft", offset: 0, style: { fill: 'hsl(var(--muted-foreground))' } }} />
                 <Tooltip contentStyle={{ background: 'hsl(var(--card))', border: '1px solid hsl(var(--border))', borderRadius: '8px', color: 'hsl(var(--foreground))' }} formatter={(value: number, name: string, props: any) => [`${value.toLocaleString()} (${props.payload.percent})`, 'Clientes']} />
                 <Bar dataKey="quantidade" radius={[4, 4, 0, 0]}>
-                  {[
-                    { fill: "hsl(207, 44%, 49%)" },
-                    { fill: "hsl(40, 65%, 52%)" },
-                    { fill: "hsl(25, 85%, 60%)" },
-                    { fill: "hsl(330, 55%, 38%)" },
-                  ].map((entry, index) => (
-                    <rect key={index} fill={entry.fill} />
+                  {["hsl(207, 44%, 49%)", "hsl(40, 65%, 52%)", "hsl(25, 85%, 60%)", "hsl(330, 55%, 38%)"].map((color, index) => (
+                    <Cell key={index} fill={color} />
                   ))}
                 </Bar>
               </BarChart>
