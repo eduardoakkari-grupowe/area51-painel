@@ -771,10 +771,10 @@ const ModelagemEstatistica = () => {
                 { escolaridade: "Analfabeto", quantidade: 2, percent: "0.0%" },
                 { escolaridade: "Sem Informação", quantidade: 1184, percent: "3.6%" },
               ]}
-              margin={{ top: 20, right: 20, left: 10, bottom: 80 }}
+              margin={{ top: 20, right: 20, left: 10, bottom: 28 }}
             >
               <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-              <XAxis dataKey="escolaridade" tick={{ fontSize: 10, fill: 'hsl(var(--muted-foreground))' }} angle={-45} textAnchor="end" interval={0} height={80} />
+              <XAxis dataKey="escolaridade" tick={{ fontSize: 10, fill: 'hsl(var(--muted-foreground))' }} angle={-45} textAnchor="end" interval={0} height={28} />
               <YAxis tick={{ fontSize: 11, fill: 'hsl(var(--muted-foreground))' }} label={{ value: "Número de Clientes", angle: -90, position: "insideLeft", offset: 0, style: { fill: 'hsl(var(--muted-foreground))', fontSize: 11 } }} />
               <Tooltip contentStyle={{ background: 'hsl(var(--card))', border: '1px solid hsl(var(--border))', borderRadius: '8px', color: 'hsl(var(--foreground))' }} labelStyle={{ color: 'hsl(var(--foreground))', fontWeight: 600, marginBottom: 4 }} itemStyle={{ color: 'hsl(var(--foreground))' }} formatter={(value: number, name: string, props: any) => [`${value.toLocaleString()} (${props.payload.percent})`, 'Clientes']} />
               <Bar dataKey="quantidade" radius={[4, 4, 0, 0]} fill="hsl(var(--accent))" />
