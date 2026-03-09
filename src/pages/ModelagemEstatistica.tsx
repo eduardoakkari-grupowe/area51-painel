@@ -782,7 +782,6 @@ const ModelagemEstatistica = () => {
           </ResponsiveContainer>
         </div>
       </div>
-    </div>
 
       {/* Considerações + Tabela Escolaridade */}
       <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
