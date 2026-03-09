@@ -278,6 +278,78 @@ const ModelagemEstatistica = () => {
         </div>
       </div>
     </div>
+
+    {/* Submenu Sexo */}
+    <div id="sexo" className="mt-10 scroll-mt-6">
+      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3">
+        <div className="h-2.5 w-2.5 rounded-full bg-accent" />
+        <span className="text-xl font-semibold text-foreground">Sexo</span>
+      </div>
+
+      <div className="mt-6 flex flex-col lg:flex-row gap-8">
+        {/* Left: Histogram */}
+        <div className="flex-1 min-w-0">
+          <h3 className="text-lg font-bold text-foreground mb-1">Idade (Homens e Mulheres)</h3>
+          <p className="text-xs text-muted-foreground mb-4">Distribuição de Idade dos Compradores</p>
+          <div className="w-full h-[320px]">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={idadeDistribuicao} margin={{ top: 5, right: 20, left: 10, bottom: 25 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                <XAxis dataKey="idade" label={{ value: "Idade", position: "insideBottom", offset: -15, style: { fill: 'hsl(var(--muted-foreground))' } }} tick={{ fontSize: 11, fill: 'hsl(var(--muted-foreground))' }} />
+                <YAxis label={{ value: "Frequência", angle: -90, position: "insideLeft", offset: 0, style: { fill: 'hsl(var(--muted-foreground))' } }} tick={{ fontSize: 11, fill: 'hsl(var(--muted-foreground))' }} />
+                <Tooltip contentStyle={{ background: 'hsl(var(--card))', border: '1px solid hsl(var(--border))', borderRadius: '8px', color: 'hsl(var(--foreground))' }} />
+                <Bar dataKey="frequencia" fill="hsl(var(--primary))" radius={[2, 2, 0, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        {/* Right: Insights + Table */}
+        <div className="flex-1 min-w-0">
+          <h3 className="text-base font-bold text-primary mb-3">O Perfil Geracional e o Consumo</h3>
+          <ul className="space-y-3 mb-6">
+            <li className="flex items-start gap-2">
+              <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
+              <span className="text-sm text-muted-foreground"><strong className="text-foreground">O Grupo Dominante (36-45 anos):</strong> É o maior volume da base (13.728 clientes). Eles gastam em média R$ 291,29 e são o motor do e-commerce.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
+              <span className="text-sm text-muted-foreground"><strong className="text-foreground">Os "Heavy Spenders" (56 anos ou mais):</strong> Embora em menor número, são os clientes que possuem o maior ticket médio (R$ 345,64 para quem tem 66+) e a maior frequência de compra (1.81). Isso indica que o público sênior, quando fidelizado, é o mais rentável.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
+              <span className="text-sm text-muted-foreground"><strong className="text-foreground">Os Jovens (18-25 anos):</strong> Representam apenas 305 clientes. O ticket médio é o menor (R$ 197,38) e a frequência também.</span>
+            </li>
+          </ul>
+
+          {/* Table */}
+          <div className="overflow-auto">
+            <Table>
+              <TableHeader>
+                <TableRow className="bg-primary/10">
+                  <TableHead className="text-foreground font-bold text-xs">Faixa Etária</TableHead>
+                  <TableHead className="text-foreground font-bold text-xs">Volume de Clientes</TableHead>
+                  <TableHead className="text-foreground font-bold text-xs">Gasto Médio (M)</TableHead>
+                  <TableHead className="text-foreground font-bold text-xs">Frequência</TableHead>
+                  <TableHead className="text-foreground font-bold text-xs">Renda Média</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                {idadeTabela.map((row) => (
+                  <TableRow key={row.faixa}>
+                    <TableCell className="text-sm font-medium">{row.faixa}</TableCell>
+                    <TableCell className="text-sm">{row.volume}</TableCell>
+                    <TableCell className="text-sm">{row.gasto}</TableCell>
+                    <TableCell className="text-sm">{row.frequencia}</TableCell>
+                    <TableCell className="text-sm">{row.renda}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+        </div>
+      </div>
+    </div>
   </DashboardLayout>
   );
 };
