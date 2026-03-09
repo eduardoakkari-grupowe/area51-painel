@@ -33,13 +33,13 @@ const modelagemScrollItems = [
   { title: "Metodologia Look Alike", hash: "metodologia-look-alike" },
   { title: "Idade", hash: "sexo" },
   { title: "Sexo X Valor", hash: "sexo-x-valor" },
+  { title: "Compras (Qtde X Valor)", hash: "compras-quantidade-valor" },
 ];
 
 const modelagemSubItems = [
   
   
   
-  { title: "Compras", url: "/modelagem-estatistica/compras" },
   { title: "Escolaridade", url: "/modelagem-estatistica/escolaridade" },
   { title: "Conta Bancária Digital", url: "/modelagem-estatistica/conta-bancaria-digital" },
   { title: "Posse de Imóvel", url: "/modelagem-estatistica/posse-de-imovel" },
