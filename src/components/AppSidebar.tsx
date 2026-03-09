@@ -90,7 +90,7 @@ export function AppSidebar() {
         <img src={area51Logo} alt="area51" className={`transition-all duration-300 ${collapsed ? "w-10" : "w-[160px] h-auto"}`} />
       </div>
 
-      <SidebarContent className="pt-4">
+      <SidebarContent className="pt-4 overflow-x-hidden">
         <SidebarGroup>
           <SidebarGroupLabel className="text-[10px] uppercase tracking-widest text-muted-foreground/60 px-4 mb-2">
             Menu
