@@ -1,5 +1,5 @@
 import { DashboardLayout } from "@/components/DashboardLayout";
-import { Users, ShoppingCart, Target } from "lucide-react";
+import { Users, ShoppingCart, AlertTriangle } from "lucide-react";
 
 const objetivos = [
   "Estudo do perfil de clientes da Novvo;",
