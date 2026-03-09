@@ -196,9 +196,9 @@ const ModelagemEstatistica = () => {
 
         {/* Google Ads - arrow from Prospect going down-right */}
         <div className="absolute flex items-center gap-6" style={{ left: '310px', top: '370px' }}>
-          <svg width="220" height="36" viewBox="0 0 147 24" className="shrink-0">
-            <path d="M0 12 L137 12" stroke="hsl(260, 10%, 55%)" strokeWidth="2" fill="none" />
-            <path d="M132 6 L142 12 L132 18" stroke="hsl(260, 10%, 55%)" strokeWidth="2" fill="none" />
+          <svg width="320" height="36" viewBox="0 0 213 24" className="shrink-0">
+            <path d="M0 12 L203 12" stroke="hsl(260, 10%, 55%)" strokeWidth="2" fill="none" />
+            <path d="M198 6 L208 12 L198 18" stroke="hsl(260, 10%, 55%)" strokeWidth="2" fill="none" />
           </svg>
           <div className="flex items-center gap-3">
             <img src={googleAdsIcon} alt="Google Ads" className="h-12 w-12" />
