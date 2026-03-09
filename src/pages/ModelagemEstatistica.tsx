@@ -9,7 +9,7 @@ import googleAdsText from "@/assets/google-ads-text.png";
 import metaIcon from "@/assets/meta-icon.png";
 import metaText from "@/assets/meta-text.png";
 import metaApps from "@/assets/meta-apps.png";
-import boxplotSexoValor from "@/assets/tools/boxplot_sexo_valor.png";
+
 
 const etapas = [
   {
