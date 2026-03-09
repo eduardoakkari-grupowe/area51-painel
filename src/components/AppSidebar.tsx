@@ -17,6 +17,17 @@ import {
 
 const mainItems = [
   { title: "Dashboard", url: "/", icon: LayoutDashboard },
+  { title: "Notícias We / Clientes", url: "/noticias", icon: Newspaper },
+  { title: "Notícias WT.AG / Clientes", url: "/noticias-wtag", icon: Newspaper },
+  { title: "Notícias area51 / Clientes", url: "/noticias-area51", icon: Newspaper },
+  { title: "Wemetrics", url: "/wemetrics", icon: BarChart3 },
+  { title: "Ferramentas", url: "/ferramentas", icon: Wrench },
+  { title: "Logos We / Clientes", url: "/logotipos", icon: Image },
+  { title: "Logos WT.AG / Clientes", url: "/logotipos-wtag", icon: Image },
+  { title: "Credenciais", url: "/credenciais", icon: IdCard },
+  { title: "Onboarding", url: "/onboarding", icon: Video },
+  { title: "Tutoriais", url: "/tutoriais", icon: GraduationCap },
+  { title: "Eventos", url: "/eventos", icon: Megaphone },
   { title: "Usuários", url: "/usuarios", icon: Users },
 ];
 
