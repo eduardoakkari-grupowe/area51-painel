@@ -147,6 +147,7 @@ const ModelagemEstatistica = () => {
       </div>
     </div>
   </DashboardLayout>
-);
+  );
+};
 
 export default ModelagemEstatistica;
