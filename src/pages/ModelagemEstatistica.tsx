@@ -1,5 +1,13 @@
 import { DashboardLayout } from "@/components/DashboardLayout";
-import { Users, ShoppingCart } from "lucide-react";
+import { Users, ShoppingCart, Target } from "lucide-react";
+
+const objetivos = [
+  "Estudo do perfil de clientes da Novvo;",
+  "Criação das Personas, com a identificação dos segmentos onde há predomínio de \"clientes\";",
+  "Desenvolvimento de modelo de Look Alike, tendo por objetivo identificar na area51 pessoas que possuem perfil semelhante aos atuais clientes, visando o desenvolvimento de ações de prospecção anonimizadas;",
+  "Estudo comparativo do perfil de clientes com perfis de afinidade area51;",
+  "Avaliação de perfis com taxa de recorrência para a prospecção de clientes;",
+];
 
 const ModelagemEstatistica = () => (
   <DashboardLayout>
@@ -8,7 +16,15 @@ const ModelagemEstatistica = () => (
       <p className="text-sm text-muted-foreground mt-1">Verifique a modelagem estatística da base de clientes e ou compradores</p>
     </div>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-8 max-w-2xl">
+    {/* Submenu Dados utilizados */}
+    <div className="mt-8">
+      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-4 py-2">
+        <div className="h-2 w-2 rounded-full bg-primary" />
+        <span className="text-sm font-semibold text-foreground">Dados utilizados</span>
+      </div>
+    </div>
+
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4 max-w-2xl">
       {/* Card Clientes */}
       <div className="rounded-xl overflow-hidden shadow-lg">
         <div className="bg-primary flex items-center gap-4 p-6">
@@ -40,6 +56,23 @@ const ModelagemEstatistica = () => (
           <p className="text-xs text-muted-foreground">Base de compras registradas para análise de perfil e recorrência.</p>
         </div>
       </div>
+    </div>
+
+    {/* Submenu Objetivos */}
+    <div className="mt-10">
+      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-4 py-2">
+        <div className="h-2 w-2 rounded-full bg-accent" />
+        <span className="text-sm font-semibold text-foreground">Objetivos</span>
+      </div>
+
+      <ul className="mt-4 space-y-3 max-w-3xl">
+        {objetivos.map((item, i) => (
+          <li key={i} className="flex items-start gap-3">
+            <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
+            <span className="text-sm text-muted-foreground">{item}</span>
+          </li>
+        ))}
+      </ul>
     </div>
   </DashboardLayout>
 );
