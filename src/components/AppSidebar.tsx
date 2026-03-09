@@ -181,13 +181,10 @@ export function AppSidebar() {
         </SidebarGroup>
       </SidebarContent>
 
-      <SidebarFooter className="p-3 border-t border-sidebar-border space-y-2">
+      <SidebarFooter className="p-3 border-t border-sidebar-border">
         <button className={`flex items-center gap-3 py-2.5 rounded-lg text-sm text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground transition-all duration-200 w-full ${collapsed ? "justify-center px-0" : "px-4"}`}>
           <LogOut className="h-[18px] w-[18px] shrink-0" />
           {!collapsed && <span>Sair</span>}
-        </button>
-        <button onClick={toggleSidebar} className="flex items-center justify-center w-8 h-8 rounded-lg text-muted-foreground hover:text-foreground hover:bg-sidebar-accent transition-colors">
-          <ChevronLeft className={`h-4 w-4 transition-transform duration-300 ${collapsed ? "rotate-180" : ""}`} />
         </button>
       </SidebarFooter>
     </Sidebar>
