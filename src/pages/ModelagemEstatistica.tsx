@@ -226,10 +226,6 @@ const ModelagemEstatistica = () => {
         </li>
         <li className="flex items-start gap-3">
           <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
-          <span className="text-sm text-muted-foreground">Técnica Supervisionada ou Semi-Supervisionada;</span>
-        </li>
-        <li className="flex items-start gap-3">
-          <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
           <span className="text-sm text-muted-foreground">O score de similaridade possibilita ordenar os indivíduos em ordem decrescente de similaridade, ou seja, através dele pode-se selecionar os top 1% mais semelhantes ao público de interesse, visando o desenvolvimento de ações de prospecção;</span>
         </li>
         <li className="flex items-start gap-3">
