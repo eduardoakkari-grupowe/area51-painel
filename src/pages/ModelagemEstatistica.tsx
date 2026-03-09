@@ -159,7 +159,7 @@ const ModelagemEstatistica = () => {
         <span className="text-sm font-semibold text-foreground">Aquário</span>
       </div>
 
-      <div className="mt-6 flex flex-col lg:flex-row items-center gap-12 lg:gap-24">
+      <div className="mt-6 relative" style={{ minHeight: '510px' }}>
         {/* Concentric circles */}
         <div className="relative w-[510px] h-[510px] shrink-0">
           {/* Mercado Total - outer */}
@@ -179,33 +179,30 @@ const ModelagemEstatistica = () => {
           </div>
         </div>
 
-        {/* Arrows and logos */}
-        <div className="flex flex-col gap-14">
-          {/* Meta */}
-          <div className="flex items-center gap-6">
-            <svg width="90" height="36" viewBox="0 0 60 24" className="shrink-0">
-              <path d="M0 12 L50 12" stroke="hsl(260, 10%, 55%)" strokeWidth="2" fill="none" />
-              <path d="M45 6 L55 12 L45 18" stroke="hsl(260, 10%, 55%)" strokeWidth="2" fill="none" />
-            </svg>
-            <div className="flex flex-col items-start gap-3">
-              <div className="flex items-center gap-3">
-                <img src={metaIcon} alt="Meta" className="h-12 w-auto" />
-                <img src={metaText} alt="Meta" className="h-9 invert brightness-0 invert" style={{ filter: 'brightness(0) invert(1)' }} />
-              </div>
-              <img src={metaApps} alt="Facebook, Messenger, WhatsApp, Instagram" className="h-12" />
-            </div>
-          </div>
-
-          {/* Google Ads */}
-          <div className="flex items-center gap-6">
-            <svg width="90" height="36" viewBox="0 0 60 24" className="shrink-0">
-              <path d="M0 12 L50 12" stroke="hsl(260, 10%, 55%)" strokeWidth="2" fill="none" />
-              <path d="M45 6 L55 12 L45 18" stroke="hsl(260, 10%, 55%)" strokeWidth="2" fill="none" />
-            </svg>
+        {/* Meta - arrow from Prospect going up-right */}
+        <div className="absolute flex items-center gap-6" style={{ left: '350px', top: '280px' }}>
+          <svg width="120" height="36" viewBox="0 0 80 24" className="shrink-0">
+            <path d="M0 12 L70 12" stroke="hsl(260, 10%, 55%)" strokeWidth="2" fill="none" />
+            <path d="M65 6 L75 12 L65 18" stroke="hsl(260, 10%, 55%)" strokeWidth="2" fill="none" />
+          </svg>
+          <div className="flex flex-col items-start gap-3">
             <div className="flex items-center gap-3">
-              <img src={googleAdsIcon} alt="Google Ads" className="h-12 w-12" />
-              <img src={googleAdsText} alt="Google Ads" className="h-9" />
+              <img src={metaIcon} alt="Meta" className="h-12 w-auto" />
+              <img src={metaText} alt="Meta" className="h-9" style={{ filter: 'brightness(0) invert(1)' }} />
             </div>
+            <img src={metaApps} alt="Facebook, Messenger, WhatsApp, Instagram" className="h-12" />
+          </div>
+        </div>
+
+        {/* Google Ads - arrow from Prospect going down-right */}
+        <div className="absolute flex items-center gap-6" style={{ left: '350px', top: '400px' }}>
+          <svg width="120" height="36" viewBox="0 0 80 24" className="shrink-0">
+            <path d="M0 12 L70 12" stroke="hsl(260, 10%, 55%)" strokeWidth="2" fill="none" />
+            <path d="M65 6 L75 12 L65 18" stroke="hsl(260, 10%, 55%)" strokeWidth="2" fill="none" />
+          </svg>
+          <div className="flex items-center gap-3">
+            <img src={googleAdsIcon} alt="Google Ads" className="h-12 w-12" />
+            <img src={googleAdsText} alt="Google Ads" className="h-9" />
           </div>
         </div>
       </div>
