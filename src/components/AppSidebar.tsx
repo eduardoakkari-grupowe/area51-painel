@@ -50,6 +50,7 @@ const modelagemScrollItems = [
   { title: "Posse de Moto", hash: "posse-de-moto" },
   { title: "Fãs de Celebridade", hash: "fas-de-celebridade" },
   { title: "Viagens e Turismo", hash: "viagens-e-turismo" },
+  { title: "Personas", hash: "personas" },
 ];
 
 const modelagemSubItems: { title: string; url: string }[] = [];
