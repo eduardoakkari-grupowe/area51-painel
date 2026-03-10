@@ -2330,6 +2330,88 @@ const ModelagemEstatistica = () => {
       </div>
     </div>
 
+    {/* ==================== AQUÁRIO DE PERSONAS ==================== */}
+    <div id="aquario-de-personas" className="scroll-mt-24 mt-16">
+      <h2 className="text-xl font-bold text-foreground flex items-center gap-2 mb-6">
+        <span className="inline-block w-2.5 h-2.5 rounded-full bg-primary" />
+        Aquário de Personas
+      </h2>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Tabela */}
+        <div className="bg-card border border-border rounded-xl p-6">
+          <h3 className="text-lg font-bold text-foreground mb-4">Quantidade de Pessoas por Persona e Decil</h3>
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-primary/10">
+                  <th className="border border-border px-3 py-2 text-left font-semibold text-foreground">PersonaId</th>
+                  <th className="border border-border px-3 py-2 text-center font-semibold text-foreground">Decil 1</th>
+                  <th className="border border-border px-3 py-2 text-center font-semibold text-foreground">Decil 2</th>
+                  <th className="border border-border px-3 py-2 text-center font-semibold text-foreground">Decil 3</th>
+                  <th className="border border-border px-3 py-2 text-center font-semibold text-foreground">Decil 4</th>
+                  <th className="border border-border px-3 py-2 text-center font-semibold text-foreground">Decil 5</th>
+                </tr>
+              </thead>
+              <tbody>
+                {[
+                  { persona: "Pers_1", d1: "1.25M", d2: "1.54M", d3: "1.4M", d4: "723k", d5: "504k" },
+                  { persona: "Pers_2", d1: "40.4k", d2: "672k", d3: "2.38M", d4: "3.03M", d5: "2.95M" },
+                  { persona: "Pers_3", d1: "33.5k", d2: "92.4k", d3: "209k", d4: "277k", d5: "556k" },
+                  { persona: "Pers_4", d1: "", d2: "6.08k", d3: "228k", d4: "977k", d5: "2.26M" },
+                  { persona: "Pers_5", d1: "", d2: "8.38k", d3: "410k", d4: "2.13M", d5: "5.56M" },
+                ].map((row, i) => (
+                  <tr key={i} className={i % 2 === 0 ? "bg-card" : "bg-muted/30"}>
+                    <td className="border border-border px-3 py-2 font-medium text-foreground">{row.persona}</td>
+                    <td className="border border-border px-3 py-2 text-center text-muted-foreground">{row.d1}</td>
+                    <td className="border border-border px-3 py-2 text-center text-muted-foreground">{row.d2}</td>
+                    <td className="border border-border px-3 py-2 text-center text-muted-foreground">{row.d3}</td>
+                    <td className="border border-border px-3 py-2 text-center text-muted-foreground">{row.d4}</td>
+                    <td className="border border-border px-3 py-2 text-center text-muted-foreground">{row.d5}</td>
+                  </tr>
+                ))}
+                <tr className="bg-primary/10 font-bold">
+                  <td className="border border-border px-3 py-2 text-right text-foreground">Total (Soma)</td>
+                  <td className="border border-border px-3 py-2 text-center text-foreground">1.33M</td>
+                  <td className="border border-border px-3 py-2 text-center text-foreground">2.32M</td>
+                  <td className="border border-border px-3 py-2 text-center text-foreground">4.63M</td>
+                  <td className="border border-border px-3 py-2 text-center text-foreground">7.14M</td>
+                  <td className="border border-border px-3 py-2 text-center text-foreground">11.8M</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        {/* Gráfico de barras agrupadas */}
+        <div className="bg-card border border-border rounded-xl p-6">
+          <h3 className="text-lg font-bold text-foreground mb-4">Distribuição por Decil</h3>
+          <div className="h-[350px]">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={[
+                { decil: "Decil 1", Pers_1: 1250000, Pers_2: 40400, Pers_3: 33500, Pers_4: 0, Pers_5: 0 },
+                { decil: "Decil 2", Pers_1: 1540000, Pers_2: 672000, Pers_3: 92400, Pers_4: 6080, Pers_5: 8380 },
+                { decil: "Decil 3", Pers_1: 1400000, Pers_2: 2380000, Pers_3: 209000, Pers_4: 228000, Pers_5: 410000 },
+                { decil: "Decil 4", Pers_1: 723000, Pers_2: 3030000, Pers_3: 277000, Pers_4: 977000, Pers_5: 2130000 },
+                { decil: "Decil 5", Pers_1: 504000, Pers_2: 2950000, Pers_3: 556000, Pers_4: 2260000, Pers_5: 5560000 },
+              ]} margin={{ top: 10, right: 10, left: 10, bottom: 5 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                <XAxis dataKey="decil" tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }} />
+                <YAxis tick={{ fontSize: 10, fill: "hsl(var(--muted-foreground))" }} tickFormatter={(v: number) => v >= 1000000 ? `${(v / 1000000).toFixed(1)}M` : v >= 1000 ? `${(v / 1000).toFixed(0)}k` : String(v)} />
+                <Tooltip formatter={(value: number) => value >= 1000000 ? `${(value / 1000000).toFixed(2)}M` : value >= 1000 ? `${(value / 1000).toFixed(1)}k` : String(value)} contentStyle={{ backgroundColor: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: "8px", fontSize: "12px" }} />
+                <Legend wrapperStyle={{ fontSize: "11px" }} />
+                <Bar dataKey="Pers_1" fill="hsl(var(--primary))" radius={[2, 2, 0, 0]} />
+                <Bar dataKey="Pers_2" fill="hsl(var(--accent))" radius={[2, 2, 0, 0]} />
+                <Bar dataKey="Pers_3" fill="hsl(var(--secondary))" radius={[2, 2, 0, 0]} />
+                <Bar dataKey="Pers_4" fill="hsl(var(--warning))" radius={[2, 2, 0, 0]} />
+                <Bar dataKey="Pers_5" fill="hsl(var(--destructive))" radius={[2, 2, 0, 0]} />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </DashboardLayout>
   );
 };

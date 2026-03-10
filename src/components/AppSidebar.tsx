@@ -51,6 +51,7 @@ const modelagemScrollItems = [
   { title: "Fãs de Celebridade", hash: "fas-de-celebridade" },
   { title: "Viagens e Turismo", hash: "viagens-e-turismo" },
   { title: "Personas", hash: "personas" },
+  { title: "Aquário de Personas", hash: "aquario-de-personas" },
 ];
 
 const modelagemSubItems: { title: string; url: string }[] = [];
