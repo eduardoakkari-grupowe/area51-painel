@@ -923,7 +923,7 @@ const ModelagemEstatistica = () => {
                   { uf: "SE", tier: "secundario" }, { uf: "TO", tier: "secundario" }, { uf: "RO", tier: "secundario" },
                   { uf: "AC", tier: "secundario" }, { uf: "RR", tier: "secundario" }, { uf: "AP", tier: "secundario" },
                 ].map((entry, index) => (
-                  <Cell key={`cell-${index}`} fill={entry.tier === "top" ? "hsl(var(--accent))" : entry.tier === "expansao" ? "hsl(36, 70%, 50%)" : "hsl(210, 60%, 40%)"} />
+                  <Cell key={`cell-${index}`} fill={entry.tier === "top" ? "hsl(var(--accent))" : entry.tier === "expansao" ? "hsl(var(--primary))" : "hsl(var(--secondary))"} />
                 ))}
               </Bar>
             </BarChart>
