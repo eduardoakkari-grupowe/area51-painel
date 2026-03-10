@@ -931,77 +931,66 @@ const ModelagemEstatistica = () => {
         </div>
       </div>
 
-      {/* Tabela Estados em 2 colunas */}
-      <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div className="bg-card border border-border rounded-xl p-6 overflow-auto">
-          <Table>
-            <TableHeader>
-              <TableRow className="bg-primary/10">
-                <TableHead className="text-foreground font-bold text-xs">Estado (UF)</TableHead>
-                <TableHead className="text-foreground font-bold text-xs text-right">Qtde de Clientes</TableHead>
-                <TableHead className="text-foreground font-bold text-xs text-right">Participação (%)</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {[
-                { uf: "SP", qtd: "14.698", pct: "45,07%" },
-                { uf: "RJ", qtd: "3.076", pct: "9,43%" },
-                { uf: "MG", qtd: "3.010", pct: "9,23%" },
-                { uf: "PR", qtd: "1.908", pct: "5,85%" },
-                { uf: "SC", qtd: "1.591", pct: "4,88%" },
-                { uf: "RS", qtd: "1.358", pct: "4,16%" },
-                { uf: "DF", qtd: "1.324", pct: "4,06%" },
-                { uf: "GO", qtd: "883", pct: "2,71%" },
-                { uf: "BA", qtd: "867", pct: "2,66%" },
-                { uf: "PE", qtd: "691", pct: "2,12%" },
-                { uf: "ES", qtd: "518", pct: "1,59%" },
-                { uf: "CE", qtd: "450", pct: "1,38%" },
-                { uf: "MS", qtd: "389", pct: "1,19%" },
-                { uf: "MT", qtd: "353", pct: "1,08%" },
-              ].map((row) => (
-                <TableRow key={row.uf}>
-                  <TableCell className="text-sm font-medium">{row.uf}</TableCell>
-                  <TableCell className="text-sm text-right">{row.qtd}</TableCell>
-                  <TableCell className="text-sm text-right">{row.pct}</TableCell>
+      {/* Tabela Estados em 4 colunas */}
+      <div className="mt-6 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-4">
+        {[
+          [
+            { uf: "SP", qtd: "14.698", pct: "45,07%" },
+            { uf: "RJ", qtd: "3.076", pct: "9,43%" },
+            { uf: "MG", qtd: "3.010", pct: "9,23%" },
+            { uf: "PR", qtd: "1.908", pct: "5,85%" },
+            { uf: "SC", qtd: "1.591", pct: "4,88%" },
+            { uf: "RS", qtd: "1.358", pct: "4,16%" },
+            { uf: "DF", qtd: "1.324", pct: "4,06%" },
+          ],
+          [
+            { uf: "GO", qtd: "883", pct: "2,71%" },
+            { uf: "BA", qtd: "867", pct: "2,66%" },
+            { uf: "PE", qtd: "691", pct: "2,12%" },
+            { uf: "ES", qtd: "518", pct: "1,59%" },
+            { uf: "CE", qtd: "450", pct: "1,38%" },
+            { uf: "MS", qtd: "389", pct: "1,19%" },
+            { uf: "MT", qtd: "353", pct: "1,08%" },
+          ],
+          [
+            { uf: "PA", qtd: "226", pct: "0,69%" },
+            { uf: "AL", qtd: "193", pct: "0,59%" },
+            { uf: "MA", qtd: "186", pct: "0,57%" },
+            { uf: "RN", qtd: "183", pct: "0,56%" },
+            { uf: "PB", qtd: "171", pct: "0,52%" },
+            { uf: "PI", qtd: "115", pct: "0,35%" },
+            { uf: "AM", qtd: "114", pct: "0,35%" },
+          ],
+          [
+            { uf: "SE", qtd: "100", pct: "0,31%" },
+            { uf: "TO", qtd: "89", pct: "0,27%" },
+            { uf: "RO", qtd: "68", pct: "0,21%" },
+            { uf: "AC", qtd: "20", pct: "0,06%" },
+            { uf: "RR", qtd: "18", pct: "0,06%" },
+            { uf: "AP", qtd: "14", pct: "0,04%" },
+          ],
+        ].map((group, gi) => (
+          <div key={gi} className="bg-card border border-border rounded-xl p-4 overflow-auto">
+            <Table>
+              <TableHeader>
+                <TableRow className="bg-primary/10">
+                  <TableHead className="text-foreground font-bold text-xs">Estado (UF)</TableHead>
+                  <TableHead className="text-foreground font-bold text-xs text-right">Qtde de Clientes</TableHead>
+                  <TableHead className="text-foreground font-bold text-xs text-right">Participação (%)</TableHead>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </div>
-        <div className="bg-card border border-border rounded-xl p-6 overflow-auto">
-          <Table>
-            <TableHeader>
-              <TableRow className="bg-primary/10">
-                <TableHead className="text-foreground font-bold text-xs">Estado (UF)</TableHead>
-                <TableHead className="text-foreground font-bold text-xs text-right">Qtde de Clientes</TableHead>
-                <TableHead className="text-foreground font-bold text-xs text-right">Participação (%)</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {[
-                { uf: "PA", qtd: "226", pct: "0,69%" },
-                { uf: "AL", qtd: "193", pct: "0,59%" },
-                { uf: "MA", qtd: "186", pct: "0,57%" },
-                { uf: "RN", qtd: "183", pct: "0,56%" },
-                { uf: "PB", qtd: "171", pct: "0,52%" },
-                { uf: "PI", qtd: "115", pct: "0,35%" },
-                { uf: "AM", qtd: "114", pct: "0,35%" },
-                { uf: "SE", qtd: "100", pct: "0,31%" },
-                { uf: "TO", qtd: "89", pct: "0,27%" },
-                { uf: "RO", qtd: "68", pct: "0,21%" },
-                { uf: "AC", qtd: "20", pct: "0,06%" },
-                { uf: "RR", qtd: "18", pct: "0,06%" },
-                { uf: "AP", qtd: "14", pct: "0,04%" },
-              ].map((row) => (
-                <TableRow key={row.uf}>
-                  <TableCell className="text-sm font-medium">{row.uf}</TableCell>
-                  <TableCell className="text-sm text-right">{row.qtd}</TableCell>
-                  <TableCell className="text-sm text-right">{row.pct}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </div>
+              </TableHeader>
+              <TableBody>
+                {group.map((row) => (
+                  <TableRow key={row.uf}>
+                    <TableCell className="text-sm font-medium">{row.uf}</TableCell>
+                    <TableCell className="text-sm text-right">{row.qtd}</TableCell>
+                    <TableCell className="text-sm text-right">{row.pct}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
+        ))}
       </div>
     </div>
 
