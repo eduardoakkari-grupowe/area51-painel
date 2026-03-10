@@ -1394,7 +1394,7 @@ const ModelagemEstatistica = () => {
     <div id="veiculo-0km" className="mt-10 scroll-mt-6">
       <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3 mb-6">
         <div className="h-2.5 w-2.5 rounded-full bg-primary" />
-        <span className="text-xl font-semibold text-foreground">Proprietário de Veículo 0KM</span>
+        <span className="text-xl font-semibold text-foreground">Posse de Automóvel 0KM</span>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
