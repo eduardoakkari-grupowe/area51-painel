@@ -2223,11 +2223,11 @@ const ModelagemEstatistica = () => {
     </div>
 
     {/* ==================== PERSONAS ==================== */}
-    <div id="personas" className="scroll-mt-24 mt-16">
-      <h2 className="text-xl font-bold text-foreground flex items-center gap-2 mb-6">
-        <span className="inline-block w-2.5 h-2.5 rounded-full bg-primary" />
-        Personas
-      </h2>
+    <div id="personas" className="mt-10 scroll-mt-6">
+      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3 mb-6">
+        <div className="h-2.5 w-2.5 rounded-full bg-primary" />
+        <span className="text-xl font-semibold text-foreground">Personas</span>
+      </div>
 
       <div className="bg-card border border-border rounded-xl p-6">
         <h3 className="text-lg font-bold text-foreground mb-4">Metodologia</h3>
@@ -2331,11 +2331,11 @@ const ModelagemEstatistica = () => {
     </div>
 
     {/* ==================== AQUÁRIO DE PERSONAS ==================== */}
-    <div id="aquario-de-personas" className="scroll-mt-24 mt-16">
-      <h2 className="text-xl font-bold text-foreground flex items-center gap-2 mb-6">
-        <span className="inline-block w-2.5 h-2.5 rounded-full bg-primary" />
-        Aquário de Personas
-      </h2>
+    <div id="aquario-de-personas" className="mt-10 scroll-mt-6">
+      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3 mb-6">
+        <div className="h-2.5 w-2.5 rounded-full bg-primary" />
+        <span className="text-xl font-semibold text-foreground">Aquário de Personas</span>
+      </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Tabela */}
