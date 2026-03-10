@@ -490,11 +490,13 @@ const ModelagemEstatistica = () => {
       </div>
 
       <p className="text-sm text-muted-foreground mt-2 mb-4">Distribuição de Valor Gasto por Sexo (Limpando Outliers para Visão)</p>
-      <div className="mt-6 flex flex-col lg:flex-row gap-8">
-        {/* Left: Boxplot chart (custom SVG) */}
-        <div className="lg:w-[450px] shrink-0 bg-card border border-border rounded-xl p-6">
+
+      {/* 3 Boxplots side by side */}
+      <div className="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Boxplot 1 - Valor Monetário */}
+        <div className="bg-card border border-border rounded-xl p-6">
+          <p className="text-sm font-semibold text-foreground mb-4 text-center">Valor Monetário por Sexo</p>
           <svg viewBox="0 0 400 340" className="w-full h-auto">
-            {/* Grid lines */}
             {[0, 200, 400, 600, 800, 1000].map((val, i) => {
               const y = 300 - (val / 1000) * 280;
               return (
@@ -504,55 +506,39 @@ const ModelagemEstatistica = () => {
                 </g>
               );
             })}
-            {/* Y axis label */}
             <text x="14" y="160" textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="11" transform="rotate(-90, 14, 160)">Valor_Monetário</text>
-            {/* X axis label */}
             <text x="210" y="335" textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="12">SEXO</text>
-
-            {/* Male boxplot */}
             {(() => {
               const cx = 145, bw = 70;
               const toY = (v: number) => 300 - (v / 1000) * 280;
               const q1 = 120, med = 180, q3 = 350, min = 50, max = 720;
               return (
                 <g>
-                  {/* Whisker line */}
                   <line x1={cx} y1={toY(max)} x2={cx} y2={toY(min)} stroke="hsl(var(--muted-foreground))" strokeWidth={1.5} />
-                  {/* Whisker caps */}
                   <line x1={cx - 15} y1={toY(max)} x2={cx + 15} y2={toY(max)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
                   <line x1={cx - 15} y1={toY(min)} x2={cx + 15} y2={toY(min)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
-                  {/* Box */}
                   <rect x={cx - bw / 2} y={toY(q3)} width={bw} height={toY(q1) - toY(q3)} fill="hsl(var(--secondary))" stroke="hsl(var(--foreground))" strokeWidth={1} rx={2} />
-                  {/* Median */}
                   <line x1={cx - bw / 2} y1={toY(med)} x2={cx + bw / 2} y2={toY(med)} stroke="hsl(var(--foreground))" strokeWidth={2.5} />
-                  {/* Outlier dots */}
                   {[950, 980, 990, 1000].map((v, i) => (
-                    <circle key={i} cx={cx + (Math.random() - 0.5) * 10} cy={toY(v)} r={2.5} fill="hsl(var(--muted-foreground))" opacity={0.5} />
+                    <circle key={i} cx={cx + (i % 2 === 0 ? -3 : 3)} cy={toY(v)} r={2.5} fill="hsl(var(--muted-foreground))" opacity={0.5} />
                   ))}
                   <text x={cx} y={310} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="13" fontWeight="500">M</text>
                 </g>
               );
             })()}
-
-            {/* Female boxplot */}
             {(() => {
               const cx = 275, bw = 70;
               const toY = (v: number) => 300 - (v / 1000) * 280;
               const q1 = 95, med = 155, q3 = 305, min = 40, max = 615;
               return (
                 <g>
-                  {/* Whisker line */}
                   <line x1={cx} y1={toY(max)} x2={cx} y2={toY(min)} stroke="hsl(var(--muted-foreground))" strokeWidth={1.5} />
-                  {/* Whisker caps */}
                   <line x1={cx - 15} y1={toY(max)} x2={cx + 15} y2={toY(max)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
                   <line x1={cx - 15} y1={toY(min)} x2={cx + 15} y2={toY(min)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
-                  {/* Box */}
                   <rect x={cx - bw / 2} y={toY(q3)} width={bw} height={toY(q1) - toY(q3)} fill="hsl(var(--accent))" stroke="hsl(var(--foreground))" strokeWidth={1} rx={2} />
-                  {/* Median */}
                   <line x1={cx - bw / 2} y1={toY(med)} x2={cx + bw / 2} y2={toY(med)} stroke="hsl(var(--foreground))" strokeWidth={2.5} />
-                  {/* Outlier dots */}
                   {[920, 960, 980, 1000].map((v, i) => (
-                    <circle key={i} cx={cx + (Math.random() - 0.5) * 10} cy={toY(v)} r={2.5} fill="hsl(var(--muted-foreground))" opacity={0.5} />
+                    <circle key={i} cx={cx + (i % 2 === 0 ? -3 : 3)} cy={toY(v)} r={2.5} fill="hsl(var(--muted-foreground))" opacity={0.5} />
                   ))}
                   <text x={cx} y={310} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="13" fontWeight="500">F</text>
                 </g>
@@ -561,28 +547,124 @@ const ModelagemEstatistica = () => {
           </svg>
         </div>
 
-        {/* Right: Perfis */}
-        <div className="flex-1 min-w-0">
-          <div className="space-y-6">
-            <div>
-              <p className="text-sm font-bold text-primary mb-2">1. Perfil Masculino (Maioria e Maior LTV)</p>
-              <ul className="space-y-1 ml-4">
-                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Volume: 18.583 clientes (aprox. 57% da base).</span></li>
-                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Ticket Médio e Gasto: Homens gastam, em média, R$ 316,33, o que é cerca de 16% a mais que as mulheres.</span></li>
-                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Frequência: Também compram com uma frequência ligeiramente maior (1.70 vs 1.53).</span></li>
-                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Interesses: Têm uma penetração maior em Clubes de Vinho (94%) e Consumo de Luxo (90%). Além disso, o perfil de Apostas Online é mais que o dobro do feminino (2.46 vs 1.11%).</span></li>
-              </ul>
-            </div>
+        {/* Boxplot 2 - Ticket Médio */}
+        <div className="bg-card border border-border rounded-xl p-6">
+          <p className="text-sm font-semibold text-foreground mb-4 text-center">Ticket Médio por Sexo</p>
+          <svg viewBox="0 0 400 340" className="w-full h-auto">
+            {[0, 100, 200, 300, 400, 500].map((val, i) => {
+              const y = 300 - (val / 500) * 280;
+              return (
+                <g key={i}>
+                  <line x1="60" y1={y} x2="360" y2={y} stroke="hsl(var(--border))" strokeDasharray="3 3" strokeWidth={0.5} />
+                  <text x="52" y={y + 4} textAnchor="end" fill="hsl(var(--muted-foreground))" fontSize="11">{val}</text>
+                </g>
+              );
+            })}
+            <text x="14" y="160" textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="11" transform="rotate(-90, 14, 160)">Ticket_Médio</text>
+            <text x="210" y="335" textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="12">SEXO</text>
+            {(() => {
+              const cx = 145, bw = 70;
+              const toY = (v: number) => 300 - (v / 500) * 280;
+              const q1 = 150, med = 220, q3 = 350, min = 60, max = 480;
+              return (
+                <g>
+                  <line x1={cx} y1={toY(max)} x2={cx} y2={toY(min)} stroke="hsl(var(--muted-foreground))" strokeWidth={1.5} />
+                  <line x1={cx - 15} y1={toY(max)} x2={cx + 15} y2={toY(max)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
+                  <line x1={cx - 15} y1={toY(min)} x2={cx + 15} y2={toY(min)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
+                  <rect x={cx - bw / 2} y={toY(q3)} width={bw} height={toY(q1) - toY(q3)} fill="hsl(var(--secondary))" stroke="hsl(var(--foreground))" strokeWidth={1} rx={2} />
+                  <line x1={cx - bw / 2} y1={toY(med)} x2={cx + bw / 2} y2={toY(med)} stroke="hsl(var(--foreground))" strokeWidth={2.5} />
+                  <text x={cx} y={310} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="13" fontWeight="500">M</text>
+                </g>
+              );
+            })()}
+            {(() => {
+              const cx = 275, bw = 70;
+              const toY = (v: number) => 300 - (v / 500) * 280;
+              const q1 = 120, med = 185, q3 = 300, min = 45, max = 420;
+              return (
+                <g>
+                  <line x1={cx} y1={toY(max)} x2={cx} y2={toY(min)} stroke="hsl(var(--muted-foreground))" strokeWidth={1.5} />
+                  <line x1={cx - 15} y1={toY(max)} x2={cx + 15} y2={toY(max)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
+                  <line x1={cx - 15} y1={toY(min)} x2={cx + 15} y2={toY(min)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
+                  <rect x={cx - bw / 2} y={toY(q3)} width={bw} height={toY(q1) - toY(q3)} fill="hsl(var(--accent))" stroke="hsl(var(--foreground))" strokeWidth={1} rx={2} />
+                  <line x1={cx - bw / 2} y1={toY(med)} x2={cx + bw / 2} y2={toY(med)} stroke="hsl(var(--foreground))" strokeWidth={2.5} />
+                  <text x={cx} y={310} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="13" fontWeight="500">F</text>
+                </g>
+              );
+            })()}
+          </svg>
+        </div>
 
-            <div>
-              <p className="text-sm font-bold text-primary mb-2">2. Perfil Feminino (Público Qualificado, mas "Light")</p>
-              <ul className="space-y-1 ml-4">
-                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Volume: 13.926 clientes (aprox. 43% da base).</span></li>
-                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Ticket Médio: Gastam em média R$ 271,98.</span></li>
-                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Renda e Score: A renda presumida média das mulheres na base (R$ 18.928) é significativamente menor que a dos homens (R$ 26.894), embora o Score de crédito seja muito similar (795 vs 802).</span></li>
-                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Estratégia: O público feminino parece ser mais cauteloso no ticket inicial ou focado em pacotes menores/individuais.</span></li>
-              </ul>
-            </div>
+        {/* Boxplot 3 - Frequência de Compra */}
+        <div className="bg-card border border-border rounded-xl p-6">
+          <p className="text-sm font-semibold text-foreground mb-4 text-center">Frequência de Compra por Sexo</p>
+          <svg viewBox="0 0 400 340" className="w-full h-auto">
+            {[0, 1, 2, 3, 4, 5].map((val, i) => {
+              const y = 300 - (val / 5) * 280;
+              return (
+                <g key={i}>
+                  <line x1="60" y1={y} x2="360" y2={y} stroke="hsl(var(--border))" strokeDasharray="3 3" strokeWidth={0.5} />
+                  <text x="52" y={y + 4} textAnchor="end" fill="hsl(var(--muted-foreground))" fontSize="11">{val}</text>
+                </g>
+              );
+            })}
+            <text x="14" y="160" textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="11" transform="rotate(-90, 14, 160)">Frequência</text>
+            <text x="210" y="335" textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="12">SEXO</text>
+            {(() => {
+              const cx = 145, bw = 70;
+              const toY = (v: number) => 300 - (v / 5) * 280;
+              const q1 = 1.0, med = 1.5, q3 = 2.2, min = 1, max = 4.5;
+              return (
+                <g>
+                  <line x1={cx} y1={toY(max)} x2={cx} y2={toY(min)} stroke="hsl(var(--muted-foreground))" strokeWidth={1.5} />
+                  <line x1={cx - 15} y1={toY(max)} x2={cx + 15} y2={toY(max)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
+                  <line x1={cx - 15} y1={toY(min)} x2={cx + 15} y2={toY(min)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
+                  <rect x={cx - bw / 2} y={toY(q3)} width={bw} height={toY(q1) - toY(q3)} fill="hsl(var(--secondary))" stroke="hsl(var(--foreground))" strokeWidth={1} rx={2} />
+                  <line x1={cx - bw / 2} y1={toY(med)} x2={cx + bw / 2} y2={toY(med)} stroke="hsl(var(--foreground))" strokeWidth={2.5} />
+                  <text x={cx} y={310} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="13" fontWeight="500">M</text>
+                </g>
+              );
+            })()}
+            {(() => {
+              const cx = 275, bw = 70;
+              const toY = (v: number) => 300 - (v / 5) * 280;
+              const q1 = 1.0, med = 1.3, q3 = 1.9, min = 1, max = 4.0;
+              return (
+                <g>
+                  <line x1={cx} y1={toY(max)} x2={cx} y2={toY(min)} stroke="hsl(var(--muted-foreground))" strokeWidth={1.5} />
+                  <line x1={cx - 15} y1={toY(max)} x2={cx + 15} y2={toY(max)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
+                  <line x1={cx - 15} y1={toY(min)} x2={cx + 15} y2={toY(min)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
+                  <rect x={cx - bw / 2} y={toY(q3)} width={bw} height={toY(q1) - toY(q3)} fill="hsl(var(--accent))" stroke="hsl(var(--foreground))" strokeWidth={1} rx={2} />
+                  <line x1={cx - bw / 2} y1={toY(med)} x2={cx + bw / 2} y2={toY(med)} stroke="hsl(var(--foreground))" strokeWidth={2.5} />
+                  <text x={cx} y={310} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="13" fontWeight="500">F</text>
+                </g>
+              );
+            })()}
+          </svg>
+        </div>
+      </div>
+
+      {/* Considerações */}
+      <div className="mt-6 bg-card border border-border rounded-xl p-6">
+        <h3 className="text-lg font-bold text-foreground mb-4">Considerações</h3>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div>
+            <p className="text-sm font-bold text-primary mb-2">1. Perfil Masculino (Maioria e Maior LTV)</p>
+            <ul className="space-y-1 ml-4">
+              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Volume: 18.583 clientes (aprox. 57% da base).</span></li>
+              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Ticket Médio e Gasto: Homens gastam, em média, R$ 316,33, o que é cerca de 16% a mais que as mulheres.</span></li>
+              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Frequência: Também compram com uma frequência ligeiramente maior (1.70 vs 1.53).</span></li>
+              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Interesses: Têm uma penetração maior em Clubes de Vinho (94%) e Consumo de Luxo (90%). Além disso, o perfil de Apostas Online é mais que o dobro do feminino (2.46 vs 1.11%).</span></li>
+            </ul>
+          </div>
+          <div>
+            <p className="text-sm font-bold text-primary mb-2">2. Perfil Feminino (Público Qualificado, mas "Light")</p>
+            <ul className="space-y-1 ml-4">
+              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Volume: 13.926 clientes (aprox. 43% da base).</span></li>
+              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Ticket Médio: Gastam em média R$ 271,98.</span></li>
+              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Renda e Score: A renda presumida média das mulheres na base (R$ 18.928) é significativamente menor que a dos homens (R$ 26.894), embora o Score de crédito seja muito similar (795 vs 802).</span></li>
+              <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Estratégia: O público feminino parece ser mais cauteloso no ticket inicial ou focado em pacotes menores/individuais.</span></li>
+            </ul>
           </div>
         </div>
       </div>
