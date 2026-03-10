@@ -493,154 +493,82 @@ const ModelagemEstatistica = () => {
 
       {/* 3 Boxplots side by side */}
       <div className="mt-6 grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Boxplot 1 - Valor Monetário */}
+        {/* Gráfico 1 - Pizza Homens vs Mulheres */}
         <div className="bg-card border border-border rounded-xl p-6">
-          <p className="text-sm font-semibold text-foreground mb-4 text-center">Valor Monetário por Sexo</p>
-          <svg viewBox="0 0 400 340" className="w-full h-auto">
-            {[0, 200, 400, 600, 800, 1000].map((val, i) => {
-              const y = 300 - (val / 1000) * 280;
-              return (
-                <g key={i}>
-                  <line x1="60" y1={y} x2="360" y2={y} stroke="hsl(var(--border))" strokeDasharray="3 3" strokeWidth={0.5} />
-                  <text x="52" y={y + 4} textAnchor="end" fill="hsl(var(--muted-foreground))" fontSize="11">{val}</text>
-                </g>
-              );
-            })}
-            <text x="14" y="160" textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="11" transform="rotate(-90, 14, 160)">Valor_Monetário</text>
-            <text x="210" y="335" textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="12">SEXO</text>
-            {(() => {
-              const cx = 145, bw = 70;
-              const toY = (v: number) => 300 - (v / 1000) * 280;
-              const q1 = 120, med = 180, q3 = 350, min = 50, max = 720;
-              return (
-                <g>
-                  <line x1={cx} y1={toY(max)} x2={cx} y2={toY(min)} stroke="hsl(var(--muted-foreground))" strokeWidth={1.5} />
-                  <line x1={cx - 15} y1={toY(max)} x2={cx + 15} y2={toY(max)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
-                  <line x1={cx - 15} y1={toY(min)} x2={cx + 15} y2={toY(min)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
-                  <rect x={cx - bw / 2} y={toY(q3)} width={bw} height={toY(q1) - toY(q3)} fill="hsl(var(--secondary))" stroke="hsl(var(--foreground))" strokeWidth={1} rx={2} />
-                  <line x1={cx - bw / 2} y1={toY(med)} x2={cx + bw / 2} y2={toY(med)} stroke="hsl(var(--foreground))" strokeWidth={2.5} />
-                  {[950, 980, 990, 1000].map((v, i) => (
-                    <circle key={i} cx={cx + (i % 2 === 0 ? -3 : 3)} cy={toY(v)} r={2.5} fill="hsl(var(--muted-foreground))" opacity={0.5} />
-                  ))}
-                  <text x={cx} y={310} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="13" fontWeight="500">M</text>
-                </g>
-              );
-            })()}
-            {(() => {
-              const cx = 275, bw = 70;
-              const toY = (v: number) => 300 - (v / 1000) * 280;
-              const q1 = 95, med = 155, q3 = 305, min = 40, max = 615;
-              return (
-                <g>
-                  <line x1={cx} y1={toY(max)} x2={cx} y2={toY(min)} stroke="hsl(var(--muted-foreground))" strokeWidth={1.5} />
-                  <line x1={cx - 15} y1={toY(max)} x2={cx + 15} y2={toY(max)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
-                  <line x1={cx - 15} y1={toY(min)} x2={cx + 15} y2={toY(min)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
-                  <rect x={cx - bw / 2} y={toY(q3)} width={bw} height={toY(q1) - toY(q3)} fill="hsl(var(--accent))" stroke="hsl(var(--foreground))" strokeWidth={1} rx={2} />
-                  <line x1={cx - bw / 2} y1={toY(med)} x2={cx + bw / 2} y2={toY(med)} stroke="hsl(var(--foreground))" strokeWidth={2.5} />
-                  {[920, 960, 980, 1000].map((v, i) => (
-                    <circle key={i} cx={cx + (i % 2 === 0 ? -3 : 3)} cy={toY(v)} r={2.5} fill="hsl(var(--muted-foreground))" opacity={0.5} />
-                  ))}
-                  <text x={cx} y={310} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="13" fontWeight="500">F</text>
-                </g>
-              );
-            })()}
-          </svg>
+          <p className="text-sm font-semibold text-foreground mb-4 text-center">Distribuição por Sexo</p>
+          <div className="h-[300px]">
+            <ResponsiveContainer width="100%" height="100%">
+              <PieChart>
+                <Pie
+                  data={[
+                    { name: "Masculino", value: 18583, percent: "57%" },
+                    { name: "Feminino", value: 13926, percent: "43%" },
+                  ]}
+                  cx="50%"
+                  cy="45%"
+                  innerRadius={50}
+                  outerRadius={90}
+                  dataKey="value"
+                  label={({ name, percent }) => `${name}: ${percent}`}
+                  labelLine={{ stroke: "hsl(var(--muted-foreground))" }}
+                >
+                  <Cell fill="hsl(var(--primary))" />
+                  <Cell fill="hsl(var(--accent))" />
+                </Pie>
+                <Tooltip
+                  contentStyle={{ background: 'hsl(var(--card))', border: '1px solid hsl(var(--border))', borderRadius: '8px', color: 'hsl(var(--foreground))' }}
+                  formatter={(value: number) => [value.toLocaleString(), 'Clientes']}
+                />
+                <Legend
+                  formatter={(value: string) => <span style={{ color: 'hsl(var(--muted-foreground))' }}>{value}</span>}
+                />
+              </PieChart>
+            </ResponsiveContainer>
+          </div>
         </div>
 
-        {/* Boxplot 2 - Ticket Médio */}
+        {/* Gráfico 2 - Masculino Valor Pago (K=4) */}
         <div className="bg-card border border-border rounded-xl p-6">
-          <p className="text-sm font-semibold text-foreground mb-4 text-center">Ticket Médio por Sexo</p>
-          <svg viewBox="0 0 400 340" className="w-full h-auto">
-            {[0, 100, 200, 300, 400, 500].map((val, i) => {
-              const y = 300 - (val / 500) * 280;
-              return (
-                <g key={i}>
-                  <line x1="60" y1={y} x2="360" y2={y} stroke="hsl(var(--border))" strokeDasharray="3 3" strokeWidth={0.5} />
-                  <text x="52" y={y + 4} textAnchor="end" fill="hsl(var(--muted-foreground))" fontSize="11">{val}</text>
-                </g>
-              );
-            })}
-            <text x="14" y="160" textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="11" transform="rotate(-90, 14, 160)">Ticket_Médio</text>
-            <text x="210" y="335" textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="12">SEXO</text>
-            {(() => {
-              const cx = 145, bw = 70;
-              const toY = (v: number) => 300 - (v / 500) * 280;
-              const q1 = 150, med = 220, q3 = 350, min = 60, max = 480;
-              return (
-                <g>
-                  <line x1={cx} y1={toY(max)} x2={cx} y2={toY(min)} stroke="hsl(var(--muted-foreground))" strokeWidth={1.5} />
-                  <line x1={cx - 15} y1={toY(max)} x2={cx + 15} y2={toY(max)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
-                  <line x1={cx - 15} y1={toY(min)} x2={cx + 15} y2={toY(min)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
-                  <rect x={cx - bw / 2} y={toY(q3)} width={bw} height={toY(q1) - toY(q3)} fill="hsl(var(--secondary))" stroke="hsl(var(--foreground))" strokeWidth={1} rx={2} />
-                  <line x1={cx - bw / 2} y1={toY(med)} x2={cx + bw / 2} y2={toY(med)} stroke="hsl(var(--foreground))" strokeWidth={2.5} />
-                  <text x={cx} y={310} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="13" fontWeight="500">M</text>
-                </g>
-              );
-            })()}
-            {(() => {
-              const cx = 275, bw = 70;
-              const toY = (v: number) => 300 - (v / 500) * 280;
-              const q1 = 120, med = 185, q3 = 300, min = 45, max = 420;
-              return (
-                <g>
-                  <line x1={cx} y1={toY(max)} x2={cx} y2={toY(min)} stroke="hsl(var(--muted-foreground))" strokeWidth={1.5} />
-                  <line x1={cx - 15} y1={toY(max)} x2={cx + 15} y2={toY(max)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
-                  <line x1={cx - 15} y1={toY(min)} x2={cx + 15} y2={toY(min)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
-                  <rect x={cx - bw / 2} y={toY(q3)} width={bw} height={toY(q1) - toY(q3)} fill="hsl(var(--accent))" stroke="hsl(var(--foreground))" strokeWidth={1} rx={2} />
-                  <line x1={cx - bw / 2} y1={toY(med)} x2={cx + bw / 2} y2={toY(med)} stroke="hsl(var(--foreground))" strokeWidth={2.5} />
-                  <text x={cx} y={310} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="13" fontWeight="500">F</text>
-                </g>
-              );
-            })()}
-          </svg>
+          <p className="text-sm font-semibold text-foreground mb-4 text-center">Masculino — Valor Pago (K=4)</p>
+          <div className="space-y-3">
+            {[
+              { cluster: "Baixo Valor", qtd: "15.894", pct: "85,5%", faixa: "R$0 a R$491,56", gasto: "R$176,04", freq: "1,23", color: "hsl(var(--primary))" },
+              { cluster: "Médio Valor", qtd: "2.208", pct: "11,9%", faixa: "R$492 a R$1.535", gasto: "R$808,70", freq: "3,44", color: "hsl(var(--secondary))" },
+              { cluster: "Alto Valor", qtd: "430", pct: "2,3%", faixa: "R$1.538 a R$4.193", gasto: "R$2.271,05", freq: "8,23", color: "hsl(var(--accent))" },
+              { cluster: "Premium", qtd: "51", pct: "0,3%", faixa: "R$4.257 a R$11.843", gasto: "R$6.238,51", freq: "17,20", color: "hsl(var(--warning))" },
+            ].map((item, i) => (
+              <div key={i} className="border border-border rounded-lg p-3">
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="h-2.5 w-2.5 rounded-full shrink-0" style={{ backgroundColor: item.color }} />
+                  <span className="text-sm font-semibold text-foreground">{item.cluster} — {item.qtd} ({item.pct})</span>
+                </div>
+                <p className="text-xs text-muted-foreground ml-4">Faixa: {item.faixa}</p>
+                <p className="text-xs text-muted-foreground ml-4">Gasto médio: {item.gasto} | Freq: {item.freq}</p>
+              </div>
+            ))}
+          </div>
         </div>
 
-        {/* Boxplot 3 - Frequência de Compra */}
+        {/* Gráfico 3 - Feminino Valor Pago (K=4) */}
         <div className="bg-card border border-border rounded-xl p-6">
-          <p className="text-sm font-semibold text-foreground mb-4 text-center">Frequência de Compra por Sexo</p>
-          <svg viewBox="0 0 400 340" className="w-full h-auto">
-            {[0, 1, 2, 3, 4, 5].map((val, i) => {
-              const y = 300 - (val / 5) * 280;
-              return (
-                <g key={i}>
-                  <line x1="60" y1={y} x2="360" y2={y} stroke="hsl(var(--border))" strokeDasharray="3 3" strokeWidth={0.5} />
-                  <text x="52" y={y + 4} textAnchor="end" fill="hsl(var(--muted-foreground))" fontSize="11">{val}</text>
-                </g>
-              );
-            })}
-            <text x="14" y="160" textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="11" transform="rotate(-90, 14, 160)">Frequência</text>
-            <text x="210" y="335" textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="12">SEXO</text>
-            {(() => {
-              const cx = 145, bw = 70;
-              const toY = (v: number) => 300 - (v / 5) * 280;
-              const q1 = 1.0, med = 1.5, q3 = 2.2, min = 1, max = 4.5;
-              return (
-                <g>
-                  <line x1={cx} y1={toY(max)} x2={cx} y2={toY(min)} stroke="hsl(var(--muted-foreground))" strokeWidth={1.5} />
-                  <line x1={cx - 15} y1={toY(max)} x2={cx + 15} y2={toY(max)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
-                  <line x1={cx - 15} y1={toY(min)} x2={cx + 15} y2={toY(min)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
-                  <rect x={cx - bw / 2} y={toY(q3)} width={bw} height={toY(q1) - toY(q3)} fill="hsl(var(--secondary))" stroke="hsl(var(--foreground))" strokeWidth={1} rx={2} />
-                  <line x1={cx - bw / 2} y1={toY(med)} x2={cx + bw / 2} y2={toY(med)} stroke="hsl(var(--foreground))" strokeWidth={2.5} />
-                  <text x={cx} y={310} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="13" fontWeight="500">M</text>
-                </g>
-              );
-            })()}
-            {(() => {
-              const cx = 275, bw = 70;
-              const toY = (v: number) => 300 - (v / 5) * 280;
-              const q1 = 1.0, med = 1.3, q3 = 1.9, min = 1, max = 4.0;
-              return (
-                <g>
-                  <line x1={cx} y1={toY(max)} x2={cx} y2={toY(min)} stroke="hsl(var(--muted-foreground))" strokeWidth={1.5} />
-                  <line x1={cx - 15} y1={toY(max)} x2={cx + 15} y2={toY(max)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
-                  <line x1={cx - 15} y1={toY(min)} x2={cx + 15} y2={toY(min)} stroke="hsl(var(--foreground))" strokeWidth={1.5} />
-                  <rect x={cx - bw / 2} y={toY(q3)} width={bw} height={toY(q1) - toY(q3)} fill="hsl(var(--accent))" stroke="hsl(var(--foreground))" strokeWidth={1} rx={2} />
-                  <line x1={cx - bw / 2} y1={toY(med)} x2={cx + bw / 2} y2={toY(med)} stroke="hsl(var(--foreground))" strokeWidth={2.5} />
-                  <text x={cx} y={310} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize="13" fontWeight="500">F</text>
-                </g>
-              );
-            })()}
-          </svg>
+          <p className="text-sm font-semibold text-foreground mb-4 text-center">Feminino — Valor Pago (K=4)</p>
+          <div className="space-y-3">
+            {[
+              { cluster: "Baixo Valor", qtd: "10.471", pct: "75,2%", faixa: "R$0 a R$310,31", gasto: "R$131,42", freq: "1,12", color: "hsl(var(--primary))" },
+              { cluster: "Médio Valor", qtd: "2.964", pct: "21,3%", faixa: "R$310,64 a R$1.055", gasto: "R$489,30", freq: "2,14", color: "hsl(var(--secondary))" },
+              { cluster: "Alto Valor", qtd: "443", pct: "3,2%", faixa: "R$1.058 a R$3.235", gasto: "R$1.627,83", freq: "5,97", color: "hsl(var(--accent))" },
+              { cluster: "Premium", qtd: "48", pct: "0,3%", faixa: "R$3.380 a R$9.692", gasto: "R$5.001,63", freq: "13,12", color: "hsl(var(--warning))" },
+            ].map((item, i) => (
+              <div key={i} className="border border-border rounded-lg p-3">
+                <div className="flex items-center gap-2 mb-1">
+                  <div className="h-2.5 w-2.5 rounded-full shrink-0" style={{ backgroundColor: item.color }} />
+                  <span className="text-sm font-semibold text-foreground">{item.cluster} — {item.qtd} ({item.pct})</span>
+                </div>
+                <p className="text-xs text-muted-foreground ml-4">Faixa: {item.faixa}</p>
+                <p className="text-xs text-muted-foreground ml-4">Gasto médio: {item.gasto} | Freq: {item.freq}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
