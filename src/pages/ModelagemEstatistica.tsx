@@ -2095,8 +2095,8 @@ const ModelagemEstatistica = () => {
               <YAxis tick={{ fill: "hsl(var(--foreground))", fontSize: 12 }} label={{ value: "Número de Clientes", angle: -90, position: "insideLeft", offset: 0, fill: "hsl(var(--muted-foreground))", fontSize: 12 }} />
               <Tooltip />
               <Bar dataKey="total" radius={[4, 4, 0, 0]}>
-                <Cell fill="#E991B8" />
-                <Cell fill="#D4A853" />
+                <Cell fill="hsl(var(--accent))" />
+                <Cell fill="hsl(var(--primary))" />
                 <LabelList dataKey="total" position="top" content={({ x, y, width, value, index }: any) => {
                   const pcts = ["5.9%", "94.1%"];
                   return (
