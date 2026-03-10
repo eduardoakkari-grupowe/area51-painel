@@ -628,7 +628,7 @@ const ModelagemEstatistica = () => {
         {/* Boxplot - Distribuição de Qtde. Compras por Cluster */}
         <div className="bg-card border border-border rounded-xl p-6">
           <p className="text-sm font-semibold text-foreground mb-4 text-center">Distribuição de Qtde. Compras por Cluster</p>
-          <svg viewBox="0 0 460 320" className="w-full h-auto">
+          <svg viewBox="0 0 460 320" className="w-full h-[320px]">
             {/* Grid lines */}
             {[0, 10, 20, 30, 40].map((val) => {
               const y = 280 - (val / 45) * 260;
