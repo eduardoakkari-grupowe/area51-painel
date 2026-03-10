@@ -337,8 +337,8 @@ const ModelagemEstatistica = () => {
               <YAxis label={{ value: "Frequência", angle: -90, position: "insideLeft", offset: 0, style: { fill: 'hsl(var(--muted-foreground))' } }} tick={{ fontSize: 11, fill: 'hsl(var(--muted-foreground))' }} />
               <Tooltip contentStyle={{ background: 'hsl(var(--card))', border: '1px solid hsl(var(--border))', borderRadius: '8px', color: 'hsl(var(--foreground))' }} />
               <Legend wrapperStyle={{ fontSize: '12px' }} align="left" />
-              <Bar dataKey="homens" stackId="a" fill="hsl(var(--accent))" radius={[0, 0, 0, 0]} name="Homens" />
-              <Bar dataKey="mulheres" stackId="a" fill="hsl(var(--primary))" radius={[2, 2, 0, 0]} name="Mulheres" />
+              <Bar dataKey="homens" fill="hsl(var(--primary))" radius={[2, 2, 0, 0]} name="Homens" />
+              <Bar dataKey="mulheres" fill="hsl(var(--accent))" radius={[2, 2, 0, 0]} name="Mulheres" />
             </BarChart>
           </ResponsiveContainer>
         </div>
