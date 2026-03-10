@@ -1085,10 +1085,10 @@ const ModelagemEstatistica = () => {
           <div className="space-y-4">
             <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg">
               <p className="text-sm font-bold text-foreground mb-1">1. Nível: Classe Média / Entrada</p>
-              <p className="text-xs text-muted-foreground"><strong>Faixa:</strong> R$ 1.561,91 a R$ 22.779,42</p>
-              <p className="text-xs text-muted-foreground"><strong>Volume:</strong> 21.498 clientes (65,9% da base).</p>
-              <p className="text-xs text-muted-foreground"><strong>Comportamento:</strong> Possuem o menor gasto médio (R$ 269,35) e a menor frequência (1,57).</p>
-              <p className="text-xs text-muted-foreground"><strong>Estratégia:</strong> Focar em conversão de primeira compra e "educação" sobre os benefícios das cápsulas.</p>
+              <p className="text-sm text-muted-foreground"><strong>Faixa:</strong> R$ 1.561,91 a R$ 22.779,42</p>
+              <p className="text-sm text-muted-foreground"><strong>Volume:</strong> 21.498 clientes (65,9% da base).</p>
+              <p className="text-sm text-muted-foreground"><strong>Comportamento:</strong> Possuem o menor gasto médio (R$ 269,35) e a menor frequência (1,57).</p>
+              <p className="text-sm text-muted-foreground"><strong>Estratégia:</strong> Focar em conversão de primeira compra e "educação" sobre os benefícios das cápsulas.</p>
             </div>
             <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg">
               <p className="text-sm font-bold text-foreground mb-1">2. Nível: Classe Alta / Premium</p>
