@@ -530,6 +530,29 @@ const ModelagemEstatistica = () => {
         {/* Gráfico 2 - Masculino Valor Pago (K=4) */}
         <div className="bg-card border border-border rounded-xl p-6">
           <p className="text-sm font-semibold text-foreground mb-4 text-center">Masculino — Valor Pago (K=4)</p>
+          <div className="h-[200px] mb-4">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart
+                data={[
+                  { cluster: "Baixo Valor", quantidade: 15894, fill: "hsl(var(--primary))" },
+                  { cluster: "Médio Valor", quantidade: 2208, fill: "hsl(var(--secondary))" },
+                  { cluster: "Alto Valor", quantidade: 430, fill: "hsl(var(--accent))" },
+                  { cluster: "Premium", quantidade: 51, fill: "hsl(var(--warning))" },
+                ]}
+                margin={{ top: 20, right: 10, left: 0, bottom: 5 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                <XAxis dataKey="cluster" tick={{ fontSize: 9, fill: 'hsl(var(--muted-foreground))' }} />
+                <YAxis tick={{ fontSize: 9, fill: 'hsl(var(--muted-foreground))' }} />
+                <Tooltip contentStyle={{ background: 'hsl(var(--card))', border: '1px solid hsl(var(--border))', borderRadius: '8px', color: 'hsl(var(--foreground))' }} formatter={(value: number) => [value.toLocaleString(), 'Clientes']} />
+                <Bar dataKey="quantidade" radius={[4, 4, 0, 0]}>
+                  {["hsl(var(--primary))", "hsl(var(--secondary))", "hsl(var(--accent))", "hsl(var(--warning))"].map((color, index) => (
+                    <Cell key={index} fill={color} />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
           <div className="space-y-3">
             {[
               { cluster: "Baixo Valor", qtd: "15.894", pct: "85,5%", faixa: "R$0 a R$491,56", gasto: "R$176,04", freq: "1,23", color: "hsl(var(--primary))" },
@@ -552,6 +575,29 @@ const ModelagemEstatistica = () => {
         {/* Gráfico 3 - Feminino Valor Pago (K=4) */}
         <div className="bg-card border border-border rounded-xl p-6">
           <p className="text-sm font-semibold text-foreground mb-4 text-center">Feminino — Valor Pago (K=4)</p>
+          <div className="h-[200px] mb-4">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart
+                data={[
+                  { cluster: "Baixo Valor", quantidade: 10471, fill: "hsl(var(--primary))" },
+                  { cluster: "Médio Valor", quantidade: 2964, fill: "hsl(var(--secondary))" },
+                  { cluster: "Alto Valor", quantidade: 443, fill: "hsl(var(--accent))" },
+                  { cluster: "Premium", quantidade: 48, fill: "hsl(var(--warning))" },
+                ]}
+                margin={{ top: 20, right: 10, left: 0, bottom: 5 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                <XAxis dataKey="cluster" tick={{ fontSize: 9, fill: 'hsl(var(--muted-foreground))' }} />
+                <YAxis tick={{ fontSize: 9, fill: 'hsl(var(--muted-foreground))' }} />
+                <Tooltip contentStyle={{ background: 'hsl(var(--card))', border: '1px solid hsl(var(--border))', borderRadius: '8px', color: 'hsl(var(--foreground))' }} formatter={(value: number) => [value.toLocaleString(), 'Clientes']} />
+                <Bar dataKey="quantidade" radius={[4, 4, 0, 0]}>
+                  {["hsl(var(--primary))", "hsl(var(--secondary))", "hsl(var(--accent))", "hsl(var(--warning))"].map((color, index) => (
+                    <Cell key={index} fill={color} />
+                  ))}
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
           <div className="space-y-3">
             {[
               { cluster: "Baixo Valor", qtd: "10.471", pct: "75,2%", faixa: "R$0 a R$310,31", gasto: "R$131,42", freq: "1,12", color: "hsl(var(--primary))" },
