@@ -1909,6 +1909,94 @@ const ModelagemEstatistica = () => {
       </div>
     </div>
 
+    {/* ===== POSSE DE MOTO ===== */}
+    <div id="posse-de-moto" className="mt-10 scroll-mt-6">
+      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3 mb-6">
+        <div className="h-2.5 w-2.5 rounded-full bg-primary" />
+        <span className="text-xl font-semibold text-foreground">Posse de Moto</span>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+        <div className="bg-card border border-border rounded-xl p-6">
+          <p className="text-sm font-semibold text-foreground mb-4 text-center">Distribuição de Clientes: Possui Moto?</p>
+          <div className="h-[350px]">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={[
+                { categoria: "N", total: 24726 },
+                { categoria: "S", total: 7888 },
+              ]} margin={{ top: 30, right: 30, left: 20, bottom: 40 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                <XAxis dataKey="categoria" tick={{ fill: "hsl(var(--foreground))", fontSize: 13 }} label={{ value: "Posse de Moto (S = Sim, N = Não)", position: "insideBottom", offset: -25, fill: "hsl(var(--muted-foreground))", fontSize: 12 }} />
+                <YAxis tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 11 }} label={{ value: "Número de Clientes", angle: -90, position: "insideLeft", offset: 0, fill: "hsl(var(--muted-foreground))", fontSize: 12 }} />
+                <Tooltip contentStyle={{ background: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: 8 }} />
+                <Bar dataKey="total" radius={[4, 4, 0, 0]} label={false}>
+                  <Cell fill="#D4A853" />
+                  <Cell fill="#BA6B2A" />
+                  <LabelList
+                    dataKey="total"
+                    position="top"
+                    content={({ x, y, width, index }: any) => {
+                      const labels = [
+                        { qty: "24.726", pct: "(75,8%)" },
+                        { qty: "7.888", pct: "(24,2%)" },
+                      ];
+                      const item = labels[index as number];
+                      if (!item) return null;
+                      return (
+                        <g>
+                          <text x={x + width / 2} y={y - 18} textAnchor="middle" fill="hsl(var(--foreground))" fontSize={13} fontWeight={700}>{item.qty}</text>
+                          <text x={x + width / 2} y={y - 4} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize={11}>{item.pct}</text>
+                        </g>
+                      );
+                    }}
+                  />
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        <div className="bg-card border border-border rounded-xl p-6 flex flex-col justify-center">
+          <h3 className="text-base font-bold text-foreground mb-3">Perfil Socioeconômico: Moto vs. Não Moto</h3>
+          <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5 mb-5">
+            <li><strong className="text-foreground">Renda e Patrimônio:</strong> Clientes que possuem moto têm uma renda média de R$ 17.223, enquanto os que não possuem têm média de R$ 25.466.</li>
+            <li><strong className="text-foreground">Score de Crédito:</strong> Há uma diferença notável aqui. O grupo que possui moto tem um Score médio de 682, significativamente menor que os 836 do grupo sem moto.</li>
+            <li><strong className="text-foreground">Consumo:</strong> O ticket médio de quem tem moto é de <strong className="text-foreground">R$ 280,98</strong>, cerca de 7% menor que o grupo que não possui (R$ 302,40).</li>
+          </ul>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-primary/20">
+                  <th className="border border-border px-3 py-2 text-left font-bold text-foreground">Perfil Moto</th>
+                  <th className="border border-border px-3 py-2 text-center font-bold text-foreground">Volume de Clientes</th>
+                  <th className="border border-border px-3 py-2 text-center font-bold text-foreground">Renda Média</th>
+                  <th className="border border-border px-3 py-2 text-center font-bold text-foreground">Gasto Médio</th>
+                  <th className="border border-border px-3 py-2 text-center font-bold text-foreground">Score de Crédito</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border border-border px-3 py-2 font-medium text-foreground">Não (N)</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">24.726</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">R$25.466</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">R$302,40</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">836</td>
+                </tr>
+                <tr>
+                  <td className="border border-border px-3 py-2 font-medium text-foreground">Sim (S)</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">7.888</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">R$17.223</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">R$280,98</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">682</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </DashboardLayout>
   );
 };
