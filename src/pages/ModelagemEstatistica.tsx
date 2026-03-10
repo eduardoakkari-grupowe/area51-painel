@@ -2149,7 +2149,7 @@ const ModelagemEstatistica = () => {
               <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
               <XAxis dataKey="categoria" tick={{ fill: "hsl(var(--foreground))", fontSize: 13 }} label={{ value: "Viagens e Turismo (S = Sim, N = Não)", position: "insideBottom", offset: -10, fill: "hsl(var(--muted-foreground))", fontSize: 12 }} />
               <YAxis tick={{ fill: "hsl(var(--foreground))", fontSize: 12 }} label={{ value: "Número de Clientes", angle: -90, position: "insideLeft", offset: 0, fill: "hsl(var(--muted-foreground))", fontSize: 12 }} />
-              <Tooltip />
+              <Tooltip labelStyle={{ color: 'hsl(var(--primary))', fontWeight: 'bold' }} />
               <Bar dataKey="total" radius={[4, 4, 0, 0]}>
                 <Cell fill="hsl(var(--accent))" />
                 <Cell fill="hsl(var(--primary))" />
