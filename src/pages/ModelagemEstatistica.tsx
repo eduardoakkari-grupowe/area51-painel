@@ -2249,15 +2249,15 @@ const ModelagemEstatistica = () => {
           <h3 className="text-lg font-bold text-foreground mb-5">Personas Masculinas — KMeans (K=5)</h3>
           <div className="space-y-5">
             {[
-              { nome: "Jovem Econômico", qtd: "1.015", pct: "5,5%", idade: "36", renda: "R$4.983", gasto: "R$240", freq: "1,44", perfil: "Alta posse de moto (84%), digital (64%). Sem luxo nem imóvel alto padrão.", campanha: "Entrada com preço acessível, comunicação jovem e prática." },
-              { nome: "Adulto Conectado", qtd: "6.718", pct: "36,2%", idade: "39", renda: "R$15.581", gasto: "R$239", freq: "1,47", perfil: "Score alto (947), possui imóvel e automóvel. Viajante, clube do vinho.", campanha: "Assinaturas, kits intermediários, cross-sell com experiências." },
-              { nome: "Profissional Maduro", qtd: "4.391", pct: "23,6%", idade: "44", renda: "R$23.196", gasto: "R$239", freq: "1,43", perfil: "Score baixo (469), mas renda boa. Não é entusiasta de tecnologia.", campanha: "Reativação e educação de marca, canais offline." },
-              { nome: "Heavy Buyer", qtd: "554", pct: "3,0%", idade: "46", renda: "R$35.451", gasto: "R$2.489", freq: "9,06", perfil: "Os super-compradores. Maior LTV da base masculina de longe.", campanha: "Tratamento VIP, edições limitadas, programa de embaixadores." },
-              { nome: "Sênior Premium", qtd: "5.904", pct: "31,8%", idade: "50", renda: "R$45.487", gasto: "R$270", freq: "1,52", perfil: "100% luxo, vinho, celebridade. Mais alta renda, mas compra pouco.", campanha: "Exclusividade, kits premium, parcerias com marcas de luxo." },
+              { nome: "Jovem Econômico", qtd: "1.015", pct: "5,5%", idade: "médio: 36 (80% concentrados entre 24 e 49 anos)", renda: "R$4.983", gasto: "R$240", freq: "1,44", perfil: "Alta posse de moto (84%), digital (64%). Sem luxo nem imóvel alto padrão.", campanha: "Entrada com preço acessível, comunicação jovem e prática." },
+              { nome: "Adulto Conectado", qtd: "6.718", pct: "36,2%", idade: "média: 39 (80% concentrados entre 31 e 48 anos)", renda: "R$15.581", gasto: "R$239", freq: "1,47", perfil: "Score alto (947), possui imóvel e automóvel. Viajante, clube do vinho.", campanha: "Assinaturas, kits intermediários, cross-sell com experiências." },
+              { nome: "Profissional Maduro", qtd: "4.391", pct: "23,6%", idade: "média: 44 (80% concentrados entre 35 e 54 anos)", renda: "R$23.196", gasto: "R$239", freq: "1,43", perfil: "Score baixo (469), mas renda boa. Não é entusiasta de tecnologia.", campanha: "Reativação e educação de marca, canais offline." },
+              { nome: "Heavy Buyer", qtd: "554", pct: "3,0%", idade: "média: 46 (80% concentrados entre 37 e 58 anos)", renda: "R$35.451", gasto: "R$2.489", freq: "9,06", perfil: "Os super-compradores. Maior LTV da base masculina de longe.", campanha: "Tratamento VIP, edições limitadas, programa de embaixadores." },
+              { nome: "Sênior Premium", qtd: "5.904", pct: "31,8%", idade: "média: 50 (80% concentrados entre 40 e 62 anos)", renda: "R$45.487", gasto: "R$270", freq: "1,52", perfil: "100% luxo, vinho, celebridade. Mais alta renda, mas compra pouco.", campanha: "Exclusividade, kits premium, parcerias com marcas de luxo." },
             ].map((p, i) => (
               <div key={i} className="border-b border-border pb-4 last:border-b-0 last:pb-0">
                 <h4 className="text-sm font-bold text-foreground mb-1">Persona {i + 1}: {p.nome} <span className="font-normal text-muted-foreground">({p.qtd} | {p.pct})</span></h4>
-                <p className="text-xs text-muted-foreground mb-1">Idade: <strong className="text-foreground">{p.idade}</strong> | Renda: <strong className="text-foreground">{p.renda}</strong> | Gasto: <strong className="text-foreground">{p.gasto}</strong> | Freq: <strong className="text-foreground">{p.freq}</strong></p>
+                <p className="text-xs text-muted-foreground mb-1">Idade {p.idade.includes('méd') ? p.idade : `: ${p.idade}`} | Renda: <strong className="text-foreground">{p.renda}</strong> | Gasto: <strong className="text-foreground">{p.gasto}</strong> | Freq: <strong className="text-foreground">{p.freq}</strong></p>
                 <p className="text-xs text-muted-foreground mb-1"><strong className="text-foreground">Perfil:</strong> {p.perfil}</p>
                 <p className="text-xs text-muted-foreground"><strong className="text-foreground">Campanha:</strong> {p.campanha}</p>
               </div>
@@ -2278,7 +2278,7 @@ const ModelagemEstatistica = () => {
             ].map((p, i) => (
               <div key={i} className="border-b border-border pb-4 last:border-b-0 last:pb-0">
                 <h4 className="text-sm font-bold text-foreground mb-1">Persona {i + 1}: {p.nome} <span className="font-normal text-muted-foreground">({p.qtd} | {p.pct})</span></h4>
-                <p className="text-xs text-muted-foreground mb-1">Idade: <strong className="text-foreground">{p.idade}</strong> | Renda: <strong className="text-foreground">{p.renda}</strong> | Score: <strong className="text-foreground">{p.score}</strong> | Gasto: <strong className="text-foreground">{p.gasto}</strong> | Freq: <strong className="text-foreground">{p.freq}</strong></p>
+                <p className="text-xs text-muted-foreground mb-1">Idade {p.idade.includes('méd') ? p.idade : `: ${p.idade}`} | Renda: <strong className="text-foreground">{p.renda}</strong> | Score: <strong className="text-foreground">{p.score}</strong> | Gasto: <strong className="text-foreground">{p.gasto}</strong> | Freq: <strong className="text-foreground">{p.freq}</strong></p>
                 <p className="text-xs text-muted-foreground mb-1"><strong className="text-foreground">Regra:</strong> {p.regra}</p>
                 <p className="text-xs text-muted-foreground"><strong className="text-foreground">Campanha:</strong> {p.campanha}</p>
               </div>
@@ -2293,14 +2293,14 @@ const ModelagemEstatistica = () => {
           <h3 className="text-lg font-bold text-foreground mb-5">Personas Femininas — KMeans (K=4)</h3>
           <div className="space-y-5">
             {[
-              { nome: "Jovem Econômica", qtd: "1.348", pct: "9,7%", idade: "39", renda: "R$4.064", gasto: "R$229", freq: "1,38", perfil: "Baixa penetração em quase todos os perfis. Digital como ponto forte (79%).", campanha: "Primeiro contato, promoções e facilidades de pagamento." },
-              { nome: "Adulta Prática", qtd: "6.001", pct: "43,1%", idade: "41", renda: "R$12.640", gasto: "R$240", freq: "1,46", perfil: "Score alto (905), viajante, clube do vinho. Massa principal.", campanha: "Assinaturas e programas de fidelidade, kits presentes." },
-              { nome: "Profissional Engajada", qtd: "3.156", pct: "22,7%", idade: "47", renda: "R$14.589", gasto: "R$253", freq: "1,52", perfil: "Score baixo (481), mas boa frequência. Não usa tecnologia.", campanha: "CRM pós-venda, canais tradicionais, cupons de recompra." },
-              { nome: "Sênior Premium", qtd: "3.421", pct: "24,6%", idade: "48", renda: "R$39.819", gasto: "R$364", freq: "1,75", perfil: "100% luxo, vinho, celebridade. Maior gasto e frequência.", campanha: "Exclusividade, experiências premium, parcerias de luxo." },
+              { nome: "Jovem Econômica", qtd: "1.348", pct: "9,7%", idade: "média: 39 (80% concentradas entre 25 e 53 anos)", renda: "R$4.064", gasto: "R$229", freq: "1,38", perfil: "Baixa penetração em quase todos os perfis. Digital como ponto forte (79%).", campanha: "Primeiro contato, promoções e facilidades de pagamento." },
+              { nome: "Adulta Prática", qtd: "6.001", pct: "43,1%", idade: "média: 41 (80% concentradas entre 32 e 51 anos)", renda: "R$12.640", gasto: "R$240", freq: "1,46", perfil: "Score alto (905), viajante, clube do vinho. Massa principal.", campanha: "Assinaturas e programas de fidelidade, kits presentes." },
+              { nome: "Profissional Engajada", qtd: "3.156", pct: "22,7%", idade: "média: 47 (80% concentradas entre 36 e 61 anos)", renda: "R$14.589", gasto: "R$253", freq: "1,52", perfil: "Score baixo (481), mas boa frequência. Não usa tecnologia.", campanha: "CRM pós-venda, canais tradicionais, cupons de recompra." },
+              { nome: "Sênior Premium", qtd: "3.421", pct: "24,6%", idade: "média: 48 (80% concentradas entre 40 e 59 anos)", renda: "R$39.819", gasto: "R$364", freq: "1,75", perfil: "100% luxo, vinho, celebridade. Maior gasto e frequência.", campanha: "Exclusividade, experiências premium, parcerias de luxo." },
             ].map((p, i) => (
               <div key={i} className="border-b border-border pb-4 last:border-b-0 last:pb-0">
                 <h4 className="text-sm font-bold text-foreground mb-1">Persona {i + 1}: {p.nome} <span className="font-normal text-muted-foreground">({p.qtd} | {p.pct})</span></h4>
-                <p className="text-xs text-muted-foreground mb-1">Idade: <strong className="text-foreground">{p.idade}</strong> | Renda: <strong className="text-foreground">{p.renda}</strong> | Gasto: <strong className="text-foreground">{p.gasto}</strong> | Freq: <strong className="text-foreground">{p.freq}</strong></p>
+                <p className="text-xs text-muted-foreground mb-1">Idade {p.idade.includes('méd') ? p.idade : `: ${p.idade}`} | Renda: <strong className="text-foreground">{p.renda}</strong> | Gasto: <strong className="text-foreground">{p.gasto}</strong> | Freq: <strong className="text-foreground">{p.freq}</strong></p>
                 <p className="text-xs text-muted-foreground mb-1"><strong className="text-foreground">Perfil:</strong> {p.perfil}</p>
                 <p className="text-xs text-muted-foreground"><strong className="text-foreground">Campanha:</strong> {p.campanha}</p>
               </div>
@@ -2399,8 +2399,11 @@ const ModelagemEstatistica = () => {
                 <XAxis dataKey="decil" tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }} />
                 <YAxis tick={{ fontSize: 10, fill: "hsl(var(--muted-foreground))" }} tickFormatter={(v: number) => v >= 1000000 ? `${(v / 1000000).toFixed(1)}M` : v >= 1000 ? `${(v / 1000).toFixed(0)}k` : String(v)} />
                 <Tooltip formatter={(value: number) => value >= 1000000 ? `${(value / 1000000).toFixed(2)}M` : value >= 1000 ? `${(value / 1000).toFixed(1)}k` : String(value)} contentStyle={{ backgroundColor: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: "8px", fontSize: "12px" }} />
-                <Legend wrapperStyle={{ fontSize: "11px" }} />
-                <Bar dataKey="total" name="Total" fill="hsl(var(--primary))" radius={[2, 2, 0, 0]} />
+                <Bar dataKey="total" name="Total" radius={[2, 2, 0, 0]}>
+                  {["#00a39e", "#8013ba", "#361e63", "#43438c", "#17082d"].map((color, index) => (
+                    <Cell key={`cell-${index}`} fill={color} />
+                  ))}
+                </Bar>
               </BarChart>
             </ResponsiveContainer>
           </div>
