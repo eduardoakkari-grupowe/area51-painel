@@ -2389,22 +2389,18 @@ const ModelagemEstatistica = () => {
           <div className="h-[350px]">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={[
-                { decil: "Decil 1", Pers_1: 1250000, Pers_2: 40400, Pers_3: 33500, Pers_4: 0, Pers_5: 0 },
-                { decil: "Decil 2", Pers_1: 1540000, Pers_2: 672000, Pers_3: 92400, Pers_4: 6080, Pers_5: 8380 },
-                { decil: "Decil 3", Pers_1: 1400000, Pers_2: 2380000, Pers_3: 209000, Pers_4: 228000, Pers_5: 410000 },
-                { decil: "Decil 4", Pers_1: 723000, Pers_2: 3030000, Pers_3: 277000, Pers_4: 977000, Pers_5: 2130000 },
-                { decil: "Decil 5", Pers_1: 504000, Pers_2: 2950000, Pers_3: 556000, Pers_4: 2260000, Pers_5: 5560000 },
+                { decil: "Decil 1", total: 1323900 },
+                { decil: "Decil 2", total: 2318860 },
+                { decil: "Decil 3", total: 4627000 },
+                { decil: "Decil 4", total: 7137000 },
+                { decil: "Decil 5", total: 11830000 },
               ]} margin={{ top: 10, right: 10, left: 10, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
                 <XAxis dataKey="decil" tick={{ fontSize: 11, fill: "hsl(var(--muted-foreground))" }} />
                 <YAxis tick={{ fontSize: 10, fill: "hsl(var(--muted-foreground))" }} tickFormatter={(v: number) => v >= 1000000 ? `${(v / 1000000).toFixed(1)}M` : v >= 1000 ? `${(v / 1000).toFixed(0)}k` : String(v)} />
                 <Tooltip formatter={(value: number) => value >= 1000000 ? `${(value / 1000000).toFixed(2)}M` : value >= 1000 ? `${(value / 1000).toFixed(1)}k` : String(value)} contentStyle={{ backgroundColor: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: "8px", fontSize: "12px" }} />
                 <Legend wrapperStyle={{ fontSize: "11px" }} />
-                <Bar dataKey="Pers_1" fill="hsl(var(--primary))" radius={[2, 2, 0, 0]} />
-                <Bar dataKey="Pers_2" fill="hsl(var(--accent))" radius={[2, 2, 0, 0]} />
-                <Bar dataKey="Pers_3" fill="hsl(var(--secondary))" radius={[2, 2, 0, 0]} />
-                <Bar dataKey="Pers_4" fill="hsl(var(--warning))" radius={[2, 2, 0, 0]} />
-                <Bar dataKey="Pers_5" fill="hsl(var(--destructive))" radius={[2, 2, 0, 0]} />
+                <Bar dataKey="total" name="Total" fill="hsl(var(--primary))" radius={[2, 2, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
