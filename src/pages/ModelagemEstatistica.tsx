@@ -2136,7 +2136,7 @@ const ModelagemEstatistica = () => {
           <div className="overflow-x-auto">
             <table className="w-full text-sm border-collapse">
               <thead>
-                <tr className="bg-[#2F5597] text-white">
+                <tr className="bg-primary/10">
                   <th className="border border-border px-3 py-2 text-left font-semibold">Perfil de Viagens</th>
                   <th className="border border-border px-3 py-2 text-center font-semibold">Volume de Clientes</th>
                   <th className="border border-border px-3 py-2 text-center font-semibold">Renda Média</th>
