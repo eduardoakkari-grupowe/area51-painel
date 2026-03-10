@@ -2237,6 +2237,50 @@ const ModelagemEstatistica = () => {
           <li><strong className="text-foreground">Resultado:</strong> KMeans venceu — mais estável e interpretável. O GMM oscilou muito entre valores de K.</li>
         </ul>
       </div>
+
+      {/* Personas Masculinas e Femininas */}
+      <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Masculinas */}
+        <div className="bg-card border border-border rounded-xl p-6">
+          <h3 className="text-lg font-bold text-foreground mb-5">Personas Masculinas — KMeans (K=5)</h3>
+          <div className="space-y-5">
+            {[
+              { nome: "Jovem Econômico", qtd: "1.015", pct: "5,5%", idade: "36", renda: "R$4.983", gasto: "R$240", freq: "1,44", perfil: "Alta posse de moto (84%), digital (64%). Sem luxo nem imóvel alto padrão.", campanha: "Entrada com preço acessível, comunicação jovem e prática." },
+              { nome: "Adulto Conectado", qtd: "6.718", pct: "36,2%", idade: "39", renda: "R$15.581", gasto: "R$239", freq: "1,47", perfil: "Score alto (947), possui imóvel e automóvel. Viajante, clube do vinho.", campanha: "Assinaturas, kits intermediários, cross-sell com experiências." },
+              { nome: "Profissional Maduro", qtd: "4.391", pct: "23,6%", idade: "44", renda: "R$23.196", gasto: "R$239", freq: "1,43", perfil: "Score baixo (469), mas renda boa. Não é entusiasta de tecnologia.", campanha: "Reativação e educação de marca, canais offline." },
+              { nome: "Heavy Buyer", qtd: "554", pct: "3,0%", idade: "46", renda: "R$35.451", gasto: "R$2.489", freq: "9,06", perfil: "Os super-compradores. Maior LTV da base masculina de longe.", campanha: "Tratamento VIP, edições limitadas, programa de embaixadores." },
+              { nome: "Sênior Premium", qtd: "5.904", pct: "31,8%", idade: "50", renda: "R$45.487", gasto: "R$270", freq: "1,52", perfil: "100% luxo, vinho, celebridade. Mais alta renda, mas compra pouco.", campanha: "Exclusividade, kits premium, parcerias com marcas de luxo." },
+            ].map((p, i) => (
+              <div key={i} className="border-b border-border pb-4 last:border-b-0 last:pb-0">
+                <h4 className="text-sm font-bold text-foreground mb-1">Persona {i + 1}: {p.nome} <span className="font-normal text-muted-foreground">({p.qtd} | {p.pct})</span></h4>
+                <p className="text-xs text-muted-foreground mb-1">Idade: <strong className="text-foreground">{p.idade}</strong> | Renda: <strong className="text-foreground">{p.renda}</strong> | Gasto: <strong className="text-foreground">{p.gasto}</strong> | Freq: <strong className="text-foreground">{p.freq}</strong></p>
+                <p className="text-xs text-muted-foreground mb-1"><strong className="text-foreground">Perfil:</strong> {p.perfil}</p>
+                <p className="text-xs text-muted-foreground"><strong className="text-foreground">Campanha:</strong> {p.campanha}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Femininas */}
+        <div className="bg-card border border-border rounded-xl p-6">
+          <h3 className="text-lg font-bold text-foreground mb-5">Personas Femininas — KMeans (K=4)</h3>
+          <div className="space-y-5">
+            {[
+              { nome: "Jovem Econômica", qtd: "1.348", pct: "9,7%", idade: "39", renda: "R$4.064", gasto: "R$229", freq: "1,38", perfil: "Baixa penetração em quase todos os perfis. Digital como ponto forte (79%).", campanha: "Primeiro contato, promoções e facilidades de pagamento." },
+              { nome: "Adulta Prática", qtd: "6.001", pct: "43,1%", idade: "41", renda: "R$12.640", gasto: "R$240", freq: "1,46", perfil: "Score alto (905), viajante, clube do vinho. Massa principal.", campanha: "Assinaturas e programas de fidelidade, kits presentes." },
+              { nome: "Profissional Engajada", qtd: "3.156", pct: "22,7%", idade: "47", renda: "R$14.589", gasto: "R$253", freq: "1,52", perfil: "Score baixo (481), mas boa frequência. Não usa tecnologia.", campanha: "CRM pós-venda, canais tradicionais, cupons de recompra." },
+              { nome: "Sênior Premium", qtd: "3.421", pct: "24,6%", idade: "48", renda: "R$39.819", gasto: "R$364", freq: "1,75", perfil: "100% luxo, vinho, celebridade. Maior gasto e frequência.", campanha: "Exclusividade, experiências premium, parcerias de luxo." },
+            ].map((p, i) => (
+              <div key={i} className="border-b border-border pb-4 last:border-b-0 last:pb-0">
+                <h4 className="text-sm font-bold text-foreground mb-1">Persona {i + 1}: {p.nome} <span className="font-normal text-muted-foreground">({p.qtd} | {p.pct})</span></h4>
+                <p className="text-xs text-muted-foreground mb-1">Idade: <strong className="text-foreground">{p.idade}</strong> | Renda: <strong className="text-foreground">{p.renda}</strong> | Gasto: <strong className="text-foreground">{p.gasto}</strong> | Freq: <strong className="text-foreground">{p.freq}</strong></p>
+                <p className="text-xs text-muted-foreground mb-1"><strong className="text-foreground">Perfil:</strong> {p.perfil}</p>
+                <p className="text-xs text-muted-foreground"><strong className="text-foreground">Campanha:</strong> {p.campanha}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
 
   </DashboardLayout>
