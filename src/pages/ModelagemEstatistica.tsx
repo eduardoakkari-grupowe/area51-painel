@@ -1919,8 +1919,8 @@ const ModelagemEstatistica = () => {
                 <YAxis tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 11 }} label={{ value: "Número de Clientes", angle: -90, position: "insideLeft", offset: 0, fill: "hsl(var(--muted-foreground))", fontSize: 12 }} />
                 <Tooltip contentStyle={{ background: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: 8 }} />
                 <Bar dataKey="total" radius={[4, 4, 0, 0]} label={false}>
-                  <Cell fill="#D4A853" />
-                  <Cell fill="#BA6B2A" />
+                  <Cell fill="hsl(var(--primary))" />
+                  <Cell fill="hsl(var(--secondary))" />
                   <LabelList
                     dataKey="total"
                     position="top"
