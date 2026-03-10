@@ -1080,7 +1080,7 @@ const ModelagemEstatistica = () => {
 
       {/* Considerações Renda */}
       <div className="mt-6 bg-card border border-border rounded-xl p-6">
-        <h3 className="text-base font-bold text-foreground mb-4">Considerações</h3>
+        <h3 className="text-lg font-bold text-foreground mb-4">Considerações</h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           <div className="space-y-4">
             <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg">
