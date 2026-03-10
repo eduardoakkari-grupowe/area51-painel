@@ -1642,6 +1642,96 @@ const ModelagemEstatistica = () => {
       </div>
     </div>
 
+    {/* ===== ENTUSIASTAS DE TECNOLOGIA ===== */}
+    <div id="entusiastas-de-tecnologia" className="mt-10 scroll-mt-6">
+      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3 mb-6">
+        <div className="h-2.5 w-2.5 rounded-full bg-primary" />
+        <span className="text-xl font-semibold text-foreground">Entusiastas de Tecnologia</span>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+        {/* Gráfico */}
+        <div className="bg-card border border-border rounded-xl p-6">
+          <p className="text-sm font-semibold text-foreground mb-4 text-center">Distribuição de Clientes: Entusiasta de Tecnologia</p>
+          <div className="h-[350px]">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={[
+                { categoria: "N", total: 12460 },
+                { categoria: "S", total: 20154 },
+              ]} margin={{ top: 30, right: 30, left: 20, bottom: 40 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                <XAxis dataKey="categoria" tick={{ fill: "hsl(var(--foreground))", fontSize: 13 }} label={{ value: "Entusiasta de Tecnologia (S = Sim, N = Não)", position: "insideBottom", offset: -25, fill: "hsl(var(--muted-foreground))", fontSize: 12 }} />
+                <YAxis tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 11 }} label={{ value: "Número de Clientes", angle: -90, position: "insideLeft", offset: 0, fill: "hsl(var(--muted-foreground))", fontSize: 12 }} />
+                <Tooltip contentStyle={{ background: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: 8 }} />
+                <Bar dataKey="total" radius={[4, 4, 0, 0]} label={false}>
+                  <Cell fill="#1B4F72" />
+                  <Cell fill="#1ABC9C" />
+                  <LabelList
+                    dataKey="total"
+                    position="top"
+                    content={({ x, y, width, index }: any) => {
+                      const labels = [
+                        { qty: "12.460", pct: "(38,2%)" },
+                        { qty: "20.154", pct: "(61,8%)" },
+                      ];
+                      const item = labels[index as number];
+                      if (!item) return null;
+                      return (
+                        <g>
+                          <text x={x + width / 2} y={y - 18} textAnchor="middle" fill="hsl(var(--foreground))" fontSize={13} fontWeight={700}>{item.qty}</text>
+                          <text x={x + width / 2} y={y - 4} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize={11}>{item.pct}</text>
+                        </g>
+                      );
+                    }}
+                  />
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        {/* Considerações */}
+        <div className="bg-card border border-border rounded-xl p-6 flex flex-col justify-center">
+          <h3 className="text-base font-bold text-foreground mb-3">O Perfil do "Early Adopter" (Entusiasta de Tecnologia)</h3>
+          <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5 mb-5">
+            <li><strong className="text-foreground">Poder Econômico:</strong> Diferente de outras variáveis, a renda média entre entusiastas (R$ 23.838) e não entusiastas (R$ 22.880) é muito similar. Ou seja, ser entusiasta de tecnologia na sua base não depende apenas de ter mais dinheiro, mas sim de um traço de personalidade.</li>
+            <li><strong className="text-foreground">Score de Crédito (O Diferencial):</strong> Aqui está a maior surpresa: entusiastas de tecnologia possuem um Score de Crédito muito superior (937 vs 575). Isso indica que seu público tecnológico é extremamente organizado financeiramente e possui um perfil de risco baixíssimo.</li>
+            <li><strong className="text-foreground">Consumo:</strong> Ticket médio e frequência são quase idênticos, o que mostra que o entusiasmo tecnológico não altera "quanto" eles compram, mas "como" eles percebem o valor do produto.</li>
+          </ul>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-primary/20">
+                  <th className="border border-border px-3 py-2 text-left font-bold text-foreground">Perfil Tecnologia</th>
+                  <th className="border border-border px-3 py-2 text-center font-bold text-foreground">Volume de Clientes</th>
+                  <th className="border border-border px-3 py-2 text-center font-bold text-foreground">Renda Média</th>
+                  <th className="border border-border px-3 py-2 text-center font-bold text-foreground">Gasto Médio</th>
+                  <th className="border border-border px-3 py-2 text-center font-bold text-foreground">Score de Crédito</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border border-border px-3 py-2 font-medium text-foreground">Sim (S)</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">20.154</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">R$23.838</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">R$298,24</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">937</td>
+                </tr>
+                <tr>
+                  <td className="border border-border px-3 py-2 font-medium text-foreground">Não (N)</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">12.460</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">R$22.880</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">R$295,56</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">575</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </DashboardLayout>
   );
 };
