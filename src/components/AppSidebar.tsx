@@ -48,6 +48,7 @@ const modelagemScrollItems = [
   { title: "Aposta Online", hash: "aposta-online" },
   { title: "Clube do Vinho", hash: "clube-do-vinho" },
   { title: "Posse de Moto", hash: "posse-de-moto" },
+  { title: "Fãs de Celebridade", hash: "fas-de-celebridade" },
 ];
 
 const modelagemSubItems: { title: string; url: string }[] = [];
