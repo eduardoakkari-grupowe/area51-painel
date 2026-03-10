@@ -2137,11 +2137,11 @@ const ModelagemEstatistica = () => {
             <table className="w-full text-sm border-collapse">
               <thead>
                 <tr className="bg-primary/10">
-                  <th className="border border-border px-3 py-2 text-left font-semibold">Perfil de Viagens</th>
-                  <th className="border border-border px-3 py-2 text-center font-semibold">Volume de Clientes</th>
-                  <th className="border border-border px-3 py-2 text-center font-semibold">Renda Média</th>
-                  <th className="border border-border px-3 py-2 text-center font-semibold">Gasto Médio</th>
-                  <th className="border border-border px-3 py-2 text-center font-semibold">Score de Crédito</th>
+                  <th className="border border-border px-3 py-2 text-left font-semibold text-foreground">Perfil de Viagens</th>
+                  <th className="border border-border px-3 py-2 text-center font-semibold text-foreground">Volume de Clientes</th>
+                  <th className="border border-border px-3 py-2 text-center font-semibold text-foreground">Renda Média</th>
+                  <th className="border border-border px-3 py-2 text-center font-semibold text-foreground">Gasto Médio</th>
+                  <th className="border border-border px-3 py-2 text-center font-semibold text-foreground">Score de Crédito</th>
                 </tr>
               </thead>
               <tbody>
