@@ -2235,7 +2235,9 @@ const ModelagemEstatistica = () => {
           <li>Testamos <strong className="text-foreground">KMeans</strong> vs <strong className="text-foreground">Gaussian Mixture (GMM)</strong> com K de 2 a 8, usando <strong className="text-foreground">19 features</strong>: Qtde Compras, Valor Total, Ticket, Renda, Idade, Score + 13 perfis comportamentais.</li>
           <li><strong className="text-foreground">Métricas avaliadas:</strong> Silhouette Score, Calinski-Harabasz e Davies-Bouldin.</li>
           <li><strong className="text-foreground">Resultado:</strong> KMeans venceu — mais estável e interpretável. O GMM oscilou muito entre valores de K.</li>
-          <li>Também fizemos a modelagem utilizando o modelo de <strong className="text-foreground">Árvore de Decisão</strong>, tendo as considerações:</li>
+        </ul>
+        <p className="text-sm text-muted-foreground mt-4 mb-2">Também fizemos a modelagem utilizando o modelo de <strong className="text-foreground">Árvore de Decisão</strong>, tendo as considerações:</p>
+        <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5">
           <li>A grande vantagem desse modelo é que ele gera <strong className="text-foreground">regras claras e interpretáveis</strong> — você sabe exatamente qual "caminho" leva cada cliente a uma persona.</li>
           <li>A Árvore de Decisão teve acurácia muito alta (<strong className="text-foreground">92,4% masc.</strong> e <strong className="text-foreground">95,2% fem.</strong>) ao replicar os clusters do KMeans, o que significa que as regras geradas são confiáveis para segmentar novos clientes de forma automática em campanhas.</li>
         </ul>
