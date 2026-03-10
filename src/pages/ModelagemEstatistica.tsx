@@ -2231,19 +2231,10 @@ const ModelagemEstatistica = () => {
 
       <div className="bg-card border border-border rounded-xl p-6">
         <h3 className="text-lg font-bold text-foreground mb-4">Metodologia</h3>
-        <ul className="space-y-3 text-sm text-muted-foreground">
-          <li className="flex gap-2">
-            <span className="text-primary mt-1">•</span>
-            <span>Testamos <strong className="text-foreground">KMeans</strong> vs <strong className="text-foreground">Gaussian Mixture (GMM)</strong> com K de 2 a 8, usando <strong className="text-foreground">19 features</strong>: Qtde Compras, Valor Total, Ticket, Renda, Idade, Score + 13 perfis comportamentais.</span>
-          </li>
-          <li className="flex gap-2">
-            <span className="text-primary mt-1">•</span>
-            <span><strong className="text-foreground">Métricas avaliadas:</strong> Silhouette Score, Calinski-Harabasz e Davies-Bouldin.</span>
-          </li>
-          <li className="flex gap-2">
-            <span className="text-primary mt-1">•</span>
-            <span><strong className="text-foreground">Resultado:</strong> KMeans venceu — mais estável e interpretável. O GMM oscilou muito entre valores de K.</span>
-          </li>
+        <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5">
+          <li>Testamos <strong className="text-foreground">KMeans</strong> vs <strong className="text-foreground">Gaussian Mixture (GMM)</strong> com K de 2 a 8, usando <strong className="text-foreground">19 features</strong>: Qtde Compras, Valor Total, Ticket, Renda, Idade, Score + 13 perfis comportamentais.</li>
+          <li><strong className="text-foreground">Métricas avaliadas:</strong> Silhouette Score, Calinski-Harabasz e Davies-Bouldin.</li>
+          <li><strong className="text-foreground">Resultado:</strong> KMeans venceu — mais estável e interpretável. O GMM oscilou muito entre valores de K.</li>
         </ul>
       </div>
     </div>
