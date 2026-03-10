@@ -45,6 +45,7 @@ const modelagemScrollItems = [
   { title: "Comportamento Digital", hash: "comportamento-digital" },
   { title: "Consumo de Luxo", hash: "consumo-de-luxo" },
   { title: "Entusiastas de Tecnologia", hash: "entusiastas-de-tecnologia" },
+  { title: "Aposta Online", hash: "aposta-online" },
 ];
 
 const modelagemSubItems: { title: string; url: string }[] = [];
