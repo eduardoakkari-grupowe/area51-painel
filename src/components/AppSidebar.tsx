@@ -43,7 +43,6 @@ const modelagemScrollItems = [
   { title: "Posse de Automóvel", hash: "posse-de-automovel" },
   { title: "Veículo 0KM", hash: "veiculo-0km" },
   { title: "Comportamento Digital", hash: "comportamento-digital" },
-  { title: "Viagens e Turismo", hash: "viagens-e-turismo" },
 ];
 
 const modelagemSubItems: { title: string; url: string }[] = [];
