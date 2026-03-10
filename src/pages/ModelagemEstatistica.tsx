@@ -1101,10 +1101,10 @@ const ModelagemEstatistica = () => {
           <div className="space-y-4">
             <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg">
               <p className="text-sm font-bold text-foreground mb-1">3. Nível: Elite / High-End</p>
-              <p className="text-xs text-muted-foreground"><strong>Faixa:</strong> R$ 53.779,62 a R$ 117.918,54</p>
-              <p className="text-xs text-muted-foreground"><strong>Volume:</strong> 2.453 clientes (7,5% da base).</p>
-              <p className="text-xs text-muted-foreground"><strong>Comportamento:</strong> O gasto médio sobe para R$ 407,57. A frequência de compra (1,82) é a mais alta da base, mostrando que o produto faz parte do estilo de vida social constante.</p>
-              <p className="text-xs text-muted-foreground"><strong>Estratégia:</strong> Marketing focado em exclusividade, eventos e parcerias com marcas de luxo (vinhos caros, resorts).</p>
+              <p className="text-sm text-muted-foreground"><strong>Faixa:</strong> R$ 53.779,62 a R$ 117.918,54</p>
+              <p className="text-sm text-muted-foreground"><strong>Volume:</strong> 2.453 clientes (7,5% da base).</p>
+              <p className="text-sm text-muted-foreground"><strong>Comportamento:</strong> O gasto médio sobe para R$ 407,57. A frequência de compra (1,82) é a mais alta da base, mostrando que o produto faz parte do estilo de vida social constante.</p>
+              <p className="text-sm text-muted-foreground"><strong>Estratégia:</strong> Marketing focado em exclusividade, eventos e parcerias com marcas de luxo (vinhos caros, resorts).</p>
             </div>
             <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg">
               <p className="text-sm font-bold text-foreground mb-1">4. Nível: Ultra-Ricos / VIPs</p>
