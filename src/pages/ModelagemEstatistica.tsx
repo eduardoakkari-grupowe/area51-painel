@@ -2089,7 +2089,7 @@ const ModelagemEstatistica = () => {
     <div id="viagens-e-turismo" className="mt-10 scroll-mt-6">
       <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3 mb-6">
         <div className="h-2.5 w-2.5 rounded-full bg-primary" />
-        <h2 className="text-base font-bold text-foreground tracking-wide uppercase">Perfil de Viagens e Turismo</h2>
+        <h2 className="text-base font-bold text-foreground tracking-wide uppercase">Viagens e Turismo</h2>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
