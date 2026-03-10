@@ -1108,10 +1108,10 @@ const ModelagemEstatistica = () => {
             </div>
             <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg">
               <p className="text-sm font-bold text-foreground mb-1">4. Nível: Ultra-Ricos / VIPs</p>
-              <p className="text-xs text-muted-foreground"><strong>Faixa:</strong> R$ 118.461,21 a R$ 919.911,59</p>
-              <p className="text-xs text-muted-foreground"><strong>Volume:</strong> 384 clientes (1,2% da base).</p>
-              <p className="text-xs text-muted-foreground"><strong>Comportamento:</strong> É o topo absoluto. Gastam em média R$ 411,80. Embora sejam poucos, possuem o maior LTV (Lifetime Value) da base, com frequência de 1,77.</p>
-              <p className="text-xs text-muted-foreground"><strong>Estratégia:</strong> Atendimento personalizado (Concierge), ofertas de edições limitadas e kits "Ultra" de longa duração.</p>
+              <p className="text-sm text-muted-foreground"><strong>Faixa:</strong> R$ 118.461,21 a R$ 919.911,59</p>
+              <p className="text-sm text-muted-foreground"><strong>Volume:</strong> 384 clientes (1,2% da base).</p>
+              <p className="text-sm text-muted-foreground"><strong>Comportamento:</strong> É o topo absoluto. Gastam em média R$ 411,80. Embora sejam poucos, possuem o maior LTV (Lifetime Value) da base, com frequência de 1,77.</p>
+              <p className="text-sm text-muted-foreground"><strong>Estratégia:</strong> Atendimento personalizado (Concierge), ofertas de edições limitadas e kits "Ultra" de longa duração.</p>
             </div>
           </div>
         </div>
