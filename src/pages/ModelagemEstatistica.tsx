@@ -1092,10 +1092,10 @@ const ModelagemEstatistica = () => {
             </div>
             <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg">
               <p className="text-sm font-bold text-foreground mb-1">2. Nível: Classe Alta / Premium</p>
-              <p className="text-xs text-muted-foreground"><strong>Faixa:</strong> R$ 22.781,55 a R$ 53.752,43</p>
-              <p className="text-xs text-muted-foreground"><strong>Volume:</strong> 8.268 clientes (25,4% da base).</p>
-              <p className="text-xs text-muted-foreground"><strong>Comportamento:</strong> Há um salto significativo no gasto médio para R$ 331,72. Este público já compra com mais recorrência (1,72).</p>
-              <p className="text-xs text-muted-foreground"><strong>Estratégia:</strong> Este é o público ideal para programas de assinatura e kits intermediários.</p>
+              <p className="text-sm text-muted-foreground"><strong>Faixa:</strong> R$ 22.781,55 a R$ 53.752,43</p>
+              <p className="text-sm text-muted-foreground"><strong>Volume:</strong> 8.268 clientes (25,4% da base).</p>
+              <p className="text-sm text-muted-foreground"><strong>Comportamento:</strong> Há um salto significativo no gasto médio para R$ 331,72. Este público já compra com mais recorrência (1,72).</p>
+              <p className="text-sm text-muted-foreground"><strong>Estratégia:</strong> Este é o público ideal para programas de assinatura e kits intermediários.</p>
             </div>
           </div>
           <div className="space-y-4">
