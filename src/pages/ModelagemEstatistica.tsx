@@ -643,8 +643,8 @@ const ModelagemEstatistica = () => {
 
             {/* Boxplots */}
             {[
-              { label: "Baixo Valor", cx: 110, color: "hsl(var(--primary))", min: 1, q1: 1, med: 1, q3: 1, max: 2, outliers: [3, 4, 5, 6] },
-              { label: "Médio Valor", cx: 200, color: "hsl(var(--secondary))", min: 1, q1: 1, med: 2, q3: 2, max: 3, outliers: [5, 6, 7, 8] },
+              { label: "Baixo Valor", cx: 110, color: "hsl(var(--accent))", min: 1, q1: 1, med: 1, q3: 1, max: 2, outliers: [3, 4, 5, 6] },
+              { label: "Médio Valor", cx: 200, color: "hsl(var(--accent))", min: 1, q1: 1, med: 2, q3: 2, max: 3, outliers: [5, 6, 7, 8] },
               { label: "Alto Valor", cx: 290, color: "hsl(var(--accent))", min: 3, q1: 4, med: 6, q3: 7, max: 11, outliers: [13, 14, 15] },
               { label: "Premium", cx: 380, color: "hsl(var(--warning))", min: 2, q1: 10, med: 13, q3: 18, max: 28, outliers: [33, 34, 42] },
             ].map((bp) => {
