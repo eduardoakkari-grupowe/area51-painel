@@ -1551,6 +1551,97 @@ const ModelagemEstatistica = () => {
       </div>
     </div>
 
+    {/* ===== CONSUMO DE LUXO ===== */}
+    <div id="consumo-de-luxo" className="mt-10 scroll-mt-6">
+      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3 mb-6">
+        <div className="h-2.5 w-2.5 rounded-full bg-primary" />
+        <span className="text-xl font-semibold text-foreground">Consumo de Luxo</span>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+        {/* Gráfico */}
+        <div className="bg-card border border-border rounded-xl p-6">
+          <p className="text-sm font-semibold text-foreground mb-4 text-center">Distribuição de Clientes: Perfil de Consumo de Luxo</p>
+          <div className="h-[350px]">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={[
+                { categoria: "N", total: 4027 },
+                { categoria: "S", total: 28587 },
+              ]} margin={{ top: 30, right: 30, left: 20, bottom: 40 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                <XAxis dataKey="categoria" tick={{ fill: "hsl(var(--foreground))", fontSize: 13 }} label={{ value: "Consumo de Luxo (S = Sim, N = Não)", position: "insideBottom", offset: -25, fill: "hsl(var(--muted-foreground))", fontSize: 12 }} />
+                <YAxis tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 11 }} label={{ value: "Número de Clientes", angle: -90, position: "insideLeft", offset: 0, fill: "hsl(var(--muted-foreground))", fontSize: 12 }} />
+                <Tooltip contentStyle={{ background: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: 8 }} />
+                <Bar dataKey="total" radius={[4, 4, 0, 0]} label={false}>
+                  <Cell fill="#5B2C6F" />
+                  <Cell fill="#CD9B6A" />
+                  <LabelList
+                    dataKey="total"
+                    position="top"
+                    content={({ x, y, width, index }: any) => {
+                      const labels = [
+                        { qty: "4.027", pct: "(12,4%)" },
+                        { qty: "28.587", pct: "(87,6%)" },
+                      ];
+                      const item = labels[index as number];
+                      if (!item) return null;
+                      return (
+                        <g>
+                          <text x={x + width / 2} y={y - 18} textAnchor="middle" fill="hsl(var(--foreground))" fontSize={13} fontWeight={700}>{item.qty}</text>
+                          <text x={x + width / 2} y={y - 4} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize={11}>{item.pct}</text>
+                        </g>
+                      );
+                    }}
+                  />
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        {/* Considerações */}
+        <div className="bg-card border border-border rounded-xl p-6 flex flex-col justify-center">
+          <h3 className="text-base font-bold text-foreground mb-1">O Abismo entre o Consumo de Luxo e o Regular</h3>
+          <p className="text-sm font-semibold text-muted-foreground mb-3">A diferença socioeconômica entre os grupos é drástica:</p>
+          <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5 mb-5">
+            <li><strong className="text-foreground">Poder Aquisitivo:</strong> O cliente com perfil de luxo tem uma renda média de <strong className="text-foreground">R$ 26.172</strong>, o que é 6 vezes superior à renda dos clientes regulares (R$ 4.285).</li>
+            <li><strong className="text-foreground">Investimento no Produto:</strong> O ticket médio do grupo de luxo é R$ 305,36, superando em 27% o grupo regular.</li>
+            <li><strong className="text-foreground">Fidelidade:</strong> A frequência de compra também é maior (1.65 vs 1.47), sugerindo que o consumo do produto está integrado a hábitos sociais recorrentes (jantares, eventos, viagens).</li>
+          </ul>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-primary/20">
+                  <th className="border border-border px-3 py-2 text-left font-bold text-foreground">Perfil de Consumo</th>
+                  <th className="border border-border px-3 py-2 text-center font-bold text-foreground">Volume de Clientes</th>
+                  <th className="border border-border px-3 py-2 text-center font-bold text-foreground">Renda Média</th>
+                  <th className="border border-border px-3 py-2 text-center font-bold text-foreground">Gasto Médio (M)</th>
+                  <th className="border border-border px-3 py-2 text-center font-bold text-foreground">Score de Crédito</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td className="border border-border px-3 py-2 font-medium text-foreground">Luxo (S)</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">28.587</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">R$26.172</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">R$305,36</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">805</td>
+                </tr>
+                <tr>
+                  <td className="border border-border px-3 py-2 font-medium text-foreground">Regular (N)</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">4.027</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">R$4.285</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">R$239,43</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">755</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </DashboardLayout>
   );
 };
