@@ -41,6 +41,7 @@ const modelagemScrollItems = [
   { title: "Posse de Imóvel", hash: "posse-de-imovel" },
   { title: "Posse de Imóvel de AP", hash: "posse-de-imovel-alto-padrao" },
   { title: "Posse de Automóvel", hash: "posse-de-automovel" },
+  { title: "Veículo 0KM", hash: "veiculo-0km" },
   { title: "Comportamento Digital", hash: "comportamento-digital" },
   { title: "Viagens e Turismo", hash: "viagens-e-turismo" },
 ];

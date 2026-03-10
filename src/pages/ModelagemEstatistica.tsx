@@ -1401,6 +1401,96 @@ const ModelagemEstatistica = () => {
       </div>
     </div>
 
+    {/* ===== PROPRIETÁRIO DE VEÍCULO 0KM ===== */}
+    <div id="veiculo-0km" className="mt-10 scroll-mt-6">
+      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3 mb-6">
+        <div className="h-2.5 w-2.5 rounded-full bg-primary" />
+        <span className="text-xl font-semibold text-foreground">Proprietário de Veículo 0KM</span>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        {/* Gráfico */}
+        <div className="bg-card border border-border rounded-xl p-6">
+          <p className="text-sm font-semibold text-foreground mb-4 text-center">Distribuição de Clientes: Perfil de Veículo Zero KM</p>
+          <div className="h-[350px]">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={[
+                { categoria: "N", total: 17332 },
+                { categoria: "S", total: 15282 },
+              ]} margin={{ top: 30, right: 30, left: 20, bottom: 40 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                <XAxis dataKey="categoria" tick={{ fill: "hsl(var(--foreground))", fontSize: 13 }} label={{ value: "Veículo Zero KM (S = Sim, N = Não)", position: "insideBottom", offset: -25, fill: "hsl(var(--muted-foreground))", fontSize: 12 }} />
+                <YAxis tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 11 }} label={{ value: "Número de Clientes", angle: -90, position: "insideLeft", offset: 0, fill: "hsl(var(--muted-foreground))", fontSize: 12 }} />
+                <Tooltip contentStyle={{ background: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: 8 }} />
+                <Bar dataKey="total" radius={[4, 4, 0, 0]} label={false}>
+                  <Cell fill="#D4760A" />
+                  <Cell fill="#C5A332" />
+                  <LabelList
+                    dataKey="total"
+                    position="top"
+                    content={({ x, y, width, index }: any) => {
+                      const labels = [
+                        { qty: "17.332", pct: "(53,1%)" },
+                        { qty: "15.282", pct: "(46,9%)" },
+                      ];
+                      const item = labels[index as number];
+                      if (!item) return null;
+                      return (
+                        <g>
+                          <text x={x + width / 2} y={y - 18} textAnchor="middle" fill="hsl(var(--foreground))" fontSize={13} fontWeight={700}>{item.qty}</text>
+                          <text x={x + width / 2} y={y - 4} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize={11}>{item.pct}</text>
+                        </g>
+                      );
+                    }}
+                  />
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        {/* Considerações */}
+        <div className="bg-card border border-border rounded-xl p-6 flex flex-col justify-start">
+          <h3 className="text-base font-bold text-foreground mb-3">O Perfil "Zero KM" vs. Mercado de Usados/Não Proprietários</h3>
+          <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5 mb-6">
+            <li><strong className="text-foreground">Poder Aquisitivo Extremo:</strong> Clientes com perfil de veículo Zero KM têm uma renda média de <strong className="text-foreground">R$ 35.920</strong>, quase 3 vezes superior aos que não têm esse perfil (R$ 12.493).</li>
+            <li><strong className="text-foreground">Consumo e Ticket Médio:</strong> Esse grupo gasta, em média, R$ 335,59, um valor 27% maior do que os demais. Além disso, eles compram com mais frequência (1.74 vs 1.54).</li>
+            <li><strong className="text-foreground">Confiança de Crédito:</strong> O Score de crédito é ligeiramente superior (806 vs 792), indicando bons pagadores.</li>
+          </ul>
+
+          <div className="overflow-x-auto">
+            <Table>
+              <TableHeader>
+                <TableRow className="bg-primary/10">
+                  <TableHead className="text-foreground font-bold text-center">Perfil Veículo</TableHead>
+                  <TableHead className="text-foreground font-bold text-center">Volume de Clientes</TableHead>
+                  <TableHead className="text-foreground font-bold text-center">Renda Média</TableHead>
+                  <TableHead className="text-foreground font-bold text-center">Gasto Médio</TableHead>
+                  <TableHead className="text-foreground font-bold text-center">Frequência Média</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
+                <TableRow>
+                  <TableCell className="text-center font-medium">Sim (S)</TableCell>
+                  <TableCell className="text-center">15.282</TableCell>
+                  <TableCell className="text-center">R$35.920</TableCell>
+                  <TableCell className="text-center">R$335,59</TableCell>
+                  <TableCell className="text-center">1.74</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell className="text-center font-medium">Não (N)</TableCell>
+                  <TableCell className="text-center">17.332</TableCell>
+                  <TableCell className="text-center">R$12.493</TableCell>
+                  <TableCell className="text-center">R$263,38</TableCell>
+                  <TableCell className="text-center">1.54</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
+          </div>
+        </div>
+      </div>
+    </div>
+
     {/* ===== COMPORTAMENTO DIGITAL ===== */}
     <div id="comportamento-digital" className="mt-10 scroll-mt-6">
       <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3 mb-6">
