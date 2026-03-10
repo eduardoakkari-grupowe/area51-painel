@@ -292,8 +292,8 @@ const ModelagemEstatistica = () => {
 
         {/* Machine Learning */}
         <div className="flex flex-col items-center text-center gap-3 w-[140px]">
-          <div className="bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 rounded-2xl p-6 shadow-lg w-[112px] h-[112px] flex items-center justify-center">
-            <Brain className="h-16 w-16 text-white" />
+          <div className="bg-gradient-to-br from-accent via-primary to-secondary rounded-2xl p-6 shadow-lg w-[112px] h-[112px] flex items-center justify-center">
+            <Brain className="h-16 w-16 text-primary-foreground" />
           </div>
           <p className="text-sm font-bold text-foreground">Machine Learning</p>
         </div>
