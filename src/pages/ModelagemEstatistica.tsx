@@ -2085,6 +2085,98 @@ const ModelagemEstatistica = () => {
       </div>
     </div>
 
+    {/* ===== VIAGENS E TURISMO ===== */}
+    <div id="viagens-e-turismo" className="mt-10 scroll-mt-6">
+      <div className="inline-flex items-center gap-2 bg-card border border-border rounded-lg px-5 py-3 mb-6">
+        <div className="h-2.5 w-2.5 rounded-full bg-primary" />
+        <h2 className="text-base font-bold text-foreground tracking-wide uppercase">Perfil de Viagens e Turismo</h2>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+        {/* Gráfico */}
+        <div className="bg-card rounded-xl border border-border p-6">
+          <h3 className="text-sm font-bold text-foreground mb-4 text-center">Perfil de Viagens e Turismo</h3>
+          <ResponsiveContainer width="100%" height={350}>
+            <BarChart data={[
+              { categoria: "N", total: 1919 },
+              { categoria: "S", total: 30695 },
+            ]} margin={{ top: 40, right: 30, left: 20, bottom: 20 }}>
+              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+              <XAxis dataKey="categoria" tick={{ fill: "hsl(var(--foreground))", fontSize: 13 }} label={{ value: "Viagens e Turismo (S = Sim, N = Não)", position: "insideBottom", offset: -10, fill: "hsl(var(--muted-foreground))", fontSize: 12 }} />
+              <YAxis tick={{ fill: "hsl(var(--foreground))", fontSize: 12 }} label={{ value: "Número de Clientes", angle: -90, position: "insideLeft", offset: 0, fill: "hsl(var(--muted-foreground))", fontSize: 12 }} />
+              <Tooltip />
+              <Bar dataKey="total" radius={[4, 4, 0, 0]}>
+                <Cell fill="#E991B8" />
+                <Cell fill="#D4A853" />
+                <LabelList dataKey="total" position="top" content={({ x, y, width, value, index }: any) => {
+                  const pcts = ["5.9%", "94.1%"];
+                  return (
+                    <g>
+                      <text x={x + width / 2} y={y - 18} textAnchor="middle" fill="hsl(var(--foreground))" fontSize={13} fontWeight="bold">
+                        {Number(value).toLocaleString("pt-BR")}
+                      </text>
+                      <text x={x + width / 2} y={y - 4} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize={11}>
+                        ({pcts[index]})
+                      </text>
+                    </g>
+                  );
+                }} />
+              </Bar>
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+
+        {/* Considerações */}
+        <div className="bg-card rounded-xl border border-border p-6">
+          <h3 className="text-base font-bold text-foreground mb-4">O Perfil do Viajante vs. Não Viajante</h3>
+          <ul className="space-y-3 text-sm text-muted-foreground mb-6">
+            <li className="flex gap-2">
+              <span className="text-primary mt-1">•</span>
+              <span><strong className="text-foreground">Poder Econômico:</strong> Clientes que viajam têm uma renda média de <strong className="text-foreground">R$ 24.552</strong>, o que é 4 vezes superior à dos não viajantes (R$ 6.151).</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="text-primary mt-1">•</span>
+              <span><strong className="text-foreground">Consumo e LTV:</strong> Viajantes gastam em média R$ 300,44, enquanto os não viajantes gastam R$ 245,61. Além disso, a frequência de compra é superior no grupo de viajantes (1.64 vs 1.44).</span>
+            </li>
+            <li className="flex gap-2">
+              <span className="text-primary mt-1">•</span>
+              <span><strong className="text-foreground">Crédito:</strong> O Score de crédito também acompanha o perfil, sendo maior no grupo que viaja (800 vs 782).</span>
+            </li>
+          </ul>
+
+          <div className="overflow-x-auto">
+            <table className="w-full text-sm border-collapse">
+              <thead>
+                <tr className="bg-[#2F5597] text-white">
+                  <th className="border border-border px-3 py-2 text-left font-semibold">Perfil de Viagens</th>
+                  <th className="border border-border px-3 py-2 text-center font-semibold">Volume de Clientes</th>
+                  <th className="border border-border px-3 py-2 text-center font-semibold">Renda Média</th>
+                  <th className="border border-border px-3 py-2 text-center font-semibold">Gasto Médio</th>
+                  <th className="border border-border px-3 py-2 text-center font-semibold">Score de Crédito</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="bg-card">
+                  <td className="border border-border px-3 py-2 font-medium text-foreground">Sim (S)</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">30.695</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">R$24.552</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">R$300,44</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">800</td>
+                </tr>
+                <tr>
+                  <td className="border border-border px-3 py-2 font-medium text-foreground">Não (N)</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">1.919</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">R$6.151</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">R$245,61</td>
+                  <td className="border border-border px-3 py-2 text-center text-muted-foreground">782</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </DashboardLayout>
   );
 };
