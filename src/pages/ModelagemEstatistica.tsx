@@ -270,7 +270,7 @@ const ModelagemEstatistica = () => {
         </li>
         <li className="flex items-start gap-3">
           <span className="mt-1.5 h-2 w-2 rounded-full bg-primary shrink-0" />
-          <span className="text-sm text-muted-foreground">A aplicação do modelo no Big Data area51 possibilita a seleção de indivíduos com alta similaridade ao público de interesse, visando a construção do Aquário utilizado em ações de prospecção on-line anonimizadas.</span>
+          <span className="text-sm text-muted-foreground">A aplicação do modelo no Big Data area51 possibilita a seleção desses indivíduos com alta similaridade ao público de interesse, visando a construção do Aquário utilizado para montagem dos públicos para realização de ações de prospecção on-line anonimizadas.</span>
         </li>
       </ul>
 
