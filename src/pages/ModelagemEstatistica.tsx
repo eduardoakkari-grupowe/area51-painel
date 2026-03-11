@@ -256,7 +256,7 @@ const ModelagemEstatistica = () => {
       </div>
 
       <p className="mt-4 text-sm text-muted-foreground">
-        A partir de um público de interesse, identifica indivíduos que apresentam alto nível de semelhança a ele, sendo esta semelhança dada por um score de similaridade:
+        A partir de um público de interesse, identificamos indivíduos que apresentam alto nível de semelhança a ele, sendo esta semelhança dada por um score de similaridade:
       </p>
 
       <ul className="mt-4 space-y-3">
