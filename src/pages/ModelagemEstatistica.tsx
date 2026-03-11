@@ -113,9 +113,9 @@ const ModelagemEstatistica = () => {
           <div className="bg-white/20 rounded-lg p-3">
             <ShoppingCart className="h-8 w-8 text-accent-foreground" />
           </div>
-          <div>
+          <div className="flex items-baseline gap-2">
             <p className="text-4xl font-bold text-accent-foreground">55.000</p>
-            <p className="text-sm font-medium text-accent-foreground/90">Compras</p>
+            <p className="text-lg font-medium text-accent-foreground/90">Compras</p>
           </div>
         </div>
         <div className="bg-card p-4 border border-t-0 border-border rounded-b-xl">
@@ -129,9 +129,9 @@ const ModelagemEstatistica = () => {
           <div className="bg-white/20 rounded-lg p-3">
             <Users className="h-8 w-8 text-primary-foreground" />
           </div>
-          <div>
+          <div className="flex items-baseline gap-2">
             <p className="text-4xl font-bold text-primary-foreground">32.715</p>
-            <p className="text-sm font-medium text-primary-foreground/90">CPFs / Clientes</p>
+            <p className="text-lg font-medium text-primary-foreground/90">CPFs / Clientes</p>
           </div>
         </div>
         <div className="bg-card p-4 border border-t-0 border-border rounded-b-xl">
