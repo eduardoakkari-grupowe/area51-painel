@@ -38,7 +38,7 @@ const objetivos = [
   "Estudo do perfil de clientes da Novvo;",
   "Criação das Personas, com a identificação de atributos que possam diferenciar os clientes para posterior utilizaçao no look alike com a base area51.;",
   "Desenvolvimento de modelo de Look Alike, tendo por objetivo identificar na area51 pessoas que possuem perfil semelhante aos atuais clientes, visando o desenvolvimento de ações de prospecção anonimizadas;",
-  "Estudo comparativo do perfil de clientes com perfis de afinidade area51;",
+
   "Avaliação de perfis com taxa de recorrência para a prospecção de clientes;",
 ];
 
