@@ -980,75 +980,130 @@ const ModelagemEstatistica = () => {
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        {/* Gráfico */}
-        <div className="bg-card border border-border rounded-xl p-6">
-          <h3 className="text-sm font-bold text-foreground mb-4 text-center">Quantidade de Clientes por Cluster</h3>
-          <ResponsiveContainer width="100%" height={350}>
-            <BarChart data={[
-              { cluster: "Classe Média\nEntrada", total: 21498, color: "hsl(210, 55%, 55%)" },
-              { cluster: "Classe Alta\nPremium", total: 8268, color: "hsl(210, 45%, 65%)" },
-              { cluster: "Elite\nHigh-End", total: 2453, color: "hsl(30, 70%, 55%)" },
-              { cluster: "Ultra-Ricos\nVIPs", total: 384, color: "hsl(350, 65%, 50%)" },
-            ]} margin={{ top: 50, right: 20, left: 20, bottom: 20 }}>
-              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-              <XAxis dataKey="cluster" tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 11 }} />
-              <YAxis tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 11 }} />
-              <Tooltip contentStyle={{ backgroundColor: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: "8px", color: "hsl(var(--foreground))" }} />
-              <Bar dataKey="total" radius={[4, 4, 0, 0]} label={false}>
-                <Cell fill="hsl(var(--primary))" />
-                <Cell fill="hsl(var(--secondary))" />
-                <Cell fill="hsl(var(--accent))" />
-                <Cell fill="hsl(var(--chart-4))" />
-                <LabelList
-                  dataKey="total"
-                  position="top"
-                  content={({ x, y, width, index }: any) => {
-                    const labels = [
-                      { qty: "21,498", pct: "(65.9%)" },
-                      { qty: "8,268", pct: "(25.4%)" },
-                      { qty: "2,453", pct: "(7.5%)" },
-                      { qty: "384", pct: "(1.2%)" },
-                    ];
-                    const item = labels[index];
-                    if (!item) return null;
-                    return (
-                      <g>
-                        <text x={x + width / 2} y={y - 20} textAnchor="middle" fill="hsl(var(--foreground))" fontSize={12} fontWeight={700}>{item.qty}</text>
-                        <text x={x + width / 2} y={y - 6} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize={11}>{item.pct}</text>
-                      </g>
-                    );
-                  }}
-                />
-              </Bar>
-            </BarChart>
-          </ResponsiveContainer>
+        {/* Gráfico 1 - Quantidade */}
+        <div className="bg-card border border-border rounded-xl p-6 flex flex-col items-center">
+          <p className="text-sm font-semibold text-foreground mb-4 text-center">Quantidade de Clientes por Faixa de Renda</p>
+          <div className="w-full h-[300px]">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={[
+                { faixa: "Até 10k", total: 10359, pct: "(31,8%)" },
+                { faixa: "10k a 20k", total: 9335, pct: "(28,6%)" },
+                { faixa: "20k a 30k", total: 5186, pct: "(15,9%)" },
+                { faixa: "30k a 40k", total: 2587, pct: "(7,9%)" },
+                { faixa: "40k a 50k", total: 1755, pct: "(5,4%)" },
+                { faixa: "Mais 50k", total: 3381, pct: "(10,4%)" },
+              ]} margin={{ top: 30, right: 10, left: 10, bottom: 25 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                <XAxis dataKey="faixa" tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 10 }} angle={-25} textAnchor="end" />
+                <YAxis tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 11 }} />
+                <Tooltip contentStyle={{ backgroundColor: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: "8px", color: "hsl(var(--foreground))" }} formatter={(value: number) => [value.toLocaleString(), "Clientes"]} />
+                <Bar dataKey="total" radius={[4, 4, 0, 0]} fill="hsl(var(--primary))">
+                  <LabelList
+                    dataKey="total"
+                    position="top"
+                    content={({ x, y, width, index }: any) => {
+                      const labels = [
+                        { qty: "10.359", pct: "(31,8%)" },
+                        { qty: "9.335", pct: "(28,6%)" },
+                        { qty: "5.186", pct: "(15,9%)" },
+                        { qty: "2.587", pct: "(7,9%)" },
+                        { qty: "1.755", pct: "(5,4%)" },
+                        { qty: "3.381", pct: "(10,4%)" },
+                      ];
+                      const item = labels[index];
+                      if (!item) return null;
+                      return (
+                        <g>
+                          <text x={x + width / 2} y={y - 14} textAnchor="middle" fill="hsl(var(--foreground))" fontSize={11} fontWeight={700}>{item.qty}</text>
+                          <text x={x + width / 2} y={y - 4} textAnchor="middle" fill="hsl(var(--muted-foreground))" fontSize={9}>{item.pct}</text>
+                        </g>
+                      );
+                    }}
+                  />
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
         </div>
 
-        {/* Tabela */}
+        {/* Gráfico 2 - Gasto Médio */}
+        <div className="bg-card border border-border rounded-xl p-6 flex flex-col items-center">
+          <p className="text-sm font-semibold text-foreground mb-4 text-center">Gasto Médio por Faixa de Renda (R$)</p>
+          <div className="w-full h-[300px]">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={[
+                { faixa: "Até 10k", valor: 248 },
+                { faixa: "10k a 20k", valor: 286 },
+                { faixa: "20k a 30k", valor: 311 },
+                { faixa: "30k a 40k", valor: 346 },
+                { faixa: "40k a 50k", valor: 340 },
+                { faixa: "Mais 50k", valor: 400 },
+              ]} margin={{ top: 20, right: 10, left: 10, bottom: 25 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                <XAxis dataKey="faixa" tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 10 }} angle={-25} textAnchor="end" />
+                <YAxis tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 11 }} />
+                <Tooltip contentStyle={{ backgroundColor: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: "8px", color: "hsl(var(--foreground))" }} formatter={(value: number) => [`R$ ${value}`, "Gasto Médio"]} />
+                <Bar dataKey="valor" radius={[4, 4, 0, 0]} fill="hsl(var(--secondary))">
+                  <LabelList dataKey="valor" position="top" formatter={(val: number) => `R$${val}`} style={{ fill: "hsl(var(--foreground))", fontSize: 10, fontWeight: 'bold' }} />
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        {/* Gráfico 3 - Frequência Média */}
+        <div className="bg-card border border-border rounded-xl p-6 flex flex-col items-center">
+          <p className="text-sm font-semibold text-foreground mb-4 text-center">Frequência Média por Faixa de Renda</p>
+          <div className="w-full h-[300px]">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart data={[
+                { faixa: "Até 10k", freq: 1.51 },
+                { faixa: "10k a 20k", freq: 1.62 },
+                { faixa: "20k a 30k", freq: 1.66 },
+                { faixa: "30k a 40k", freq: 1.82 },
+                { faixa: "40k a 50k", freq: 1.68 },
+                { faixa: "Mais 50k", freq: 1.80 },
+              ]} margin={{ top: 20, right: 10, left: 10, bottom: 25 }}>
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
+                <XAxis dataKey="faixa" tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 10 }} angle={-25} textAnchor="end" />
+                <YAxis tick={{ fill: "hsl(var(--muted-foreground))", fontSize: 11 }} domain={[0, 2]} />
+                <Tooltip contentStyle={{ backgroundColor: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: "8px", color: "hsl(var(--foreground))" }} formatter={(value: number) => [value, "Frequência"]} />
+                <Bar dataKey="freq" radius={[4, 4, 0, 0]} fill="hsl(var(--accent))">
+                  <LabelList dataKey="freq" position="top" style={{ fill: "hsl(var(--foreground))", fontSize: 10, fontWeight: 'bold' }} />
+                </Bar>
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        </div>
+
+        {/* Tabela Resumo */}
         <div className="bg-card border border-border rounded-xl p-6 overflow-auto">
+          <p className="text-sm font-semibold text-foreground mb-4 text-center">Resumo por Faixa de Renda</p>
           <Table>
             <TableHeader>
               <TableRow className="bg-primary/10">
-                <TableHead className="text-foreground font-bold text-xs">Cluster</TableHead>
-                <TableHead className="text-foreground font-bold text-xs text-right">Clientes</TableHead>
-                <TableHead className="text-foreground font-bold text-xs">Faixa de Renda</TableHead>
-                <TableHead className="text-foreground font-bold text-xs text-right">Gasto Médio</TableHead>
-                <TableHead className="text-foreground font-bold text-xs text-right">Freq. Média</TableHead>
+                <TableHead className="text-foreground font-bold text-[11px] px-2 py-2">Faixa de Renda</TableHead>
+                <TableHead className="text-foreground font-bold text-[11px] px-2 py-2 text-right">Clientes</TableHead>
+                <TableHead className="text-foreground font-bold text-[11px] px-2 py-2 text-right">Gasto</TableHead>
+                <TableHead className="text-foreground font-bold text-[11px] px-2 py-2 text-right">Freq.</TableHead>
+                <TableHead className="text-foreground font-bold text-[11px] px-2 py-2 text-right">Renda</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
               {[
-                { cluster: "Classe Média / Entrada", clientes: "21.498", faixa: "R$ 1.562 a R$ 22.779", gasto: "R$ 269,35", freq: "1,57" },
-                { cluster: "Classe Alta / Premium", clientes: "8.268", faixa: "R$ 22.782 a R$ 53.752", gasto: "R$ 331,72", freq: "1,72" },
-                { cluster: "Elite / High-End", clientes: "2.453", faixa: "R$ 53.780 a R$ 117.919", gasto: "R$ 407,57", freq: "1,82" },
-                { cluster: "Ultra-Ricos / VIPs", clientes: "384", faixa: "R$ 118.461 a R$ 919.912", gasto: "R$ 411,80", freq: "1,77" },
+                { f: "Até R$10.000", cl: "10.359", g: "R$ 247,59", fr: "1,51", rm: "R$ 6.134" },
+                { f: "R$10.001 a R$20.000", cl: "9.335", g: "R$ 286,07", fr: "1,62", rm: "R$ 14.657" },
+                { f: "R$20.001 a R$30.000", cl: "5.186", g: "R$ 310,59", fr: "1,66", rm: "R$ 24.486" },
+                { f: "R$30.001 a R$40.000", cl: "2.587", g: "R$ 346,34", fr: "1,82", rm: "R$ 34.362" },
+                { f: "R$40.001 a R$50.000", cl: "1.755", g: "R$ 339,50", fr: "1,68", rm: "R$ 45.098" },
+                { f: "Acima de R$50.000", cl: "3.381", g: "R$ 400,26", fr: "1,80", rm: "R$ 79.868" },
               ].map((row) => (
-                <TableRow key={row.cluster}>
-                  <TableCell className="text-sm font-medium">{row.cluster}</TableCell>
-                  <TableCell className="text-sm text-right">{row.clientes}</TableCell>
-                  <TableCell className="text-sm">{row.faixa}</TableCell>
-                  <TableCell className="text-sm text-right">{row.gasto}</TableCell>
-                  <TableCell className="text-sm text-right">{row.freq}</TableCell>
+                <TableRow key={row.f}>
+                  <TableCell className="text-xs font-medium px-2 py-2 leading-tight">{row.f}</TableCell>
+                  <TableCell className="text-xs text-right px-2 py-2">{row.cl}</TableCell>
+                  <TableCell className="text-xs text-right px-2 py-2 whitespace-nowrap">{row.g}</TableCell>
+                  <TableCell className="text-xs text-right px-2 py-2">{row.fr}</TableCell>
+                  <TableCell className="text-xs text-right px-2 py-2 whitespace-nowrap">{row.rm}</TableCell>
                 </TableRow>
               ))}
             </TableBody>
