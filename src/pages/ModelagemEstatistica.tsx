@@ -106,25 +106,9 @@ const ModelagemEstatistica = () => {
       </div>
     </div>
 
-    <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4 max-w-2xl">
-      {/* Card Clientes */}
-      <div className="rounded-xl overflow-hidden shadow-lg">
-        <div className="bg-primary flex items-center gap-4 p-6">
-          <div className="bg-white/20 rounded-lg p-3">
-            <Users className="h-8 w-8 text-primary-foreground" />
-          </div>
-          <div>
-            <p className="text-4xl font-bold text-primary-foreground">32.715</p>
-            <p className="text-sm font-medium text-primary-foreground/90">CPFs / Clientes</p>
-          </div>
-        </div>
-        <div className="bg-card p-4 border border-t-0 border-border rounded-b-xl">
-          <p className="text-sm text-muted-foreground">Base de clientes distintos identificados na modelagem.</p>
-        </div>
-      </div>
-
+    <div className="flex flex-col gap-6 mt-4 w-full">
       {/* Card Compras */}
-      <div className="rounded-xl overflow-hidden shadow-lg">
+      <div className="rounded-xl overflow-hidden shadow-lg w-full">
         <div className="bg-accent flex items-center gap-4 p-6">
           <div className="bg-white/20 rounded-lg p-3">
             <ShoppingCart className="h-8 w-8 text-accent-foreground" />
@@ -138,13 +122,29 @@ const ModelagemEstatistica = () => {
           <p className="text-sm text-muted-foreground">Base de compras registradas para análise de perfil e recorrência.</p>
         </div>
       </div>
+
+      {/* Card Clientes */}
+      <div className="rounded-xl overflow-hidden shadow-lg w-full">
+        <div className="bg-primary flex items-center gap-4 p-6">
+          <div className="bg-white/20 rounded-lg p-3">
+            <Users className="h-8 w-8 text-primary-foreground" />
+          </div>
+          <div>
+            <p className="text-4xl font-bold text-primary-foreground">32.715</p>
+            <p className="text-sm font-medium text-primary-foreground/90">CPFs / Clientes</p>
+          </div>
+        </div>
+        <div className="bg-card p-4 border border-t-0 border-border rounded-b-xl">
+          <p className="text-sm text-muted-foreground">Base de clientes distintos identificados na modelagem.</p>
+        </div>
+      </div>
     </div>
 
     {/* Observação CNPJs */}
     <div className="mt-4 max-w-2xl flex items-center gap-2 bg-card border border-accent/30 rounded-lg px-4 py-3">
       <AlertTriangle className="h-4 w-4 text-warning shrink-0" />
       <p className="text-xs text-muted-foreground">
-        Para realização da <span className="font-semibold text-foreground">MODELAGEM ESTATÍSTICA</span> foram removidos os CNPJs da base de clientes fornecida.
+        Para realização da <span className="font-semibold text-foreground">MODELAGEM ESTATÍSTICA</span> foram removidos os CNPJs da base fornecida.
       </p>
     </div>
 
