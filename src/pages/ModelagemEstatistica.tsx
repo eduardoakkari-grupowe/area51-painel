@@ -948,21 +948,21 @@ const ModelagemEstatistica = () => {
             { uf: "AP", qtd: "14", pct: "0,04%" },
           ],
         ].map((group, gi) => (
-          <div key={gi} className="bg-card border border-border rounded-xl p-4 overflow-auto">
+          <div key={gi} className="bg-card border border-border rounded-xl px-2 py-4 overflow-hidden">
             <Table>
               <TableHeader>
                 <TableRow className="bg-primary/10">
-                  <TableHead className="text-foreground font-bold text-xs w-[60px]">Estado</TableHead>
-                  <TableHead className="text-foreground font-bold text-xs text-right">Qtde</TableHead>
-                  <TableHead className="text-foreground font-bold text-xs text-right w-[70px]">%</TableHead>
+                  <TableHead className="text-foreground font-bold text-xs px-2 w-[50px]">Estado</TableHead>
+                  <TableHead className="text-foreground font-bold text-xs text-right px-2">Qtde</TableHead>
+                  <TableHead className="text-foreground font-bold text-xs text-right px-2 w-[60px]">%</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {group.map((row) => (
                   <TableRow key={row.uf}>
-                    <TableCell className="text-sm font-medium">{row.uf}</TableCell>
-                    <TableCell className="text-sm text-right">{row.qtd}</TableCell>
-                    <TableCell className="text-sm text-right">{row.pct}</TableCell>
+                    <TableCell className="text-sm font-medium px-2 py-2">{row.uf}</TableCell>
+                    <TableCell className="text-sm text-right px-2 py-2">{row.qtd}</TableCell>
+                    <TableCell className="text-sm text-right px-2 py-2">{row.pct}</TableCell>
                   </TableRow>
                 ))}
               </TableBody>
