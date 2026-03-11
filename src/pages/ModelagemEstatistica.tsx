@@ -1059,38 +1059,37 @@ const ModelagemEstatistica = () => {
       {/* Considerações Renda */}
       <div className="mt-6 bg-card border border-border rounded-xl p-6">
         <h3 className="text-lg font-bold text-foreground mb-4">Considerações</h3>
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <div className="space-y-4">
-            <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg">
-              <p className="text-sm font-bold text-foreground mb-1">1. Nível: Classe Média / Entrada</p>
-              <p className="text-sm text-muted-foreground"><strong>Faixa:</strong> R$ 1.561,91 a R$ 22.779,42</p>
-              <p className="text-sm text-muted-foreground"><strong>Volume:</strong> 21.498 clientes (65,9% da base).</p>
-              <p className="text-sm text-muted-foreground"><strong>Comportamento:</strong> Possuem o menor gasto médio (R$ 269,35) e a menor frequência (1,57).</p>
-              <p className="text-sm text-muted-foreground"><strong>Estratégia:</strong> Focar em conversão de primeira compra e "educação" sobre os benefícios das cápsulas.</p>
-            </div>
-            <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg">
-              <p className="text-sm font-bold text-foreground mb-1">2. Nível: Classe Alta / Premium</p>
-              <p className="text-sm text-muted-foreground"><strong>Faixa:</strong> R$ 22.781,55 a R$ 53.752,43</p>
-              <p className="text-sm text-muted-foreground"><strong>Volume:</strong> 8.268 clientes (25,4% da base).</p>
-              <p className="text-sm text-muted-foreground"><strong>Comportamento:</strong> Há um salto significativo no gasto médio para R$ 331,72. Este público já compra com mais recorrência (1,72).</p>
-              <p className="text-sm text-muted-foreground"><strong>Estratégia:</strong> Este é o público ideal para programas de assinatura e kits intermediários.</p>
-            </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-stretch">
+          <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg h-full flex flex-col">
+            <p className="text-sm font-bold text-foreground mb-1">1. Nível: Classe Média / Entrada</p>
+            <p className="text-sm text-muted-foreground"><strong>Faixa:</strong> R$ 1.561,91 a R$ 22.779,42</p>
+            <p className="text-sm text-muted-foreground"><strong>Volume:</strong> 21.498 clientes (65,9% da base).</p>
+            <p className="text-sm text-muted-foreground"><strong>Comportamento:</strong> Possuem o menor gasto médio (R$ 269,35) e a menor frequência (1,57).</p>
+            <p className="text-sm text-muted-foreground"><strong>Estratégia:</strong> Focar em conversão de primeira compra e "educação" sobre os benefícios das cápsulas.</p>
           </div>
-          <div className="space-y-4">
-            <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg">
-              <p className="text-sm font-bold text-foreground mb-1">3. Nível: Elite / High-End</p>
-              <p className="text-sm text-muted-foreground"><strong>Faixa:</strong> R$ 53.779,62 a R$ 117.918,54</p>
-              <p className="text-sm text-muted-foreground"><strong>Volume:</strong> 2.453 clientes (7,5% da base).</p>
-              <p className="text-sm text-muted-foreground"><strong>Comportamento:</strong> O gasto médio sobe para R$ 407,57. A frequência de compra (1,82) é a mais alta da base, mostrando que o produto faz parte do estilo de vida social constante.</p>
-              <p className="text-sm text-muted-foreground"><strong>Estratégia:</strong> Marketing focado em exclusividade, eventos e parcerias com marcas de luxo (vinhos caros, resorts).</p>
-            </div>
-            <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg">
-              <p className="text-sm font-bold text-foreground mb-1">4. Nível: Ultra-Ricos / VIPs</p>
-              <p className="text-sm text-muted-foreground"><strong>Faixa:</strong> R$ 118.461,21 a R$ 919.911,59</p>
-              <p className="text-sm text-muted-foreground"><strong>Volume:</strong> 384 clientes (1,2% da base).</p>
-              <p className="text-sm text-muted-foreground"><strong>Comportamento:</strong> É o topo absoluto. Gastam em média R$ 411,80. Embora sejam poucos, possuem o maior LTV (Lifetime Value) da base, com frequência de 1,77.</p>
-              <p className="text-sm text-muted-foreground"><strong>Estratégia:</strong> Atendimento personalizado (Concierge), ofertas de edições limitadas e kits "Ultra" de longa duração.</p>
-            </div>
+          
+          <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg h-full flex flex-col">
+            <p className="text-sm font-bold text-foreground mb-1">3. Nível: Elite / High-End</p>
+            <p className="text-sm text-muted-foreground"><strong>Faixa:</strong> R$ 53.779,62 a R$ 117.918,54</p>
+            <p className="text-sm text-muted-foreground"><strong>Volume:</strong> 2.453 clientes (7,5% da base).</p>
+            <p className="text-sm text-muted-foreground"><strong>Comportamento:</strong> O gasto médio sobe para R$ 407,57. A frequência de compra (1,82) é a mais alta da base, mostrando que o produto faz parte do estilo de vida social constante.</p>
+            <p className="text-sm text-muted-foreground"><strong>Estratégia:</strong> Marketing focado em exclusividade, eventos e parcerias com marcas de luxo (vinhos caros, resorts).</p>
+          </div>
+
+          <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg h-full flex flex-col">
+            <p className="text-sm font-bold text-foreground mb-1">2. Nível: Classe Alta / Premium</p>
+            <p className="text-sm text-muted-foreground"><strong>Faixa:</strong> R$ 22.781,55 a R$ 53.752,43</p>
+            <p className="text-sm text-muted-foreground"><strong>Volume:</strong> 8.268 clientes (25,4% da base).</p>
+            <p className="text-sm text-muted-foreground"><strong>Comportamento:</strong> Há um salto significativo no gasto médio para R$ 331,72. Este público já compra com mais recorrência (1,72).</p>
+            <p className="text-sm text-muted-foreground"><strong>Estratégia:</strong> Este é o público ideal para programas de assinatura e kits intermediários.</p>
+          </div>
+
+          <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg h-full flex flex-col">
+            <p className="text-sm font-bold text-foreground mb-1">4. Nível: Ultra-Ricos / VIPs</p>
+            <p className="text-sm text-muted-foreground"><strong>Faixa:</strong> R$ 118.461,21 a R$ 919.911,59</p>
+            <p className="text-sm text-muted-foreground"><strong>Volume:</strong> 384 clientes (1,2% da base).</p>
+            <p className="text-sm text-muted-foreground"><strong>Comportamento:</strong> É o topo absoluto. Gastam em média R$ 411,80. Embora sejam poucos, possuem o maior LTV (Lifetime Value) da base, com frequência de 1,77.</p>
+            <p className="text-sm text-muted-foreground"><strong>Estratégia:</strong> Atendimento personalizado (Concierge), ofertas de edições limitadas e kits "Ultra" de longa duração.</p>
           </div>
         </div>
       </div>
