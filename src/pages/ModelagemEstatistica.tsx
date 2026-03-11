@@ -399,7 +399,7 @@ const ModelagemEstatistica = () => {
           <h3 className="text-lg font-bold text-foreground mb-4">Descritivo dos Homens</h3>
           <div className="space-y-6">
             <div>
-              <p className="text-sm font-bold text-primary mb-1">1. Nível: Jovens Adultos / Startups (Cluster 2)</p>
+              <p className="text-sm font-bold text-primary mb-1">1. Nível: Jovens Adultos / Startups</p>
               <ul className="space-y-1 ml-4">
                 <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Faixa Etária: 19 a 37 anos.</span></li>
                 <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Volume: 4.067 homens.</span></li>
@@ -408,7 +408,7 @@ const ModelagemEstatistica = () => {
               </ul>
             </div>
             <div>
-              <p className="text-sm font-bold text-primary mb-1">2. Nível: Consolidação de Carreira (Cluster 0)</p>
+              <p className="text-sm font-bold text-primary mb-1">2. Nível: Consolidação de Carreira</p>
               <ul className="space-y-1 ml-4">
                 <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Faixa Etária: 38 a 45 anos.</span></li>
                 <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Volume: 6.732 homens (O maior grupo da base masculina).</span></li>
@@ -417,7 +417,7 @@ const ModelagemEstatistica = () => {
               </ul>
             </div>
             <div>
-              <p className="text-sm font-bold text-primary mb-1">3. Nível: Plenitude Profissional (Cluster 3)</p>
+              <p className="text-sm font-bold text-primary mb-1">3. Nível: Plenitude Profissional</p>
               <ul className="space-y-1 ml-4">
                 <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Faixa Etária: 46 a 55 anos.</span></li>
                 <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Volume: 5.524 homens.</span></li>
@@ -426,7 +426,7 @@ const ModelagemEstatistica = () => {
               </ul>
             </div>
             <div>
-              <p className="text-sm font-bold text-primary mb-1">4. Nível: Sênior / Lifestyle (Cluster 1)</p>
+              <p className="text-sm font-bold text-primary mb-1">4. Nível: Sênior / Lifestyle</p>
               <ul className="space-y-1 ml-4">
                 <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Faixa Etária: 56 a 95 anos.</span></li>
                 <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Volume: 2.259 homens.</span></li>
@@ -442,7 +442,7 @@ const ModelagemEstatistica = () => {
           <h3 className="text-lg font-bold text-foreground mb-4">Descritivo das Mulheres</h3>
           <div className="space-y-6">
             <div>
-              <p className="text-sm font-bold text-primary mb-1">1. Nível: Jovens Adultas / Conectadas (Cluster 1)</p>
+              <p className="text-sm font-bold text-primary mb-1">1. Nível: Jovens Adultas / Conectadas</p>
               <ul className="space-y-1 ml-4">
                 <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Faixa Etária: 19 a 38 anos.</span></li>
                 <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Volume: 3.336 mulheres.</span></li>
@@ -451,7 +451,7 @@ const ModelagemEstatistica = () => {
               </ul>
             </div>
             <div>
-              <p className="text-sm font-bold text-primary mb-1">2. Nível: Mulheres em Ascensão (Cluster 2)</p>
+              <p className="text-sm font-bold text-primary mb-1">2. Nível: Mulheres em Ascensão</p>
               <ul className="space-y-1 ml-4">
                 <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Faixa Etária: 39 a 46 anos.</span></li>
                 <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Volume: 5.065 mulheres (O maior grupo da base feminina).</span></li>
@@ -460,7 +460,7 @@ const ModelagemEstatistica = () => {
               </ul>
             </div>
             <div>
-              <p className="text-sm font-bold text-primary mb-1">3. Nível: Plenitude e Bem-Estar (Cluster 0)</p>
+              <p className="text-sm font-bold text-primary mb-1">3. Nível: Plenitude e Bem-Estar</p>
               <ul className="space-y-1 ml-4">
                 <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Faixa Etária: 47 a 56 anos.</span></li>
                 <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Volume: 4.103 mulheres.</span></li>
@@ -469,7 +469,7 @@ const ModelagemEstatistica = () => {
               </ul>
             </div>
             <div>
-              <p className="text-sm font-bold text-primary mb-1">4. Nível: Maturidade / Sênior (Cluster 3)</p>
+              <p className="text-sm font-bold text-primary mb-1">4. Nível: Maturidade / Sênior</p>
               <ul className="space-y-1 ml-4">
                 <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Faixa Etária: 57 a 87 anos.</span></li>
                 <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Volume: 1.422 mulheres.</span></li>
