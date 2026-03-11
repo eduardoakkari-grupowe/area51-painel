@@ -803,7 +803,7 @@ const ModelagemEstatistica = () => {
             <TableHeader>
               <TableRow className="bg-primary/10">
                 <TableHead className="text-foreground font-bold text-xs">Escolaridade</TableHead>
-                <TableHead className="text-foreground font-bold text-xs text-right">Quantidade</TableHead>
+                <TableHead className="text-foreground font-bold text-xs text-right w-[60px]">Qtde</TableHead>
                 <TableHead className="text-foreground font-bold text-xs text-right">% do Total</TableHead>
                 <TableHead className="text-foreground font-bold text-xs text-right">Freq. Média</TableHead>
                 <TableHead className="text-foreground font-bold text-xs text-right">Gasto Médio (LTV)</TableHead>
