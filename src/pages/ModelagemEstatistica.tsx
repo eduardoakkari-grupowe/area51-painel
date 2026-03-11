@@ -761,70 +761,41 @@ const ModelagemEstatistica = () => {
         <span className="text-xl font-semibold text-foreground">Escolaridade</span>
       </div>
 
-      <div className="mt-6 bg-card border border-border rounded-xl p-6">
-        <p className="text-sm font-semibold text-foreground mb-4 text-center">Distribuição de Clientes por Nível de Escolaridade</p>
-        <div className="h-[420px]">
-          <ResponsiveContainer width="100%" height="100%">
-            <BarChart
-              data={[
-                { escolaridade: "Superior Completo", quantidade: 25572, percent: "81.4%" },
-                { escolaridade: "2º Grau Completo", quantidade: 2620, percent: "8.3%" },
-                { escolaridade: "Superior Incompleto", quantidade: 1345, percent: "4.3%" },
-                { escolaridade: "Pós-Grad./Espec.", quantidade: 1024, percent: "3.3%" },
-                { escolaridade: "Mestrado", quantidade: 364, percent: "1.2%" },
-                { escolaridade: "1º Grau Completo", quantidade: 185, percent: "0.6%" },
-                { escolaridade: "Doutorado", quantidade: 116, percent: "0.4%" },
-                { escolaridade: "2º Grau Incompleto", quantidade: 109, percent: "0.3%" },
-                { escolaridade: "4ª Série Completa", quantidade: 73, percent: "0.2%" },
-                { escolaridade: "5ª a 8ª Série Inc.", quantidade: 9, percent: "0.0%" },
-                { escolaridade: "Até 4ª Série Inc.", quantidade: 8, percent: "0.0%" },
-                { escolaridade: "Pós-Doutorado", quantidade: 3, percent: "0.0%" },
-                { escolaridade: "Analfabeto", quantidade: 2, percent: "0.0%" },
-                { escolaridade: "Sem Informação", quantidade: 1184, percent: "3.6%" },
-              ]}
-              margin={{ top: 20, right: 20, left: 10, bottom: 56 }}
-            >
-              <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" />
-              <XAxis dataKey="escolaridade" tick={{ fontSize: 10, fill: 'hsl(var(--muted-foreground))' }} angle={-45} textAnchor="end" interval={0} height={56} />
-              <YAxis tick={{ fontSize: 11, fill: 'hsl(var(--muted-foreground))' }} label={{ value: "Número de Clientes", angle: -90, position: "insideLeft", offset: 0, style: { fill: 'hsl(var(--muted-foreground))', fontSize: 11 } }} />
-              <Tooltip contentStyle={{ background: 'hsl(var(--card))', border: '1px solid hsl(var(--border))', borderRadius: '8px', color: 'hsl(var(--foreground))' }} labelStyle={{ color: 'hsl(var(--foreground))', fontWeight: 600, marginBottom: 4 }} itemStyle={{ color: 'hsl(var(--foreground))' }} formatter={(value: number, name: string, props: any) => [`${value.toLocaleString()} (${props.payload.percent})`, 'Clientes']} />
-              <Bar dataKey="quantidade" radius={[4, 4, 0, 0]} fill="hsl(var(--accent))" />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
-      </div>
-
-      {/* Considerações + Tabela Escolaridade */}
-      <div className="mt-6 grid grid-cols-1 lg:grid-cols-[1fr_2fr] gap-6 items-start">
-        {/* Considerações à esquerda */}
+      {/* Chart and Table side by side */}
+      <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+        {/* Gráfico à esquerda */}
         <div className="bg-card border border-border rounded-xl p-6">
-          <h3 className="text-lg font-bold text-foreground mb-4">Considerações</h3>
-          <div className="space-y-6">
-            <div>
-              <p className="text-sm font-bold text-primary mb-1">1. Nível: Compradores Pontuais — Baixo Valor</p>
-              <ul className="space-y-1 ml-4">
-                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Volume: 24.932 clientes (76,4% da base).</span></li>
-                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Perfil: Grande massa de experimentação. Média de 1,3 compras, gasto médio total de R$150 e ticket médio de R$119.</span></li>
-                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Estratégia: O desafio é a primeira recompra. Campanhas de CRM pós-venda (ex: 20 dias após a primeira compra) são cruciais.</span></li>
-              </ul>
-            </div>
-            <div>
-              <p className="text-sm font-bold text-primary mb-1">2. Nível: Compradores Recorrentes — Médio Valor</p>
-              <ul className="space-y-1 ml-4">
-                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Volume: 5.706 clientes (17,5% da base).</span></li>
-                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Perfil: Clientes que validaram o produto e o incluíram na rotina. Média de 1,6 compras, gasto médio total de R$491 e ticket médio de R$332.</span></li>
-                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Estratégia: Fidelização e aumento de ticket. Ofertas de assinaturas ou clubes de benefícios funcionam muito bem.</span></li>
-              </ul>
-            </div>
-            <div>
-              <p className="text-sm font-bold text-primary mb-1">3. Nível: Clientes Fiéis — Alto Valor</p>
-              <ul className="space-y-1 ml-4">
-                <li className="flex items-start gap-2"><span className="mt-1.5 h-1.5 w-1.5 rounded-full bg-muted-foreground shrink-0" /><span className="text-sm text-muted-foreground">Clientes de maior valor e recorrência na base.</span></li>
-              </ul>
-            </div>
+          <p className="text-sm font-semibold text-foreground mb-4 text-center">Distribuição de Clientes por Nível de Escolaridade</p>
+          <div className="h-[350px]">
+            <ResponsiveContainer width="100%" height="100%">
+              <BarChart
+                data={[
+                  { escolaridade: "Superior Completo", quantidade: 25572, percent: "81.4%" },
+                  { escolaridade: "2º Grau Completo", quantidade: 2620, percent: "8.3%" },
+                  { escolaridade: "Superior Incompleto", quantidade: 1345, percent: "4.3%" },
+                  { escolaridade: "Pós-Grad./Espec.", quantidade: 1024, percent: "3.3%" },
+                  { escolaridade: "Mestrado", quantidade: 364, percent: "1.2%" },
+                  { escolaridade: "1º Grau Completo", quantidade: 185, percent: "0.6%" },
+                  { escolaridade: "Doutorado", quantidade: 116, percent: "0.4%" },
+                  { escolaridade: "2º Grau Incompleto", quantidade: 109, percent: "0.3%" },
+                  { escolaridade: "4ª Série Completa", quantidade: 73, percent: "0.2%" },
+                  { escolaridade: "5ª a 8ª Série Inc.", quantidade: 9, percent: "0.0%" },
+                  { escolaridade: "Até 4ª Série Inc.", quantidade: 8, percent: "0.0%" },
+                  { escolaridade: "Pós-Doutorado", quantidade: 3, percent: "0.0%" },
+                  { escolaridade: "Analfabeto", quantidade: 2, percent: "0.0%" },
+                  { escolaridade: "Sem Informação", quantidade: 1184, percent: "3.6%" },
+                ]}
+                margin={{ top: 20, right: 30, left: 20, bottom: 60 }}
+              >
+                <CartesianGrid strokeDasharray="3 3" stroke="hsl(var(--border))" vertical={false} />
+                <XAxis dataKey="escolaridade" tick={{ fontSize: 10, fill: 'hsl(var(--muted-foreground))' }} angle={-45} textAnchor="end" height={60} />
+                <YAxis tick={{ fontSize: 11, fill: 'hsl(var(--muted-foreground))' }} label={{ value: "Número de Clientes", angle: -90, position: "insideLeft", offset: -5, style: { fill: 'hsl(var(--muted-foreground))' } }} />
+                <Tooltip contentStyle={{ background: 'hsl(var(--card))', border: '1px solid hsl(var(--border))', borderRadius: '8px', color: 'hsl(var(--foreground))' }} labelStyle={{ color: 'hsl(var(--foreground))', fontWeight: 600, marginBottom: 4 }} itemStyle={{ color: 'hsl(var(--foreground))' }} formatter={(value: number, name: string, props: any) => [`${value.toLocaleString()} (${props.payload.percent})`, 'Clientes']} />
+                <Bar dataKey="quantidade" radius={[4, 4, 0, 0]} fill="hsl(var(--accent))" />
+              </BarChart>
+            </ResponsiveContainer>
           </div>
         </div>
-
 
         {/* Tabela à direita */}
         <div className="bg-card border border-border rounded-xl p-6 overflow-auto">
@@ -851,10 +822,6 @@ const ModelagemEstatistica = () => {
                 { nivel: "Doutorado", qtd: "116", pct: "0,4%", freq: "1.70", gasto: "R$328,81", renda: "R$29.378" },
                 { nivel: "Ensino Médio Incompleto", qtd: "109", pct: "0,3%", freq: "1.38", gasto: "R$251,44", renda: "R$14.401" },
                 { nivel: "4ª Série Completa", qtd: "73", pct: "0,2%", freq: "1.70", gasto: "R$278,56", renda: "R$17.241" },
-                { nivel: "5ª a 8ª Série Incompleta", qtd: "9", pct: "0,0%", freq: "2.00", gasto: "R$327,98", renda: "R$6.816" },
-                { nivel: "Até 4ª Série Incompleta", qtd: "8", pct: "0,0%", freq: "1.25", gasto: "R$162,23", renda: "R$16.375" },
-                { nivel: "Pós-Doutorado", qtd: "3", pct: "0,0%", freq: "1.67", gasto: "R$265,72", renda: "R$15.159" },
-                { nivel: "Analfabeto", qtd: "2", pct: "0,0%", freq: "1.50", gasto: "R$154,44", renda: "R$5.159" },
               ].map((row) => (
                 <TableRow key={row.nivel}>
                   <TableCell className="text-xs font-medium">{row.nivel}</TableCell>
