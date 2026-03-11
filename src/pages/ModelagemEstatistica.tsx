@@ -952,9 +952,9 @@ const ModelagemEstatistica = () => {
             <Table>
               <TableHeader>
                 <TableRow className="bg-primary/10">
-                  <TableHead className="text-foreground font-bold text-xs">Estado (UF)</TableHead>
+                  <TableHead className="text-foreground font-bold text-xs w-[60px]">Estado</TableHead>
                   <TableHead className="text-foreground font-bold text-xs text-right">Qtde</TableHead>
-                  <TableHead className="text-foreground font-bold text-xs text-right">%</TableHead>
+                  <TableHead className="text-foreground font-bold text-xs text-right w-[70px]">%</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
