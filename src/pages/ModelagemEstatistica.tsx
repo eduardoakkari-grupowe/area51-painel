@@ -2268,7 +2268,29 @@ const ModelagemEstatistica = () => {
         </div>
       </div>
 
-
+      {/* Row 2: Masculinas — Árvore de Decisão */}
+      <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="bg-card border border-border rounded-xl p-6 lg:col-span-2">
+          <h3 className="text-lg font-bold text-foreground mb-3">Personas Masculinas — Árvore de Decisão (Acurácia: 92,4%)</h3>
+          <p className="text-xs text-muted-foreground mb-5">As features mais decisivas foram: <strong className="text-foreground">Imóvel Alto Padrão (35,4%)</strong>, <strong className="text-foreground">Score (30,1%)</strong> e <strong className="text-foreground">Moto (7,3%)</strong>.</p>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-6 gap-y-5">
+            {[
+              { nome: "Jovem Econômico", qtd: "816", pct: "4,4%", idade: "média: 36 (80% concentrados entre 25 e 49 anos)", renda: "R$3.933", score: "763", gasto: "R$264", freq: "1,55", regra: "Score baixo + possui moto + sem imóvel. Alta posse de moto (91%).", campanha: "Preço acessível, comunicação jovem, canais digitais." },
+              { nome: "Adulto Conectado", qtd: "7.034", pct: "37,9%", idade: "média: 40 (80% concentrados entre 31 e 50 anos)", renda: "R$16.135", score: "948", gasto: "R$250", freq: "1,52", regra: "Score alto + entusiasta de tecnologia + sem imóvel alto padrão.", campanha: "Assinaturas digitais, cross-sell com experiências." },
+              { nome: "Profissional Maduro", qtd: "4.853", pct: "26,1%", idade: "média: 44 (80% concentrados entre 34 e 56 anos)", renda: "R$23.356", score: "507", gasto: "R$251", freq: "1,49", regra: "Score baixo + sem moto + sem imóvel alto padrão.", campanha: "Reativação, canais offline, educação de marca." },
+              { nome: "Heavy Buyer", qtd: "448", pct: "2,4%", idade: "média: 46 (80% concentrados entre 37 e 56 anos)", renda: "R$36.750", score: "861", gasto: "R$2.446", freq: "8,16", regra: "Valor total líquido > R$1.362. Maior LTV da base.", campanha: "VIP, edições limitadas, programa de embaixadores." },
+              { nome: "Sênior Premium", qtd: "5.431", pct: "29,2%", idade: "média: 50 (80% concentrados entre 40 e 61 anos)", renda: "R$46.634", score: "879", gasto: "R$293", freq: "1,61", regra: "Imóvel alto padrão + veículo 0km. 100% luxo, vinho, celebridade.", campanha: "Exclusividade, parcerias premium, kits de alto valor." },
+            ].map((p, i) => (
+              <div key={i} className="border-b lg:border-b-0 lg:border-b border-border pb-4 last:border-b-0 lg:last:border-b-0 last:pb-0">
+                <h4 className="text-sm font-bold text-foreground mb-1">Persona {i + 1}: {p.nome} <span className="font-normal text-muted-foreground">({p.qtd} | {p.pct})</span></h4>
+                <p className="text-xs text-muted-foreground mb-1">Idade {p.idade.includes('méd') ? p.idade : `: ${p.idade}`} | Renda: <strong className="text-foreground">{p.renda}</strong> | Score: <strong className="text-foreground">{p.score}</strong> | Gasto: <strong className="text-foreground">{p.gasto}</strong> | Freq: <strong className="text-foreground">{p.freq}</strong></p>
+                <p className="text-xs text-muted-foreground mb-1"><strong className="text-foreground">Regra:</strong> {p.regra}</p>
+                <p className="text-xs text-muted-foreground"><strong className="text-foreground">Campanha:</strong> {p.campanha}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
     </div>
 
     {/* ==================== AQUÁRIO DE PERSONAS ==================== */}
