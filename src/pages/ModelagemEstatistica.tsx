@@ -654,9 +654,9 @@ const ModelagemEstatistica = () => {
       {/* Two charts side by side */}
       <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
         {/* Bar chart - Quantidade de Clientes por Cluster */}
-        <div className="bg-card border border-border rounded-xl p-6">
+        <div className="bg-card border border-border rounded-xl p-6 h-full flex flex-col">
           <p className="text-sm font-semibold text-foreground mb-4 text-center">Quantidade de Clientes por Cluster</p>
-          <div className="h-[320px]">
+          <div className="flex-1 min-h-[320px]">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart
                 data={[
@@ -764,9 +764,9 @@ const ModelagemEstatistica = () => {
       {/* Chart and Table side by side */}
       <div className="mt-6 grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
         {/* Gráfico à esquerda */}
-        <div className="bg-card border border-border rounded-xl p-6">
+        <div className="bg-card border border-border rounded-xl p-6 h-full flex flex-col">
           <p className="text-sm font-semibold text-foreground mb-4 text-center">Distribuição de Clientes por Nível de Escolaridade</p>
-          <div className="h-[350px]">
+          <div className="flex-1 min-h-[480px]">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart
                 data={[
