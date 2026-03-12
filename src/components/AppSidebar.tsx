@@ -61,7 +61,7 @@ const bottomItems = [
   { title: "Tag", url: "https://www.ph3a.com.br/crm/account/login?returnUrl=https://www.ph3a.com.br:443/crm/", icon: Tag, external: true },
   { title: "FTPs", url: "https://www.ph3a.com.br/crm/account/login?returnUrl=https://www.ph3a.com.br:443/crm/", icon: FolderUp, external: true },
   { title: "Tutoriais", url: "/tutoriais", icon: GraduationCap, external: false },
-  { title: "Usuários", url: "https://www.ph3a.com.br/crm/account/login?returnUrl=https://www.ph3a.com.br:443/crm/customer/configuration", icon: Users, external: true },
+  { title: "Usuários Tag / FTPs", url: "https://www.ph3a.com.br/crm/account/login?returnUrl=https://www.ph3a.com.br:443/crm/customer/configuration", icon: Users, external: true },
 ];
 
 export function AppSidebar() {
