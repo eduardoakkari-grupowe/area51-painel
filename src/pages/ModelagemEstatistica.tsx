@@ -1124,41 +1124,47 @@ const ModelagemEstatistica = () => {
       <div className="mt-6 bg-card border border-border rounded-xl p-6">
         <h3 className="text-lg font-bold text-foreground mb-4">Considerações</h3>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-x-6 lg:gap-y-4">
-          <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg h-full">
-            <p className="text-sm font-bold text-foreground mb-1">1. Faixa: R$1.562 a R$10.000</p>
-            <p className="text-sm text-muted-foreground"><strong>Volume:</strong> 10.359 clientes (31,8% da base)</p>
-            <p className="text-sm text-muted-foreground"><strong>Gasto Médio:</strong> R$247,59 | <strong>Frequência:</strong> 1,51 | <strong>Renda Média:</strong> R$6.134</p>
-            <p className="text-sm text-muted-foreground"><strong>Estratégia:</strong> Maior volume da base. Focar em conversão de primeira compra e "educação" sobre os benefícios das cápsulas.</p>
+          {/* Coluna Esquerda: 1, 2, 3 */}
+          <div className="flex flex-col gap-4">
+            <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg">
+              <p className="text-sm font-bold text-foreground mb-1">1. Faixa: R$1.562 a R$10.000</p>
+              <p className="text-sm text-muted-foreground"><strong>Volume:</strong> 10.359 clientes (31,8% da base)</p>
+              <p className="text-sm text-muted-foreground"><strong>Gasto Médio:</strong> R$247,59 | <strong>Frequência:</strong> 1,51 | <strong>Renda Média:</strong> R$6.134</p>
+              <p className="text-sm text-muted-foreground"><strong>Estratégia:</strong> Maior volume da base. Focar em conversão de primeira compra e "educação" sobre os benefícios das cápsulas.</p>
+            </div>
+            <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg">
+              <p className="text-sm font-bold text-foreground mb-1">2. Faixa: R$10.001 a R$20.000</p>
+              <p className="text-sm text-muted-foreground"><strong>Volume:</strong> 9.335 clientes (28,6% da base)</p>
+              <p className="text-sm text-muted-foreground"><strong>Gasto Médio:</strong> R$286,07 | <strong>Frequência:</strong> 1,62 | <strong>Renda Média:</strong> R$14.657</p>
+              <p className="text-sm text-muted-foreground"><strong>Estratégia:</strong> Segunda maior faixa. Público ideal para assinaturas e kits intermediários.</p>
+            </div>
+            <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg">
+              <p className="text-sm font-bold text-foreground mb-1">3. Faixa: R$20.001 a R$30.000</p>
+              <p className="text-sm text-muted-foreground"><strong>Volume:</strong> 5.186 clientes (15,9% da base)</p>
+              <p className="text-sm text-muted-foreground"><strong>Gasto Médio:</strong> R$310,59 | <strong>Frequência:</strong> 1,66 | <strong>Renda Média:</strong> R$24.486</p>
+              <p className="text-sm text-muted-foreground"><strong>Estratégia:</strong> Gasto e frequência em crescimento. Programas de fidelidade e cross-sell com experiências.</p>
+            </div>
           </div>
-          <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg h-full">
-            <p className="text-sm font-bold text-foreground mb-1">2. Faixa: R$10.001 a R$20.000</p>
-            <p className="text-sm text-muted-foreground"><strong>Volume:</strong> 9.335 clientes (28,6% da base)</p>
-            <p className="text-sm text-muted-foreground"><strong>Gasto Médio:</strong> R$286,07 | <strong>Frequência:</strong> 1,62 | <strong>Renda Média:</strong> R$14.657</p>
-            <p className="text-sm text-muted-foreground"><strong>Estratégia:</strong> Segunda maior faixa. Público ideal para assinaturas e kits intermediários.</p>
-          </div>
-          <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg h-full">
-            <p className="text-sm font-bold text-foreground mb-1">3. Faixa: R$20.001 a R$30.000</p>
-            <p className="text-sm text-muted-foreground"><strong>Volume:</strong> 5.186 clientes (15,9% da base)</p>
-            <p className="text-sm text-muted-foreground"><strong>Gasto Médio:</strong> R$310,59 | <strong>Frequência:</strong> 1,66 | <strong>Renda Média:</strong> R$24.486</p>
-            <p className="text-sm text-muted-foreground"><strong>Estratégia:</strong> Gasto e frequência em crescimento. Programas de fidelidade e cross-sell com experiências.</p>
-          </div>
-          <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg h-full">
-            <p className="text-sm font-bold text-foreground mb-1">4. Faixa: R$30.001 a R$40.000</p>
-            <p className="text-sm text-muted-foreground"><strong>Volume:</strong> 2.587 clientes (7,9% da base)</p>
-            <p className="text-sm text-muted-foreground"><strong>Gasto Médio:</strong> R$346,34 | <strong>Frequência:</strong> 1,82 | <strong>Renda Média:</strong> R$34.362</p>
-            <p className="text-sm text-muted-foreground"><strong>Estratégia:</strong> Maior frequência da base. Clube de benefícios e kits premium.</p>
-          </div>
-          <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg h-full">
-            <p className="text-sm font-bold text-foreground mb-1">5. Faixa: R$40.001 a R$50.000</p>
-            <p className="text-sm text-muted-foreground"><strong>Volume:</strong> 1.755 clientes (5,4% da base)</p>
-            <p className="text-sm text-muted-foreground"><strong>Gasto Médio:</strong> R$339,50 | <strong>Frequência:</strong> 1,68 | <strong>Renda Média:</strong> R$45.098</p>
-            <p className="text-sm text-muted-foreground"><strong>Estratégia:</strong> Marketing focado em exclusividade e parcerias com marcas de luxo.</p>
-          </div>
-          <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg h-full">
-            <p className="text-sm font-bold text-foreground mb-1">6. Faixa: R$50.001 a R$99.900</p>
-            <p className="text-sm text-muted-foreground"><strong>Volume:</strong> 3.381 clientes (10,4% da base)</p>
-            <p className="text-sm text-muted-foreground"><strong>Gasto Médio:</strong> R$400,26 | <strong>Frequência:</strong> 1,80 | <strong>Renda Média:</strong> R$79.868</p>
-            <p className="text-sm text-muted-foreground"><strong>Estratégia:</strong> Topo da pirâmide. Atendimento personalizado (Concierge), edições limitadas e experiências exclusivas.</p>
+          {/* Coluna Direita: 4, 5, 6 */}
+          <div className="flex flex-col gap-4">
+            <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg">
+              <p className="text-sm font-bold text-foreground mb-1">4. Faixa: R$30.001 a R$40.000</p>
+              <p className="text-sm text-muted-foreground"><strong>Volume:</strong> 2.587 clientes (7,9% da base)</p>
+              <p className="text-sm text-muted-foreground"><strong>Gasto Médio:</strong> R$346,34 | <strong>Frequência:</strong> 1,82 | <strong>Renda Média:</strong> R$34.362</p>
+              <p className="text-sm text-muted-foreground"><strong>Estratégia:</strong> Maior frequência da base. Clube de benefícios e kits premium.</p>
+            </div>
+            <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg">
+              <p className="text-sm font-bold text-foreground mb-1">5. Faixa: R$40.001 a R$50.000</p>
+              <p className="text-sm text-muted-foreground"><strong>Volume:</strong> 1.755 clientes (5,4% da base)</p>
+              <p className="text-sm text-muted-foreground"><strong>Gasto Médio:</strong> R$339,50 | <strong>Frequência:</strong> 1,68 | <strong>Renda Média:</strong> R$45.098</p>
+              <p className="text-sm text-muted-foreground"><strong>Estratégia:</strong> Marketing focado em exclusividade e parcerias com marcas de luxo.</p>
+            </div>
+            <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg">
+              <p className="text-sm font-bold text-foreground mb-1">6. Faixa: R$50.001 a R$99.900</p>
+              <p className="text-sm text-muted-foreground"><strong>Volume:</strong> 3.381 clientes (10,4% da base)</p>
+              <p className="text-sm text-muted-foreground"><strong>Gasto Médio:</strong> R$400,26 | <strong>Frequência:</strong> 1,80 | <strong>Renda Média:</strong> R$79.868</p>
+              <p className="text-sm text-muted-foreground"><strong>Estratégia:</strong> Topo da pirâmide. Atendimento personalizado (Concierge), edições limitadas e experiências exclusivas.</p>
+            </div>
           </div>
         </div>
       </div>
