@@ -2241,7 +2241,7 @@ const ModelagemEstatistica = () => {
               { nome: "Sênior Premium", qtd: "5.904", pct: "31,8%", idade: "média: 50 (80% concentrados entre 40 e 62 anos)", renda: "R$45.487", gasto: "R$270", freq: "1,52", perfil: "100% luxo, vinho, celebridade. Mais alta renda, mas compra pouco.", campanha: "Exclusividade, kits premium, parcerias com marcas de luxo.", foto: personaM5 },
             ].map((p, i) => (
               <div key={i} className="border-b border-border pb-4 last:border-b-0 last:pb-0 flex gap-4 items-start">
-                <div className="shrink-0 rounded-xl overflow-hidden border-2 border-accent w-16 h-16">
+                <div className="shrink-0 rounded-xl overflow-hidden border-2 border-accent w-24 h-24">
                   <img src={p.foto} alt={p.nome} className="w-full h-full object-cover" />
                 </div>
                 <div className="flex-1 min-w-0">
@@ -2265,7 +2265,7 @@ const ModelagemEstatistica = () => {
               { nome: "Sênior Premium", qtd: "3.421", pct: "24,6%", idade: "média: 48 (80% concentradas entre 40 e 59 anos)", renda: "R$39.819", gasto: "R$364", freq: "1,75", perfil: "100% luxo, vinho, celebridade. Maior gasto e frequência.", campanha: "Exclusividade, experiências premium, parcerias de luxo.", foto: personaF4 },
             ].map((p, i) => (
               <div key={i} className="border-b border-border pb-4 last:border-b-0 last:pb-0 flex gap-4 items-start">
-                <div className="shrink-0 rounded-xl overflow-hidden border-2 border-accent w-16 h-16">
+                <div className="shrink-0 rounded-xl overflow-hidden border-2 border-accent w-24 h-24">
                   <img src={p.foto} alt={p.nome} className="w-full h-full object-cover" />
                 </div>
                 <div className="flex-1 min-w-0">
