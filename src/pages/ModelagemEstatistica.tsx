@@ -2030,8 +2030,8 @@ const ModelagemEstatistica = () => {
         <span className="text-xl font-semibold text-foreground">Fãs de Celebridade</span>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
-        <div className="bg-card border border-border rounded-xl p-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+        <div className="bg-card border border-border rounded-xl p-6 h-full">
           <p className="text-sm font-semibold text-foreground mb-4 text-center">Distribuição de Clientes: Perfil Fãs de Celebridade</p>
           <div className="h-[350px]">
             <ResponsiveContainer width="100%" height="100%">
@@ -2070,7 +2070,7 @@ const ModelagemEstatistica = () => {
           </div>
         </div>
 
-        <div className="bg-card border border-border rounded-xl p-6 flex flex-col justify-center">
+        <div className="bg-card border border-border rounded-xl p-6 h-full flex flex-col justify-center">
           <h3 className="text-base font-bold text-foreground mb-3">Perfil "Fã de Celebridade" vs. Restante da Base</h3>
           <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5 mb-5">
             <li><strong className="text-foreground">Poder Econômico:</strong> Clientes com perfil de fã têm uma renda média de <strong className="text-foreground">R$ 24.621</strong>, quase 4 vezes maior do que os que não possuem esse perfil mapeado (R$ 6.802).</li>
@@ -2118,9 +2118,9 @@ const ModelagemEstatistica = () => {
         <span className="text-xl font-semibold text-foreground">Viagens e Turismo</span>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
         {/* Gráfico */}
-        <div className="bg-card rounded-xl border border-border p-6">
+        <div className="bg-card rounded-xl border border-border p-6 h-full">
           <h3 className="text-sm font-bold text-foreground mb-4 text-center">Perfil de Viagens e Turismo</h3>
           <ResponsiveContainer width="100%" height={350}>
             <BarChart data={[
@@ -2153,7 +2153,7 @@ const ModelagemEstatistica = () => {
         </div>
 
         {/* Considerações */}
-        <div className="bg-card rounded-xl border border-border p-6">
+        <div className="bg-card rounded-xl border border-border p-6 h-full">
           <h3 className="text-base font-bold text-foreground mb-4">O Perfil do Viajante vs. Não Viajante</h3>
           <ul className="space-y-3 text-sm text-muted-foreground mb-6">
             <li className="flex gap-2">
