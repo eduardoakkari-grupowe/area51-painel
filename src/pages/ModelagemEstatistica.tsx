@@ -2246,7 +2246,8 @@ const ModelagemEstatistica = () => {
                 </div>
                 <div className="flex-1 min-w-0">
                   <h4 className="text-sm font-bold text-foreground mb-1">Persona {i + 1}: {p.nome} <span className="font-normal text-muted-foreground">({p.qtd} | {p.pct})</span></h4>
-                  <p className="text-xs text-muted-foreground mb-1">Idade {p.idade.includes('méd') ? p.idade : `: ${p.idade}`} | Renda: <strong className="text-foreground">{p.renda}</strong> | Gasto: <strong className="text-foreground">{p.gasto}</strong> | Freq: <strong className="text-foreground">{p.freq}</strong></p>
+                  <p className="text-xs text-muted-foreground mb-0.5">Idade {p.idade.includes('méd') ? p.idade : `: ${p.idade}`}</p>
+                  <p className="text-xs text-muted-foreground mb-1">Renda: <strong className="text-foreground">{p.renda}</strong> | Gasto: <strong className="text-foreground">{p.gasto}</strong> | Freq: <strong className="text-foreground">{p.freq}</strong></p>
                   <p className="text-xs text-muted-foreground mb-1"><strong className="text-foreground">Perfil:</strong> {p.perfil}</p>
                   <p className="text-xs text-muted-foreground"><strong className="text-foreground">Campanha:</strong> {p.campanha}</p>
                 </div>
@@ -2270,7 +2271,8 @@ const ModelagemEstatistica = () => {
                 </div>
                 <div className="flex-1 min-w-0">
                   <h4 className="text-sm font-bold text-foreground mb-1">Persona {i + 1}: {p.nome} <span className="font-normal text-muted-foreground">({p.qtd} | {p.pct})</span></h4>
-                  <p className="text-xs text-muted-foreground mb-1">Idade {p.idade} | Renda: <strong className="text-foreground">{p.renda}</strong> | Gasto: <strong className="text-foreground">{p.gasto}</strong> | Freq: <strong className="text-foreground">{p.freq}</strong></p>
+                  <p className="text-xs text-muted-foreground mb-0.5">Idade {p.idade}</p>
+                  <p className="text-xs text-muted-foreground mb-1">Renda: <strong className="text-foreground">{p.renda}</strong> | Gasto: <strong className="text-foreground">{p.gasto}</strong> | Freq: <strong className="text-foreground">{p.freq}</strong></p>
                   <p className="text-xs text-muted-foreground mb-1"><strong className="text-foreground">Perfil:</strong> {p.perfil}</p>
                   <p className="text-xs text-muted-foreground"><strong className="text-foreground">Campanha:</strong> {p.campanha}</p>
                 </div>
