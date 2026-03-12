@@ -1160,7 +1160,7 @@ const ModelagemEstatistica = () => {
               <p className="text-sm text-muted-foreground"><strong>Estratégia:</strong> Marketing focado em exclusividade e parcerias com marcas de luxo.</p>
             </div>
             <div className="p-4 bg-accent/10 border border-accent/30 rounded-lg">
-              <p className="text-sm font-bold text-foreground mb-1">6. Faixa: R$50.001 a R$99.900</p>
+              <p className="text-sm font-bold text-foreground mb-1">6. Faixa: Acima de R$50.001</p>
               <p className="text-sm text-muted-foreground"><strong>Volume:</strong> 3.381 clientes (10,4% da base)</p>
               <p className="text-sm text-muted-foreground"><strong>Gasto Médio:</strong> R$400,26 | <strong>Frequência:</strong> 1,80 | <strong>Renda Média:</strong> R$79.868</p>
               <p className="text-sm text-muted-foreground"><strong>Estratégia:</strong> Topo da pirâmide. Atendimento personalizado (Concierge), edições limitadas e experiências exclusivas.</p>
