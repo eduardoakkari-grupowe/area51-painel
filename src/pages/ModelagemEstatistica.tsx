@@ -2242,20 +2242,18 @@ const ModelagemEstatistica = () => {
         </div>
 
         <div className="bg-card border border-border rounded-xl p-6">
-          <h3 className="text-lg font-bold text-foreground mb-3">Personas Masculinas — Árvore de Decisão (Acurácia: 92,4%)</h3>
-          <p className="text-xs text-muted-foreground mb-5">As features mais decisivas foram: <strong className="text-foreground">Imóvel Alto Padrão (35,4%)</strong>, <strong className="text-foreground">Score (30,1%)</strong> e <strong className="text-foreground">Moto (7,3%)</strong>.</p>
+          <h3 className="text-lg font-bold text-foreground mb-3">Personas Femininas — KMeans (K=4)</h3>
           <div className="space-y-5">
             {[
-              { nome: "Jovem Econômico", qtd: "816", pct: "4,4%", idade: "média: 36 (80% concentrados entre 25 e 49 anos)", renda: "R$3.933", score: "763", gasto: "R$264", freq: "1,55", regra: "Score baixo + possui moto + sem imóvel. Alta posse de moto (91%).", campanha: "Preço acessível, comunicação jovem, canais digitais." },
-              { nome: "Adulto Conectado", qtd: "7.034", pct: "37,9%", idade: "média: 40 (80% concentrados entre 31 e 50 anos)", renda: "R$16.135", score: "948", gasto: "R$250", freq: "1,52", regra: "Score alto + entusiasta de tecnologia + sem imóvel alto padrão.", campanha: "Assinaturas digitais, cross-sell com experiências." },
-              { nome: "Profissional Maduro", qtd: "4.853", pct: "26,1%", idade: "média: 44 (80% concentrados entre 34 e 56 anos)", renda: "R$23.356", score: "507", gasto: "R$251", freq: "1,49", regra: "Score baixo + sem moto + sem imóvel alto padrão.", campanha: "Reativação, canais offline, educação de marca." },
-              { nome: "Heavy Buyer", qtd: "448", pct: "2,4%", idade: "média: 46 (80% concentrados entre 37 e 56 anos)", renda: "R$36.750", score: "861", gasto: "R$2.446", freq: "8,16", regra: "Valor total líquido > R$1.362. Maior LTV da base.", campanha: "VIP, edições limitadas, programa de embaixadores." },
-              { nome: "Sênior Premium", qtd: "5.431", pct: "29,2%", idade: "média: 50 (80% concentrados entre 40 e 61 anos)", renda: "R$46.634", score: "879", gasto: "R$293", freq: "1,61", regra: "Imóvel alto padrão + veículo 0km. 100% luxo, vinho, celebridade.", campanha: "Exclusividade, parcerias premium, kits de alto valor." },
+              { nome: "Jovem Econômica", qtd: "1.348", pct: "9,7%", idade: "média: 39 (80% concentradas entre 25 e 53 anos)", renda: "R$4.064", gasto: "R$229", freq: "1,38", perfil: "Baixa penetração em quase todos os perfis. Digital como ponto forte (79%).", campanha: "Primeiro contato, promoções e facilidades de pagamento." },
+              { nome: "Adulta Prática", qtd: "6.001", pct: "43,1%", idade: "média: 41 (80% concentradas entre 32 e 51 anos)", renda: "R$12.640", gasto: "R$240", freq: "1,46", perfil: "Score alto (905), viajante, clube do vinho. Massa principal.", campanha: "Assinaturas e programas de fidelidade, kits presentes." },
+              { nome: "Profissional Engajada", qtd: "3.156", pct: "22,7%", idade: "média: 47 (80% concentradas entre 36 e 61 anos)", renda: "R$14.589", gasto: "R$253", freq: "1,52", perfil: "Score baixo (481), mas boa frequência. Não usa tecnologia.", campanha: "CRM pós-venda, canais tradicionais, cupons de recompra." },
+              { nome: "Sênior Premium", qtd: "3.421", pct: "24,6%", idade: "média: 48 (80% concentradas entre 40 e 59 anos)", renda: "R$39.819", gasto: "R$364", freq: "1,75", perfil: "100% luxo, vinho, celebridade. Maior gasto e frequência.", campanha: "Exclusividade, experiências premium, parcerias de luxo." },
             ].map((p, i) => (
               <div key={i} className="border-b border-border pb-4 last:border-b-0 last:pb-0">
                 <h4 className="text-sm font-bold text-foreground mb-1">Persona {i + 1}: {p.nome} <span className="font-normal text-muted-foreground">({p.qtd} | {p.pct})</span></h4>
-                <p className="text-xs text-muted-foreground mb-1">Idade {p.idade.includes('méd') ? p.idade : `: ${p.idade}`} | Renda: <strong className="text-foreground">{p.renda}</strong> | Score: <strong className="text-foreground">{p.score}</strong> | Gasto: <strong className="text-foreground">{p.gasto}</strong> | Freq: <strong className="text-foreground">{p.freq}</strong></p>
-                <p className="text-xs text-muted-foreground mb-1"><strong className="text-foreground">Regra:</strong> {p.regra}</p>
+                <p className="text-xs text-muted-foreground mb-1">Idade {p.idade} | Renda: <strong className="text-foreground">{p.renda}</strong> | Gasto: <strong className="text-foreground">{p.gasto}</strong> | Freq: <strong className="text-foreground">{p.freq}</strong></p>
+                <p className="text-xs text-muted-foreground mb-1"><strong className="text-foreground">Perfil:</strong> {p.perfil}</p>
                 <p className="text-xs text-muted-foreground"><strong className="text-foreground">Campanha:</strong> {p.campanha}</p>
               </div>
             ))}
