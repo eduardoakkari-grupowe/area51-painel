@@ -32,7 +32,7 @@ export function DashboardLayout({ children }: DashboardLayoutProps) {
         <AppSidebar />
         <div className="flex-1 flex flex-col min-w-0 relative">
           <DashboardHeader />
-          <main ref={mainRef} className="flex-1 p-6 overflow-y-auto overflow-x-hidden [&_.overflow-x-auto]:!overflow-x-hidden">
+          <main ref={mainRef} className="flex-1 p-6 overflow-y-auto overflow-x-hidden [&_.overflow-x-auto]:!overflow-x-hidden [&_.overflow-auto]:!overflow-x-hidden [&_.overflow-x-scroll]:!overflow-x-hidden [&_.overflow-scroll]:!overflow-x-hidden">
             {children}
           </main>
           {showButton && (
