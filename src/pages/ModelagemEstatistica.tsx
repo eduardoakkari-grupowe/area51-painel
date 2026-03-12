@@ -1176,7 +1176,6 @@ const ModelagemEstatistica = () => {
               </div>
             </div>
         </div>
-        </div>
       </div>
     </div>
 
