@@ -1162,9 +1162,9 @@ const ModelagemEstatistica = () => {
         <span className="text-xl font-semibold text-foreground">Conta Bancária Digital</span>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
         {/* Gráfico */}
-        <div className="bg-card border border-border rounded-xl p-6">
+        <div className="bg-card border border-border rounded-xl p-6 h-full">
           <p className="text-sm font-semibold text-foreground mb-4 text-center">Distribuição de Clientes: Tem Conta Bancária Digital?</p>
           <div className="h-[350px]">
             <ResponsiveContainer width="100%" height="100%">
@@ -1204,7 +1204,7 @@ const ModelagemEstatistica = () => {
         </div>
 
         {/* Considerações e Tabela */}
-        <div className="bg-card border border-border rounded-xl p-6 flex flex-col gap-6">
+        <div className="bg-card border border-border rounded-xl p-6 h-full flex flex-col gap-6">
           <div>
             <h3 className="text-base font-bold text-foreground mb-3">O Perfil do Cliente "Digital"</h3>
             <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5">
@@ -1253,9 +1253,9 @@ const ModelagemEstatistica = () => {
         <span className="text-xl font-semibold text-foreground">Posse de Imóvel</span>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
         {/* Gráfico */}
-        <div className="bg-card border border-border rounded-xl p-6">
+        <div className="bg-card border border-border rounded-xl p-6 h-full">
           <p className="text-sm font-semibold text-foreground mb-4 text-center">Distribuição de Clientes: Possui Imóvel Próprio?</p>
           <div className="h-[350px]">
             <ResponsiveContainer width="100%" height="100%">
@@ -1295,7 +1295,7 @@ const ModelagemEstatistica = () => {
         </div>
 
         {/* Considerações */}
-        <div className="bg-card border border-border rounded-xl p-6 flex flex-col justify-center">
+        <div className="bg-card border border-border rounded-xl p-6 h-full flex flex-col justify-center">
           <h3 className="text-base font-bold text-foreground mb-3">Comparativo de Perfil: Proprietários vs. Não Proprietários</h3>
           <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5">
             <li><strong className="text-foreground">Poder Aquisitivo:</strong> Clientes que possuem imóvel têm uma renda média 7 vezes superior (R$ 24.901) em relação aos que não possuem (R$ 3.344).</li>
@@ -1313,9 +1313,9 @@ const ModelagemEstatistica = () => {
         <span className="text-xl font-semibold text-foreground">Posse de Imóvel de Alto Padrão</span>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
         {/* Gráfico */}
-        <div className="bg-card border border-border rounded-xl p-6">
+        <div className="bg-card border border-border rounded-xl p-6 h-full">
           <p className="text-sm font-semibold text-foreground mb-4 text-center">Distribuição de Clientes: Possui Imóvel de Alto Padrão?</p>
           <div className="h-[350px]">
             <ResponsiveContainer width="100%" height="100%">
@@ -1355,7 +1355,7 @@ const ModelagemEstatistica = () => {
         </div>
 
         {/* Considerações */}
-        <div className="bg-card border border-border rounded-xl p-6 flex flex-col justify-center">
+        <div className="bg-card border border-border rounded-xl p-6 h-full flex flex-col justify-center">
           <h3 className="text-base font-bold text-foreground mb-2">O "Salto" Econômico do Alto Padrão</h3>
           <p className="text-sm text-muted-foreground mb-3">O impacto dessa variável na saúde financeira do cliente é drástico:</p>
           <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5">
@@ -1374,9 +1374,9 @@ const ModelagemEstatistica = () => {
         <span className="text-xl font-semibold text-foreground">Posse de Automóvel</span>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
         {/* Gráfico */}
-        <div className="bg-card border border-border rounded-xl p-6">
+        <div className="bg-card border border-border rounded-xl p-6 h-full">
           <p className="text-sm font-semibold text-foreground mb-4 text-center">Distribuição de Clientes: Possui Automóvel?</p>
           <div className="h-[350px]">
             <ResponsiveContainer width="100%" height="100%">
@@ -1416,7 +1416,7 @@ const ModelagemEstatistica = () => {
         </div>
 
         {/* Considerações */}
-        <div className="bg-card border border-border rounded-xl p-6 flex flex-col justify-center">
+        <div className="bg-card border border-border rounded-xl p-6 h-full flex flex-col justify-center">
           <h3 className="text-base font-bold text-foreground mb-3">Perfil Socioeconômico e Automóvel</h3>
           <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5">
             <li><strong className="text-foreground">Renda e Patrimônio:</strong> Clientes com automóvel possuem uma renda média de <strong className="text-foreground">R$ 24.417</strong>, o que é 6 vezes maior do que a renda dos clientes sem veículo (R$ 3.930).</li>
@@ -1434,9 +1434,9 @@ const ModelagemEstatistica = () => {
         <span className="text-xl font-semibold text-foreground">Proprietário de Veículo 0KM</span>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
         {/* Gráfico */}
-        <div className="bg-card border border-border rounded-xl p-6">
+        <div className="bg-card border border-border rounded-xl p-6 h-full">
           <p className="text-sm font-semibold text-foreground mb-4 text-center">Distribuição de Clientes: Perfil de Veículo Zero KM</p>
           <div className="h-[350px]">
             <ResponsiveContainer width="100%" height="100%">
@@ -1476,7 +1476,7 @@ const ModelagemEstatistica = () => {
         </div>
 
         {/* Considerações */}
-        <div className="bg-card border border-border rounded-xl p-6 flex flex-col justify-start">
+        <div className="bg-card border border-border rounded-xl p-6 h-full flex flex-col justify-start">
           <h3 className="text-base font-bold text-foreground mb-3">O Perfil "Zero KM" vs. Mercado de Usados/Não Proprietários</h3>
           <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5 mb-6">
             <li><strong className="text-foreground">Poder Aquisitivo Extremo:</strong> Clientes com perfil de veículo Zero KM têm uma renda média de <strong className="text-foreground">R$ 35.920</strong>, quase 3 vezes superior aos que não têm esse perfil (R$ 12.493).</li>
@@ -1524,9 +1524,9 @@ const ModelagemEstatistica = () => {
         <span className="text-xl font-semibold text-foreground">Comportamento Digital</span>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
         {/* Gráfico */}
-        <div className="bg-card border border-border rounded-xl p-6">
+        <div className="bg-card border border-border rounded-xl p-6 h-full">
           <p className="text-sm font-semibold text-foreground mb-4 text-center">Distribuição de Clientes: Perfil de Comportamento Digital</p>
           <div className="h-[350px]">
             <ResponsiveContainer width="100%" height="100%">
@@ -1566,7 +1566,7 @@ const ModelagemEstatistica = () => {
         </div>
 
         {/* Considerações */}
-        <div className="bg-card border border-border rounded-xl p-6 flex flex-col justify-center">
+        <div className="bg-card border border-border rounded-xl p-6 h-full flex flex-col justify-center">
           <h3 className="text-base font-bold text-foreground mb-3">O Impacto do Comportamento Digital</h3>
           <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5">
             <li><strong className="text-foreground">Renda e Perfil:</strong> Clientes com comportamento digital ativo possuem uma renda média de <strong className="text-foreground">R$ 23.972</strong>, o que é quase 3 vezes superior aos clientes não digitais (R$ 8.337).</li>
@@ -1584,9 +1584,9 @@ const ModelagemEstatistica = () => {
         <span className="text-xl font-semibold text-foreground">Consumo de Luxo</span>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
         {/* Gráfico */}
-        <div className="bg-card border border-border rounded-xl p-6">
+        <div className="bg-card border border-border rounded-xl p-6 h-full">
           <p className="text-sm font-semibold text-foreground mb-4 text-center">Distribuição de Clientes: Perfil de Consumo de Luxo</p>
           <div className="h-[350px]">
             <ResponsiveContainer width="100%" height="100%">
@@ -1626,7 +1626,7 @@ const ModelagemEstatistica = () => {
         </div>
 
         {/* Considerações */}
-        <div className="bg-card border border-border rounded-xl p-6 flex flex-col justify-center">
+        <div className="bg-card border border-border rounded-xl p-6 h-full flex flex-col justify-center">
           <h3 className="text-base font-bold text-foreground mb-1">O Abismo entre o Consumo de Luxo e o Regular</h3>
           <p className="text-sm font-semibold text-muted-foreground mb-3">A diferença socioeconômica entre os grupos é drástica:</p>
           <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5 mb-5">
@@ -1675,9 +1675,9 @@ const ModelagemEstatistica = () => {
         <span className="text-xl font-semibold text-foreground">Entusiastas de Tecnologia</span>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
         {/* Gráfico */}
-        <div className="bg-card border border-border rounded-xl p-6">
+        <div className="bg-card border border-border rounded-xl p-6 h-full">
           <p className="text-sm font-semibold text-foreground mb-4 text-center">Distribuição de Clientes: Entusiasta de Tecnologia</p>
           <div className="h-[350px]">
             <ResponsiveContainer width="100%" height="100%">
@@ -1717,7 +1717,7 @@ const ModelagemEstatistica = () => {
         </div>
 
         {/* Considerações */}
-        <div className="bg-card border border-border rounded-xl p-6 flex flex-col justify-center">
+        <div className="bg-card border border-border rounded-xl p-6 h-full flex flex-col justify-center">
           <h3 className="text-base font-bold text-foreground mb-3">O Perfil do "Early Adopter" (Entusiasta de Tecnologia)</h3>
           <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5 mb-5">
             <li><strong className="text-foreground">Poder Econômico:</strong> Diferente de outras variáveis, a renda média entre entusiastas (R$ 23.838) e não entusiastas (R$ 22.880) é muito similar. Ou seja, ser entusiasta de tecnologia na sua base não depende apenas de ter mais dinheiro, mas sim de um traço de personalidade.</li>
@@ -1765,9 +1765,9 @@ const ModelagemEstatistica = () => {
         <span className="text-xl font-semibold text-foreground">Aposta Online</span>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
         {/* Gráfico */}
-        <div className="bg-card border border-border rounded-xl p-6">
+        <div className="bg-card border border-border rounded-xl p-6 h-full">
           <p className="text-sm font-semibold text-foreground mb-4 text-center">Distribuição de Clientes: Perfil de Aposta Online</p>
           <div className="h-[350px]">
             <ResponsiveContainer width="100%" height="100%">
@@ -1807,7 +1807,7 @@ const ModelagemEstatistica = () => {
         </div>
 
         {/* Considerações */}
-        <div className="bg-card border border-border rounded-xl p-6 flex flex-col justify-center">
+        <div className="bg-card border border-border rounded-xl p-6 h-full flex flex-col justify-center">
           <h3 className="text-base font-bold text-foreground mb-3">O Perfil do "Apostador" vs. Restante da Base</h3>
           <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5 mb-5">
             <li><strong className="text-foreground">Renda e Score (A Queda Livre):</strong> Este é o grupo com os menores indicadores financeiros. A renda média é de R$ 7.607, enquanto os não apostadores têm média de R$ 23.776 (uma diferença de 3 vezes). O Score de crédito cai drasticamente para 490 (contra 805 do restante da base).</li>
@@ -1854,8 +1854,8 @@ const ModelagemEstatistica = () => {
         <span className="text-xl font-semibold text-foreground">Clube do Vinho</span>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
-        <div className="bg-card border border-border rounded-xl p-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+        <div className="bg-card border border-border rounded-xl p-6 h-full">
           <p className="text-sm font-semibold text-foreground mb-4 text-center">Distribuição de Clientes: Perfil Clube do Vinho</p>
           <div className="h-[350px]">
             <ResponsiveContainer width="100%" height="100%">
@@ -1894,7 +1894,7 @@ const ModelagemEstatistica = () => {
           </div>
         </div>
 
-        <div className="bg-card border border-border rounded-xl p-6 flex flex-col justify-center">
+        <div className="bg-card border border-border rounded-xl p-6 h-full flex flex-col justify-center">
           <h3 className="text-base font-bold text-foreground mb-3">O Vínculo Direto: Vinho e Bem-estar</h3>
           <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5 mb-5">
             <li><strong className="text-foreground">Poder Econômico:</strong> O cliente que pertence a um Clube do Vinho tem uma renda média de <strong className="text-foreground">R$ 25.022</strong>, o que é 5,5 vezes superior à dos não membros (R$ 4.515).</li>
@@ -1942,8 +1942,8 @@ const ModelagemEstatistica = () => {
         <span className="text-xl font-semibold text-foreground">Posse de Moto</span>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
-        <div className="bg-card border border-border rounded-xl p-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-stretch">
+        <div className="bg-card border border-border rounded-xl p-6 h-full">
           <p className="text-sm font-semibold text-foreground mb-4 text-center">Distribuição de Clientes: Possui Moto?</p>
           <div className="h-[350px]">
             <ResponsiveContainer width="100%" height="100%">
@@ -1982,7 +1982,7 @@ const ModelagemEstatistica = () => {
           </div>
         </div>
 
-        <div className="bg-card border border-border rounded-xl p-6 flex flex-col justify-center">
+        <div className="bg-card border border-border rounded-xl p-6 h-full flex flex-col justify-center">
           <h3 className="text-base font-bold text-foreground mb-3">Perfil Socioeconômico: Moto vs. Não Moto</h3>
           <ul className="space-y-2 text-sm text-muted-foreground list-disc pl-5 mb-5">
             <li><strong className="text-foreground">Renda e Patrimônio:</strong> Clientes que possuem moto têm uma renda média de R$ 17.223, enquanto os que não possuem têm média de R$ 25.466.</li>
