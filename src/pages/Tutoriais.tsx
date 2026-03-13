@@ -22,7 +22,7 @@ const Tutoriais = () => {
           </div>
         </div>
         <div className="glass-card p-4">
-          <h2 className="text-sm font-semibold text-foreground mb-3">Tutorial de utilização do cubo de Pessoas Jurídicas</h2>
+          <h2 className="text-sm font-semibold text-foreground mb-3">Tutorial de utilização do cubo de Pessoas Jurídicas - PJ</h2>
           <div className="aspect-video rounded-lg overflow-hidden">
             <iframe
               className="w-full h-full"
