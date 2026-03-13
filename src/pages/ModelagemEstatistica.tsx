@@ -208,28 +208,28 @@ const ModelagemEstatistica = () => {
         <span className="text-xl font-semibold text-foreground">Aquário</span>
       </div>
 
-      <div className="mt-6 relative" style={{ minHeight: '510px' }}>
+      <div className="mt-6 relative min-h-[340px] sm:min-h-[510px]">
         {/* Concentric circles */}
-        <div className="relative w-[510px] h-[510px] shrink-0">
+        <div className="relative w-[320px] h-[320px] sm:w-[510px] sm:h-[510px] shrink-0 mx-auto sm:mx-0">
           {/* Mercado Total - outer */}
-          <div className="absolute inset-0 rounded-full flex flex-col items-center justify-start pt-12" style={{ background: 'linear-gradient(180deg, hsl(264 53% 18%) 0%, hsl(264 70% 12%) 100%)' }}>
-            <p className="text-lg font-bold text-foreground">Mercado Total</p>
-            <p className="text-sm text-muted-foreground">População em geral.</p>
+          <div className="absolute inset-0 rounded-full flex flex-col items-center justify-start pt-8 sm:pt-12" style={{ background: 'linear-gradient(180deg, hsl(264 53% 18%) 0%, hsl(264 70% 12%) 100%)' }}>
+            <p className="text-sm sm:text-lg font-bold text-foreground">Mercado Total</p>
+            <p className="text-xs sm:text-sm text-muted-foreground">População em geral.</p>
           </div>
           {/* Mercado Potencial - middle */}
-          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[40%] w-[330px] h-[330px] rounded-full flex flex-col items-center justify-start pt-9" style={{ background: 'linear-gradient(180deg, hsl(240 35% 41%) 0%, hsl(264 45% 28%) 100%)' }}>
-            <p className="text-sm font-bold text-foreground">Mercado Potencial</p>
-            <p className="text-xs text-muted-foreground text-center px-6 mt-1">Parcela da população que apresenta perfil semelhante ao dos atuais clientes.</p>
+          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[40%] w-[210px] h-[210px] sm:w-[330px] sm:h-[330px] rounded-full flex flex-col items-center justify-start pt-6 sm:pt-9" style={{ background: 'linear-gradient(180deg, hsl(240 35% 41%) 0%, hsl(264 45% 28%) 100%)' }}>
+            <p className="text-xs sm:text-sm font-bold text-foreground">Mercado Potencial</p>
+            <p className="text-[10px] sm:text-xs text-muted-foreground text-center px-4 sm:px-6 mt-1">Parcela da população que apresenta perfil semelhante ao dos atuais clientes.</p>
           </div>
           {/* Prospect - inner */}
-          <div className="absolute left-1/2 bottom-[15%] -translate-x-1/2 w-[195px] h-[195px] rounded-full flex flex-col items-center justify-center" style={{ background: 'linear-gradient(180deg, hsl(178 100% 32%) 0%, hsl(178 80% 26%) 100%)' }}>
-            <p className="text-sm font-bold text-primary-foreground">Prospect</p>
-            <p className="text-[11px] text-primary-foreground/80 text-center px-4 mt-0.5">Parcela do Mercado potencial pertencente a uma das Personas identificadas.</p>
+          <div className="absolute left-1/2 bottom-[15%] -translate-x-1/2 w-[125px] h-[125px] sm:w-[195px] sm:h-[195px] rounded-full flex flex-col items-center justify-center" style={{ background: 'linear-gradient(180deg, hsl(178 100% 32%) 0%, hsl(178 80% 26%) 100%)' }}>
+            <p className="text-xs sm:text-sm font-bold text-primary-foreground">Prospect</p>
+            <p className="text-[9px] sm:text-[11px] text-primary-foreground/80 text-center px-3 sm:px-4 mt-0.5">Parcela do Mercado potencial pertencente a uma das Personas identificadas.</p>
           </div>
         </div>
 
         {/* Meta - arrow from Prospect going up-right */}
-        <div className="absolute flex items-center gap-6" style={{ left: '310px', top: '230px' }}>
+        <div className="hidden sm:flex absolute items-center gap-6" style={{ left: '310px', top: '230px' }}>
           <svg width="320" height="36" viewBox="0 0 213 24" className="shrink-0">
             <path d="M0 12 L203 12" stroke="hsl(260, 10%, 55%)" strokeWidth="2" fill="none" />
             <path d="M198 6 L208 12 L198 18" stroke="hsl(260, 10%, 55%)" strokeWidth="2" fill="none" />
@@ -244,7 +244,7 @@ const ModelagemEstatistica = () => {
         </div>
 
         {/* Google Ads - arrow from Prospect going down-right */}
-        <div className="absolute flex items-center gap-6" style={{ left: '310px', top: '370px' }}>
+        <div className="hidden sm:flex absolute items-center gap-6" style={{ left: '310px', top: '370px' }}>
           <svg width="320" height="36" viewBox="0 0 213 24" className="shrink-0">
             <path d="M0 12 L203 12" stroke="hsl(260, 10%, 55%)" strokeWidth="2" fill="none" />
             <path d="M198 6 L208 12 L198 18" stroke="hsl(260, 10%, 55%)" strokeWidth="2" fill="none" />
@@ -252,6 +252,19 @@ const ModelagemEstatistica = () => {
           <div className="flex items-center gap-3">
             <img src={googleAdsIcon} alt="Google Ads" className="h-12 w-12" />
             <img src={googleAdsText} alt="Google Ads" className="h-9" />
+          </div>
+        </div>
+
+        {/* Mobile: Meta & Google Ads below circles */}
+        <div className="flex sm:hidden flex-col items-center gap-4 mt-6">
+          <div className="flex items-center gap-3">
+            <img src={metaIcon} alt="Meta" className="h-10 w-auto" />
+            <img src={metaText} alt="Meta" className="h-7" style={{ filter: 'brightness(0) invert(1)' }} />
+            <img src={metaApps} alt="Apps" className="h-10" />
+          </div>
+          <div className="flex items-center gap-3">
+            <img src={googleAdsIcon} alt="Google Ads" className="h-10 w-10" />
+            <img src={googleAdsText} alt="Google Ads" className="h-7" />
           </div>
         </div>
       </div>
