@@ -10,7 +10,7 @@ const Tutoriais = () => {
 
       <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="glass-card p-4">
-          <h2 className="text-sm font-semibold text-foreground mb-3">Tutorial de utilização do cubo de Pessoas Físicas</h2>
+          <h2 className="text-sm font-semibold text-foreground mb-3">Tutorial de utilização do cubo de Pessoas Físicas - PF</h2>
           <div className="aspect-video rounded-lg overflow-hidden">
             <iframe
               className="w-full h-full"
