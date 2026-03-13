@@ -9,7 +9,7 @@ export function DashboardHeader() {
         <img src={novvoLogo} alt="Novvo" style={{ height: 'calc(14 * 0.6 * 0.25rem + 5px)' }} />
       </div>
 
-      <p className="text-sm text-muted-foreground">Desenvolvido por Eduardo Akkari</p>
+      <p className="text-sm text-muted-foreground text-right">Desenvolvido por<br className="sm:hidden" /> Eduardo Akkari</p>
     </header>
   );
 }
