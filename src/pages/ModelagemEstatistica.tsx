@@ -297,7 +297,7 @@ const ModelagemEstatistica = () => {
       </ul>
 
       {/* Visual: Público de Interesse → Machine Learning → Pessoas semelhantes */}
-      <div className="mt-8 flex flex-col sm:flex-row items-start justify-start gap-6 sm:gap-10">
+      <div className="mt-8 flex flex-col sm:flex-row items-center sm:items-start justify-start gap-6 sm:gap-10">
         {/* Público de Interesse */}
         <div className="flex flex-col items-center text-center gap-3 w-[140px]">
           <div className="bg-card border border-border rounded-2xl p-6 shadow-lg w-[112px] h-[112px] flex items-center justify-center">
